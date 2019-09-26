@@ -1,0 +1,29 @@
+﻿.dvLogeo {
+    background-color: white;
+    border-radius: .4rem;
+    height: 35rem;
+    width: 30rem;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.secCentral {
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.ulCompLogeo {
+    margin: 0px;
+    padding: 0px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+    .ulCompLogeo li {
+        display: block;
+    }
+
+body {
+    background-image: url('../img/BGCOAL.jpg');
+}

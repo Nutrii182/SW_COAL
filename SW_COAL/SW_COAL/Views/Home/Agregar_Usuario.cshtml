@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Agregar Usuario";
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>Agregar Usuario</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="~/Scripts/Project/JS/jsAgregarUsuario.js"></script>
+</head>
+<body>
+    <h2 class="text-left">Agregar Usuario</h2>
+    <div class="container col-lg-12">
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label>Nombre</label>
+                <div>
+                    <input id="inNombre" type="text" placeholder="Nombre(s)" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Apellido Paterno</label>
+                <div>
+                    <input id="inPaterno" type="text" placeholder="Apellido Paterno" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Apellido Materno</label>
+                <div>
+                    <input id="inMaterno" type="text" placeholder="Apellido Materno" class="form-control required" />
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label>Número Teléfonico</label>
+                <div>
+                    <input id="inTelefono" type="tel" placeholder="Número Telefónico" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Número de Celular</label>
+                <div>
+                    <input id="inCelular" type="tel" placeholder="Número de Celular" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Correo Electrónico</label>
+                <div>
+                    <input id="inCorreo" type="email" placeholder="Correlo Electrónico" class="form-control required" />
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label>Nombre de Usuario</label>
+                <div>
+                    <input id="inUsuario" type="text" placeholder="Nombre de Usuario" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Contraseña</label>
+                <div>
+                    <input id="inContraseña" type="password" placeholder="Contraseña" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <div>
+                    <input type="hidden" />
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-lg-start">
+            <div class="form-group col-sm-2">
+                <div>
+                    <button id="idRegistro" class="btn btn-primary form-control">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sec>
+        <input type="hidden" id="urlRecibeUsuario" value="@Url.Action("recibeUsuario","Home")" />
+        <input type="hidden" id="urlAgregarUsuario" value="@Url.Action("Agregar_Usuario","Home")" />
+    </sec>
+</body>
+</html>

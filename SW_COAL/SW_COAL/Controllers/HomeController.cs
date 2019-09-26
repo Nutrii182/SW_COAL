@@ -1,0 +1,100 @@
+﻿using CapaDatos;
+using CapaModelo;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace SWP_COAL.Controllers
+{
+    public class HomeController : Controller
+    {
+        public ActionResult Index()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
+        [HttpGet]
+        public ActionResult ObtieneUsuarios()
+        {
+            CD_Usuario usu = new CD_Usuario();
+            List<UsuarioModel> listaUsu = new List<UsuarioModel>();
+            listaUsu = usu.MostrarUsuarios();
+            return Json(new { data = listaUsu }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult RecibePaciente(PacientesModel nuevoPaciente)
+        {
+            var result = new JObject();
+
+            CD_Paciente paciente = new CD_Paciente();
+
+            if (paciente.NuevoPaciente(nuevoPaciente) != null)
+            {
+                result["Exito"] = true;
+            }
+            else
+            {
+                result["Advertencia"] = true;
+            }
+            return Content(result.ToString());
+        }
+
+        [HttpPost]
+        public ActionResult recibeUsuario(UsuarioModel nuevoUsuario)
+        {
+            var resultado = new JObject();
+
+            CD_Usuario user = new CD_Usuario();
+
+
+            if (user.NuevoUsuario(nuevoUsuario) != null)
+            {
+                resultado["Exito"] = true;
+            }
+            else
+            {
+                resultado["Advertencia"] = true;
+            }
+            return Content(resultado.ToString());
+        }
+
+        public ActionResult Agregar_Usuario()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+        public ActionResult Agregar_Paciente()
+        {
+
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                ViewBag.Message = "Your application description page.";
+
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
+        public ActionResult Calendario()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                ViewBag.Message = "Your contact page.";
+
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+    }
+}

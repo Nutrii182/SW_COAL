@@ -1,0 +1,19 @@
+﻿
+body {
+    margin-top: -5%;
+    background: #0094ff;
+}
+
+.nav a {
+    color: white;
+    text-decoration-line: none;
+}
+
+    .nav a:link {
+        text-decoration: none;
+    }
+
+    .nav a:hover {
+        background: rgba(255, 255,255,.1);
+        color: white;
+    }
