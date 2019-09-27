@@ -15,7 +15,7 @@
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/Project/JS/jsSelUsuarios.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarPaciente.js"></script>
+    <script src="~/Scripts/Project/JS/jsAgregarTratamiento.js"></script>
 </head>
 <body>
     <h3 class="text-left">Agregar Paciente</h3>
@@ -155,6 +155,23 @@
                 <label>Apellido Materno</label>
                 <div>
                     <input id="inMaternoD" type="text" placeholder="Apellido Materno" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Teléfono del Doctor</label>
+                <div>
+                    <input id="inTelD" type="tel" placeholder="Teléfono del Doctor" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Celular del Doctor</label>
+                <div>
+                    <input id="inCelD" type="tel" placeholder="Celular del Doctor" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <div>
+                    <input type="hidden"/>
                 </div>
             </div>
         </div>
@@ -604,7 +621,7 @@
             </ul>
         </div>
     </div>
-    <h5>Información Adicional</h5>
+    <h4>Información Adicional</h4>
     <div class="container col-lg-12">
         <div class="row">
             <div class="form-group col-sm-4">
@@ -730,7 +747,9 @@
     <sec>
         <input type="hidden" id="urlAgregaPaciente" value="@Url.Action("Agregar_Paciente","Home")" />
         <input type="hidden" id="urlUsuarios" value="@Url.Action("ObtieneUsuarios","Home")" />
+        <input type="hidden" id="urlObPacientes" value="@Url.Action("ObtienePacientes","Home")" />
         <input type="hidden" id="urlPacientes" value="@Url.Action("RecibePaciente","Home")" />
+        <input type="hidden" id="urlTratamiento" value="@Url.Action("RecibeTratamiento","Home")" />
     </sec>
 </body>
 </html>

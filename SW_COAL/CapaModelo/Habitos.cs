@@ -14,6 +14,7 @@ namespace CapaModelo
     
     public partial class Habitos
     {
+        public int idhabito { get; set; }
         public string habito { get; set; }
         public string chupador { get; set; }
         public Nullable<int> frecuencia { get; set; }

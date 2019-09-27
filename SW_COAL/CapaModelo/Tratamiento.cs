@@ -14,6 +14,7 @@ namespace CapaModelo
     
     public partial class Tratamiento
     {
+        public int idtratamiento { get; set; }
         public string bajo_tratamiento { get; set; }
         public string tipo_tratamiento { get; set; }
         public string nombre_doctor { get; set; }

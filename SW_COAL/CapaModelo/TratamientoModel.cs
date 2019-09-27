@@ -26,6 +26,8 @@ namespace CapaModelo
 
         public String sMedicamento { get; set; }
 
+        public String sHospi { get; set; }
+
         public String sMotivo { get; set; }
 
         public int iPaciente { get; set; }

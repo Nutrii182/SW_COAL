@@ -14,6 +14,7 @@ namespace CapaModelo
     
     public partial class Adicional
     {
+        public int idadicional { get; set; }
         public string rech_apri { get; set; }
         public string trat_encias { get; set; }
         public string ori_bucal { get; set; }

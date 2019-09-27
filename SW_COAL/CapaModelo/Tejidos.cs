@@ -14,6 +14,7 @@ namespace CapaModelo
     
     public partial class Tejidos
     {
+        public int idtejidos { get; set; }
         public string duros { get; set; }
         public string rx { get; set; }
         public string blandos { get; set; }

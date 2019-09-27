@@ -29,6 +29,15 @@ namespace SWP_COAL.Controllers
             return Json(new { data = listaUsu }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public ActionResult ObtienePacientes()
+        {
+            CD_Paciente paci = new CD_Paciente();
+            List<PacientesModel> listaPaci = new List<PacientesModel>();
+            listaPaci = paci.MostrarPacientes();
+            return Json(new { data = listaPaci }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
         public ActionResult RecibePaciente(PacientesModel nuevoPaciente)
         {
@@ -37,6 +46,24 @@ namespace SWP_COAL.Controllers
             CD_Paciente paciente = new CD_Paciente();
 
             if (paciente.NuevoPaciente(nuevoPaciente) != null)
+            {
+                result["Exito"] = true;
+            }
+            else
+            {
+                result["Advertencia"] = true;
+            }
+            return Content(result.ToString());
+        }
+
+        [HttpPost]
+        public ActionResult RecibeTratamiento(TratamientoModel nuevotrata)
+        {
+            var result = new JObject();
+
+            CD_Tratamiento trata = new CD_Tratamiento();
+
+            if (trata.NuevoTratamiento(nuevotrata) != null)
             {
                 result["Exito"] = true;
             }

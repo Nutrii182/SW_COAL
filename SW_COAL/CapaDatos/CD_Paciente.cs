@@ -47,5 +47,34 @@ namespace CapaDatos
                 throw e;
             }
         }
+
+        public List<PacientesModel> MostrarPacientes()
+        {
+            try
+            {
+
+                using (var context = new COALEntities())
+
+                    return context.Pacientes.Select(p => new PacientesModel()
+                    {
+                        sNombre = p.nombre,
+                        sApePaterno = p.apellido_paterno,
+                        sApeMaterno = p.apellido_materno,
+                        sDomicilio = p.domicilio,
+                        lTelefono = p.telefono,
+                        lCelular = p.celular,
+                        dtIniciaTratamiento = p.in_tratamiento,
+                        dtTerminaTratamiento = p.fn_tratamiento,
+                        dtFechaNacimiento = p.fecha_nacimiento,
+                        sSexo = p.sexo,
+                        iOdontologo = p.odontologo
+                    }).ToList();
+
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

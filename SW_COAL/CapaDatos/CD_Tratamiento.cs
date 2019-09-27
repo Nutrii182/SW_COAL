@@ -32,6 +32,7 @@ namespace CapaDatos
                         cel_doctor = trat.lCelDoct,
                         toma_medi = trat.sTomaMedi,
                         medicamento = trat.sMedicamento,
+                        hospitalizado = trat.sHospi,
                         motivo = trat.sMotivo,
                         paciente = trat.iPaciente
                     };

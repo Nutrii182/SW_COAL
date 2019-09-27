@@ -14,6 +14,7 @@ namespace CapaModelo
     
     public partial class Antecendentes
     {
+        public int idantecedente { get; set; }
         public string antecedente { get; set; }
         public string otro_antecedente { get; set; }
         public string embarazo { get; set; }
