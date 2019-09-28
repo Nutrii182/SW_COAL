@@ -93,6 +93,23 @@ namespace SWP_COAL.Controllers
             return Content(resultado.ToString());
         }
 
+        public ActionResult recibeAdicional(InfoAdicionalModel info)
+        {
+            var resultado = new JObject();
+
+            CD_InfoAdicional adicional = new CD_InfoAdicional();
+
+            if(adicional.NuevaInfoAdi(info) != null)
+            {
+                resultado["Exito"] = true;
+            }
+            else
+            {
+                resultado["Advertencia"] = true;
+            }
+            return Content(resultado.ToString());
+        }
+
         public ActionResult Agregar_Usuario()
         {
             if ((UsuarioModel)Session["usuario"] != null)

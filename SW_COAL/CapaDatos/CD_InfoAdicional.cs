@@ -26,7 +26,7 @@ namespace CapaDatos
                         rech_apri = infadi.sRechiApri,
                         trat_encias = infadi.sTrataEncias,
                         ori_bucal = infadi.sOriHigBucal,
-                        ciru_encias = infadi.sCirujiaEncias,
+                        ciru_encias = infadi.sCirugiaEncias,
                         hemorragias = infadi.sHemorragiaBucal,
                         veces_cepillado = infadi.iCepillado,
                         tipo_cepillo = infadi.sTipoCepillo,

@@ -14,7 +14,7 @@ namespace CapaModelo
 
         public String sOriHigBucal { get; set; }
 
-        public String sCirujiaEncias { get; set; }
+        public String sCirugiaEncias { get; set; }
 
         public String sHemorragiaBucal { get; set; }
 
