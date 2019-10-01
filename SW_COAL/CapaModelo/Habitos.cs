@@ -15,8 +15,13 @@ namespace CapaModelo
     public partial class Habitos
     {
         public int idhabito { get; set; }
-        public string habito { get; set; }
-        public string chupador { get; set; }
+        public string bricomania { get; set; }
+        public string contrac_musc { get; set; }
+        public string habi_mordi { get; set; }
+        public string resp_bucal { get; set; }
+        public string chupa_labios { get; set; }
+        public string chupa_lengua { get; set; }
+        public string chupa_dedos { get; set; }
         public Nullable<int> frecuencia { get; set; }
         public string alimentacion { get; set; }
         public int paciente { get; set; }

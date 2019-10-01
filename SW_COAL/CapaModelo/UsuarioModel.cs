@@ -8,6 +8,7 @@ namespace CapaModelo
 {
     public class UsuarioModel
     {
+        public int iId { get; set; }
         public String sNombre { get; set; }
 
         public String sAp_Paterno { get; set; }

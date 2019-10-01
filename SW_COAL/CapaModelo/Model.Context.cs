@@ -25,11 +25,11 @@ namespace CapaModelo
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Antecendentes> Antecendentes { get; set; }
         public virtual DbSet<Pacientes> Pacientes { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
-        public virtual DbSet<Adicional> Adicional { get; set; }
-        public virtual DbSet<Antecendentes> Antecendentes { get; set; }
         public virtual DbSet<Habitos> Habitos { get; set; }
+        public virtual DbSet<Adicional> Adicional { get; set; }
         public virtual DbSet<Tejidos> Tejidos { get; set; }
         public virtual DbSet<Tratamiento> Tratamiento { get; set; }
     }

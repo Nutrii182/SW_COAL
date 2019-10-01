@@ -1,19 +1,36 @@
-﻿$(document).ready(function () {
+﻿
+$(document).on('click', '#regPaci', function () {
 
-    var v;
+    var url = $('#urlUsuarios').val();
 
-    $(document).on('change', '#selOdonto', function () {
-        v = $(this).val();
-    });
-
-    $(document).on('click', '#regPaci', function () {
-        validador(v);
+    $.ajax({
+        type: "GET",
+        url: url,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: ObtieneUsuarios,
+        error: function (data) {
+            alert('error obteniendo');
+        }
     });
 });
 
+function ObtieneUsuarios(res) {
 
+    var u = localStorage.getItem('user');
 
-function validador(v) {
+    for (c = 0; c < res.data.length; c++) {
+
+        if (res.data[c].sUsuario == u) {
+
+            validador(res.data[c].iId);
+            break;
+        }
+    
+    }
+}
+
+function validador(id) {
     var s;
 
     if ($('#inMasculino').prop('checked')) {
@@ -31,11 +48,9 @@ function validador(v) {
         sDomicilio: $('#inDomicilio').val(),
         lTelefono: $('#inTelefono').val(),
         lCelular: $('#inCelular').val(),
-        dtIniciaTratamiento: $('#inFechaIni').val(),
-        dtTerminaTratamiento: $('#inFechaFin').val(),
         dtFechaNacimiento: $('#inFechaNac').val(),
         sSexo: s,
-        iOdontologo: parseInt(++v),
+        iOdontologo: parseInt(id),
     });
     $('#regPaci').attr("disabled", true);
     LlamadoPaciente(datosPaciente);

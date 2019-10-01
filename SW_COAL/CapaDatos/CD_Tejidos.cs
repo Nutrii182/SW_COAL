@@ -16,7 +16,7 @@ namespace CapaDatos
 
                 using (var context = new COALEntities())
                 {
-                    var comp = context.Tejidos.Where(t => t.blandos == teji.sBlandos || t.oclusion == teji.sOclusion).FirstOrDefault();
+                    var comp = context.Tejidos.Where(t => t.paciente == teji.iPaciente).FirstOrDefault();
 
                     if (comp != null)
                         return null;
@@ -25,8 +25,17 @@ namespace CapaDatos
                     {
                         duros = teji.sDuros,
                         rx = teji.sRx,
-                        blandos = teji.sBlandos,
-                        oclusion = teji.sOclusion,
+                        encia = teji.sEncia,
+                        inser_epi = teji.sInsert_Epi,
+                        lengua = teji.sLengua,
+                        pulpa = teji.sPulpa,
+                        velo = teji.sVelo,
+                        carrillos = teji.sCarrillos,
+                        sob_vert = teji.sSob_Vert,
+                        sob_hori = teji.sSob_Hori,
+                        mordi_abier = teji.sMordi_Abier,
+                        desg_bru = teji.sDesg_Bru,
+                        anoclusion = teji.sAnoclusion,
                         paciente = teji.iPaciente
                     };
                     context.Tejidos.Add(nuevoTejido);

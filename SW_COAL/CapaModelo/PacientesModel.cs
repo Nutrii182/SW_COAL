@@ -20,10 +20,6 @@ namespace CapaModelo
 
         public long? lCelular { get; set; }
 
-        public DateTime dtIniciaTratamiento { get; set; }
-
-        public DateTime dtTerminaTratamiento { get; set; }
-
         public DateTime dtFechaNacimiento { get; set; }
 
         public String sSexo { get; set; }

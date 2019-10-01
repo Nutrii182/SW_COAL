@@ -17,8 +17,17 @@ namespace CapaModelo
         public int idtejidos { get; set; }
         public string duros { get; set; }
         public string rx { get; set; }
-        public string blandos { get; set; }
-        public string oclusion { get; set; }
+        public string encia { get; set; }
+        public string inser_epi { get; set; }
+        public string lengua { get; set; }
+        public string pulpa { get; set; }
+        public string velo { get; set; }
+        public string carrillos { get; set; }
+        public string sob_vert { get; set; }
+        public string sob_hori { get; set; }
+        public string mordi_abier { get; set; }
+        public string desg_bru { get; set; }
+        public string anoclusion { get; set; }
         public int paciente { get; set; }
     
         public virtual Pacientes Pacientes { get; set; }

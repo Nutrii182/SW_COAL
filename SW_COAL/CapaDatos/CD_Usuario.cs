@@ -93,9 +93,14 @@ namespace CapaDatos
 
                     return context.Usuarios.Select(u => new UsuarioModel()
                     {
+                        iId = u.idusuario,
                         sNombre = u.nombre,
                         sAp_Paterno = u.ap_paterno,
-                        sAp_Materno = u.ap_materno
+                        sAp_Materno = u.ap_materno,
+                        lTelefono = u.telefono,
+                        lCelular = u.celular,
+                        sCorreo = u.correo,
+                        sUsuario = u.usuario
                     }).ToList();
             }
             catch (Exception e)

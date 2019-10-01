@@ -30,8 +30,6 @@ namespace CapaDatos
                         domicilio = paci.sDomicilio,
                         telefono = paci.lTelefono,
                         celular = paci.lCelular,
-                        in_tratamiento = paci.dtIniciaTratamiento,
-                        fn_tratamiento = paci.dtTerminaTratamiento,
                         fecha_nacimiento = paci.dtFechaNacimiento,
                         sexo = paci.sSexo,
                         odontologo = paci.iOdontologo
@@ -63,8 +61,6 @@ namespace CapaDatos
                         sDomicilio = p.domicilio,
                         lTelefono = p.telefono,
                         lCelular = p.celular,
-                        dtIniciaTratamiento = p.in_tratamiento,
-                        dtTerminaTratamiento = p.fn_tratamiento,
                         dtFechaNacimiento = p.fecha_nacimiento,
                         sSexo = p.sexo,
                         iOdontologo = p.odontologo

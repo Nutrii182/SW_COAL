@@ -37,6 +37,7 @@ function validador() {
             sContraseña: $('#inContra').val()
         };
         $('#gif').css("display", "block");
+        localStorage.setItem('user', datosUsuario.sUsuario);
         $('.btnLogear').attr("disabled", true);
         LlamadaIniciarSesion(datosUsuario);
     }

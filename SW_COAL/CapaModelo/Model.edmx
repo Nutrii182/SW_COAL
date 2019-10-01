@@ -24,7 +24,17 @@
             <PropertyRef Name="idantecedente" />
           </Key>
           <Property Name="idantecedente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="antecedente" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="apa_resp" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="apa_cardi" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="apa_diges" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="sis_nerv" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="prob_goagu" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="desmayos" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="verti_mareo" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="diabetes" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="tiroides" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="fie_reu" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="hipertension" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="otro_antecedente" Type="varchar" MaxLength="35" />
           <Property Name="embarazo" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="meses_embarazo" Type="int" />
@@ -43,8 +53,13 @@
             <PropertyRef Name="idhabito" />
           </Key>
           <Property Name="idhabito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="habito" Type="varchar" MaxLength="30" />
-          <Property Name="chupador" Type="varchar" MaxLength="20" />
+          <Property Name="bricomania" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="contrac_musc" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="habi_mordi" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="resp_bucal" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="chupa_labios" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="chupa_lengua" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="chupa_dedos" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="frecuencia" Type="int" />
           <Property Name="alimentacion" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="paciente" Type="int" Nullable="false" />
@@ -60,8 +75,6 @@
           <Property Name="domicilio" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="telefono" Type="bigint" />
           <Property Name="celular" Type="bigint" />
-          <Property Name="in_tratamiento" Type="datetime" Nullable="false" />
-          <Property Name="fn_tratamiento" Type="datetime" Nullable="false" />
           <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
           <Property Name="sexo" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="odontologo" Type="int" Nullable="false" />
@@ -73,8 +86,17 @@
           <Property Name="idtejidos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="duros" Type="nvarchar" MaxLength="7" Nullable="false" />
           <Property Name="rx" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="blandos" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="oclusion" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="encia" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="inser_epi" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="lengua" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="pulpa" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="velo" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="carrillos" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="sob_vert" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="sob_hori" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="mordi_abier" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="desg_bru" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="anoclusion" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="paciente" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Tratamiento">
@@ -109,7 +131,7 @@
           <Property Name="usuario" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="contraseña" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Adicional__pacie__2CF2ADDF">
+        <Association Name="FK__Adicional__pacie__7FEAFD3E">
           <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
           <End Role="Adicional" Type="Self.Adicional" Multiplicity="*" />
           <ReferentialConstraint>
@@ -121,7 +143,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Antecende__pacie__19DFD96B">
+        <Association Name="FK__Antecende__pacie__6BE40491">
           <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
           <End Role="Antecendentes" Type="Self.Antecendentes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -133,7 +155,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Habitos__pacient__1EA48E88">
+        <Association Name="FK__Habitos__pacient__6FB49575">
           <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
           <End Role="Habitos" Type="Self.Habitos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -145,7 +167,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pacientes__odont__14270015">
+        <Association Name="FK__Pacientes__odont__662B2B3B">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -157,7 +179,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tejidos__pacient__2180FB33">
+        <Association Name="FK__Tejidos__pacient__72910220">
           <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
           <End Role="Tejidos" Type="Self.Tejidos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -169,7 +191,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tratamien__pacie__2A164134">
+        <Association Name="FK__Tratamien__pacie__7D0E9093">
           <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
           <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="*" />
           <ReferentialConstraint>
@@ -189,27 +211,27 @@
           <EntitySet Name="Tejidos" EntityType="Self.Tejidos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Adicional__pacie__2CF2ADDF" Association="Self.FK__Adicional__pacie__2CF2ADDF">
+          <AssociationSet Name="FK__Adicional__pacie__7FEAFD3E" Association="Self.FK__Adicional__pacie__7FEAFD3E">
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Adicional" EntitySet="Adicional" />
           </AssociationSet>
-          <AssociationSet Name="FK__Antecende__pacie__19DFD96B" Association="Self.FK__Antecende__pacie__19DFD96B">
+          <AssociationSet Name="FK__Antecende__pacie__6BE40491" Association="Self.FK__Antecende__pacie__6BE40491">
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Antecendentes" EntitySet="Antecendentes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Habitos__pacient__1EA48E88" Association="Self.FK__Habitos__pacient__1EA48E88">
+          <AssociationSet Name="FK__Habitos__pacient__6FB49575" Association="Self.FK__Habitos__pacient__6FB49575">
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Habitos" EntitySet="Habitos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pacientes__odont__14270015" Association="Self.FK__Pacientes__odont__14270015">
+          <AssociationSet Name="FK__Pacientes__odont__662B2B3B" Association="Self.FK__Pacientes__odont__662B2B3B">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Pacientes" EntitySet="Pacientes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tejidos__pacient__2180FB33" Association="Self.FK__Tejidos__pacient__2180FB33">
+          <AssociationSet Name="FK__Tejidos__pacient__72910220" Association="Self.FK__Tejidos__pacient__72910220">
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Tejidos" EntitySet="Tejidos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tratamien__pacie__2A164134" Association="Self.FK__Tratamien__pacie__2A164134">
+          <AssociationSet Name="FK__Tratamien__pacie__7D0E9093" Association="Self.FK__Tratamien__pacie__7D0E9093">
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Tratamiento" EntitySet="Tratamiento" />
           </AssociationSet>
@@ -218,47 +240,120 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="COALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="COALEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Antecendentes" EntityType="COALModel.Antecendentes" />
+          <EntitySet Name="Pacientes" EntityType="COALModel.Pacientes" />
+          <EntitySet Name="Usuarios" EntityType="COALModel.Usuarios" />
+          <AssociationSet Name="FK__Antecende__pacie__6BE40491" Association="COALModel.FK__Antecende__pacie__6BE40491">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Antecendentes" EntitySet="Antecendentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pacientes__odont__662B2B3B" Association="COALModel.FK__Pacientes__odont__662B2B3B">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Pacientes" EntitySet="Pacientes" />
+          </AssociationSet>
+          <EntitySet Name="Habitos" EntityType="COALModel.Habitos" />
+          <AssociationSet Name="FK__Habitos__pacient__6FB49575" Association="COALModel.FK__Habitos__pacient__6FB49575">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Habitos" EntitySet="Habitos" />
+          </AssociationSet>
+          <EntitySet Name="Adicional" EntityType="COALModel.Adicional" />
+          <EntitySet Name="Tejidos" EntityType="COALModel.Tejidos" />
+          <EntitySet Name="Tratamiento" EntityType="COALModel.Tratamiento" />
+          <AssociationSet Name="FK__Adicional__pacie__7FEAFD3E" Association="COALModel.FK__Adicional__pacie__7FEAFD3E">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Adicional" EntitySet="Adicional" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tejidos__pacient__72910220" Association="COALModel.FK__Tejidos__pacient__72910220">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Tejidos" EntitySet="Tejidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tratamien__pacie__7D0E9093" Association="COALModel.FK__Tratamien__pacie__7D0E9093">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Tratamiento" EntitySet="Tratamiento" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Antecendentes">
+          <Key>
+            <PropertyRef Name="idantecedente" />
+          </Key>
+          <Property Name="idantecedente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="apa_resp" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="apa_cardi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="apa_diges" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="sis_nerv" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="prob_goagu" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="desmayos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="verti_mareo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="diabetes" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="tiroides" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="fie_reu" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="hipertension" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="otro_antecedente" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="embarazo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="meses_embarazo" Type="Int32" />
+          <Property Name="anticonceptivos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="tipo_anticoncep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fumador" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="consume_alcohol" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="drogas" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="alergia" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="tipo_alergia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="higiene_bucal" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="paciente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Antecende__pacie__6BE40491" FromRole="Antecendentes" ToRole="Pacientes" />
+        </EntityType>
         <EntityType Name="Pacientes">
           <Key>
             <PropertyRef Name="idpaciente" />
           </Key>
           <Property Name="idpaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellido_paterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellido_materno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_paterno" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_materno" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="domicilio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="Int64" />
           <Property Name="celular" Type="Int64" />
-          <Property Name="in_tratamiento" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="fn_tratamiento" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="odontologo" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Pacientes__odont__2A4B4B5E" FromRole="Pacientes" ToRole="Usuarios" />
-          <NavigationProperty Name="Adicional" Relationship="COALModel.FK__Adicional__pacie__2CF2ADDF" FromRole="Pacientes" ToRole="Adicional" />
-          <NavigationProperty Name="Antecendentes" Relationship="COALModel.FK__Antecende__pacie__19DFD96B" FromRole="Pacientes" ToRole="Antecendentes" />
-          <NavigationProperty Name="Habitos" Relationship="COALModel.FK__Habitos__pacient__1EA48E88" FromRole="Pacientes" ToRole="Habitos" />
-          <NavigationProperty Name="Tejidos" Relationship="COALModel.FK__Tejidos__pacient__2180FB33" FromRole="Pacientes" ToRole="Tejidos" />
-          <NavigationProperty Name="Tratamiento" Relationship="COALModel.FK__Tratamien__pacie__2A164134" FromRole="Pacientes" ToRole="Tratamiento" />
+          <NavigationProperty Name="Antecendentes" Relationship="COALModel.FK__Antecende__pacie__6BE40491" FromRole="Pacientes" ToRole="Antecendentes" />
+          <NavigationProperty Name="Usuarios" Relationship="COALModel.FK__Pacientes__odont__662B2B3B" FromRole="Pacientes" ToRole="Usuarios" />
+          <NavigationProperty Name="Habitos" Relationship="COALModel.FK__Habitos__pacient__6FB49575" FromRole="Pacientes" ToRole="Habitos" />
+          <NavigationProperty Name="Adicional" Relationship="COALModel.FK__Adicional__pacie__7FEAFD3E" FromRole="Pacientes" ToRole="Adicional" />
+          <NavigationProperty Name="Tejidos" Relationship="COALModel.FK__Tejidos__pacient__72910220" FromRole="Pacientes" ToRole="Tejidos" />
+          <NavigationProperty Name="Tratamiento" Relationship="COALModel.FK__Tratamien__pacie__7D0E9093" FromRole="Pacientes" ToRole="Tratamiento" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="idusuario" />
           </Key>
           <Property Name="idusuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ap_paterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ap_materno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ap_paterno" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ap_materno" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="Int64" />
           <Property Name="celular" Type="Int64" />
           <Property Name="correo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="contraseña" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Pacientes" Relationship="Self.FK__Pacientes__odont__2A4B4B5E" FromRole="Usuarios" ToRole="Pacientes" />
+          <Property Name="usuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="contraseña" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Pacientes__odont__662B2B3B" FromRole="Usuarios" ToRole="Pacientes" />
         </EntityType>
-        <Association Name="FK__Pacientes__odont__2A4B4B5E">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
-          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+        <Association Name="FK__Antecende__pacie__6BE40491">
+          <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
+          <End Type="COALModel.Antecendentes" Role="Antecendentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="idpaciente" />
+            </Principal>
+            <Dependent Role="Antecendentes">
+              <PropertyRef Name="paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pacientes__odont__662B2B3B">
+          <End Type="COALModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="idusuario" />
@@ -268,39 +363,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="COALEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Pacientes" EntityType="Self.Pacientes" />
-          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
-          <AssociationSet Name="FK__Pacientes__odont__2A4B4B5E" Association="Self.FK__Pacientes__odont__2A4B4B5E">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Pacientes" EntitySet="Pacientes" />
-          </AssociationSet>
-          <EntitySet Name="Adicional" EntityType="COALModel.Adicional" />
-          <EntitySet Name="Antecendentes" EntityType="COALModel.Antecendentes" />
-          <EntitySet Name="Habitos" EntityType="COALModel.Habitos" />
-          <EntitySet Name="Tejidos" EntityType="COALModel.Tejidos" />
-          <EntitySet Name="Tratamiento" EntityType="COALModel.Tratamiento" />
-          <AssociationSet Name="FK__Adicional__pacie__2CF2ADDF" Association="COALModel.FK__Adicional__pacie__2CF2ADDF">
-            <End Role="Pacientes" EntitySet="Pacientes" />
-            <End Role="Adicional" EntitySet="Adicional" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Antecende__pacie__19DFD96B" Association="COALModel.FK__Antecende__pacie__19DFD96B">
-            <End Role="Pacientes" EntitySet="Pacientes" />
-            <End Role="Antecendentes" EntitySet="Antecendentes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Habitos__pacient__1EA48E88" Association="COALModel.FK__Habitos__pacient__1EA48E88">
-            <End Role="Pacientes" EntitySet="Pacientes" />
-            <End Role="Habitos" EntitySet="Habitos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tejidos__pacient__2180FB33" Association="COALModel.FK__Tejidos__pacient__2180FB33">
-            <End Role="Pacientes" EntitySet="Pacientes" />
-            <End Role="Tejidos" EntitySet="Tejidos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tratamien__pacie__2A164134" Association="COALModel.FK__Tratamien__pacie__2A164134">
-            <End Role="Pacientes" EntitySet="Pacientes" />
-            <End Role="Tratamiento" EntitySet="Tratamiento" />
-          </AssociationSet>
-        </EntityContainer>
+        <EntityType Name="Habitos">
+          <Key>
+            <PropertyRef Name="idhabito" />
+          </Key>
+          <Property Name="idhabito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bricomania" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="contrac_musc" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="habi_mordi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="resp_bucal" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="chupa_labios" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="chupa_lengua" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="chupa_dedos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="frecuencia" Type="Int32" />
+          <Property Name="alimentacion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="paciente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Habitos__pacient__6FB49575" FromRole="Habitos" ToRole="Pacientes" />
+        </EntityType>
+        <Association Name="FK__Habitos__pacient__6FB49575">
+          <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
+          <End Type="COALModel.Habitos" Role="Habitos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="idpaciente" />
+            </Principal>
+            <Dependent Role="Habitos">
+              <PropertyRef Name="paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="Adicional">
           <Key>
             <PropertyRef Name="idadicional" />
@@ -314,39 +405,7 @@
           <Property Name="veces_cepillado" Type="Int32" Nullable="false" />
           <Property Name="tipo_cepillo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="paciente" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Adicional__pacie__2CF2ADDF" FromRole="Adicional" ToRole="Pacientes" />
-        </EntityType>
-        <EntityType Name="Antecendentes">
-          <Key>
-            <PropertyRef Name="idantecedente" />
-          </Key>
-          <Property Name="idantecedente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="antecedente" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
-          <Property Name="otro_antecedente" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
-          <Property Name="embarazo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="meses_embarazo" Type="Int32" />
-          <Property Name="anticonceptivos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="tipo_anticoncep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="fumador" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="consume_alcohol" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="drogas" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="alergia" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="tipo_alergia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="higiene_bucal" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="paciente" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Antecende__pacie__19DFD96B" FromRole="Antecendentes" ToRole="Pacientes" />
-        </EntityType>
-        <EntityType Name="Habitos">
-          <Key>
-            <PropertyRef Name="idhabito" />
-          </Key>
-          <Property Name="idhabito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="habito" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="chupador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="frecuencia" Type="Int32" />
-          <Property Name="alimentacion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="paciente" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Habitos__pacient__1EA48E88" FromRole="Habitos" ToRole="Pacientes" />
+          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Adicional__pacie__7FEAFD3E" FromRole="Adicional" ToRole="Pacientes" />
         </EntityType>
         <EntityType Name="Tejidos">
           <Key>
@@ -355,10 +414,19 @@
           <Property Name="idtejidos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="duros" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
           <Property Name="rx" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="blandos" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="oclusion" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="encia" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="inser_epi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="lengua" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="pulpa" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="velo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="carrillos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="sob_vert" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="sob_hori" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="mordi_abier" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="desg_bru" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="anoclusion" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="paciente" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tejidos__pacient__2180FB33" FromRole="Tejidos" ToRole="Pacientes" />
+          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tejidos__pacient__72910220" FromRole="Tejidos" ToRole="Pacientes" />
         </EntityType>
         <EntityType Name="Tratamiento">
           <Key>
@@ -377,9 +445,9 @@
           <Property Name="hospitalizado" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="motivo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="paciente" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tratamien__pacie__2A164134" FromRole="Tratamiento" ToRole="Pacientes" />
+          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tratamien__pacie__7D0E9093" FromRole="Tratamiento" ToRole="Pacientes" />
         </EntityType>
-        <Association Name="FK__Adicional__pacie__2CF2ADDF">
+        <Association Name="FK__Adicional__pacie__7FEAFD3E">
           <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
           <End Type="COALModel.Adicional" Role="Adicional" Multiplicity="*" />
           <ReferentialConstraint>
@@ -391,31 +459,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Antecende__pacie__19DFD96B">
-          <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
-          <End Type="COALModel.Antecendentes" Role="Antecendentes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pacientes">
-              <PropertyRef Name="idpaciente" />
-            </Principal>
-            <Dependent Role="Antecendentes">
-              <PropertyRef Name="paciente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Habitos__pacient__1EA48E88">
-          <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
-          <End Type="COALModel.Habitos" Role="Habitos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pacientes">
-              <PropertyRef Name="idpaciente" />
-            </Principal>
-            <Dependent Role="Habitos">
-              <PropertyRef Name="paciente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tejidos__pacient__2180FB33">
+        <Association Name="FK__Tejidos__pacient__72910220">
           <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
           <End Type="COALModel.Tejidos" Role="Tejidos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -427,7 +471,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tratamien__pacie__2A164134">
+        <Association Name="FK__Tratamien__pacie__7D0E9093">
           <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
           <End Type="COALModel.Tratamiento" Role="Tratamiento" Multiplicity="*" />
           <ReferentialConstraint>
@@ -439,42 +483,87 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="COALModelStoreContainer" CdmEntityContainer="COALEntities">
+          <EntitySetMapping Name="Antecendentes">
+            <EntityTypeMapping TypeName="COALModel.Antecendentes">
+              <MappingFragment StoreEntitySet="Antecendentes">
+                <ScalarProperty Name="paciente" ColumnName="paciente" />
+                <ScalarProperty Name="higiene_bucal" ColumnName="higiene_bucal" />
+                <ScalarProperty Name="tipo_alergia" ColumnName="tipo_alergia" />
+                <ScalarProperty Name="alergia" ColumnName="alergia" />
+                <ScalarProperty Name="drogas" ColumnName="drogas" />
+                <ScalarProperty Name="consume_alcohol" ColumnName="consume_alcohol" />
+                <ScalarProperty Name="fumador" ColumnName="fumador" />
+                <ScalarProperty Name="tipo_anticoncep" ColumnName="tipo_anticoncep" />
+                <ScalarProperty Name="anticonceptivos" ColumnName="anticonceptivos" />
+                <ScalarProperty Name="meses_embarazo" ColumnName="meses_embarazo" />
+                <ScalarProperty Name="embarazo" ColumnName="embarazo" />
+                <ScalarProperty Name="otro_antecedente" ColumnName="otro_antecedente" />
+                <ScalarProperty Name="hipertension" ColumnName="hipertension" />
+                <ScalarProperty Name="fie_reu" ColumnName="fie_reu" />
+                <ScalarProperty Name="tiroides" ColumnName="tiroides" />
+                <ScalarProperty Name="diabetes" ColumnName="diabetes" />
+                <ScalarProperty Name="verti_mareo" ColumnName="verti_mareo" />
+                <ScalarProperty Name="desmayos" ColumnName="desmayos" />
+                <ScalarProperty Name="prob_goagu" ColumnName="prob_goagu" />
+                <ScalarProperty Name="sis_nerv" ColumnName="sis_nerv" />
+                <ScalarProperty Name="apa_diges" ColumnName="apa_diges" />
+                <ScalarProperty Name="apa_cardi" ColumnName="apa_cardi" />
+                <ScalarProperty Name="apa_resp" ColumnName="apa_resp" />
+                <ScalarProperty Name="idantecedente" ColumnName="idantecedente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Pacientes">
             <EntityTypeMapping TypeName="COALModel.Pacientes">
               <MappingFragment StoreEntitySet="Pacientes">
-                <ScalarProperty Name="idpaciente" ColumnName="idpaciente" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
-                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
-                <ScalarProperty Name="domicilio" ColumnName="domicilio" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="celular" ColumnName="celular" />
-                <ScalarProperty Name="in_tratamiento" ColumnName="in_tratamiento" />
-                <ScalarProperty Name="fn_tratamiento" ColumnName="fn_tratamiento" />
-                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
-                <ScalarProperty Name="sexo" ColumnName="sexo" />
                 <ScalarProperty Name="odontologo" ColumnName="odontologo" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="domicilio" ColumnName="domicilio" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idpaciente" ColumnName="idpaciente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="COALModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
-                <ScalarProperty Name="idusuario" ColumnName="idusuario" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="ap_paterno" ColumnName="ap_paterno" />
-                <ScalarProperty Name="ap_materno" ColumnName="ap_materno" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="celular" ColumnName="celular" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="ap_materno" ColumnName="ap_materno" />
+                <ScalarProperty Name="ap_paterno" ColumnName="ap_paterno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idusuario" ColumnName="idusuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Habitos">
+            <EntityTypeMapping TypeName="COALModel.Habitos">
+              <MappingFragment StoreEntitySet="Habitos">
+                <ScalarProperty Name="paciente" ColumnName="paciente" />
+                <ScalarProperty Name="alimentacion" ColumnName="alimentacion" />
+                <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
+                <ScalarProperty Name="chupa_dedos" ColumnName="chupa_dedos" />
+                <ScalarProperty Name="chupa_lengua" ColumnName="chupa_lengua" />
+                <ScalarProperty Name="chupa_labios" ColumnName="chupa_labios" />
+                <ScalarProperty Name="resp_bucal" ColumnName="resp_bucal" />
+                <ScalarProperty Name="habi_mordi" ColumnName="habi_mordi" />
+                <ScalarProperty Name="contrac_musc" ColumnName="contrac_musc" />
+                <ScalarProperty Name="bricomania" ColumnName="bricomania" />
+                <ScalarProperty Name="idhabito" ColumnName="idhabito" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -493,44 +582,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Antecendentes">
-            <EntityTypeMapping TypeName="COALModel.Antecendentes">
-              <MappingFragment StoreEntitySet="Antecendentes">
-                <ScalarProperty Name="paciente" ColumnName="paciente" />
-                <ScalarProperty Name="higiene_bucal" ColumnName="higiene_bucal" />
-                <ScalarProperty Name="tipo_alergia" ColumnName="tipo_alergia" />
-                <ScalarProperty Name="alergia" ColumnName="alergia" />
-                <ScalarProperty Name="drogas" ColumnName="drogas" />
-                <ScalarProperty Name="consume_alcohol" ColumnName="consume_alcohol" />
-                <ScalarProperty Name="fumador" ColumnName="fumador" />
-                <ScalarProperty Name="tipo_anticoncep" ColumnName="tipo_anticoncep" />
-                <ScalarProperty Name="anticonceptivos" ColumnName="anticonceptivos" />
-                <ScalarProperty Name="meses_embarazo" ColumnName="meses_embarazo" />
-                <ScalarProperty Name="embarazo" ColumnName="embarazo" />
-                <ScalarProperty Name="otro_antecedente" ColumnName="otro_antecedente" />
-                <ScalarProperty Name="antecedente" ColumnName="antecedente" />
-                <ScalarProperty Name="idantecedente" ColumnName="idantecedente" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Habitos">
-            <EntityTypeMapping TypeName="COALModel.Habitos">
-              <MappingFragment StoreEntitySet="Habitos">
-                <ScalarProperty Name="paciente" ColumnName="paciente" />
-                <ScalarProperty Name="alimentacion" ColumnName="alimentacion" />
-                <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
-                <ScalarProperty Name="chupador" ColumnName="chupador" />
-                <ScalarProperty Name="habito" ColumnName="habito" />
-                <ScalarProperty Name="idhabito" ColumnName="idhabito" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Tejidos">
             <EntityTypeMapping TypeName="COALModel.Tejidos">
               <MappingFragment StoreEntitySet="Tejidos">
                 <ScalarProperty Name="paciente" ColumnName="paciente" />
-                <ScalarProperty Name="oclusion" ColumnName="oclusion" />
-                <ScalarProperty Name="blandos" ColumnName="blandos" />
+                <ScalarProperty Name="anoclusion" ColumnName="anoclusion" />
+                <ScalarProperty Name="desg_bru" ColumnName="desg_bru" />
+                <ScalarProperty Name="mordi_abier" ColumnName="mordi_abier" />
+                <ScalarProperty Name="sob_hori" ColumnName="sob_hori" />
+                <ScalarProperty Name="sob_vert" ColumnName="sob_vert" />
+                <ScalarProperty Name="carrillos" ColumnName="carrillos" />
+                <ScalarProperty Name="velo" ColumnName="velo" />
+                <ScalarProperty Name="pulpa" ColumnName="pulpa" />
+                <ScalarProperty Name="lengua" ColumnName="lengua" />
+                <ScalarProperty Name="inser_epi" ColumnName="inser_epi" />
+                <ScalarProperty Name="encia" ColumnName="encia" />
                 <ScalarProperty Name="rx" ColumnName="rx" />
                 <ScalarProperty Name="duros" ColumnName="duros" />
                 <ScalarProperty Name="idtejidos" ColumnName="idtejidos" />
