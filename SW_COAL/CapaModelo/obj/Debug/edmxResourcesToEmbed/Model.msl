@@ -1,52 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="COALModelStoreContainer" CdmEntityContainer="COALEntities">
-    <EntitySetMapping Name="Antecendentes">
-      <EntityTypeMapping TypeName="COALModel.Antecendentes">
-        <MappingFragment StoreEntitySet="Antecendentes">
-          <ScalarProperty Name="paciente" ColumnName="paciente" />
-          <ScalarProperty Name="higiene_bucal" ColumnName="higiene_bucal" />
-          <ScalarProperty Name="tipo_alergia" ColumnName="tipo_alergia" />
-          <ScalarProperty Name="alergia" ColumnName="alergia" />
-          <ScalarProperty Name="drogas" ColumnName="drogas" />
-          <ScalarProperty Name="consume_alcohol" ColumnName="consume_alcohol" />
-          <ScalarProperty Name="fumador" ColumnName="fumador" />
-          <ScalarProperty Name="tipo_anticoncep" ColumnName="tipo_anticoncep" />
-          <ScalarProperty Name="anticonceptivos" ColumnName="anticonceptivos" />
-          <ScalarProperty Name="meses_embarazo" ColumnName="meses_embarazo" />
-          <ScalarProperty Name="embarazo" ColumnName="embarazo" />
-          <ScalarProperty Name="otro_antecedente" ColumnName="otro_antecedente" />
-          <ScalarProperty Name="hipertension" ColumnName="hipertension" />
-          <ScalarProperty Name="fie_reu" ColumnName="fie_reu" />
-          <ScalarProperty Name="tiroides" ColumnName="tiroides" />
-          <ScalarProperty Name="diabetes" ColumnName="diabetes" />
-          <ScalarProperty Name="verti_mareo" ColumnName="verti_mareo" />
-          <ScalarProperty Name="desmayos" ColumnName="desmayos" />
-          <ScalarProperty Name="prob_goagu" ColumnName="prob_goagu" />
-          <ScalarProperty Name="sis_nerv" ColumnName="sis_nerv" />
-          <ScalarProperty Name="apa_diges" ColumnName="apa_diges" />
-          <ScalarProperty Name="apa_cardi" ColumnName="apa_cardi" />
-          <ScalarProperty Name="apa_resp" ColumnName="apa_resp" />
-          <ScalarProperty Name="idantecedente" ColumnName="idantecedente" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Pacientes">
-      <EntityTypeMapping TypeName="COALModel.Pacientes">
-        <MappingFragment StoreEntitySet="Pacientes">
-          <ScalarProperty Name="odontologo" ColumnName="odontologo" />
-          <ScalarProperty Name="sexo" ColumnName="sexo" />
-          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
-          <ScalarProperty Name="celular" ColumnName="celular" />
-          <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="domicilio" ColumnName="domicilio" />
-          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
-          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="idpaciente" ColumnName="idpaciente" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="COALModel.Usuarios">
         <MappingFragment StoreEntitySet="Usuarios">
@@ -131,6 +85,52 @@
           <ScalarProperty Name="tipo_tratamiento" ColumnName="tipo_tratamiento" />
           <ScalarProperty Name="bajo_tratamiento" ColumnName="bajo_tratamiento" />
           <ScalarProperty Name="idtratamiento" ColumnName="idtratamiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Antecendentes">
+      <EntityTypeMapping TypeName="COALModel.Antecendentes">
+        <MappingFragment StoreEntitySet="Antecendentes">
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="higiene_bucal" ColumnName="higiene_bucal" />
+          <ScalarProperty Name="tipo_alergia" ColumnName="tipo_alergia" />
+          <ScalarProperty Name="alergia" ColumnName="alergia" />
+          <ScalarProperty Name="drogas" ColumnName="drogas" />
+          <ScalarProperty Name="consume_alcohol" ColumnName="consume_alcohol" />
+          <ScalarProperty Name="fumador" ColumnName="fumador" />
+          <ScalarProperty Name="tipo_anticoncep" ColumnName="tipo_anticoncep" />
+          <ScalarProperty Name="anticonceptivos" ColumnName="anticonceptivos" />
+          <ScalarProperty Name="meses_embarazo" ColumnName="meses_embarazo" />
+          <ScalarProperty Name="embarazo" ColumnName="embarazo" />
+          <ScalarProperty Name="idantecedente" ColumnName="idantecedente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacientes">
+      <EntityTypeMapping TypeName="COALModel.Pacientes">
+        <MappingFragment StoreEntitySet="Pacientes">
+          <ScalarProperty Name="odontologo" ColumnName="odontologo" />
+          <ScalarProperty Name="otro_antecedente" ColumnName="otro_antecedente" />
+          <ScalarProperty Name="hipertension" ColumnName="hipertension" />
+          <ScalarProperty Name="fie_reu" ColumnName="fie_reu" />
+          <ScalarProperty Name="tiroides" ColumnName="tiroides" />
+          <ScalarProperty Name="diabetes" ColumnName="diabetes" />
+          <ScalarProperty Name="verti_mareo" ColumnName="verti_mareo" />
+          <ScalarProperty Name="desmayos" ColumnName="desmayos" />
+          <ScalarProperty Name="prob_goagu" ColumnName="prob_goagu" />
+          <ScalarProperty Name="sis_nerv" ColumnName="sis_nerv" />
+          <ScalarProperty Name="apa_diges" ColumnName="apa_diges" />
+          <ScalarProperty Name="apa_cardi" ColumnName="apa_cardi" />
+          <ScalarProperty Name="apa_resp" ColumnName="apa_resp" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="domicilio" ColumnName="domicilio" />
+          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idpaciente" ColumnName="idpaciente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

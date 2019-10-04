@@ -9,11 +9,23 @@ body {
     text-decoration-line: none;
 }
 
-    .nav a:link {
-        text-decoration: none;
-    }
+.nav a:link {
+text-decoration: none;
+}
 
-    .nav a:hover {
-        background: rgba(255, 255,255,.1);
-        color: white;
-    }
+.nav a:hover {
+    background: rgba(255, 255,255,.1);
+    color: white;
+}
+
+header ul {
+    list-style: none;
+}
+
+header li {
+    margin-left: 5%;
+}
+
+header li ul {
+    display: none;
+}

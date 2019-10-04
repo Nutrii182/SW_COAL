@@ -17,9 +17,9 @@ namespace CapaModelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pacientes()
         {
+            this.Adicional = new HashSet<Adicional>();
             this.Antecendentes = new HashSet<Antecendentes>();
             this.Habitos = new HashSet<Habitos>();
-            this.Adicional = new HashSet<Adicional>();
             this.Tejidos = new HashSet<Tejidos>();
             this.Tratamiento = new HashSet<Tratamiento>();
         }
@@ -33,15 +33,27 @@ namespace CapaModelo
         public Nullable<long> celular { get; set; }
         public System.DateTime fecha_nacimiento { get; set; }
         public string sexo { get; set; }
+        public string apa_resp { get; set; }
+        public string apa_cardi { get; set; }
+        public string apa_diges { get; set; }
+        public string sis_nerv { get; set; }
+        public string prob_goagu { get; set; }
+        public string desmayos { get; set; }
+        public string verti_mareo { get; set; }
+        public string diabetes { get; set; }
+        public string tiroides { get; set; }
+        public string fie_reu { get; set; }
+        public string hipertension { get; set; }
+        public string otro_antecedente { get; set; }
         public int odontologo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Adicional> Adicional { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Antecendentes> Antecendentes { get; set; }
-        public virtual Usuarios Usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Habitos> Habitos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Adicional> Adicional { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tejidos> Tejidos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

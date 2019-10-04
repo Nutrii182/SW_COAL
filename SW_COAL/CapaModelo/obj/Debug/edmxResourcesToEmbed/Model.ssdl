@@ -19,18 +19,6 @@
       <PropertyRef Name="idantecedente" />
     </Key>
     <Property Name="idantecedente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="apa_resp" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="apa_cardi" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="apa_diges" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="sis_nerv" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="prob_goagu" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="desmayos" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="verti_mareo" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="diabetes" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="tiroides" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="fie_reu" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="hipertension" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="otro_antecedente" Type="varchar" MaxLength="35" />
     <Property Name="embarazo" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="meses_embarazo" Type="int" />
     <Property Name="anticonceptivos" Type="nvarchar" MaxLength="2" Nullable="false" />
@@ -72,6 +60,18 @@
     <Property Name="celular" Type="bigint" />
     <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
     <Property Name="sexo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="apa_resp" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="apa_cardi" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="apa_diges" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="sis_nerv" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="prob_goagu" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="desmayos" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="verti_mareo" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="diabetes" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="tiroides" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="fie_reu" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="hipertension" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="otro_antecedente" Type="varchar" MaxLength="35" />
     <Property Name="odontologo" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Tejidos">
@@ -126,7 +126,7 @@
     <Property Name="usuario" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="contraseña" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Adicional__pacie__7FEAFD3E">
+  <Association Name="FK__Adicional__pacie__2704CA5F">
     <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
     <End Role="Adicional" Type="Self.Adicional" Multiplicity="*" />
     <ReferentialConstraint>
@@ -138,7 +138,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Antecende__pacie__6BE40491">
+  <Association Name="FK__Antecende__pacie__14E61A24">
     <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
     <End Role="Antecendentes" Type="Self.Antecendentes" Multiplicity="*" />
     <ReferentialConstraint>
@@ -150,7 +150,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Habitos__pacient__6FB49575">
+  <Association Name="FK__Habitos__pacient__18B6AB08">
     <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
     <End Role="Habitos" Type="Self.Habitos" Multiplicity="*" />
     <ReferentialConstraint>
@@ -162,7 +162,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Pacientes__odont__662B2B3B">
+  <Association Name="FK__Pacientes__odont__10216507">
     <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
     <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
     <ReferentialConstraint>
@@ -174,7 +174,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tejidos__pacient__72910220">
+  <Association Name="FK__Tejidos__pacient__1B9317B3">
     <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
     <End Role="Tejidos" Type="Self.Tejidos" Multiplicity="*" />
     <ReferentialConstraint>
@@ -186,7 +186,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tratamien__pacie__7D0E9093">
+  <Association Name="FK__Tratamien__pacie__24285DB4">
     <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
     <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="*" />
     <ReferentialConstraint>
@@ -206,27 +206,27 @@
     <EntitySet Name="Tejidos" EntityType="Self.Tejidos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Adicional__pacie__7FEAFD3E" Association="Self.FK__Adicional__pacie__7FEAFD3E">
+    <AssociationSet Name="FK__Adicional__pacie__2704CA5F" Association="Self.FK__Adicional__pacie__2704CA5F">
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Adicional" EntitySet="Adicional" />
     </AssociationSet>
-    <AssociationSet Name="FK__Antecende__pacie__6BE40491" Association="Self.FK__Antecende__pacie__6BE40491">
+    <AssociationSet Name="FK__Antecende__pacie__14E61A24" Association="Self.FK__Antecende__pacie__14E61A24">
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Antecendentes" EntitySet="Antecendentes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Habitos__pacient__6FB49575" Association="Self.FK__Habitos__pacient__6FB49575">
+    <AssociationSet Name="FK__Habitos__pacient__18B6AB08" Association="Self.FK__Habitos__pacient__18B6AB08">
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Habitos" EntitySet="Habitos" />
     </AssociationSet>
-    <AssociationSet Name="FK__Pacientes__odont__662B2B3B" Association="Self.FK__Pacientes__odont__662B2B3B">
+    <AssociationSet Name="FK__Pacientes__odont__10216507" Association="Self.FK__Pacientes__odont__10216507">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Pacientes" EntitySet="Pacientes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tejidos__pacient__72910220" Association="Self.FK__Tejidos__pacient__72910220">
+    <AssociationSet Name="FK__Tejidos__pacient__1B9317B3" Association="Self.FK__Tejidos__pacient__1B9317B3">
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Tejidos" EntitySet="Tejidos" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tratamien__pacie__7D0E9093" Association="Self.FK__Tratamien__pacie__7D0E9093">
+    <AssociationSet Name="FK__Tratamien__pacie__24285DB4" Association="Self.FK__Tratamien__pacie__24285DB4">
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Tratamiento" EntitySet="Tratamiento" />
     </AssociationSet>

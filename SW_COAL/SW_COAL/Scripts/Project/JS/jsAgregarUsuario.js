@@ -6,24 +6,28 @@
 function validador() {
 
     if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" ||
-        $('#inTelefono').val() === "" || $('#inCelular').val() === "" ||
-        $('#inUsuario').val() === "" || $('#inContraseña').val() === "") {
+        $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inUsuario').val() === "" ||
+        $('#inContraseña').val() === "" || $('#inVeriContraseña').val() === "") {
         alert("Favor de llenar los campos");
     }
     else {
 
-        var nuevoUsuario = {
-            sNombre: $('#inNombre').val(),
-            sAp_Paterno: $('#inPaterno').val(),
-            sAp_Materno: $('#inMaterno').val(),
-            lTelefono: $('#inTelefono').val(),
-            lCelular: $('#inCelular').val(),
-            sCorreo: $('#inCorreo').val(),
-            sUsuario: $('#inUsuario').val(),
-            sContraseña: $('#inContraseña').val()
-        };
-        $('#idRegistro').attr("disabled", true);
-        LlamadaRegistro(nuevoUsuario);
+        if ($('#inContraseña').val() !== $('#inVeriContraseña').val())
+            alert('Las contraseñas no coinciden');
+        else {
+            var nuevoUsuario = {
+                sNombre: $('#inNombre').val(),
+                sAp_Paterno: $('#inPaterno').val(),
+                sAp_Materno: $('#inMaterno').val(),
+                lTelefono: $('#inTelefono').val(),
+                lCelular: $('#inCelular').val(),
+                sCorreo: $('#inCorreo').val(),
+                sUsuario: $('#inUsuario').val(),
+                sContraseña: $('#inContraseña').val()
+            };
+            $('#idRegistro').attr("disabled", true);
+            LlamadaRegistro(nuevoUsuario);
+        }
     }
 }
 

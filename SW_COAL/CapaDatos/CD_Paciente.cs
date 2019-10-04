@@ -32,6 +32,18 @@ namespace CapaDatos
                         celular = paci.lCelular,
                         fecha_nacimiento = paci.dtFechaNacimiento,
                         sexo = paci.sSexo,
+                        apa_resp = paci.sApa_Res,
+                        apa_cardi = paci.sApa_Cardi,
+                        apa_diges = paci.sApa_Diges,
+                        sis_nerv = paci.sSis_Nerv,
+                        prob_goagu = paci.sProp_Guagu,
+                        desmayos = paci.sDesmayos,
+                        verti_mareo = paci.sVerti_Mareo,
+                        diabetes = paci.sDiabetes,
+                        tiroides = paci.sTiroides,
+                        fie_reu = paci.sFie_Reu,
+                        hipertension = paci.sHipertension,
+                        otro_antecedente = paci.sOtroAntecedente,
                         odontologo = paci.iOdontologo
                     };
                     context.Pacientes.Add(nuevoPaciente);
@@ -63,6 +75,18 @@ namespace CapaDatos
                         lCelular = p.celular,
                         dtFechaNacimiento = p.fecha_nacimiento,
                         sSexo = p.sexo,
+                        sApa_Res = p.apa_resp,
+                        sApa_Cardi = p.apa_cardi,
+                        sApa_Diges = p.apa_diges,
+                        sSis_Nerv = p.sis_nerv,
+                        sProp_Guagu = p.prob_goagu,
+                        sDesmayos = p.desmayos,
+                        sVerti_Mareo = p.verti_mareo,
+                        sDiabetes = p.diabetes,
+                        sTiroides = p.tiroides,
+                        sFie_Reu = p.fie_reu,
+                        sHipertension = p.hipertension,
+                        sOtroAntecedente = p.otro_antecedente,
                         iOdontologo = p.odontologo
                     }).ToList();
 

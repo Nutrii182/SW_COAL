@@ -22,18 +22,6 @@ namespace CapaDatos
 
                     var nuevoAntecedente = new Antecendentes
                     {
-                        apa_resp = antec.sApa_Res,
-                        apa_cardi = antec.sApa_Cardi,
-                        apa_diges = antec.sApa_Diges,
-                        sis_nerv = antec.sSis_Nerv,
-                        prob_goagu = antec.sProp_Guagu,
-                        desmayos = antec.sDesmayos,
-                        verti_mareo = antec.sVerti_Mareo,
-                        diabetes = antec.sDiabetes,
-                        tiroides = antec.sTiroides,
-                        fie_reu = antec.sFie_Reu,
-                        hipertension = antec.sHipertension,
-                        otro_antecedente = antec.sOtroAntecedente,
                         embarazo = antec.sEmbarazo,
                         meses_embarazo = antec.iMesesEmbarazo,
                         anticonceptivos = antec.sAnticonceptivos,

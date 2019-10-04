@@ -15,18 +15,6 @@ namespace CapaModelo
     public partial class Antecendentes
     {
         public int idantecedente { get; set; }
-        public string apa_resp { get; set; }
-        public string apa_cardi { get; set; }
-        public string apa_diges { get; set; }
-        public string sis_nerv { get; set; }
-        public string prob_goagu { get; set; }
-        public string desmayos { get; set; }
-        public string verti_mareo { get; set; }
-        public string diabetes { get; set; }
-        public string tiroides { get; set; }
-        public string fie_reu { get; set; }
-        public string hipertension { get; set; }
-        public string otro_antecedente { get; set; }
         public string embarazo { get; set; }
         public Nullable<int> meses_embarazo { get; set; }
         public string anticonceptivos { get; set; }
