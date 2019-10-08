@@ -218,6 +218,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\AgregarPaciente.css" />
+    <Content Include="Content\css\Consulta.css" />
     <Content Include="Content\css\Layout.css" />
     <Content Include="Content\css\Login.css" />
     <Content Include="Content\img\BGCOAL.jpg" />
@@ -270,12 +271,13 @@
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\Project\JS\jsAgregarAdicional.js" />
+    <Content Include="Scripts\Project\JS\jsAgregarConsulta.js" />
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarTratamiento.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
     <Content Include="Scripts\Project\JS\jsLogin.js" />
     <Content Include="Scripts\Project\JS\jsLogout.js" />
-    <Content Include="Scripts\Project\JS\jsSelUsuarios.js" />
+    <Content Include="Scripts\Project\JS\jsSelPacientes.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />

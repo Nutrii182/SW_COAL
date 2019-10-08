@@ -36,6 +36,18 @@
           <Property Name="higiene_bucal" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="paciente" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Consultas">
+          <Key>
+            <PropertyRef Name="idconsulta" />
+          </Key>
+          <Property Name="idconsulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="paciente" Type="int" Nullable="false" />
+          <Property Name="antecedente" Type="int" Nullable="false" />
+          <Property Name="habito" Type="int" Nullable="false" />
+          <Property Name="tratamiento" Type="int" Nullable="false" />
+          <Property Name="tejido" Type="int" Nullable="false" />
+          <Property Name="adicional" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Habitos">
           <Key>
             <PropertyRef Name="idhabito" />
@@ -78,6 +90,45 @@
           <Property Name="hipertension" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="otro_antecedente" Type="varchar" MaxLength="35" />
           <Property Name="odontologo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Parodontograma">
+          <Key>
+            <PropertyRef Name="idparadonto" />
+          </Key>
+          <Property Name="idparadonto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="d11" Type="nvarchar" MaxLength="10" />
+          <Property Name="d12" Type="nvarchar" MaxLength="10" />
+          <Property Name="d13" Type="nvarchar" MaxLength="10" />
+          <Property Name="d14" Type="nvarchar" MaxLength="10" />
+          <Property Name="d15" Type="nvarchar" MaxLength="10" />
+          <Property Name="d16" Type="nvarchar" MaxLength="10" />
+          <Property Name="d17" Type="nvarchar" MaxLength="10" />
+          <Property Name="d18" Type="nvarchar" MaxLength="10" />
+          <Property Name="d21" Type="nvarchar" MaxLength="10" />
+          <Property Name="d22" Type="nvarchar" MaxLength="10" />
+          <Property Name="d23" Type="nvarchar" MaxLength="10" />
+          <Property Name="d24" Type="nvarchar" MaxLength="10" />
+          <Property Name="d25" Type="nvarchar" MaxLength="10" />
+          <Property Name="d26" Type="nvarchar" MaxLength="10" />
+          <Property Name="d27" Type="nvarchar" MaxLength="10" />
+          <Property Name="d28" Type="nvarchar" MaxLength="10" />
+          <Property Name="d31" Type="nvarchar" MaxLength="10" />
+          <Property Name="d32" Type="nvarchar" MaxLength="10" />
+          <Property Name="d33" Type="nvarchar" MaxLength="10" />
+          <Property Name="d34" Type="nvarchar" MaxLength="10" />
+          <Property Name="d35" Type="nvarchar" MaxLength="10" />
+          <Property Name="d36" Type="nvarchar" MaxLength="10" />
+          <Property Name="d37" Type="nvarchar" MaxLength="10" />
+          <Property Name="d38" Type="nvarchar" MaxLength="10" />
+          <Property Name="d41" Type="nvarchar" MaxLength="10" />
+          <Property Name="d42" Type="nvarchar" MaxLength="10" />
+          <Property Name="d43" Type="nvarchar" MaxLength="10" />
+          <Property Name="d44" Type="nvarchar" MaxLength="10" />
+          <Property Name="d45" Type="nvarchar" MaxLength="10" />
+          <Property Name="d46" Type="nvarchar" MaxLength="10" />
+          <Property Name="d47" Type="nvarchar" MaxLength="10" />
+          <Property Name="d48" Type="nvarchar" MaxLength="10" />
+          <Property Name="paciente" Type="int" />
         </EntityType>
         <EntityType Name="Tejidos">
           <Key>
@@ -155,6 +206,78 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Consultas__adici__336AA144">
+          <End Role="Adicional" Type="Self.Adicional" Multiplicity="1" />
+          <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adicional">
+              <PropertyRef Name="idadicional" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="adicional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__antec__2F9A1060">
+          <End Role="Antecendentes" Type="Self.Antecendentes" Multiplicity="1" />
+          <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Antecendentes">
+              <PropertyRef Name="idantecedente" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="antecedente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__habit__308E3499">
+          <End Role="Habitos" Type="Self.Habitos" Multiplicity="1" />
+          <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Habitos">
+              <PropertyRef Name="idhabito" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="habito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__pacie__2EA5EC27">
+          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
+          <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="idpaciente" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__tejid__32767D0B">
+          <End Role="Tejidos" Type="Self.Tejidos" Multiplicity="1" />
+          <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tejidos">
+              <PropertyRef Name="idtejidos" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="tejido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__trata__318258D2">
+          <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="1" />
+          <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tratamiento">
+              <PropertyRef Name="idtratamiento" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="tratamiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Habitos__pacient__18B6AB08">
           <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
           <End Role="Habitos" Type="Self.Habitos" Multiplicity="*" />
@@ -176,6 +299,18 @@
             </Principal>
             <Dependent Role="Pacientes">
               <PropertyRef Name="odontologo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Parodonto__pacie__39237A9A">
+          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="0..1" />
+          <End Role="Parodontograma" Type="Self.Parodontograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="idpaciente" />
+            </Principal>
+            <Dependent Role="Parodontograma">
+              <PropertyRef Name="paciente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -206,8 +341,10 @@
         <EntityContainer Name="COALModelStoreContainer">
           <EntitySet Name="Adicional" EntityType="Self.Adicional" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Antecendentes" EntityType="Self.Antecendentes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Consultas" EntityType="Self.Consultas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Habitos" EntityType="Self.Habitos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parodontograma" EntityType="Self.Parodontograma" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tejidos" EntityType="Self.Tejidos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
@@ -219,6 +356,30 @@
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Antecendentes" EntitySet="Antecendentes" />
           </AssociationSet>
+          <AssociationSet Name="FK__Consultas__adici__336AA144" Association="Self.FK__Consultas__adici__336AA144">
+            <End Role="Adicional" EntitySet="Adicional" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__antec__2F9A1060" Association="Self.FK__Consultas__antec__2F9A1060">
+            <End Role="Antecendentes" EntitySet="Antecendentes" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__habit__308E3499" Association="Self.FK__Consultas__habit__308E3499">
+            <End Role="Habitos" EntitySet="Habitos" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__pacie__2EA5EC27" Association="Self.FK__Consultas__pacie__2EA5EC27">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__tejid__32767D0B" Association="Self.FK__Consultas__tejid__32767D0B">
+            <End Role="Tejidos" EntitySet="Tejidos" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__trata__318258D2" Association="Self.FK__Consultas__trata__318258D2">
+            <End Role="Tratamiento" EntitySet="Tratamiento" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
           <AssociationSet Name="FK__Habitos__pacient__18B6AB08" Association="Self.FK__Habitos__pacient__18B6AB08">
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Habitos" EntitySet="Habitos" />
@@ -226,6 +387,10 @@
           <AssociationSet Name="FK__Pacientes__odont__10216507" Association="Self.FK__Pacientes__odont__10216507">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Pacientes" EntitySet="Pacientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Parodonto__pacie__39237A9A" Association="Self.FK__Parodonto__pacie__39237A9A">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Parodontograma" EntitySet="Parodontograma" />
           </AssociationSet>
           <AssociationSet Name="FK__Tejidos__pacient__1B9317B3" Association="Self.FK__Tejidos__pacient__1B9317B3">
             <End Role="Pacientes" EntitySet="Pacientes" />
@@ -272,6 +437,36 @@
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Tratamiento" EntitySet="Tratamiento" />
           </AssociationSet>
+          <EntitySet Name="Consultas" EntityType="COALModel.Consultas" />
+          <AssociationSet Name="FK__Consultas__adici__336AA144" Association="COALModel.FK__Consultas__adici__336AA144">
+            <End Role="Adicional" EntitySet="Adicional" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__antec__2F9A1060" Association="COALModel.FK__Consultas__antec__2F9A1060">
+            <End Role="Antecendentes" EntitySet="Antecendentes" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__habit__308E3499" Association="COALModel.FK__Consultas__habit__308E3499">
+            <End Role="Habitos" EntitySet="Habitos" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__pacie__2EA5EC27" Association="COALModel.FK__Consultas__pacie__2EA5EC27">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__tejid__32767D0B" Association="COALModel.FK__Consultas__tejid__32767D0B">
+            <End Role="Tejidos" EntitySet="Tejidos" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__trata__318258D2" Association="COALModel.FK__Consultas__trata__318258D2">
+            <End Role="Tratamiento" EntitySet="Tratamiento" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <EntitySet Name="Parodontograma" EntityType="COALModel.Parodontograma" />
+          <AssociationSet Name="FK__Parodonto__pacie__39237A9A" Association="COALModel.FK__Parodonto__pacie__39237A9A">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Parodontograma" EntitySet="Parodontograma" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Usuarios">
           <Key>
@@ -304,6 +499,7 @@
           <Property Name="alimentacion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="paciente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Habitos__pacient__18B6AB08" FromRole="Habitos" ToRole="Pacientes" />
+          <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__habit__308E3499" FromRole="Habitos" ToRole="Consultas" />
         </EntityType>
         <EntityType Name="Adicional">
           <Key>
@@ -319,6 +515,7 @@
           <Property Name="tipo_cepillo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="paciente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Adicional__pacie__2704CA5F" FromRole="Adicional" ToRole="Pacientes" />
+          <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__adici__336AA144" FromRole="Adicional" ToRole="Consultas" />
         </EntityType>
         <EntityType Name="Tejidos">
           <Key>
@@ -340,6 +537,7 @@
           <Property Name="anoclusion" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="paciente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tejidos__pacient__1B9317B3" FromRole="Tejidos" ToRole="Pacientes" />
+          <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__tejid__32767D0B" FromRole="Tejidos" ToRole="Consultas" />
         </EntityType>
         <EntityType Name="Tratamiento">
           <Key>
@@ -359,6 +557,7 @@
           <Property Name="motivo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="paciente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tratamien__pacie__24285DB4" FromRole="Tratamiento" ToRole="Pacientes" />
+          <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__trata__318258D2" FromRole="Tratamiento" ToRole="Consultas" />
         </EntityType>
         <EntityType Name="Antecendentes">
           <Key>
@@ -377,6 +576,7 @@
           <Property Name="higiene_bucal" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="paciente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Antecende__pacie__14E61A24" FromRole="Antecendentes" ToRole="Pacientes" />
+          <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__antec__2F9A1060" FromRole="Antecendentes" ToRole="Consultas" />
         </EntityType>
         <EntityType Name="Pacientes">
           <Key>
@@ -410,6 +610,8 @@
           <NavigationProperty Name="Usuarios" Relationship="COALModel.FK__Pacientes__odont__10216507" FromRole="Pacientes" ToRole="Usuarios" />
           <NavigationProperty Name="Tejidos" Relationship="COALModel.FK__Tejidos__pacient__1B9317B3" FromRole="Pacientes" ToRole="Tejidos" />
           <NavigationProperty Name="Tratamiento" Relationship="COALModel.FK__Tratamien__pacie__24285DB4" FromRole="Pacientes" ToRole="Tratamiento" />
+          <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__pacie__2EA5EC27" FromRole="Pacientes" ToRole="Consultas" />
+          <NavigationProperty Name="Parodontograma" Relationship="COALModel.FK__Parodonto__pacie__39237A9A" FromRole="Pacientes" ToRole="Parodontograma" />
         </EntityType>
         <Association Name="FK__Adicional__pacie__2704CA5F">
           <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
@@ -479,6 +681,148 @@
               <PropertyRef Name="idpaciente" />
             </Principal>
             <Dependent Role="Tratamiento">
+              <PropertyRef Name="paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Consultas">
+          <Key>
+            <PropertyRef Name="idconsulta" />
+          </Key>
+          <Property Name="idconsulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="paciente" Type="Int32" Nullable="false" />
+          <Property Name="antecedente" Type="Int32" Nullable="false" />
+          <Property Name="habito" Type="Int32" Nullable="false" />
+          <Property Name="tratamiento" Type="Int32" Nullable="false" />
+          <Property Name="tejido" Type="Int32" Nullable="false" />
+          <Property Name="adicional" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Adicional1" Relationship="COALModel.FK__Consultas__adici__336AA144" FromRole="Consultas" ToRole="Adicional" />
+          <NavigationProperty Name="Antecendentes" Relationship="COALModel.FK__Consultas__antec__2F9A1060" FromRole="Consultas" ToRole="Antecendentes" />
+          <NavigationProperty Name="Habitos" Relationship="COALModel.FK__Consultas__habit__308E3499" FromRole="Consultas" ToRole="Habitos" />
+          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Consultas__pacie__2EA5EC27" FromRole="Consultas" ToRole="Pacientes" />
+          <NavigationProperty Name="Tejidos" Relationship="COALModel.FK__Consultas__tejid__32767D0B" FromRole="Consultas" ToRole="Tejidos" />
+          <NavigationProperty Name="Tratamiento1" Relationship="COALModel.FK__Consultas__trata__318258D2" FromRole="Consultas" ToRole="Tratamiento" />
+        </EntityType>
+        <Association Name="FK__Consultas__adici__336AA144">
+          <End Type="COALModel.Adicional" Role="Adicional" Multiplicity="1" />
+          <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adicional">
+              <PropertyRef Name="idadicional" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="adicional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__antec__2F9A1060">
+          <End Type="COALModel.Antecendentes" Role="Antecendentes" Multiplicity="1" />
+          <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Antecendentes">
+              <PropertyRef Name="idantecedente" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="antecedente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__habit__308E3499">
+          <End Type="COALModel.Habitos" Role="Habitos" Multiplicity="1" />
+          <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Habitos">
+              <PropertyRef Name="idhabito" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="habito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__pacie__2EA5EC27">
+          <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
+          <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="idpaciente" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__tejid__32767D0B">
+          <End Type="COALModel.Tejidos" Role="Tejidos" Multiplicity="1" />
+          <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tejidos">
+              <PropertyRef Name="idtejidos" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="tejido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__trata__318258D2">
+          <End Type="COALModel.Tratamiento" Role="Tratamiento" Multiplicity="1" />
+          <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tratamiento">
+              <PropertyRef Name="idtratamiento" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="tratamiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Parodontograma">
+          <Key>
+            <PropertyRef Name="idparadonto" />
+          </Key>
+          <Property Name="idparadonto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="d11" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d12" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d13" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d14" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d15" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d16" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d17" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d18" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d21" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d22" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d23" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d24" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d25" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d26" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d27" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d28" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d31" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d32" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d33" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d34" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d35" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d36" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d37" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d38" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d41" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d42" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d43" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d44" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d45" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d46" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d47" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="d48" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="paciente" Type="Int32" />
+          <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Parodonto__pacie__39237A9A" FromRole="Parodontograma" ToRole="Pacientes" />
+        </EntityType>
+        <Association Name="FK__Parodonto__pacie__39237A9A">
+          <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="0..1" />
+          <End Type="COALModel.Parodontograma" Role="Parodontograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="idpaciente" />
+            </Principal>
+            <Dependent Role="Parodontograma">
               <PropertyRef Name="paciente" />
             </Dependent>
           </ReferentialConstraint>
@@ -619,6 +963,59 @@
                 <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="idpaciente" ColumnName="idpaciente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consultas">
+            <EntityTypeMapping TypeName="COALModel.Consultas">
+              <MappingFragment StoreEntitySet="Consultas">
+                <ScalarProperty Name="adicional" ColumnName="adicional" />
+                <ScalarProperty Name="tejido" ColumnName="tejido" />
+                <ScalarProperty Name="tratamiento" ColumnName="tratamiento" />
+                <ScalarProperty Name="habito" ColumnName="habito" />
+                <ScalarProperty Name="antecedente" ColumnName="antecedente" />
+                <ScalarProperty Name="paciente" ColumnName="paciente" />
+                <ScalarProperty Name="idconsulta" ColumnName="idconsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parodontograma">
+            <EntityTypeMapping TypeName="COALModel.Parodontograma">
+              <MappingFragment StoreEntitySet="Parodontograma">
+                <ScalarProperty Name="paciente" ColumnName="paciente" />
+                <ScalarProperty Name="d48" ColumnName="d48" />
+                <ScalarProperty Name="d47" ColumnName="d47" />
+                <ScalarProperty Name="d46" ColumnName="d46" />
+                <ScalarProperty Name="d45" ColumnName="d45" />
+                <ScalarProperty Name="d44" ColumnName="d44" />
+                <ScalarProperty Name="d43" ColumnName="d43" />
+                <ScalarProperty Name="d42" ColumnName="d42" />
+                <ScalarProperty Name="d41" ColumnName="d41" />
+                <ScalarProperty Name="d38" ColumnName="d38" />
+                <ScalarProperty Name="d37" ColumnName="d37" />
+                <ScalarProperty Name="d36" ColumnName="d36" />
+                <ScalarProperty Name="d35" ColumnName="d35" />
+                <ScalarProperty Name="d34" ColumnName="d34" />
+                <ScalarProperty Name="d33" ColumnName="d33" />
+                <ScalarProperty Name="d32" ColumnName="d32" />
+                <ScalarProperty Name="d31" ColumnName="d31" />
+                <ScalarProperty Name="d28" ColumnName="d28" />
+                <ScalarProperty Name="d27" ColumnName="d27" />
+                <ScalarProperty Name="d26" ColumnName="d26" />
+                <ScalarProperty Name="d25" ColumnName="d25" />
+                <ScalarProperty Name="d24" ColumnName="d24" />
+                <ScalarProperty Name="d23" ColumnName="d23" />
+                <ScalarProperty Name="d22" ColumnName="d22" />
+                <ScalarProperty Name="d21" ColumnName="d21" />
+                <ScalarProperty Name="d18" ColumnName="d18" />
+                <ScalarProperty Name="d17" ColumnName="d17" />
+                <ScalarProperty Name="d16" ColumnName="d16" />
+                <ScalarProperty Name="d15" ColumnName="d15" />
+                <ScalarProperty Name="d14" ColumnName="d14" />
+                <ScalarProperty Name="d13" ColumnName="d13" />
+                <ScalarProperty Name="d12" ColumnName="d12" />
+                <ScalarProperty Name="d11" ColumnName="d11" />
+                <ScalarProperty Name="idparadonto" ColumnName="idparadonto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

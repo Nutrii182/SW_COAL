@@ -32,6 +32,31 @@
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Tratamiento" EntitySet="Tratamiento" />
     </AssociationSet>
+    <EntitySet Name="Consultas" EntityType="COALModel.Consultas" />
+    <AssociationSet Name="FK__Consultas__adici__336AA144" Association="COALModel.FK__Consultas__adici__336AA144">
+      <End Role="Adicional" EntitySet="Adicional" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__antec__2F9A1060" Association="COALModel.FK__Consultas__antec__2F9A1060">
+      <End Role="Antecendentes" EntitySet="Antecendentes" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__habit__308E3499" Association="COALModel.FK__Consultas__habit__308E3499">
+      <End Role="Habitos" EntitySet="Habitos" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__pacie__2EA5EC27" Association="COALModel.FK__Consultas__pacie__2EA5EC27">
+      <End Role="Pacientes" EntitySet="Pacientes" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__tejid__32767D0B" Association="COALModel.FK__Consultas__tejid__32767D0B">
+      <End Role="Tejidos" EntitySet="Tejidos" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__trata__318258D2" Association="COALModel.FK__Consultas__trata__318258D2">
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuarios">
     <Key>
@@ -64,6 +89,7 @@
     <Property Name="alimentacion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
     <Property Name="paciente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Habitos__pacient__18B6AB08" FromRole="Habitos" ToRole="Pacientes" />
+    <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__habit__308E3499" FromRole="Habitos" ToRole="Consultas" />
   </EntityType>
   <EntityType Name="Adicional">
     <Key>
@@ -79,6 +105,7 @@
     <Property Name="tipo_cepillo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="paciente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Adicional__pacie__2704CA5F" FromRole="Adicional" ToRole="Pacientes" />
+    <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__adici__336AA144" FromRole="Adicional" ToRole="Consultas" />
   </EntityType>
   <EntityType Name="Tejidos">
     <Key>
@@ -100,6 +127,7 @@
     <Property Name="anoclusion" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
     <Property Name="paciente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tejidos__pacient__1B9317B3" FromRole="Tejidos" ToRole="Pacientes" />
+    <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__tejid__32767D0B" FromRole="Tejidos" ToRole="Consultas" />
   </EntityType>
   <EntityType Name="Tratamiento">
     <Key>
@@ -119,6 +147,7 @@
     <Property Name="motivo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="paciente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tratamien__pacie__24285DB4" FromRole="Tratamiento" ToRole="Pacientes" />
+    <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__trata__318258D2" FromRole="Tratamiento" ToRole="Consultas" />
   </EntityType>
   <EntityType Name="Antecendentes">
     <Key>
@@ -137,6 +166,7 @@
     <Property Name="higiene_bucal" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
     <Property Name="paciente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Antecende__pacie__14E61A24" FromRole="Antecendentes" ToRole="Pacientes" />
+    <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__antec__2F9A1060" FromRole="Antecendentes" ToRole="Consultas" />
   </EntityType>
   <EntityType Name="Pacientes">
     <Key>
@@ -170,6 +200,7 @@
     <NavigationProperty Name="Usuarios" Relationship="COALModel.FK__Pacientes__odont__10216507" FromRole="Pacientes" ToRole="Usuarios" />
     <NavigationProperty Name="Tejidos" Relationship="COALModel.FK__Tejidos__pacient__1B9317B3" FromRole="Pacientes" ToRole="Tejidos" />
     <NavigationProperty Name="Tratamiento" Relationship="COALModel.FK__Tratamien__pacie__24285DB4" FromRole="Pacientes" ToRole="Tratamiento" />
+    <NavigationProperty Name="Consultas" Relationship="COALModel.FK__Consultas__pacie__2EA5EC27" FromRole="Pacientes" ToRole="Consultas" />
   </EntityType>
   <Association Name="FK__Adicional__pacie__2704CA5F">
     <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
@@ -240,6 +271,96 @@
       </Principal>
       <Dependent Role="Tratamiento">
         <PropertyRef Name="paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Consultas">
+    <Key>
+      <PropertyRef Name="idconsulta" />
+    </Key>
+    <Property Name="idconsulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paciente" Type="Int32" Nullable="false" />
+    <Property Name="antecedente" Type="Int32" Nullable="false" />
+    <Property Name="habito" Type="Int32" Nullable="false" />
+    <Property Name="tratamiento" Type="Int32" Nullable="false" />
+    <Property Name="tejido" Type="Int32" Nullable="false" />
+    <Property Name="adicional" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Adicional1" Relationship="COALModel.FK__Consultas__adici__336AA144" FromRole="Consultas" ToRole="Adicional" />
+    <NavigationProperty Name="Antecendentes" Relationship="COALModel.FK__Consultas__antec__2F9A1060" FromRole="Consultas" ToRole="Antecendentes" />
+    <NavigationProperty Name="Habitos" Relationship="COALModel.FK__Consultas__habit__308E3499" FromRole="Consultas" ToRole="Habitos" />
+    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Consultas__pacie__2EA5EC27" FromRole="Consultas" ToRole="Pacientes" />
+    <NavigationProperty Name="Tejidos" Relationship="COALModel.FK__Consultas__tejid__32767D0B" FromRole="Consultas" ToRole="Tejidos" />
+    <NavigationProperty Name="Tratamiento1" Relationship="COALModel.FK__Consultas__trata__318258D2" FromRole="Consultas" ToRole="Tratamiento" />
+  </EntityType>
+  <Association Name="FK__Consultas__adici__336AA144">
+    <End Type="COALModel.Adicional" Role="Adicional" Multiplicity="1" />
+    <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adicional">
+        <PropertyRef Name="idadicional" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="adicional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__antec__2F9A1060">
+    <End Type="COALModel.Antecendentes" Role="Antecendentes" Multiplicity="1" />
+    <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Antecendentes">
+        <PropertyRef Name="idantecedente" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="antecedente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__habit__308E3499">
+    <End Type="COALModel.Habitos" Role="Habitos" Multiplicity="1" />
+    <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitos">
+        <PropertyRef Name="idhabito" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="habito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__pacie__2EA5EC27">
+    <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1" />
+    <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientes">
+        <PropertyRef Name="idpaciente" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__tejid__32767D0B">
+    <End Type="COALModel.Tejidos" Role="Tejidos" Multiplicity="1" />
+    <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tejidos">
+        <PropertyRef Name="idtejidos" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="tejido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__trata__318258D2">
+    <End Type="COALModel.Tratamiento" Role="Tratamiento" Multiplicity="1" />
+    <End Type="COALModel.Consultas" Role="Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tratamiento">
+        <PropertyRef Name="idtratamiento" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="tratamiento" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

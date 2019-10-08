@@ -32,5 +32,7 @@ namespace CapaModelo
         public virtual DbSet<Tratamiento> Tratamiento { get; set; }
         public virtual DbSet<Antecendentes> Antecendentes { get; set; }
         public virtual DbSet<Pacientes> Pacientes { get; set; }
+        public virtual DbSet<Consultas> Consultas { get; set; }
+        public virtual DbSet<Parodontograma> Parodontograma { get; set; }
     }
 }

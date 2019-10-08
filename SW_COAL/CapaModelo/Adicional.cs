@@ -14,6 +14,12 @@ namespace CapaModelo
     
     public partial class Adicional
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Adicional()
+        {
+            this.Consultas = new HashSet<Consultas>();
+        }
+    
         public int idadicional { get; set; }
         public string rech_apri { get; set; }
         public string trat_encias { get; set; }
@@ -25,5 +31,7 @@ namespace CapaModelo
         public int paciente { get; set; }
     
         public virtual Pacientes Pacientes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Consultas> Consultas { get; set; }
     }
 }

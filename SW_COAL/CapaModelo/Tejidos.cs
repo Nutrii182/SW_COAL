@@ -14,6 +14,12 @@ namespace CapaModelo
     
     public partial class Tejidos
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tejidos()
+        {
+            this.Consultas = new HashSet<Consultas>();
+        }
+    
         public int idtejidos { get; set; }
         public string duros { get; set; }
         public string rx { get; set; }
@@ -31,5 +37,7 @@ namespace CapaModelo
         public int paciente { get; set; }
     
         public virtual Pacientes Pacientes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Consultas> Consultas { get; set; }
     }
 }

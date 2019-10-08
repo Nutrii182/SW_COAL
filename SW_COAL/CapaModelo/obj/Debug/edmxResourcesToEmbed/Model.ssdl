@@ -31,6 +31,18 @@
     <Property Name="higiene_bucal" Type="nvarchar" MaxLength="5" Nullable="false" />
     <Property Name="paciente" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Consultas">
+    <Key>
+      <PropertyRef Name="idconsulta" />
+    </Key>
+    <Property Name="idconsulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="paciente" Type="int" Nullable="false" />
+    <Property Name="antecedente" Type="int" Nullable="false" />
+    <Property Name="habito" Type="int" Nullable="false" />
+    <Property Name="tratamiento" Type="int" Nullable="false" />
+    <Property Name="tejido" Type="int" Nullable="false" />
+    <Property Name="adicional" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Habitos">
     <Key>
       <PropertyRef Name="idhabito" />
@@ -150,6 +162,78 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Consultas__adici__336AA144">
+    <End Role="Adicional" Type="Self.Adicional" Multiplicity="1" />
+    <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adicional">
+        <PropertyRef Name="idadicional" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="adicional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__antec__2F9A1060">
+    <End Role="Antecendentes" Type="Self.Antecendentes" Multiplicity="1" />
+    <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Antecendentes">
+        <PropertyRef Name="idantecedente" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="antecedente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__habit__308E3499">
+    <End Role="Habitos" Type="Self.Habitos" Multiplicity="1" />
+    <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitos">
+        <PropertyRef Name="idhabito" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="habito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__pacie__2EA5EC27">
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
+    <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientes">
+        <PropertyRef Name="idpaciente" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__tejid__32767D0B">
+    <End Role="Tejidos" Type="Self.Tejidos" Multiplicity="1" />
+    <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tejidos">
+        <PropertyRef Name="idtejidos" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="tejido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consultas__trata__318258D2">
+    <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="1" />
+    <End Role="Consultas" Type="Self.Consultas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tratamiento">
+        <PropertyRef Name="idtratamiento" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="tratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Habitos__pacient__18B6AB08">
     <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
     <End Role="Habitos" Type="Self.Habitos" Multiplicity="*" />
@@ -201,6 +285,7 @@
   <EntityContainer Name="COALModelStoreContainer">
     <EntitySet Name="Adicional" EntityType="Self.Adicional" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Antecendentes" EntityType="Self.Antecendentes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consultas" EntityType="Self.Consultas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Habitos" EntityType="Self.Habitos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tejidos" EntityType="Self.Tejidos" Schema="dbo" store:Type="Tables" />
@@ -213,6 +298,30 @@
     <AssociationSet Name="FK__Antecende__pacie__14E61A24" Association="Self.FK__Antecende__pacie__14E61A24">
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Antecendentes" EntitySet="Antecendentes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__adici__336AA144" Association="Self.FK__Consultas__adici__336AA144">
+      <End Role="Adicional" EntitySet="Adicional" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__antec__2F9A1060" Association="Self.FK__Consultas__antec__2F9A1060">
+      <End Role="Antecendentes" EntitySet="Antecendentes" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__habit__308E3499" Association="Self.FK__Consultas__habit__308E3499">
+      <End Role="Habitos" EntitySet="Habitos" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__pacie__2EA5EC27" Association="Self.FK__Consultas__pacie__2EA5EC27">
+      <End Role="Pacientes" EntitySet="Pacientes" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__tejid__32767D0B" Association="Self.FK__Consultas__tejid__32767D0B">
+      <End Role="Tejidos" EntitySet="Tejidos" />
+      <End Role="Consultas" EntitySet="Consultas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consultas__trata__318258D2" Association="Self.FK__Consultas__trata__318258D2">
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+      <End Role="Consultas" EntitySet="Consultas" />
     </AssociationSet>
     <AssociationSet Name="FK__Habitos__pacient__18B6AB08" Association="Self.FK__Habitos__pacient__18B6AB08">
       <End Role="Pacientes" EntitySet="Pacientes" />

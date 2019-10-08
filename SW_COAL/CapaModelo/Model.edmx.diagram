@@ -4,20 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f5658f5363334f5aa43dcd19e1091d60" Name="Diagram1" ZoomLevel="77">
-        <EntityTypeShape EntityType="COALModel.Usuarios" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="COALModel.Habitos" Width="1.5" PointX="6.75" PointY="0.5" />
-        <EntityTypeShape EntityType="COALModel.Adicional" Width="1.5" PointX="0.5" PointY="4" />
-        <EntityTypeShape EntityType="COALModel.Tejidos" Width="1.5" PointX="10.875" PointY="0.5" />
-        <EntityTypeShape EntityType="COALModel.Tratamiento" Width="1.5" PointX="8.875" PointY="0.875" />
-        <EntityTypeShape EntityType="COALModel.Antecendentes" Width="1.5" PointX="4.75" PointY="1.125" />
-        <EntityTypeShape EntityType="COALModel.Pacientes" Width="1.5" PointX="2.75" PointY="0.5" />
+      <Diagram DiagramId="f5658f5363334f5aa43dcd19e1091d60" Name="Diagram1" ZoomLevel="49">
+        <EntityTypeShape EntityType="COALModel.Usuarios" Width="1.5" PointX="9.25" PointY="1.625" />
+        <EntityTypeShape EntityType="COALModel.Habitos" Width="1.5" PointX="1.25" PointY="0.625" />
+        <EntityTypeShape EntityType="COALModel.Adicional" Width="1.5" PointX="1.25" PointY="4.5" />
+        <EntityTypeShape EntityType="COALModel.Tejidos" Width="1.5" PointX="13.875" PointY="2" />
+        <EntityTypeShape EntityType="COALModel.Tratamiento" Width="1.5" PointX="11.625" PointY="1.875" />
+        <EntityTypeShape EntityType="COALModel.Antecendentes" Width="1.5" PointX="6.625" PointY="1.25" />
+        <EntityTypeShape EntityType="COALModel.Pacientes" Width="1.5" PointX="4" PointY="0.625" />
         <AssociationConnector Association="COALModel.FK__Adicional__pacie__2704CA5F" />
         <AssociationConnector Association="COALModel.FK__Antecende__pacie__14E61A24" />
         <AssociationConnector Association="COALModel.FK__Habitos__pacient__18B6AB08" />
         <AssociationConnector Association="COALModel.FK__Pacientes__odont__10216507" />
         <AssociationConnector Association="COALModel.FK__Tejidos__pacient__1B9317B3" />
         <AssociationConnector Association="COALModel.FK__Tratamien__pacie__24285DB4" />
+        <EntityTypeShape EntityType="COALModel.Consultas" Width="1.5" PointX="15.875" PointY="0.75" />
+        <AssociationConnector Association="COALModel.FK__Consultas__adici__336AA144" />
+        <AssociationConnector Association="COALModel.FK__Consultas__antec__2F9A1060" />
+        <AssociationConnector Association="COALModel.FK__Consultas__habit__308E3499" />
+        <AssociationConnector Association="COALModel.FK__Consultas__pacie__2EA5EC27" />
+        <AssociationConnector Association="COALModel.FK__Consultas__tejid__32767D0B" />
+        <AssociationConnector Association="COALModel.FK__Consultas__trata__318258D2" />
+        <EntityTypeShape EntityType="COALModel.Parodontograma" Width="1.5" PointX="17.875" PointY="0.75" />
+        <AssociationConnector Association="COALModel.FK__Parodonto__pacie__39237A9A" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

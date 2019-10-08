@@ -128,12 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Antecedente.cs" />
+    <Compile Include="CD_Consultas.cs" />
     <Compile Include="CD_Habitos.cs" />
     <Compile Include="CD_InfoAdicional.cs" />
     <Compile Include="CD_Paciente.cs" />
     <Compile Include="CD_Tejidos.cs" />
     <Compile Include="CD_Tratamiento.cs" />
     <Compile Include="CD_Usuario.cs" />
+    <Compile Include="CD_Paradontograma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

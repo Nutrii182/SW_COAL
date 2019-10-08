@@ -134,8 +134,15 @@ namespace SWP_COAL.Controllers
         {
             if ((UsuarioModel)Session["usuario"] != null)
             {
-                ViewBag.Message = "Your contact page.";
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
 
+        public ActionResult Consulta()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
                 return View();
             }
             return RedirectToRoute(new { controller = "Login", action = "Index" });

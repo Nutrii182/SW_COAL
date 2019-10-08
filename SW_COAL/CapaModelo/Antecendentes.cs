@@ -14,6 +14,12 @@ namespace CapaModelo
     
     public partial class Antecendentes
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Antecendentes()
+        {
+            this.Consultas = new HashSet<Consultas>();
+        }
+    
         public int idantecedente { get; set; }
         public string embarazo { get; set; }
         public Nullable<int> meses_embarazo { get; set; }
@@ -28,5 +34,7 @@ namespace CapaModelo
         public int paciente { get; set; }
     
         public virtual Pacientes Pacientes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Consultas> Consultas { get; set; }
     }
 }

@@ -22,6 +22,8 @@ namespace CapaModelo
             this.Habitos = new HashSet<Habitos>();
             this.Tejidos = new HashSet<Tejidos>();
             this.Tratamiento = new HashSet<Tratamiento>();
+            this.Consultas = new HashSet<Consultas>();
+            this.Parodontograma = new HashSet<Parodontograma>();
         }
     
         public int idpaciente { get; set; }
@@ -58,5 +60,9 @@ namespace CapaModelo
         public virtual ICollection<Tejidos> Tejidos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tratamiento> Tratamiento { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Consultas> Consultas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Parodontograma> Parodontograma { get; set; }
     }
 }

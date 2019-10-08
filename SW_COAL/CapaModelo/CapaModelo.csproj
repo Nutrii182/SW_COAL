@@ -136,6 +136,10 @@
     <Compile Include="Antecendentes.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaModel.cs" />
+    <Compile Include="Consultas.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Habitos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -160,6 +164,10 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PacientesModel.cs" />
+    <Compile Include="ParadontogramaModel.cs" />
+    <Compile Include="Parodontograma.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Tejidos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
