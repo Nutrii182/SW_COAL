@@ -24,9 +24,7 @@ namespace CapaModelo
 
         public String sCarrillos { get; set; }
 
-        public String sSob_Vert { get; set; }
-
-        public String sSob_Hori { get; set; }
+        public String sSob_Mord { get; set; }
 
         public String sMordi_Abier { get; set; }
 

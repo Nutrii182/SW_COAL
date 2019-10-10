@@ -48,27 +48,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tejidos">
-      <EntityTypeMapping TypeName="COALModel.Tejidos">
-        <MappingFragment StoreEntitySet="Tejidos">
-          <ScalarProperty Name="paciente" ColumnName="paciente" />
-          <ScalarProperty Name="anoclusion" ColumnName="anoclusion" />
-          <ScalarProperty Name="desg_bru" ColumnName="desg_bru" />
-          <ScalarProperty Name="mordi_abier" ColumnName="mordi_abier" />
-          <ScalarProperty Name="sob_hori" ColumnName="sob_hori" />
-          <ScalarProperty Name="sob_vert" ColumnName="sob_vert" />
-          <ScalarProperty Name="carrillos" ColumnName="carrillos" />
-          <ScalarProperty Name="velo" ColumnName="velo" />
-          <ScalarProperty Name="pulpa" ColumnName="pulpa" />
-          <ScalarProperty Name="lengua" ColumnName="lengua" />
-          <ScalarProperty Name="inser_epi" ColumnName="inser_epi" />
-          <ScalarProperty Name="encia" ColumnName="encia" />
-          <ScalarProperty Name="rx" ColumnName="rx" />
-          <ScalarProperty Name="duros" ColumnName="duros" />
-          <ScalarProperty Name="idtejidos" ColumnName="idtejidos" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Tratamiento">
       <EntityTypeMapping TypeName="COALModel.Tratamiento">
         <MappingFragment StoreEntitySet="Tratamiento">
@@ -144,6 +123,66 @@
           <ScalarProperty Name="antecedente" ColumnName="antecedente" />
           <ScalarProperty Name="paciente" ColumnName="paciente" />
           <ScalarProperty Name="idconsulta" ColumnName="idconsulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parodontograma">
+      <EntityTypeMapping TypeName="COALModel.Parodontograma">
+        <MappingFragment StoreEntitySet="Parodontograma">
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="d48" ColumnName="d48" />
+          <ScalarProperty Name="d47" ColumnName="d47" />
+          <ScalarProperty Name="d46" ColumnName="d46" />
+          <ScalarProperty Name="d45" ColumnName="d45" />
+          <ScalarProperty Name="d44" ColumnName="d44" />
+          <ScalarProperty Name="d43" ColumnName="d43" />
+          <ScalarProperty Name="d42" ColumnName="d42" />
+          <ScalarProperty Name="d41" ColumnName="d41" />
+          <ScalarProperty Name="d38" ColumnName="d38" />
+          <ScalarProperty Name="d37" ColumnName="d37" />
+          <ScalarProperty Name="d36" ColumnName="d36" />
+          <ScalarProperty Name="d35" ColumnName="d35" />
+          <ScalarProperty Name="d34" ColumnName="d34" />
+          <ScalarProperty Name="d33" ColumnName="d33" />
+          <ScalarProperty Name="d32" ColumnName="d32" />
+          <ScalarProperty Name="d31" ColumnName="d31" />
+          <ScalarProperty Name="d28" ColumnName="d28" />
+          <ScalarProperty Name="d27" ColumnName="d27" />
+          <ScalarProperty Name="d26" ColumnName="d26" />
+          <ScalarProperty Name="d25" ColumnName="d25" />
+          <ScalarProperty Name="d24" ColumnName="d24" />
+          <ScalarProperty Name="d23" ColumnName="d23" />
+          <ScalarProperty Name="d22" ColumnName="d22" />
+          <ScalarProperty Name="d21" ColumnName="d21" />
+          <ScalarProperty Name="d18" ColumnName="d18" />
+          <ScalarProperty Name="d17" ColumnName="d17" />
+          <ScalarProperty Name="d16" ColumnName="d16" />
+          <ScalarProperty Name="d15" ColumnName="d15" />
+          <ScalarProperty Name="d14" ColumnName="d14" />
+          <ScalarProperty Name="d13" ColumnName="d13" />
+          <ScalarProperty Name="d12" ColumnName="d12" />
+          <ScalarProperty Name="d11" ColumnName="d11" />
+          <ScalarProperty Name="idparadonto" ColumnName="idparadonto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tejidos">
+      <EntityTypeMapping TypeName="COALModel.Tejidos">
+        <MappingFragment StoreEntitySet="Tejidos">
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="anoclusion" ColumnName="anoclusion" />
+          <ScalarProperty Name="desg_bru" ColumnName="desg_bru" />
+          <ScalarProperty Name="mordi_abier" ColumnName="mordi_abier" />
+          <ScalarProperty Name="sob_mord" ColumnName="sob_mord" />
+          <ScalarProperty Name="carrillos" ColumnName="carrillos" />
+          <ScalarProperty Name="velo" ColumnName="velo" />
+          <ScalarProperty Name="pulpa" ColumnName="pulpa" />
+          <ScalarProperty Name="lengua" ColumnName="lengua" />
+          <ScalarProperty Name="inser_epi" ColumnName="inser_epi" />
+          <ScalarProperty Name="encia" ColumnName="encia" />
+          <ScalarProperty Name="rx" ColumnName="rx" />
+          <ScalarProperty Name="duros" ColumnName="duros" />
+          <ScalarProperty Name="idtejidos" ColumnName="idtejidos" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

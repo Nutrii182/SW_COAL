@@ -29,15 +29,14 @@ namespace CapaModelo
         public string pulpa { get; set; }
         public string velo { get; set; }
         public string carrillos { get; set; }
-        public string sob_vert { get; set; }
-        public string sob_hori { get; set; }
+        public string sob_mord { get; set; }
         public string mordi_abier { get; set; }
         public string desg_bru { get; set; }
         public string anoclusion { get; set; }
         public int paciente { get; set; }
     
-        public virtual Pacientes Pacientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consultas> Consultas { get; set; }
+        public virtual Pacientes Pacientes { get; set; }
     }
 }

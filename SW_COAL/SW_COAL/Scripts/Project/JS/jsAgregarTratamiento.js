@@ -1,10 +1,18 @@
 ﻿
-$(document).on('click', '#regPaci', function () {
+$(document).ready(function () {
 
-    validado();
+    var v;
+
+    $(document).on('change', '#selPaciente', function () {
+        v = $(this).val();
+    });
+
+    $(document).on('click', '#regCon', function () {
+        validado(v);
+    });
 });
 
-function validado() {
+function validado(v) {
 
     var trat, Ttrat, Tmedi, Tmoti, Thospi, medi, moti;
 
@@ -63,9 +71,8 @@ function validado() {
         sMedicamento: $('#inMesp').val(),
         sHospi: Thospi,
         sMotivo: $('#inMotivo').val(),
-        iPaciente: 1
+        iPaciente: ++v
     });
-    console.log(datosTratamiento);
     LlamadoTratamiento(datosTratamiento);
 }
 
@@ -82,7 +89,7 @@ function LlamadoTratamiento(datosTratamiento) {
         success: SuccessTratamiento,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
             alert("Error Agregando");
-            $('#regPaci').attr("disabled", false);
+            $('#regCon').attr("disabled", false);
         }
     });
 }
@@ -90,18 +97,18 @@ function LlamadoTratamiento(datosTratamiento) {
 function SuccessTratamiento(data) {
 
     if (data.Exito) {
-        var url = $('#urlAgregaPaciente').val();
+        var url = $('#urlConsulta').val();
         alert("Datos agregados Correctamente");
         window.location.href = url;
     }
     else if (data.Advertencia) {
         alert("Advertencia tratamiento");
-        $('#regPaci').attr("disabled", false);
+        $('#regCon').attr("disabled", false);
     }
     else {
         alert("Error");
-        $('#regPaci').attr("disabled", false);
+        $('#regCon').attr("disabled", false);
     }
-    $('#regPaci').attr("disabled", false);
+    $('#regCon').attr("disabled", false);
 
 }

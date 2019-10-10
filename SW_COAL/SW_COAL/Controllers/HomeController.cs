@@ -75,6 +75,25 @@ namespace SWP_COAL.Controllers
         }
 
         [HttpPost]
+
+        public ActionResult recibeTejido(TejidosModel nuevoTejido)
+        {
+            var result = new JObject();
+
+            CD_Tejidos teji = new CD_Tejidos();
+
+            if(teji.NuevoTejido(nuevoTejido) != null)
+            {
+                result["Exito"] = true;
+            }
+            else
+            {
+                result["Advertencia"] = true;
+            }
+            return Content(result.ToString());
+        }
+
+        [HttpPost]
         public ActionResult recibeUsuario(UsuarioModel nuevoUsuario)
         {
             var resultado = new JObject();

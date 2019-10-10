@@ -1,9 +1,18 @@
 ﻿
-$(document).on('click', '#regPaci', function () {
-    validador();
+$(document).ready(function () {
+
+    var v;
+
+    $(document).on('change', '#selPaciente', function () {
+        v = $(this).val();
+    });
+
+    $(document).on('click', '#regCon', function () {
+        validador(v);
+    });
 });
 
-function validador() {
+function validador(v) {
 
     var rechi, Tencia, Cencia, OHbucal, hemo, cepi;
 
@@ -79,7 +88,7 @@ function validador() {
         sHemorragiaBucal: hemo,
         iCepillado: $('#inVecCepi').val(),
         sTipoCepillo: cepi,
-        iPaciente: 1
+        iPaciente: ++v
     });
     LlamadaInfoAdicional(datosAdicional)
 }

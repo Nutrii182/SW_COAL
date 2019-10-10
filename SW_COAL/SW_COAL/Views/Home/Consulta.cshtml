@@ -15,6 +15,7 @@
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/Project/JS/jsSelPacientes.js"></script>
+    <script src="~/Scripts/Project/JS/jsAgregarTejido.js"></script>
 </head>
 <body>
     <h3>Consulta</h3>
@@ -152,7 +153,7 @@
         </div>
     </div>
     <h4>Examen de Tejidos</h4>
-    <div class="container col-lg-12">
+    <div style="margin-left:-2%" class="container col-lg-12">
         <div class="row justify-content-center">
             <div class="form-group col-sm-4">
                 <h5>Duros</h5>
@@ -181,7 +182,7 @@
             </div>
             <div class="form-group col-sm-4">
                 <h5>Blandos</h5>
-                <ul>
+                <ul style="margin-left:-10%">
                     <li>
                         <div class="form-inline">
                             <input id="inEncia" type="radio" class="form-check" />
@@ -214,7 +215,7 @@
                     </li>
                     <li>
                         <div class="form-inline">
-                            <input id="inCarrillos" type="radio" class="form-check" />
+                            <input id="inCarrillo" type="radio" class="form-check" />
                             <label>Carrillos</label>
                         </div>
                     </li>
@@ -264,7 +265,7 @@
             </div>
         </div>
     </div>
-    <h4>Hábitos</h4>
+    <h4>Antecedentes Personales</h4>
     <div class="row">
         <div>
             <ul>
@@ -354,6 +355,7 @@
             </ul>
         </div>
     </div>
+    <h4>Hábitos</h4>
     <h5 style="margin-left:1%">Hábitos Bucales</h5>
     <div class="row">
         <div class="form-group col-sm-4">
@@ -425,7 +427,7 @@
                 <li>
                     <div>
                         <label>Frecuencia</label>
-                        <input style="width:45%" id="inFrecuencia" type="number" class="form-control" />
+                        <input style="width:40%" id="inFrecuencia" type="number" class="form-control" />
                     </div>
                 </li>
             </ul>
@@ -595,7 +597,7 @@
         <h4>Paradontograma</h4>
         <br />
         <div class="row justify-content-center">
-            <img src="~/Content/img/paradontograma.png" />
+            <img class="img-responsive" src="~/Content/img/paradontograma.png" />
         </div>
     </div>
     <div>
@@ -603,9 +605,10 @@
     </div>
     <sec>
         <input type="hidden" id="urlTratamiento" value="@Url.Action("RecibeTratamiento","Home")" />
+        <input type="hidden" id="urlTejido" value="@Url.Action("RecibeTejido","Home")" />
         <input type="hidden" id="urlAdicional" value="@Url.Action("RecibeAdicional","Home")" />
         <input type="hidden" id="urlObPacientes" value="@Url.Action("ObtienePacientes","Home")" />
+        <input type="hidden" id="urlConsulta" value="@Url.Action("Consulta","Home")" />
     </sec>
 </body>
 </html>
-
