@@ -57,6 +57,24 @@ namespace SWP_COAL.Controllers
         }
 
         [HttpPost]
+        public ActionResult RecibeAntecedente(AntecedentesModel nuevoAnte)
+        {
+            var result = new JObject();
+
+            CD_Antecedente ante = new CD_Antecedente();
+
+            if (ante.NuevoAntecedente(nuevoAnte) != null)
+            {
+                result["Exito"] = true;
+            }
+            else
+            {
+                result["Advertencia"] = true;
+            }
+            return Content(result.ToString());
+        }
+
+        [HttpPost]
         public ActionResult RecibeTratamiento(TratamientoModel nuevotrata)
         {
             var result = new JObject();

@@ -15,7 +15,7 @@
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/Project/JS/jsSelPacientes.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarTejido.js"></script>
+    <script src="~/Scripts/Project/JS/jsAgregarAntecedente.js"></script>
 </head>
 <body>
     <h3>Consulta</h3>
@@ -432,53 +432,6 @@
                 </li>
             </ul>
         </div>
-        <div class="form-group col-sm-4" style="margin-top:-3%">
-            <h5>Tipo de Consulta</h5>
-            <ul>
-                <li>
-                    <div class="form-inline">
-                        <input id="inEmergencia" name="consulta" type="radio" class="form-check" />
-                        <label>Emergencia</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="form-inline">
-                        <input id="inRevision" name="consulta" type="radio" class="form-check" />
-                        <label>Revisión</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="form-inline">
-                        <input id="inLesCarie" name="consulta" type="radio" class="form-check" />
-                        <label>Lesión Caries</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="form-inline">
-                        <input id="inLimpieza" name="consulta" type="radio" class="form-check" />
-                        <label>Limpieza</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="form-inline">
-                        <input id="inPuente" name="consulta" type="radio" class="form-check" />
-                        <label>Puente</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="form-inline">
-                        <input id="inProsto" name="consulta" type="radio" class="form-check" />
-                        <label>Prostodoncia</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="form-inline">
-                        <input id="inExtra" name="consulta" type="radio" class="form-check" />
-                        <label>Extracción</label>
-                    </div>
-                </li>
-            </ul>
-        </div>
     </div>
     <h4>Información Adicional</h4>
     <div class="container col-lg-12">
@@ -597,7 +550,7 @@
         <h4>Paradontograma</h4>
         <br />
         <div class="row justify-content-center">
-            <img class="img-responsive" src="~/Content/img/paradontograma.png" />
+            <img id="paradonto" class="img-responsive" src="~/Content/img/paradontograma.png" />
         </div>
     </div>
     <div>
@@ -606,6 +559,7 @@
     <sec>
         <input type="hidden" id="urlTratamiento" value="@Url.Action("RecibeTratamiento","Home")" />
         <input type="hidden" id="urlTejido" value="@Url.Action("RecibeTejido","Home")" />
+        <input type="hidden" id="urlAntecedente" value="@Url.Action("RecibeAntecedente","Home")" />
         <input type="hidden" id="urlAdicional" value="@Url.Action("RecibeAdicional","Home")" />
         <input type="hidden" id="urlObPacientes" value="@Url.Action("ObtienePacientes","Home")" />
         <input type="hidden" id="urlConsulta" value="@Url.Action("Consulta","Home")" />
