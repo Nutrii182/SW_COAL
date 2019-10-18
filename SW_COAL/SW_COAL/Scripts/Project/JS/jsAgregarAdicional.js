@@ -8,11 +8,11 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '#regCon', function () {
-        validador(v);
+        valida_adicional(v);
     });
 });
 
-function validador(v) {
+function valida_adicional(v) {
 
     var rechi, Tencia, Cencia, OHbucal, hemo, cepi;
 
@@ -90,6 +90,7 @@ function validador(v) {
         sTipoCepillo: cepi,
         iPaciente: ++v
     });
+    console.log(datosAdicional);
     LlamadaInfoAdicional(datosAdicional)
 }
 
@@ -106,7 +107,7 @@ function LlamadaInfoAdicional(datosAdicional) {
         async: true,
         success: SuccessAdicional,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error");
+            alert("Error adicional");
         }
     });
 }
@@ -114,8 +115,8 @@ function LlamadaInfoAdicional(datosAdicional) {
 function SuccessAdicional(data) {
 
     if (data.Exito) {
-        var url = $('#urlAgregaPaciente').val();
-        alert("Datos agregados Correctamente");
+        var url = $('#urlConsulta').val();
+        alert("Adicional agregado Correctamente");
         window.location.href = url;
     }
     else if (data.Advertencia) {

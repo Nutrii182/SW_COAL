@@ -30,6 +30,8 @@ namespace CapaDatos
                         apeMat_doctor = trat.sApeMaterDoc,
                         tel_doctor = trat.lTelDoct,
                         cel_doctor = trat.lCelDoct,
+                        ini_trata = trat.dtIniciaTratamiento,
+                        fin_trata = trat.dtTerminaTratamiento,
                         toma_medi = trat.sTomaMedi,
                         medicamento = trat.sMedicamento,
                         hospitalizado = trat.sHospi,

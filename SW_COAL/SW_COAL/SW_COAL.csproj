@@ -272,6 +272,8 @@
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\Project\JS\jsAgregarAdicional.js" />
     <Content Include="Scripts\Project\JS\jsAgregarAntecedente.js" />
+    <Content Include="Scripts\Project\JS\jsAgregarConsulta.js" />
+    <Content Include="Scripts\Project\JS\jsAgregarHabito.js" />
     <Content Include="Scripts\Project\JS\jsAgregarTejido.js" />
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarTratamiento.js" />

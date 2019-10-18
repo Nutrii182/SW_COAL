@@ -26,7 +26,7 @@ namespace CapaModelo
         public virtual Antecendentes Antecendentes { get; set; }
         public virtual Habitos Habitos { get; set; }
         public virtual Pacientes Pacientes { get; set; }
-        public virtual Tratamiento Tratamiento1 { get; set; }
         public virtual Tejidos Tejidos { get; set; }
+        public virtual Tratamiento Tratamiento1 { get; set; }
     }
 }

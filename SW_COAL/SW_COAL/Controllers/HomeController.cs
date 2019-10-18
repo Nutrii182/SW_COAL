@@ -57,6 +57,43 @@ namespace SWP_COAL.Controllers
         }
 
         [HttpPost]
+        public ActionResult RecibeConsulta(ConsultaModel nuevaConsulta)
+        {
+            var result = new JObject();
+
+            CD_Consultas consult = new CD_Consultas();
+
+            if (consult.NuevaConsulta(nuevaConsulta) != null)
+            {
+                result["Exito"] = true;
+            }
+            else
+            {
+                result["Advertencia"] = true;
+            }
+            return Content(result.ToString());
+        }
+
+        [HttpPost]
+
+        public ActionResult RecibeHabito(HabitosModel nuevoHabito)
+        {
+            var result = new JObject();
+
+            CD_Habitos habito = new CD_Habitos();
+
+            if (habito.NuevoHabito(nuevoHabito) != null)
+            {
+                result["Exito"] = true;
+            }
+            else
+            {
+                result["Advertencia"] = true;
+            }
+            return Content(result.ToString());
+        }
+
+        [HttpPost]
         public ActionResult RecibeAntecedente(AntecedentesModel nuevoAnte)
         {
             var result = new JObject();

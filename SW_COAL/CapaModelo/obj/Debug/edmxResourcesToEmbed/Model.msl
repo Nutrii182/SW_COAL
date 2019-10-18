@@ -48,25 +48,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tratamiento">
-      <EntityTypeMapping TypeName="COALModel.Tratamiento">
-        <MappingFragment StoreEntitySet="Tratamiento">
-          <ScalarProperty Name="paciente" ColumnName="paciente" />
-          <ScalarProperty Name="motivo" ColumnName="motivo" />
-          <ScalarProperty Name="hospitalizado" ColumnName="hospitalizado" />
-          <ScalarProperty Name="medicamento" ColumnName="medicamento" />
-          <ScalarProperty Name="toma_medi" ColumnName="toma_medi" />
-          <ScalarProperty Name="cel_doctor" ColumnName="cel_doctor" />
-          <ScalarProperty Name="tel_doctor" ColumnName="tel_doctor" />
-          <ScalarProperty Name="apeMat_doctor" ColumnName="apeMat_doctor" />
-          <ScalarProperty Name="apePat_doctor" ColumnName="apePat_doctor" />
-          <ScalarProperty Name="nombre_doctor" ColumnName="nombre_doctor" />
-          <ScalarProperty Name="tipo_tratamiento" ColumnName="tipo_tratamiento" />
-          <ScalarProperty Name="bajo_tratamiento" ColumnName="bajo_tratamiento" />
-          <ScalarProperty Name="idtratamiento" ColumnName="idtratamiento" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Antecendentes">
       <EntityTypeMapping TypeName="COALModel.Antecendentes">
         <MappingFragment StoreEntitySet="Antecendentes">
@@ -183,6 +164,27 @@
           <ScalarProperty Name="rx" ColumnName="rx" />
           <ScalarProperty Name="duros" ColumnName="duros" />
           <ScalarProperty Name="idtejidos" ColumnName="idtejidos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tratamiento">
+      <EntityTypeMapping TypeName="COALModel.Tratamiento">
+        <MappingFragment StoreEntitySet="Tratamiento">
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="motivo" ColumnName="motivo" />
+          <ScalarProperty Name="hospitalizado" ColumnName="hospitalizado" />
+          <ScalarProperty Name="medicamento" ColumnName="medicamento" />
+          <ScalarProperty Name="toma_medi" ColumnName="toma_medi" />
+          <ScalarProperty Name="fin_trata" ColumnName="fin_trata" />
+          <ScalarProperty Name="ini_trata" ColumnName="ini_trata" />
+          <ScalarProperty Name="cel_doctor" ColumnName="cel_doctor" />
+          <ScalarProperty Name="tel_doctor" ColumnName="tel_doctor" />
+          <ScalarProperty Name="apeMat_doctor" ColumnName="apeMat_doctor" />
+          <ScalarProperty Name="apePat_doctor" ColumnName="apePat_doctor" />
+          <ScalarProperty Name="nombre_doctor" ColumnName="nombre_doctor" />
+          <ScalarProperty Name="tipo_tratamiento" ColumnName="tipo_tratamiento" />
+          <ScalarProperty Name="bajo_tratamiento" ColumnName="bajo_tratamiento" />
+          <ScalarProperty Name="idtratamiento" ColumnName="idtratamiento" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

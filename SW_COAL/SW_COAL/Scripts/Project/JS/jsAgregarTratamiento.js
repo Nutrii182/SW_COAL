@@ -8,11 +8,11 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '#regCon', function () {
-        validado(v);
+        valida_tratamiento(v);
     });
 });
 
-function validado(v) {
+function valida_tratamiento(v) {
 
     var trat, Ttrat, Tmedi, Tmoti, Thospi, medi, moti;
 
@@ -67,12 +67,15 @@ function validado(v) {
         sApeMaterDoc: $('#inMaternoD').val(),
         lTelDoct: $('#inTelD').val(),
         lCelDoct: $('#inCelD').val(),
+        dtIniciaTratamiento: $('#inFechaIni').val(),
+        dtTerminaTratamiento: $('#inFechaFin').val(),
         sTomaMedi: Tmedi,
         sMedicamento: $('#inMesp').val(),
         sHospi: Thospi,
         sMotivo: $('#inMotivo').val(),
         iPaciente: ++v
     });
+    console.log(datosTratamiento);
     LlamadoTratamiento(datosTratamiento);
 }
 
@@ -88,7 +91,7 @@ function LlamadoTratamiento(datosTratamiento) {
         async: true,
         success: SuccessTratamiento,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error Agregando");
+            alert("Error Agregando tratamiento");
             $('#regCon').attr("disabled", false);
         }
     });
@@ -98,7 +101,7 @@ function SuccessTratamiento(data) {
 
     if (data.Exito) {
         var url = $('#urlConsulta').val();
-        alert("Datos agregados Correctamente");
+        alert("Tratamiento agregado Correctamente");
         window.location.href = url;
     }
     else if (data.Advertencia) {

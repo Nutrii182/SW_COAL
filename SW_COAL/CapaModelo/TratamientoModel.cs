@@ -22,6 +22,10 @@ namespace CapaModelo
 
         public long? lCelDoct { get; set; }
 
+        public DateTime? dtIniciaTratamiento { get; set; }
+
+        public DateTime? dtTerminaTratamiento { get; set; }
+
         public String sTomaMedi { get; set; }
 
         public String sMedicamento { get; set; }

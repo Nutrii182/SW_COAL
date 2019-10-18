@@ -8,10 +8,10 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '#regCon', function () {
-        validador(v);
+        valida_antecedente(v);
     });
 });
-function validador(v) {
+function valida_antecedente(v) {
 
     var emba,anti,fuma,bebe,droga,aler,higi;
 
@@ -92,6 +92,7 @@ function validador(v) {
         sHigieneBucal: higi,
         iPaciente: ++v
     });
+    console.log(datosAntecedentes);
     LlamadoAntecedente(datosAntecedentes);
 }
 
@@ -107,7 +108,7 @@ function LlamadoAntecedente(datosAntecedentes) {
         async: true,
         success: SuccessAntecedente,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error Agregando");
+            alert("Error Agregando antecedente");
             $('#regCon').attr("disabled", false);
         }
     });
@@ -117,7 +118,7 @@ function SuccessAntecedente(data) {
 
     if (data.Exito) {
         var url = $('#urlConsulta').val();
-        alert('Datos Agregados Correctamente');
+        alert('Antecedente Agregado Correctamente');
         window.location.href = url;
     }
     else if (data.Advertencia) {

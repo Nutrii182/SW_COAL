@@ -8,11 +8,11 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '#regCon', function () {
-        validador(v);
+        valida_tejido(v);
     });
 });
 
-function validador(v) {
+function valida_tejido(v) {
 
     var duro, rx, encia, epite, lengua, pulpa, velo, carrillo, mordida, mordabi, desbru, anoclu;
 
@@ -122,22 +122,23 @@ function validador(v) {
         sAnoclusion: anoclu,
         iPaciente: ++v
     });
-    LlamadoTratamiento(datosTejido);
+    console.log(datosTejido);
+    LlamadoTejido(datosTejido);
 }
 
-function LlamadoTratamiento(datosTratamiento) {
+function LlamadoTejido(datosTejido) {
 
     var url = $('#urlTejido').val();
     $.ajax({
         url: url,
-        data: datosTratamiento,
+        data: datosTejido,
         type: "POST",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: true,
         success: SuccessTejido,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error Agregando");
+            alert("Error Agregando tejido");
             $('#regCon').attr("disabled", false);
         }
     });
@@ -147,7 +148,7 @@ function SuccessTejido(data) {
 
     if (data.Exito) {
         var url = $('#urlConsulta').val();
-        alert('Datos Agregados Correctamente');
+        alert('Tejido Agregado Correctamente');
         window.location.href = url;
     }
     else if (data.Advertencia) {
