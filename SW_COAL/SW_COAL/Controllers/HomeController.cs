@@ -137,7 +137,7 @@ namespace SWP_COAL.Controllers
 
             CD_Tejidos teji = new CD_Tejidos();
 
-            if(teji.NuevoTejido(nuevoTejido) != null)
+            if (teji.NuevoTejido(nuevoTejido) != null)
             {
                 result["Exito"] = true;
             }
@@ -173,7 +173,7 @@ namespace SWP_COAL.Controllers
 
             CD_InfoAdicional adicional = new CD_InfoAdicional();
 
-            if(adicional.NuevaInfoAdi(info) != null)
+            if (adicional.NuevaInfoAdi(info) != null)
             {
                 resultado["Exito"] = true;
             }
@@ -200,6 +200,26 @@ namespace SWP_COAL.Controllers
                 ViewBag.Message = "Your application description page.";
 
                 return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
+        public ActionResult Pacientes()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                var paci = new COALEntities();
+                return View(paci.Pacientes);
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
+        public ActionResult Usuarios()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                var usu = new COALEntities();
+                return View(usu.Usuarios);
             }
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }

@@ -32,10 +32,10 @@ function validador() {
     if ($('#inUsuario').val() === "" || $('#inContra').val() === "") {
         alert("favor de llenar los campos");
     } else {
-        var datosUsuario = {
+        var datosUsuario = JSON.stringify ({
             sUsuario: $('#inUsuario').val(),
             sContraseña: $('#inContra').val()
-        };
+        });
         $('#gif').css("display", "block");
         localStorage.setItem('user', datosUsuario.sUsuario);
         $('.btnLogear').attr("disabled", true);
@@ -47,7 +47,7 @@ function LlamadaIniciarSesion(datosUsuario) {
     var url = $('#urlLogeo').val();
     $.ajax({
         url: url,
-        data: JSON.stringify({ datosUsuario }),
+        data: datosUsuario,
         type: "POST",
         contentType: "application/json; charset=utf-8",
         dataType: "json",

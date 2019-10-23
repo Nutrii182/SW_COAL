@@ -142,3 +142,4 @@ C:\Users\nart1\Dropbox\School\Proyecto de Titulacion\SW_COAL\SW_COAL\bin\CapaDat
 C:\Users\nart1\Dropbox\School\Proyecto de Titulacion\SW_COAL\SW_COAL\bin\CapaDatos.dll.config
 C:\Users\nart1\Dropbox\School\Proyecto de Titulacion\SW_COAL\SW_COAL\bin\CapaModelo.pdb
 C:\Users\nart1\Dropbox\School\Proyecto de Titulacion\SW_COAL\SW_COAL\bin\CapaModelo.dll.config
+C:\Users\nart1\Dropbox\School\Proyecto de Titulacion\SW_COAL\SW_COAL\bin\Mvc.JQuery.Datatables.Templates.dll
