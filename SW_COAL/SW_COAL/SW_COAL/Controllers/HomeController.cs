@@ -220,7 +220,6 @@ namespace SWP_COAL.Controllers
             {
                 var usu = new COALEntities();
                 return View(usu.Usuarios);
-                //return View();
             }
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }

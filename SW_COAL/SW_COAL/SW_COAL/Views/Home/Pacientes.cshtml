@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 <head>
-
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
@@ -28,7 +28,7 @@
     </button>
     <br /><br />
     <div class="row">
-        <table id="tabPaci" class="table">
+        <table id="tabPaci" class="table table-striped table-bordered dt-responsive nowrap">
             <thead>
                 <tr>
                     <th>
@@ -98,8 +98,6 @@
 
         </table>
     </div>
-
-    <input type="hidden" id="urlListaPacientes" value="@Url.Action("ObtienePacientes","Home")" />
 </body>
 </html>
 

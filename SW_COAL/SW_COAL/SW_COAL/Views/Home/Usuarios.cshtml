@@ -1,67 +1,104 @@
 ﻿@model IEnumerable<CapaModelo.Usuarios>
 
+
 <!doctype html>
 <html>
 <head>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+    @section scripts{
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap.min.js"></script>
+
+        <script>
+
+            table = $('#tabUsu').DataTable();
+
+        </script>
+    }
+
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ap_paterno)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ap_materno)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.celular)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.correo)
-            </th>
-            <th></th>
-        </tr>
+    <button type="button" class="btn btn-light">
+        @Html.ActionLink("Agregar Usuario", "Agregar_Usuario", "Home")
+    </button>
+    <div class="row">
+        <table id="tabUsu" class="table table-striped table-bordered dt-responsive nowrap">
+            <thead>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ap_paterno)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ap_materno)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.telefono)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.celular)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.correo)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.idusuario }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.idusuario }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.idusuario })
-                </td>
-            </tr>
-        }
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ap_paterno)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ap_materno)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.celular)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.correo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.usuario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.contraseña)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
 
-    </table>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ap_paterno)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ap_materno)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.celular)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.correo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.usuario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.contraseña)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.idusuario }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.idusuario }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.idusuario })
+                        </td>
+                    </tr>
+                </tbody>
+            }
+
+        </table>
+    </div>
 </body>
 </html>
-
-
