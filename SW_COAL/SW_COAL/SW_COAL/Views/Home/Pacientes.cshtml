@@ -1,0 +1,105 @@
+﻿@model IEnumerable<CapaModelo.Pacientes>
+
+<!doctype html>
+<html>
+<head>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+    @section scripts{
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap.min.js"></script>
+
+        <script>
+
+            table = $('#tabPaci').DataTable();
+
+        </script>
+    }
+</head>
+<body>
+    <br />
+    <button type="button" class="btn btn-light">
+        @Html.ActionLink("Agregar Paciente", "Agregar_Paciente", "Home")
+    </button>
+    <br /><br />
+    <div class="row">
+        <table id="tabPaci" class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Apellido Paterno
+                    </th>
+                    <th>
+                        Apellido Materno
+                    </th>
+                    <th>
+                        Domicilio
+                    </th>
+                    <th>
+                        Teléfono
+                    </th>
+                    <th>
+                        Celular
+                    </th>
+                    <th>
+                        Fecha de Nacimiento
+                    </th>
+                    <th>
+                        Sexo
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.apellido_paterno)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.apellido_materno)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.domicilio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.celular)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.sexo)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.idpaciente }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.idpaciente }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.idpaciente })
+                        </td>
+                    </tr>
+                </tbody>
+            }
+
+        </table>
+    </div>
+
+    <input type="hidden" id="urlListaPacientes" value="@Url.Action("ObtienePacientes","Home")" />
+</body>
+</html>
+
