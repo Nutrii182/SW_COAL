@@ -17,7 +17,7 @@ function valida_consulta(v) {
 
     var datosConsulta = JSON.stringify({
 
-        ipaciente: ++v,
+        ipaciente: v,
         iantecedente: 1,
         ihabito: 1,
         itratamiento: 1,

@@ -282,6 +282,7 @@
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarTratamiento.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
+    <Content Include="Scripts\Project\JS\jsBorrarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsLogin.js" />
     <Content Include="Scripts\Project\JS\jsLogout.js" />
     <Content Include="Scripts\Project\JS\jsSelPacientes.js" />

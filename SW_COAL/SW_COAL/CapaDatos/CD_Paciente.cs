@@ -62,11 +62,11 @@ namespace CapaDatos
         {
             try
             {
-
                 using (var context = new COALEntities())
 
                     return context.Pacientes.Select(p => new PacientesModel()
                     {
+                        iIdPaciente = p.idpaciente,
                         sNombre = p.nombre,
                         sApePaterno = p.apellido_paterno,
                         sApeMaterno = p.apellido_materno,
@@ -89,9 +89,30 @@ namespace CapaDatos
                         sOtroAntecedente = p.otro_antecedente,
                         iOdontologo = p.odontologo
                     }).ToList();
-
             }
-            catch(Exception e)
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public PacientesModel EliminaPaciente(PacientesModel pac)
+        {
+            try
+            {
+                using (var context = new COALEntities())
+                {
+                    var eliPaci = context.Pacientes.Where(p => p.idpaciente == pac.iIdPaciente).Single();
+
+                    if (eliPaci == null)
+                        return null;
+
+                    context.Pacientes.Remove(eliPaci);
+                    context.SaveChanges();
+                    return pac;
+                }
+            }
+            catch (Exception e)
             {
                 throw e;
             }

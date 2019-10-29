@@ -8,6 +8,7 @@ namespace CapaModelo
 {
     public class PacientesModel
     {
+        public int iIdPaciente { get; set; }
         public String sNombre { get; set; }
 
         public String sApePaterno { get; set; }

@@ -5,9 +5,9 @@
 <html>
 <head>
 
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />*@
     <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
 
     @section scripts{
@@ -90,9 +90,8 @@
                             @Html.DisplayFor(modelItem => item.contraseña)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.idusuario }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.idusuario }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.idusuario })
+                            <button type="button" id="btnAct" class="btn btn-primary">Actualizar</button>
+                            <button type="button" id="btnDet" class="btn btn-success">Detalles</button>
                         </td>
                     </tr>
                 </tbody>

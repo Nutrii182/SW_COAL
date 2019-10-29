@@ -88,7 +88,7 @@ function valida_adicional(v) {
         sHemorragiaBucal: hemo,
         iCepillado: $('#inVecCepi').val(),
         sTipoCepillo: cepi,
-        iPaciente: ++v
+        iPaciente: v
     });
     console.log(datosAdicional);
     LlamadaInfoAdicional(datosAdicional)

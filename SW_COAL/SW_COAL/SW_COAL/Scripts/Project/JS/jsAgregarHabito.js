@@ -84,7 +84,7 @@ function validador(v) {
         sChupa_Dedos: chuded,
         iFrecuencia: $('#inFrecuencia').val(),
         sAlimentacion: ali,
-        iPaciente: ++v
+        iPaciente: v
     });
     console.log(datosHabito);
     LlamadoHabito(datosHabito);

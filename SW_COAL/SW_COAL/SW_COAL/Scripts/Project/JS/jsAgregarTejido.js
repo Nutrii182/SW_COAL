@@ -120,7 +120,7 @@ function valida_tejido(v) {
         sMordi_Abier: mordabi,
         sDesg_Bru: desbru,
         sAnoclusion: anoclu,
-        iPaciente: ++v
+        iPaciente: v
     });
     console.log(datosTejido);
     LlamadoTejido(datosTejido);

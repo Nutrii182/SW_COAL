@@ -11,14 +11,7 @@ namespace SWP_COAL.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            if ((UsuarioModel)Session["usuario"] != null)
-            {
-                return View();
-            }
-            return RedirectToRoute(new { controller = "Login", action = "Index" });
-        }
+
 
         [HttpGet]
         public ActionResult ObtieneUsuarios()
@@ -56,23 +49,23 @@ namespace SWP_COAL.Controllers
             return Content(result.ToString());
         }
 
-        [HttpPost]
-        public ActionResult RecibeConsulta(ConsultaModel nuevaConsulta)
-        {
-            var result = new JObject();
+        //[HttpPost]
+        //public ActionResult RecibeConsulta(ConsultaModel nuevaConsulta)
+        //{
+        //    var result = new JObject();
 
-            CD_Consultas consult = new CD_Consultas();
+        //    CD_Consultas consult = new CD_Consultas();
 
-            if (consult.NuevaConsulta(nuevaConsulta) != null)
-            {
-                result["Exito"] = true;
-            }
-            else
-            {
-                result["Advertencia"] = true;
-            }
-            return Content(result.ToString());
-        }
+        //    if (consult.NuevaConsulta(nuevaConsulta) != null)
+        //    {
+        //        result["Exito"] = true;
+        //    }
+        //    else
+        //    {
+        //        result["Advertencia"] = true;
+        //    }
+        //    return Content(result.ToString());
+        //}
 
         [HttpPost]
 
@@ -184,6 +177,24 @@ namespace SWP_COAL.Controllers
             return Content(resultado.ToString());
         }
 
+        [HttpPost]
+        public ActionResult EliminaPaciente(PacientesModel paci)
+        {
+            var resultado = new JObject();
+
+            CD_Paciente paciente = new CD_Paciente();
+
+            if(paciente.EliminaPaciente(paci) != null)
+            {
+                resultado["Exito"] = true;
+            }
+            else
+            {
+                resultado["Exito"] = false;
+            }
+            return Content(resultado.ToString());
+        }
+
         public ActionResult Agregar_Usuario()
         {
             if ((UsuarioModel)Session["usuario"] != null)
@@ -199,6 +210,15 @@ namespace SWP_COAL.Controllers
             {
                 ViewBag.Message = "Your application description page.";
 
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
+        public ActionResult Index()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
                 return View();
             }
             return RedirectToRoute(new { controller = "Login", action = "Index" });

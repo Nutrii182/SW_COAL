@@ -21,7 +21,7 @@ function selectUsu() {
 function muestraPaci(res) {
 
     for (c = 0; c < res.data.length; c++) {
-        $("#selPaciente").append('<option value=' + c + '>' + res.data[c].sNombre + ' ' + res.data[c].sApePaterno + ' '
+        $("#selPaciente").append('<option value=' + res.data[c].iIdPaciente + '>' + res.data[c].sNombre + ' ' + res.data[c].sApePaterno + ' '
             + res.data[c].sApeMaterno + '</option>');
     }
 }

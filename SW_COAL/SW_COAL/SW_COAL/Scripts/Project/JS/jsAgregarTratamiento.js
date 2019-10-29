@@ -73,7 +73,7 @@ function valida_tratamiento(v) {
         sMedicamento: $('#inMesp').val(),
         sHospi: Thospi,
         sMotivo: $('#inMotivo').val(),
-        iPaciente: ++v
+        iPaciente: v
     });
     console.log(datosTratamiento);
     LlamadoTratamiento(datosTratamiento);

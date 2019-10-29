@@ -90,7 +90,7 @@ function valida_antecedente(v) {
         sAlergia: aler,
         sTipoAlergia: $('#inEspAlerg').val(),
         sHigieneBucal: higi,
-        iPaciente: ++v
+        iPaciente: v
     });
     console.log(datosAntecedentes);
     LlamadoAntecedente(datosAntecedentes);
