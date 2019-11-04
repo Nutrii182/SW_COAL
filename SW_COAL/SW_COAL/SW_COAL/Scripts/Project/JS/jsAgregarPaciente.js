@@ -18,7 +18,7 @@ $(document).on('click', '#regPaci', function () {
 function ObtieneUsuarios(res) {
 
     var u = localStorage.getItem('user');
-    console.log(u);
+
     for (c = 0; c < res.data.length; c++) {
 
         if (res.data[c].sUsuario == u) {

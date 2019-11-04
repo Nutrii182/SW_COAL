@@ -30,7 +30,7 @@ namespace CapaDatos
                         domicilio = paci.sDomicilio,
                         telefono = paci.lTelefono,
                         celular = paci.lCelular,
-                        fecha_nacimiento = paci.dtFechaNacimiento,
+                        fecha_nacimiento = DateTime.Parse(paci.dtFechaNacimiento),
                         sexo = paci.sSexo,
                         apa_resp = paci.sApa_Res,
                         apa_cardi = paci.sApa_Cardi,
@@ -63,7 +63,9 @@ namespace CapaDatos
             try
             {
                 using (var context = new COALEntities())
+                {
 
+                    var a = context.Pacientes.Select(p => p).ToList();
                     return context.Pacientes.Select(p => new PacientesModel()
                     {
                         iIdPaciente = p.idpaciente,
@@ -73,7 +75,7 @@ namespace CapaDatos
                         sDomicilio = p.domicilio,
                         lTelefono = p.telefono,
                         lCelular = p.celular,
-                        dtFechaNacimiento = p.fecha_nacimiento,
+                        dtFechaNacimiento = p.fecha_nacimiento.ToString(),
                         sSexo = p.sexo,
                         sApa_Res = p.apa_resp,
                         sApa_Cardi = p.apa_cardi,
@@ -89,6 +91,7 @@ namespace CapaDatos
                         sOtroAntecedente = p.otro_antecedente,
                         iOdontologo = p.odontologo
                     }).ToList();
+                }
             }
             catch (Exception e)
             {

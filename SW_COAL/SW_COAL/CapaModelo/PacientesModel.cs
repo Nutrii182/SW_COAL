@@ -21,7 +21,7 @@ namespace CapaModelo
 
         public long? lCelular { get; set; }
 
-        public DateTime dtFechaNacimiento { get; set; }
+        public String dtFechaNacimiento { get; set; }
 
         public String sSexo { get; set; }
 

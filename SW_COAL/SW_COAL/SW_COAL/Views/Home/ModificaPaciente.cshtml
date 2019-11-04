@@ -14,10 +14,10 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarPaciente.js"></script>
+    <script src="~/Scripts/Project/JS/jsModificaPaciente.js"></script>
 </head>
 <body>
-    <h3 class="text-left">Agregar Paciente</h3>
+    <h3 class="text-left">Modificar Paciente</h3>
     <div class="container col-lg-12">
         <div class="row justify-content-center">
             <div class="form-group col-sm-4">
@@ -175,9 +175,7 @@
         <button id="regPaci" class="btn btn-primary">Aceptar</button>
     </div>
     <sec>
-        <input type="hidden" id="urlAgregaPaciente" value="@Url.Action("Agregar_Paciente","Home")" />
-        <input type="hidden" id="urlPacientes" value="@Url.Action("RecibePaciente","Home")" />
-        <input type="hidden" id="urlUsuarios" value="@Url.Action("ObtieneUsuarios","Home")" />
+        <input type="hidden" id="urlPacientes" value="@Url.Action("ObtienePacientes","Home")" />
     </sec>
 </body>
 </html>

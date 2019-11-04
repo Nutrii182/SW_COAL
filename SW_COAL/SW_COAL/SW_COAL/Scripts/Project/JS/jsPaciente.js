@@ -1,23 +1,25 @@
 ﻿
 $(document).ready(function () {
+
+    table = $('#tabPaci').DataTable();
     Getcliente("#tabPaci tbody", table);
 });
 
 var Getcliente = function (tbody, table) {
 
-    var valdata = [];
+    $(tbody).on('click', '.ActPaci', function () {
 
-    $(tbody).on('click', '#btnEliPaci', function () {
+        var url = $('#urlModiPaci').val();
+        window.location.href = url;
+    });
 
-        var data = table.row($(this).parents('tr')).data();
 
-        valdata = Object.values(data);
+    $('#tabPaci tbody').on('click', '.EliPaci', function () {
         $('#btnEliPaci').attr('disabled', true);
 
         var eliPaci = JSON.stringify({
-            iIdPaciente: valdata[0]
-        })
-
+            iIdPaciente: $(this).attr('data-target')
+        });
         eliminaPaciente(eliPaci);
     });
 }
@@ -26,7 +28,6 @@ function eliminaPaciente(eliPaci) {
 
     var url = $('#urlEliPaci').val();
 
-    //console.log(pacieli);
     $.ajax({
         url: url,
         data: eliPaci,

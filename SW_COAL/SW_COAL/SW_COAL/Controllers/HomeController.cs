@@ -184,7 +184,7 @@ namespace SWP_COAL.Controllers
 
             CD_Paciente paciente = new CD_Paciente();
 
-            if(paciente.EliminaPaciente(paci) != null)
+            if (paciente.EliminaPaciente(paci) != null)
             {
                 resultado["Exito"] = true;
             }
@@ -224,6 +224,15 @@ namespace SWP_COAL.Controllers
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
 
+        public ActionResult ModificaPaciente()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
         public ActionResult Pacientes()
         {
             if ((UsuarioModel)Session["usuario"] != null)
@@ -233,6 +242,8 @@ namespace SWP_COAL.Controllers
             }
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
+
+
 
         public ActionResult Usuarios()
         {
