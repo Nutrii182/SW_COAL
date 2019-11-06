@@ -10,7 +10,8 @@ var Getcliente = function (tbody, table) {
     $(tbody).on('click', '.ActPaci', function () {
 
         var url = $('#urlModiPaci').val();
-        window.location.href = url;
+        window.location.href = url+'?id='+$(this).attr('data-target');
+
     });
 
 
@@ -37,7 +38,6 @@ function eliminaPaciente(eliPaci) {
         async: true,
         success: SuccessEliminaPaci,
         error: function (data) {
-            console.log(data);
             alert('Error ajax paciente');
         }
     });

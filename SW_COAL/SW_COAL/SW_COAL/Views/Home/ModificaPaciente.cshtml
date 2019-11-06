@@ -172,10 +172,12 @@
         </div>
     </div>
     <div>
-        <button id="regPaci" class="btn btn-primary">Aceptar</button>
+        <button id="EditaPaci" class="btn btn-primary">Aceptar</button>
     </div>
     <sec>
         <input type="hidden" id="urlPacientes" value="@Url.Action("ObtienePacientes","Home")" />
+        <input type="hidden" id="urlModiPaci" value="@Url.Action("ModificaPaciente","Home")" />
+        <input type="hidden" id="urlEdiPaci" value="@Url.Action("EditaPaciente","Home")" />
     </sec>
 </body>
 </html>

@@ -120,5 +120,39 @@ namespace CapaDatos
                 throw e;
             }
         }
+
+        public PacientesModel EditaPaciente(PacientesModel paci)
+        {
+            using (var context = new COALEntities())
+            {
+                var p = context.Pacientes.Where(pr => pr.idpaciente == paci.iIdPaciente).Single();
+
+                if (p == null)
+                    return null;
+
+                p.nombre = paci.sNombre;
+                p.apellido_paterno = paci.sApePaterno;
+                p.apellido_materno = paci.sApeMaterno;
+                p.domicilio = paci.sDomicilio;
+                p.telefono = paci.lTelefono;
+                p.celular = paci.lCelular;
+                p.fecha_nacimiento = DateTime.Parse(paci.dtFechaNacimiento);
+                p.sexo = paci.sSexo;
+                p.apa_resp = paci.sApa_Res;
+                p.apa_cardi = paci.sApa_Cardi;
+                p.apa_diges = paci.sApa_Diges;
+                p.sis_nerv = paci.sSis_Nerv;
+                p.prob_goagu = paci.sProp_Guagu;
+                p.desmayos = paci.sDesmayos;
+                p.verti_mareo = paci.sVerti_Mareo;
+                p.diabetes = paci.sDiabetes;
+                p.tiroides = paci.sTiroides;
+                p.fie_reu = paci.sFie_Reu;
+                p.hipertension = paci.sHipertension;
+                p.otro_antecedente = paci.sOtroAntecedente;
+                context.SaveChanges();
+                return paci;
+            }
+        }
     }
 }

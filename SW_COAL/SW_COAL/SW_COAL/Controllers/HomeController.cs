@@ -195,6 +195,24 @@ namespace SWP_COAL.Controllers
             return Content(resultado.ToString());
         }
 
+        [HttpPost]
+        public ActionResult EditaPaciente(PacientesModel pac)
+        {
+            var result = new JObject();
+
+            CD_Paciente paciente = new CD_Paciente();
+
+            if (paciente.EditaPaciente(pac) != null)
+            {
+                result["Exito"] = true;
+            }
+            else
+            {
+                result["Exito"] = false;
+            }
+            return Content(result.ToString());
+        }
+
         public ActionResult Agregar_Usuario()
         {
             if ((UsuarioModel)Session["usuario"] != null)
