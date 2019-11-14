@@ -6,7 +6,7 @@
 <!doctype html>
 <html>
 <head>
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
     <link href="~/Content/css/Paciente.css" rel="stylesheet" />
 
     <script src="~/Scripts/jquery-3.3.1.js"></script>
@@ -70,13 +70,17 @@
                 <label>Sexo</label>
                 <div>
                     <ul class="nav m-0">
-                        <li class="form-inline">
-                            <input id="inMasculino" name="sexo" type="radio" class="form-check" />
-                            <label>Masculino</label>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inMasculino" name="sexo" type="radio" class="form-check" />
+                                <label>Masculino</label>
+                            </div>
                         </li>
-                        <li style="margin-left:15px" class="form-inline">
-                            <input id="inFemenino" name="sexo" type="radio" class="form-check" />
-                            <label>Femenino</label>
+                        <li style="margin-left:15px">
+                            <div class="form-inline">
+                                <input id="inFemenino" name="sexo" type="radio" class="form-check" />
+                                <label>Femenino</label>
+                            </div>
                         </li>
                     </ul>
                 </div>

@@ -81,6 +81,7 @@ function ObtienePacientes(result) {
             $('#inAPotros').val(result.data[c].sOtroAntecedente);
 
             idOdont = result.data[c].iOdontologo;
+            break;
         }
     }
 
@@ -226,7 +227,7 @@ function LlamadoPaciente(datosPaciente) {
 function SuccessPaciente(data) {
 
     if (data.Exito) {
-        var url = $('#urlModiPaciente').val();
+        var url = $('#urlModiPaci').val();
         alert("Paciente Actualizado");
         window.location.href = url;
     }

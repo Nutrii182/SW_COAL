@@ -1,19 +1,25 @@
 ﻿
 $(document).ready(function () {
 
-    table = $('#tabPaci').DataTable();
-    Getcliente("#tabPaci tbody", table);
+    //table = $('#tabPaci').DataTable();
+    Getpaciente("#tabPaci tbody");
 });
 
-var Getcliente = function (tbody, table) {
+var Getpaciente = function (tbody) {
 
     $(tbody).on('click', '.ActPaci', function () {
 
         var url = $('#urlModiPaci').val();
-        window.location.href = url+'?id='+$(this).attr('data-target');
+        window.location.href = url + '?id=' + $(this).attr('data-target');
 
     });
 
+    $(tbody).on('click', '.DetPaci', function () {
+
+        var url = $('#urlDetPaci').val();
+        window.location.href = url + '?id=' + $(this).attr('data-target');
+
+    });
 
     $('#tabPaci tbody').on('click', '.EliPaci', function () {
         $('#btnEliPaci').attr('disabled', true);

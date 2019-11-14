@@ -221,6 +221,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\DetallesPaciente.css" />
     <Content Include="Content\css\Paciente.css" />
     <Content Include="Content\css\Consulta.css" />
     <Content Include="Content\css\Layout.css" />
@@ -239,6 +240,14 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
@@ -249,14 +258,6 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -282,11 +283,14 @@
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarTratamiento.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
+    <Content Include="Scripts\Project\JS\jsDetalles.js" />
     <Content Include="Scripts\Project\JS\jsModificaPaciente.js" />
+    <Content Include="Scripts\Project\JS\jsModificaUsuario.js" />
     <Content Include="Scripts\Project\JS\jsPaciente.js" />
     <Content Include="Scripts\Project\JS\jsLogin.js" />
     <Content Include="Scripts\Project\JS\jsLogout.js" />
     <Content Include="Scripts\Project\JS\jsSelPacientes.js" />
+    <Content Include="Scripts\Project\JS\jsUsuario.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -303,8 +307,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Calendario.cshtml" />
@@ -324,6 +326,9 @@
     <Content Include="Views\Shared\DataTable.cshtml" />
     <Content Include="Views\Home\Pacientes.cshtml" />
     <Content Include="Views\Home\ModificaPaciente.cshtml" />
+    <Content Include="Views\Home\DetallesPaciente.cshtml" />
+    <Content Include="Views\Home\DetallesUsuario.cshtml" />
+    <Content Include="Views\Home\ModificaUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

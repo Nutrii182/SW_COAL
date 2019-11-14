@@ -6,7 +6,7 @@
 <head>
 
     @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
     @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />*@
     <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
 
@@ -15,7 +15,7 @@
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
         <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
         <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap.min.js"></script>
-
+        <script src="~/Scripts/Project/JS/jsUsuario.js"></script>
         <script>
 
             table = $('#tabUsu').DataTable();
@@ -34,28 +34,25 @@
 
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.nombre)
+                        Nombre
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ap_paterno)
+                        Apellido Paterno
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ap_materno)
+                        Apellido Materno
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.telefono)
+                        Teléfono
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.celular)
+                        Celular
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.correo)
+                        Correo
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.usuario)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.contraseña)
+                        Usuario
                     </th>
                     <th></th>
                 </tr>
@@ -87,17 +84,16 @@
                             @Html.DisplayFor(modelItem => item.usuario)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.contraseña)
-                        </td>
-                        <td>
-                            <button type="button" id="btnAct" class="btn btn-primary">Actualizar</button>
-                            <button type="button" id="btnDet" class="btn btn-success">Detalles</button>
+                            <button type="button" class="btn btn-primary form-control ActUsu" data-target="@item.idusuario">Actualizar</button>
+                            <button type="button" class="btn btn-success form-control DetUsu" data-target="@item.idusuario">Detalles</button>
                         </td>
                     </tr>
                 </tbody>
             }
-
         </table>
     </div>
+    <input type="hidden" id="urlUsuarios" value="@Url.Action("Usuarios","Home")"/>
+    <input type="hidden" id="urlDetUsu" value="@Url.Action("DetallesUsuario","Home")"/>
+    <input type="hidden" id="urlModiUsu" value="@Url.Action("ModificaUsuario","Home")"/>
 </body>
 </html>

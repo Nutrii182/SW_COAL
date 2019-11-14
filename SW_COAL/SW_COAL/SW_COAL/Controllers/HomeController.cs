@@ -12,7 +12,6 @@ namespace SWP_COAL.Controllers
     public class HomeController : Controller
     {
 
-
         [HttpGet]
         public ActionResult ObtieneUsuarios()
         {
@@ -68,7 +67,6 @@ namespace SWP_COAL.Controllers
         //}
 
         [HttpPost]
-
         public ActionResult RecibeHabito(HabitosModel nuevoHabito)
         {
             var result = new JObject();
@@ -123,7 +121,6 @@ namespace SWP_COAL.Controllers
         }
 
         [HttpPost]
-
         public ActionResult recibeTejido(TejidosModel nuevoTejido)
         {
             var result = new JObject();
@@ -196,6 +193,24 @@ namespace SWP_COAL.Controllers
         }
 
         [HttpPost]
+        public ActionResult EditaUsuario(UsuarioModel usu)
+        {
+            var resultado = new JObject();
+
+            CD_Usuario usuario = new CD_Usuario();
+
+            if (usuario.EditaUsuario(usu) != null)
+            {
+                resultado["Exito"] = true;
+            }
+            else
+            {
+                resultado["Exito"] = false;
+            }
+            return Content(resultado.ToString());
+        }
+
+        [HttpPost]
         public ActionResult EditaPaciente(PacientesModel pac)
         {
             var result = new JObject();
@@ -242,6 +257,15 @@ namespace SWP_COAL.Controllers
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
 
+        public ActionResult ModificaUsuario()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
         public ActionResult ModificaPaciente()
         {
             if ((UsuarioModel)Session["usuario"] != null)
@@ -261,8 +285,6 @@ namespace SWP_COAL.Controllers
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
 
-
-
         public ActionResult Usuarios()
         {
             if ((UsuarioModel)Session["usuario"] != null)
@@ -274,6 +296,24 @@ namespace SWP_COAL.Controllers
         }
 
         public ActionResult Calendario()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
+        public ActionResult DetallesUsuario()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
+        public ActionResult DetallesPaciente()
         {
             if ((UsuarioModel)Session["usuario"] != null)
             {

@@ -1,0 +1,32 @@
+﻿
+<!doctype html>
+<html>
+<head>
+    <link href="~/Content/css/DetallesPaciente.css" rel="stylesheet" />
+    <script src="~/Scripts/Project/JS/jsDetalles.js"></script>
+</head>
+<body>
+    <h2>Detalles del Paciente</h2>
+    <div class="container col-lg-12">
+        <div class="row">
+            <div id="divDatPer">
+                <h3>Datos Personales</h3>
+                <ul class="datPer">
+                    <li>Nombre:<p id="NomPaci"></p></li>
+                    <li>Domicilio:<p id="Domi"></p></li>
+                    <li>Teléfono:<p id="Tel"></p></li>
+                    <li>Celular:<p id="Cel"></p></li>
+                    <li>Fecha de Nacimiento:<p id="Fech"></p></li>
+                    <li>Sexo:<p id="Gen"></p></li>
+                </ul>
+            </div>
+            <div id="divPade">
+                <h3>Padecimientos</h3>
+                <ul id="pade">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="urlObPaci" value="@Url.Action("ObtienePacientes","Home")" />
+</body>
+</html>

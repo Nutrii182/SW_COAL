@@ -6,7 +6,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Agregar Usuario</title>
+    <title>Modifica Usuario</title>
     @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
 
     <script src="~/Scripts/jquery-3.3.1.js"></script>
@@ -14,10 +14,10 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarUsuario.js"></script>
+    <script src="~/Scripts/Project/JS/jsModificaUsuario.js"></script>
 </head>
 <body>
-    <h2 class="text-left">Agregar Usuario</h2>
+    <h2 class="text-left">Modifica Usuario</h2>
     <div class="container col-lg-12">
         <div class="row justify-content-center">
             <div class="form-group col-sm-4">
@@ -75,21 +75,22 @@
             <div class="form-group col-sm-4">
                 <label>Verificar Contraseña</label>
                 <div>
-                    <input id="inVeriContraseña" type="password" placeholder="Verificar Contraseña" class="form-control required"/>
+                    <input id="inVeriContraseña" type="password" placeholder="Verificar Contraseña" class="form-control required" />
                 </div>
             </div>
         </div>
         <div class="row justify-content-lg-start">
             <div class="form-group col-sm-2">
                 <div>
-                    <button id="idRegistro" class="btn btn-primary form-control">Registrar</button>
+                    <button id="ModiUsu" class="btn btn-primary form-control">Aceptar</button>
                 </div>
             </div>
         </div>
     </div>
     <sec>
-        <input type="hidden" id="urlRecibeUsuario" value="@Url.Action("recibeUsuario","Home")" />
-        <input type="hidden" id="urlAgregarUsuario" value="@Url.Action("Agregar_Usuario","Home")" />
+        <input type="hidden" id="urlUsuarios" value="@Url.Action("ObtieneUsuarios","Home")" />
+        <input type="hidden" id="urlModiUsu" value="@Url.Action("ModificaUsuario","Home")" />
+        <input type="hidden" id="urlEdiUsu" value="@Url.Action("EditaUsuario","Home")" />
     </sec>
 </body>
 </html>

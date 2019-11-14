@@ -84,6 +84,36 @@ namespace CapaDatos
             }
         }
 
+        public UsuarioModel EditaUsuario(UsuarioModel usu)
+        {
+            try
+            {
+                using (var context = new COALEntities())
+                {
+                    var u = context.Usuarios.Where(us => us.idusuario == usu.iId).Single();
+
+                    if (u == null)
+                        return null;
+
+                    u.nombre = usu.sNombre;
+                    u.ap_paterno = usu.sAp_Paterno;
+                    u.ap_materno = usu.sAp_Materno;
+                    u.telefono = usu.lTelefono;
+                    u.celular = usu.lCelular;
+                    u.correo = usu.sCorreo;
+                    u.usuario = usu.sUsuario;
+                    u.contraseña = usu.sContraseña;
+                    context.SaveChanges();
+                    return usu;
+                }
+
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
         public List<UsuarioModel> MostrarUsuarios()
         {
             try
@@ -100,6 +130,7 @@ namespace CapaDatos
                         lTelefono = u.telefono,
                         lCelular = u.celular,
                         sCorreo = u.correo,
+                        sContraseña = u.contraseña,
                         sUsuario = u.usuario
                     }).ToList();
             }
