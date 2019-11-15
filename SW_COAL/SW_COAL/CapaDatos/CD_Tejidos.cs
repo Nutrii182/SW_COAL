@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class CD_Tejidos
     {
-        public TejidosModel NuevoTejido(TejidosModel teji)
+        public ConsultaModel NuevoTejido(ConsultaModel teji)
         {
             try
             {

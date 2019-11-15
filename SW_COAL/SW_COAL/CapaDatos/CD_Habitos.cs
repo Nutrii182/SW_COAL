@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class CD_Habitos
     {
-        public HabitosModel NuevoHabito(HabitosModel habit)
+        public ConsultaModel NuevoHabito(ConsultaModel habit)
         {
             try
             {

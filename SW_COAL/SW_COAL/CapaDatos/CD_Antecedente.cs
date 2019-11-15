@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class CD_Antecedente
     {
-        public AntecedentesModel NuevoAntecedente(AntecedentesModel antec)
+        public ConsultaModel NuevoAntecedente(ConsultaModel antec)
         {
             try
             {

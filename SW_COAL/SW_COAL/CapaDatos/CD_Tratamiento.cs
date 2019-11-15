@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class CD_Tratamiento
     {
-        public TratamientoModel NuevoTratamiento(TratamientoModel trat)
+        public ConsultaModel NuevoTratamiento(ConsultaModel trat)
         {
             try
             {

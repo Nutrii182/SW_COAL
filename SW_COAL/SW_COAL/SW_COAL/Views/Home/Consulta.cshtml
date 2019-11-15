@@ -15,11 +15,12 @@
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/Project/JS/jsSelPacientes.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarTratamiento.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarTejido.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarAntecedente.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarHabito.js"></script>
-    <script src="~/Scripts/Project/JS/jsAgregarAdicional.js"></script>
+    <script src="~/Scripts/Project/JS/jsAgregarConsulta.js"></script>
+    @*<script src="~/Scripts/Project/JS/jsAgregarTratamiento.js"></script>
+        <script src="~/Scripts/Project/JS/jsAgregarTejido.js"></script>
+        <script src="~/Scripts/Project/JS/jsAgregarAntecedente.js"></script>
+        <script src="~/Scripts/Project/JS/jsAgregarHabito.js"></script>
+        <script src="~/Scripts/Project/JS/jsAgregarAdicional.js"></script>*@
 </head>
 <body>
     <h3>Consulta</h3>
@@ -561,14 +562,15 @@
         <button id="regCon" class="btn btn-primary">Aceptar</button>
     </div>
     <sec>
-        <input type="hidden" id="urlTratamiento" value="@Url.Action("RecibeTratamiento","Home")" />
+        @*<input type="hidden" id="urlTratamiento" value="@Url.Action("RecibeTratamiento","Home")" />*@
         @*<input type="hidden" id="urlConsulta" value="@Url.Action("RecibeConsulta","Home")" />*@
-        <input type="hidden" id="urlTejido" value="@Url.Action("RecibeTejido","Home")" />
+        @*<input type="hidden" id="urlTejido" value="@Url.Action("RecibeTejido","Home")" />
         <input type="hidden" id="urlHabito" value="@Url.Action("RecibeHabito","Home")" />
         <input type="hidden" id="urlAntecedente" value="@Url.Action("RecibeAntecedente","Home")" />
-        <input type="hidden" id="urlAdicional" value="@Url.Action("RecibeAdicional","Home")" />
-        <input type="hidden" id="urlObPacientes" value="@Url.Action("ObtienePacientes","Home")" />
+        <input type="hidden" id="urlAdicional" value="@Url.Action("RecibeAdicional","Home")" />*@
         <input type="hidden" id="urlConsulta" value="@Url.Action("Consulta","Home")" />
+        <input type="hidden" id="urlObPacientes" value="@Url.Action("ObtienePacientes","Home")" />
+        <input type="hidden" id="urlRecConsulta" value="@Url.Action("RecibeConsulta","Home")" />
     </sec>
 </body>
 </html>

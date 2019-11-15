@@ -16,18 +16,7 @@ namespace CapaDatos
                 using(var context = new COALEntities())
                 {
 
-                    var nuevaConsulta = new Consultas
-                    {
-                        paciente = con.ipaciente,
-                        antecedente = con.iantecedente,
-                        habito = con.ihabito,
-                        tratamiento = con.itratamiento,
-                        tejido = con.itejido,
-                        adicional = con.iadicional
-                    };
-                    context.Consultas.Add(nuevaConsulta);
-                    context.SaveChanges();
-                    return con;
+                    return null;
                 }
 
             }catch(Exception e)

@@ -275,13 +275,8 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
-    <Content Include="Scripts\Project\JS\jsAgregarAdicional.js" />
-    <Content Include="Scripts\Project\JS\jsAgregarAntecedente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarConsulta.js" />
-    <Content Include="Scripts\Project\JS\jsAgregarHabito.js" />
-    <Content Include="Scripts\Project\JS\jsAgregarTejido.js" />
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
-    <Content Include="Scripts\Project\JS\jsAgregarTratamiento.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
     <Content Include="Scripts\Project\JS\jsDetalles.js" />
     <Content Include="Scripts\Project\JS\jsModificaPaciente.js" />

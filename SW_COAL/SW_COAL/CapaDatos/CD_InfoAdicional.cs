@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class CD_InfoAdicional
     {
-        public InfoAdicionalModel NuevaInfoAdi(InfoAdicionalModel infadi)
+        public ConsultaModel NuevaInfoAdi(ConsultaModel infadi)
         {
             try
             {
