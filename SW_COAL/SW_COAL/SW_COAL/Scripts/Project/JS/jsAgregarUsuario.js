@@ -1,9 +1,27 @@
-﻿$(document).on('click', '#idRegistro', function () {
-    validador();
+﻿
+$(document).ready(function () {
 
+    var v;
+
+    $(document).on('change', '#selUsuario', function () {
+        v = $(this).val();
+    });
+
+    $(document).on('click', '#idRegistro', function () {
+        validador(v);
+    });
 });
 
-function validador() {
+
+
+function validador(v) {
+
+    var usu;
+
+    if (v == 1)
+        usu = 'Usuario';
+    else
+        usu = 'SuperUsuario';
 
     if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" ||
         $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inUsuario').val() === "" ||
@@ -23,7 +41,8 @@ function validador() {
                 lCelular: $('#inCelular').val(),
                 sCorreo: $('#inCorreo').val(),
                 sUsuario: $('#inUsuario').val(),
-                sContraseña: $('#inContraseña').val()
+                sContraseña: $('#inContraseña').val(),
+                sTipo: usu
             };
             $('#idRegistro').attr("disabled", true);
             LlamadaRegistro(nuevoUsuario);

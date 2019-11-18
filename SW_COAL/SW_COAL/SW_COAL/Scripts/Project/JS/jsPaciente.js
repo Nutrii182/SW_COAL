@@ -3,8 +3,8 @@ $(document).ready(function () {
 
     var tipo = localStorage.getItem('tipo')
 
-    if (tipo == 'Usuario')
-        $('.EliPaci').css('display', 'none');
+    if (tipo == 'SuperUsuario')
+        $('.EliPaci').css('display', 'block');
 
     Getpaciente("#tabPaci tbody");
 });

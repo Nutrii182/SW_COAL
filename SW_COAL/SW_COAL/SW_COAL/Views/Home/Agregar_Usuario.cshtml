@@ -7,7 +7,6 @@
 <html>
 <head>
     <title>Agregar Usuario</title>
-    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
 
     <script src="~/Scripts/jquery-3.3.1.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
@@ -76,6 +75,17 @@
                 <label>Verificar Contraseña</label>
                 <div>
                     <input id="inVeriContraseña" type="password" placeholder="Verificar Contraseña" class="form-control required"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label>Tipo de Usuario</label>
+                <div>
+                    <select class="form-control">
+                        <option value="1">Usuario</option>
+                        <option value="2">SuperUsuario</option>
+                    </select>
                 </div>
             </div>
         </div>

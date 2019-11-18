@@ -3,8 +3,8 @@ $(document).ready(function () {
 
     var tipo = localStorage.getItem('tipo')
 
-    if (tipo == 'Usuario')
-        $('.EliUsu').css('display', 'none');
+    if (tipo == 'SuperUsuario')
+        $('.EliUsu').css('display', 'block');
 
     GetUsuario('#tabUsu tbody');
 });

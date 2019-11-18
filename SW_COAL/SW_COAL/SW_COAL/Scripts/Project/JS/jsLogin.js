@@ -60,9 +60,10 @@ function validador(result) {
 
         for (c = 0; c < result.data.length; c++) {
 
-            if (result.data[c].sUsuario == $('#inUsuario').val())
+            if (result.data[c].sUsuario == $('#inUsuario').val()) {
                 localStorage.setItem('tipo', result.data[c].sTipo);
-            break;
+                break;
+            }
         }
 
         $('#gif').css("display", "block");
