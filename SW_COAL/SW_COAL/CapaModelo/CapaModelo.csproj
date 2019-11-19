@@ -140,7 +140,6 @@
     <Compile Include="Habitos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="HabitosModel.cs" />
     <Compile Include="InfoAdicionalModel.cs" />
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>

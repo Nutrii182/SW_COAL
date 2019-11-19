@@ -3,9 +3,10 @@ $(document).ready(function () {
 
     var tipo = localStorage.getItem('tipo')
 
-    if (tipo == 'SuperUsuario')
+    if (tipo == 'SuperUsuario') {
         $('.EliUsu').css('display', 'block');
-
+        $('#AgUs').css('display', 'block');
+    }
     GetUsuario('#tabUsu tbody');
 });
 

@@ -46,4 +46,31 @@ namespace CapaDatos
             }
         }
     }
+
+    //public List<AntecedentesModel> MostrarAntecedente(ConsultaModel con)
+    //{
+    //    try
+    //    {
+    //        using(var contexto = new COALEntities())
+    //        {
+    //            return contexto.Antecendentes.Select(a => new AntecedentesModel()
+    //            {
+    //                sEmbarazo
+    //                iMesesEmbarazo
+    //                sAnticonceptivos
+    //                sTipoAnticoncep
+    //                sFuma
+    //                sBebe
+    //                sDrogas
+    //                sAlergia
+    //                sTipoAlergia
+    //                sHigieneBucal
+    //            }).ToList();
+    //        }
+    //    }
+    //    catch (Exception e)
+    //    {
+    //        throw e;
+    //    }
+    //}
 }

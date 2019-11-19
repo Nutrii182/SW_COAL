@@ -3,8 +3,9 @@ $(document).ready(function () {
 
     var v;
 
-    $(document).on('change', '#selUsuario', function () {
+    $(document).on('change', '#tipoU', function () {
         v = $(this).val();
+        console.log(v);
     });
 
     $(document).on('click', '#idRegistro', function () {
@@ -20,8 +21,12 @@ function validador(v) {
 
     if (v == 1)
         usu = 'Usuario';
-    else
-        usu = 'SuperUsuario';
+    else {
+        if (v == 2)
+            usu = 'SuperUsuario';
+        else
+            alert('escoge un usuario')
+    }
 
     if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" ||
         $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inUsuario').val() === "" ||
