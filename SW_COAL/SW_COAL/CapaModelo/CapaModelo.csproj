@@ -132,7 +132,6 @@
     <Compile Include="Adicional.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="AntecedentesModel.cs" />
     <Compile Include="Antecendentes.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -140,7 +139,6 @@
     <Compile Include="Habitos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="InfoAdicionalModel.cs" />
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,7 +158,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PacientesModel.cs" />
-    <Compile Include="ParadontogramaModel.cs" />
     <Compile Include="Parodontograma.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -170,14 +167,12 @@
     <Compile Include="Tejidos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="TejidosModel.cs" />
     <Compile Include="TipoUsuario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Tratamiento.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="TratamientoModel.cs" />
     <Compile Include="UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs">

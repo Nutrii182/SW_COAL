@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     public class CD_Paradontograma
     {
-        public ParadontogramaModel nuevoParadonto(ParadontogramaModel par)
+        public ConsultaModel nuevoParadonto(ConsultaModel par)
         {
             using(var context = new COALEntities())
             {

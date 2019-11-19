@@ -141,6 +141,27 @@ namespace CapaDatos
                 throw e;
             }
         }
+        public UsuarioModel EliminaUsuario(UsuarioModel usu)
+        {
+            try
+            {
+                using(var context = new COALEntities())
+                {
+                    var eliUsu = context.Usuarios.Where(u => u.idusuario == usu.iId).Single();
 
+                    if (eliUsu == null)
+                        return null;
+
+                    context.Usuarios.Remove(eliUsu);
+                    context.SaveChanges();
+                    return usu;
+                }
+
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

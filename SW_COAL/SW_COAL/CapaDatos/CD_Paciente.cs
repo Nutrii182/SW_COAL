@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class CD_Paciente
     {
-        public PacientesModel NuevoPaciente(PacientesModel paci)
+        public ConsultaModel NuevoPaciente(ConsultaModel paci)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace CapaDatos
             }
         }
 
-        public List<PacientesModel> MostrarPacientes()
+        public List<ConsultaModel> MostrarPacientes()
         {
             try
             {
@@ -66,7 +66,7 @@ namespace CapaDatos
                 {
 
                     var a = context.Pacientes.Select(p => p).ToList();
-                    return context.Pacientes.Select(p => new PacientesModel()
+                    return context.Pacientes.Select(p => new ConsultaModel()
                     {
                         iIdPaciente = p.idpaciente,
                         sNombre = p.nombre,
@@ -99,7 +99,7 @@ namespace CapaDatos
             }
         }
 
-        public PacientesModel EliminaPaciente(PacientesModel pac)
+        public ConsultaModel EliminaPaciente(ConsultaModel pac)
         {
             try
             {
@@ -121,7 +121,7 @@ namespace CapaDatos
             }
         }
 
-        public PacientesModel EditaPaciente(PacientesModel paci)
+        public ConsultaModel EditaPaciente(ConsultaModel paci)
         {
             using (var context = new COALEntities())
             {
