@@ -1,6 +1,27 @@
-﻿$(document).on('click', '.btnLogear', function () {
-    validador();
+﻿$(document).ready(function () {
+
+    var url = $('#urlUsuarios').val();
+
+    $.ajax({
+        type: "GET",
+        url: url,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: prueba,
+        error: function (data) {
+            alert('error obteniendo');
+        }
+    });
 });
+
+function prueba(result) {
+
+    $(document).on('click', '.btnLogear', function () {
+        validador(result);
+    });
+}
+
+
 
 $(document).ready(function () {
     $('#inUsuario').keypress(function (tecla) {
@@ -28,7 +49,7 @@ $(document).ready(function () {
     });
 });
 
-function validador() {
+function validador(result) {
     if ($('#inUsuario').val() === "" || $('#inContra').val() === "") {
         alert("favor de llenar los campos");
     } else {
@@ -36,6 +57,14 @@ function validador() {
             sUsuario: $('#inUsuario').val(),
             sContraseña: $('#inContra').val()
         });
+
+        for (c = 0; c < result.data.length; c++) {
+
+            if (result.data[c].sUsuario == $('#inUsuario').val())
+                localStorage.setItem('tipo', result.data[c].sTipo);
+            break;
+        }
+
         $('#gif').css("display", "block");
         localStorage.setItem('user', $('#inUsuario').val());
         $('.btnLogear').attr("disabled", true);
@@ -62,7 +91,7 @@ function LlamadaIniciarSesion(datosUsuario) {
 function SuccessLlamadaIniciarSesion(data) {
 
     if (data.Exito) {
-        var url = $('#urlHome').val();
+        var url = $('#urlHome').val()
         window.location.href = url;
     }
     else if (data.Advertencia) {

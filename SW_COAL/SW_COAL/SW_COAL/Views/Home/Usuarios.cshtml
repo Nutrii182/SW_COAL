@@ -54,6 +54,9 @@
                     <th>
                         Usuario
                     </th>
+                    <th>
+                        Tipo de Usuario
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -84,8 +87,12 @@
                             @Html.DisplayFor(modelItem => item.usuario)
                         </td>
                         <td>
+                            @Html.DisplayFor(modelItem => item.tipo)
+                        </td>
+                        <td>
                             <button type="button" class="btn btn-primary form-control ActUsu" data-target="@item.idusuario">Actualizar</button>
                             <button type="button" class="btn btn-success form-control DetUsu" data-target="@item.idusuario">Detalles</button>
+                            <button type="button" class="btn btn-danger form-control EliUsu" data-target="@item.idusuario">Eliminar</button>
                         </td>
                     </tr>
                 </tbody>

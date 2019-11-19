@@ -2,7 +2,7 @@ create database COAL
 
 create table Usuarios(idusuario int identity(1,1) not null primary key, nombre varchar(25) not null, ap_paterno varchar(20) not null,
 ap_materno varchar(20) not null, telefono bigint default 'No tiene', celular bigint default 'No tiene', correo varchar(25) default 'No tiene',
-usuario varchar(20) not null,contraseña varchar(20) not null)
+usuario varchar(20) not null, contraseña varchar(20) not null, tipo nvarchar(15) not null)
 
 create table Pacientes(idpaciente int identity(1,1) not null primary key, nombre varchar(25) not null, apellido_paterno varchar(20) not null,
 apellido_materno varchar(20) not null, domicilio varchar(100) not null, telefono bigint default 'No tiene', celular bigint default 'No tiene',
@@ -36,11 +36,6 @@ create table Adicional(idadicional int identity(1,1) not null primary key,rech_a
 ori_bucal nvarchar(2) not null,ciru_encias nvarchar(2) not null, hemorragias nvarchar(2) not null, veces_cepillado int not null,
 tipo_cepillo nvarchar(10) not null, paciente int references Pacientes(idpaciente) on delete cascade not null)
 
-create table Consultas(idconsulta int identity(1,1) not null primary key, paciente int references Pacientes(idpaciente) not null,
-antecedente int references Antecendentes(idantecedente) not null, habito int references Habitos(idhabito) not null,
-tratamiento int references Tratamiento(idtratamiento) not null, tejido int references Tejidos(idtejidos) not null,
-adicional int references Adicional(idadicional) not null)
-
 create table Parodontograma(idparadonto int identity(1,1) not null primary key, d11 nvarchar(10), d12 nvarchar(10), d13 nvarchar(10), 
 d14 nvarchar(10), d15 nvarchar(10), d16 nvarchar(10), d17 nvarchar(10), d18 nvarchar(10), d21 nvarchar(10), d22 nvarchar(10),d23 nvarchar(10),
 d24 nvarchar(10), d25 nvarchar(10), d26 nvarchar(10), d27 nvarchar(10), d28 nvarchar(10), d31 nvarchar(10),d32 nvarchar(10), d33 nvarchar(10),
@@ -59,7 +54,7 @@ select * from Consultas
 select * from Parodontograma
 
 insert into Usuarios
-values('rgdfd','ergd','ergdf',0,0,'regd','nutrii','yo')
+values('rgdfd','ergd','ergdf',0,0,'regd','nutrii','yo','Usuario')
 
 insert into Pacientes
 values('juan','escutia','carmona','hgjhjnb',45678,45678,'2019/10/12','Masculino','No','No','No','No','No','No','No','No','No','No','No','No',1)
@@ -73,3 +68,4 @@ drop table Pacientes
 drop table Usuarios
 drop table Consultas
 drop table Parodontograma
+

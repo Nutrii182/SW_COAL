@@ -15,30 +15,18 @@ namespace CapaModelo
 using System;
     using System.Collections.Generic;
     
-public partial class Adicional
+public partial class sysdiagrams
 {
 
-    public int idadicional { get; set; }
+    public string name { get; set; }
 
-    public string rech_apri { get; set; }
+    public int principal_id { get; set; }
 
-    public string trat_encias { get; set; }
+    public int diagram_id { get; set; }
 
-    public string ori_bucal { get; set; }
+    public Nullable<int> version { get; set; }
 
-    public string ciru_encias { get; set; }
-
-    public string hemorragias { get; set; }
-
-    public int veces_cepillado { get; set; }
-
-    public string tipo_cepillo { get; set; }
-
-    public int paciente { get; set; }
-
-
-
-    public virtual Pacientes Pacientes { get; set; }
+    public byte[] definition { get; set; }
 
 }
 

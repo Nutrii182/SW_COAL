@@ -29,8 +29,7 @@ namespace CapaDatos
                                 sNombre = usu.nombre,
                                 sAp_Paterno = usu.ap_paterno,
                                 sAp_Materno = usu.ap_materno,
-                                lTelefono = usu.telefono,
-                                lCelular = usu.celular
+                                sTipo = usu.tipo,
 
                             }).FirstOrDefault();
 
@@ -70,7 +69,8 @@ namespace CapaDatos
                         celular = user.lCelular,
                         correo = user.sCorreo,
                         usuario = user.sUsuario,
-                        contraseña = user.sContraseña
+                        contraseña = user.sContraseña,
+                        tipo = user.sTipo
                     };
                     contexto.Usuarios.Add(nuevoUsuario);
                     contexto.SaveChanges();
@@ -103,12 +103,13 @@ namespace CapaDatos
                     u.correo = usu.sCorreo;
                     u.usuario = usu.sUsuario;
                     u.contraseña = usu.sContraseña;
+                    u.tipo = usu.sTipo;
                     context.SaveChanges();
                     return usu;
                 }
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
@@ -118,9 +119,8 @@ namespace CapaDatos
         {
             try
             {
-
                 using (var context = new COALEntities())
-
+                {
                     return context.Usuarios.Select(u => new UsuarioModel()
                     {
                         iId = u.idusuario,
@@ -131,8 +131,10 @@ namespace CapaDatos
                         lCelular = u.celular,
                         sCorreo = u.correo,
                         sContraseña = u.contraseña,
-                        sUsuario = u.usuario
+                        sUsuario = u.usuario,
+                        sTipo = u.tipo
                     }).ToList();
+                }
             }
             catch (Exception e)
             {

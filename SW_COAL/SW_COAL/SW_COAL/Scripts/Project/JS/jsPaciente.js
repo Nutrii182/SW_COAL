@@ -1,7 +1,11 @@
 ﻿
 $(document).ready(function () {
 
-    //table = $('#tabPaci').DataTable();
+    var tipo = localStorage.getItem('tipo')
+
+    if (tipo == 'Usuario')
+        $('.EliPaci').css('display', 'none');
+
     Getpaciente("#tabPaci tbody");
 });
 

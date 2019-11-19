@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CD_Consultas
+    public class CD_Consulta
     {
         public ConsultaModel NuevaConsulta (ConsultaModel con)
         {

@@ -18,15 +18,6 @@ using System;
 public partial class Habitos
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Habitos()
-    {
-
-        this.Consultas = new HashSet<Consultas>();
-
-    }
-
-
     public int idhabito { get; set; }
 
     public string bricomania { get; set; }
@@ -52,10 +43,6 @@ public partial class Habitos
 
 
     public virtual Pacientes Pacientes { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Consultas> Consultas { get; set; }
 
 }
 

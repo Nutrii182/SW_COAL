@@ -18,15 +18,6 @@ using System;
 public partial class Antecendentes
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Antecendentes()
-    {
-
-        this.Consultas = new HashSet<Consultas>();
-
-    }
-
-
     public int idantecedente { get; set; }
 
     public string embarazo { get; set; }
@@ -54,10 +45,6 @@ public partial class Antecendentes
 
 
     public virtual Pacientes Pacientes { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Consultas> Consultas { get; set; }
 
 }
 

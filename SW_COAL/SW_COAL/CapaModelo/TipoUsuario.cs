@@ -15,30 +15,10 @@ namespace CapaModelo
 using System;
     using System.Collections.Generic;
     
-public partial class Adicional
+public partial class TipoUsuario
 {
 
-    public int idadicional { get; set; }
-
-    public string rech_apri { get; set; }
-
-    public string trat_encias { get; set; }
-
-    public string ori_bucal { get; set; }
-
-    public string ciru_encias { get; set; }
-
-    public string hemorragias { get; set; }
-
-    public int veces_cepillado { get; set; }
-
-    public string tipo_cepillo { get; set; }
-
-    public int paciente { get; set; }
-
-
-
-    public virtual Pacientes Pacientes { get; set; }
+    public string tipousuario1 { get; set; }
 
 }
 

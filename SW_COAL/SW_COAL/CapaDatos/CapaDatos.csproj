@@ -128,7 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Antecedente.cs" />
-    <Compile Include="CD_Consultas.cs" />
+    <Compile Include="CD_Consulta.cs" />
     <Compile Include="CD_Habitos.cs" />
     <Compile Include="CD_InfoAdicional.cs" />
     <Compile Include="CD_Paciente.cs" />

@@ -28,13 +28,11 @@ public partial class Pacientes
 
         this.Habitos = new HashSet<Habitos>();
 
+        this.Parodontograma = new HashSet<Parodontograma>();
+
         this.Tejidos = new HashSet<Tejidos>();
 
         this.Tratamiento = new HashSet<Tratamiento>();
-
-        this.Parodontograma = new HashSet<Parodontograma>();
-
-        this.Consultas = new HashSet<Consultas>();
 
     }
 
@@ -97,7 +95,9 @@ public partial class Pacientes
 
     public virtual ICollection<Habitos> Habitos { get; set; }
 
-    public virtual Usuarios Usuarios { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<Parodontograma> Parodontograma { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
@@ -107,13 +107,7 @@ public partial class Pacientes
 
     public virtual ICollection<Tratamiento> Tratamiento { get; set; }
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Parodontograma> Parodontograma { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Consultas> Consultas { get; set; }
+    public virtual Usuarios Usuarios { get; set; }
 
 }
 

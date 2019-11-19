@@ -18,15 +18,6 @@ using System;
 public partial class Tratamiento
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Tratamiento()
-    {
-
-        this.Consultas = new HashSet<Consultas>();
-
-    }
-
-
     public int idtratamiento { get; set; }
 
     public string bajo_tratamiento { get; set; }
@@ -60,10 +51,6 @@ public partial class Tratamiento
 
 
     public virtual Pacientes Pacientes { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Consultas> Consultas { get; set; }
 
 }
 

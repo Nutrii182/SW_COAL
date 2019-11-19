@@ -1,5 +1,11 @@
 ﻿
 $(document).ready(function () {
+
+    var tipo = localStorage.getItem('tipo')
+
+    if (tipo == 'Usuario')
+        $('.EliUsu').css('display', 'none');
+
     GetUsuario('#tabUsu tbody');
 });
 

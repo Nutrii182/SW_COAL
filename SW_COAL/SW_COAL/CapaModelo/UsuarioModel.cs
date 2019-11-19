@@ -25,5 +25,7 @@ namespace CapaModelo
 
         public String sContraseña { get; set; }
 
+        public String sTipo { get; set; }
+
     }
 }
