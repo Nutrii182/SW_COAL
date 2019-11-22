@@ -30,6 +30,15 @@ namespace SWP_COAL.Controllers
             return Json(new { data = listaPaci }, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult ObtieneConsulta(ConsultaModel co)
+        {
+            CD_Consulta consult = new CD_Consulta();
+            ConsultaModel consulta = new ConsultaModel();
+            consulta = consult.MuestraConsulta(co);
+            Response.ContentType = "application / json; charset = utf - 8";
+            return Json(new { data = consulta }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
         public ActionResult RecibePaciente(ConsultaModel nuevoPaciente)
         {

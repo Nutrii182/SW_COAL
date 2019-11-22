@@ -49,5 +49,35 @@ namespace CapaDatos
                 throw e;
             }
         }
+
+        public List<ConsultaModel> MostrarTratamiento()
+        {
+            try
+            {
+                using(var context = new COALEntities())
+                {
+                    return context.Tratamiento.Select(t => new ConsultaModel()
+                    {
+                        sBajoTratamiento = t.bajo_tratamiento,
+                        sTipoTratamiento = t.tipo_tratamiento,
+                        sNombreDoctor = t.nombre_doctor,
+                        sApePaterDoc = t.apePat_doctor,
+                        sApeMaterDoc = t.apeMat_doctor,
+                        lTelDoct = t.tel_doctor,
+                        lCelDoct = t.cel_doctor,
+                        dtIniciaTratamiento = t.ini_trata,
+                        dtTerminaTratamiento = t.fin_trata,
+                        sTomaMedi = t.toma_medi,
+                        sMedicamento = t.medicamento,
+                        sHospi = t.hospitalizado,
+                        sMotivo = t.motivo
+                    }).ToList();
+                }
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

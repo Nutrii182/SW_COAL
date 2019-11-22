@@ -48,5 +48,34 @@ namespace CapaDatos
                 throw e;
             }
         }
+
+        public List<ConsultaModel> MostrarTejido()
+        {
+            try
+            {
+                using(var context = new COALEntities())
+                {
+                    return context.Tejidos.Select(t => new ConsultaModel()
+                    {
+                        sDuros = t.duros,
+                        sRx = t.rx,
+                        sEncia = t.encia,
+                        sInsert_Epi = t.inser_epi,
+                        sLengua = t.lengua,
+                        sPulpa = t.pulpa,
+                        sVelo = t.velo,
+                        sCarrillos = t.carrillos,
+                        sSob_Mord = t.sob_mord,
+                        sMordi_Abier = t.mordi_abier,
+                        sDesg_Bru = t.desg_bru,
+                        sAnoclusion = t.anoclusion
+                    }).ToList();
+                }
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

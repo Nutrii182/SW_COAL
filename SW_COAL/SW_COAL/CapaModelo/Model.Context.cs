@@ -46,10 +46,6 @@ public partial class COALEntities : DbContext
 
     public virtual DbSet<Tratamiento> Tratamiento { get; set; }
 
-    public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-
-    public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
-
     public virtual DbSet<Usuarios> Usuarios { get; set; }
 
 }

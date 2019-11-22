@@ -52,6 +52,8 @@ namespace CapaModelo
 
         public int iOdontologo { get; set; }
 
+        public String sOdontologo { get; set; }
+
         //tratamiento
         public String sBajoTratamiento { get; set; }
 
@@ -108,7 +110,7 @@ namespace CapaModelo
 
         public String sEmbarazo { get; set; }
 
-        public int iMesesEmbarazo { get; set; }
+        public int? iMesesEmbarazo { get; set; }
 
         public String sAnticonceptivos { get; set; }
 
@@ -142,7 +144,7 @@ namespace CapaModelo
 
         public String sChupa_Dedos { get; set; }
 
-        public int iFrecuencia { get; set; }
+        public int? iFrecuencia { get; set; }
 
         public String sAlimentacion { get; set; }
 

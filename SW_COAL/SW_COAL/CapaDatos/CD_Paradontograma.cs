@@ -37,5 +37,30 @@ namespace CapaDatos
                 return par;
             }
         }
+
+        public List<ConsultaModel> MostrarParadontograma()
+        {
+            try
+            {
+                using(var context = new COALEntities())
+                {
+                    return context.Parodontograma.Select(p => new ConsultaModel()
+                    {
+                        sD11 = p.d11, sD21 = p.d21, sD31 = p.d31, sD41 = p.d41,
+                        sD12 = p.d12, sD22 = p.d22, sD32 = p.d32, sD42 = p.d42,
+                        sD13 = p.d13, sD23 = p.d23, sD33 = p.d33, sD43 = p.d43,
+                        sD14 = p.d14, sD24 = p.d24, sD34 = p.d34, sD44 = p.d44,
+                        sD15 = p.d15, sD25 = p.d25, sD35 = p.d35, sD45 = p.d45,
+                        sD16 = p.d16, sD26 = p.d26, sD36 = p.d36, sD46 = p.d46,
+                        sD17 = p.d17, sD27 = p.d27, sD37 = p.d37, sD47 = p.d47,
+                        sD18 = p.d18, sD28 = p.d28, sD38 = p.d38, sD48 = p.d48             
+                        
+                    }).ToList();
+                }
+            }catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

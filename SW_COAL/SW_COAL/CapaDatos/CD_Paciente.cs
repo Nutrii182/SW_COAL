@@ -65,7 +65,6 @@ namespace CapaDatos
                 using (var context = new COALEntities())
                 {
 
-                    var a = context.Pacientes.Select(p => p).ToList();
                     return context.Pacientes.Select(p => new ConsultaModel()
                     {
                         iIdPaciente = p.idpaciente,

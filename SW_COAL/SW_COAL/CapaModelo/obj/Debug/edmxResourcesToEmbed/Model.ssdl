@@ -113,16 +113,6 @@
     <Property Name="d48" Type="nvarchar" MaxLength="10" />
     <Property Name="paciente" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="Tejidos">
     <Key>
       <PropertyRef Name="idtejidos" />
@@ -141,12 +131,6 @@
     <Property Name="desg_bru" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="anoclusion" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="paciente" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TipoUsuario">
-    <Key>
-      <PropertyRef Name="tipousuario" />
-    </Key>
-    <Property Name="tipousuario" Type="nvarchar" MaxLength="15" Nullable="false" />
   </EntityType>
   <EntityType Name="Tratamiento">
     <Key>
@@ -285,9 +269,7 @@
     <EntitySet Name="Habitos" EntityType="Self.Habitos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Parodontograma" EntityType="Self.Parodontograma" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tejidos" EntityType="Self.Tejidos" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Adicional__pacie__2823D721" Association="Self.FK__Adicional__pacie__2823D721">

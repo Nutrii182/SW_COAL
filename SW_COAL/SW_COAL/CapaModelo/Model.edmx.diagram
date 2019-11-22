@@ -18,8 +18,6 @@
         <AssociationConnector Association="COALModel.FK__Parodonto__pacie__163A3110" />
         <AssociationConnector Association="COALModel.FK__Tejidos__pacient__06F7ED80" />
         <AssociationConnector Association="COALModel.FK__Tratamien__pacie__108157BA" />
-        <EntityTypeShape EntityType="COALModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="COALModel.TipoUsuario" Width="1.5" PointX="3.125" PointY="0.5" />
         <EntityTypeShape EntityType="COALModel.Usuarios" Width="1.5" PointX="3" PointY="14.75" />
         <AssociationConnector Association="COALModel.FK__Pacientes__odont__104C4D90" />
       </Diagram>

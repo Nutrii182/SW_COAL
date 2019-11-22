@@ -32,8 +32,6 @@
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Tratamiento" EntitySet="Tratamiento" />
     </AssociationSet>
-    <EntitySet Name="sysdiagrams" EntityType="COALModel.sysdiagrams" />
-    <EntitySet Name="TipoUsuario" EntityType="COALModel.TipoUsuario" />
     <EntitySet Name="Usuarios" EntityType="COALModel.Usuarios" />
     <AssociationSet Name="FK__Pacientes__odont__104C4D90" Association="COALModel.FK__Pacientes__odont__104C4D90">
       <End Role="Usuarios" EntitySet="Usuarios" />
@@ -289,22 +287,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="TipoUsuario">
-    <Key>
-      <PropertyRef Name="tipousuario1" />
-    </Key>
-    <Property Name="tipousuario1" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="Usuarios">
     <Key>
       <PropertyRef Name="idusuario" />

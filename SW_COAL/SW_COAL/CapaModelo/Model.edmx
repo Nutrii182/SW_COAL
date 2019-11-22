@@ -118,16 +118,6 @@
           <Property Name="d48" Type="nvarchar" MaxLength="10" />
           <Property Name="paciente" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Tejidos">
           <Key>
             <PropertyRef Name="idtejidos" />
@@ -146,12 +136,6 @@
           <Property Name="desg_bru" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="anoclusion" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="paciente" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TipoUsuario">
-          <Key>
-            <PropertyRef Name="tipousuario" />
-          </Key>
-          <Property Name="tipousuario" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="Tratamiento">
           <Key>
@@ -290,9 +274,7 @@
           <EntitySet Name="Habitos" EntityType="Self.Habitos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parodontograma" EntityType="Self.Parodontograma" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tejidos" EntityType="Self.Tejidos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Adicional__pacie__2823D721" Association="Self.FK__Adicional__pacie__2823D721">
@@ -360,8 +342,6 @@
             <End Role="Pacientes" EntitySet="Pacientes" />
             <End Role="Tratamiento" EntitySet="Tratamiento" />
           </AssociationSet>
-          <EntitySet Name="sysdiagrams" EntityType="COALModel.sysdiagrams" />
-          <EntitySet Name="TipoUsuario" EntityType="COALModel.TipoUsuario" />
           <EntitySet Name="Usuarios" EntityType="COALModel.Usuarios" />
           <AssociationSet Name="FK__Pacientes__odont__104C4D90" Association="COALModel.FK__Pacientes__odont__104C4D90">
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -617,22 +597,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="TipoUsuario">
-          <Key>
-            <PropertyRef Name="tipousuario1" />
-          </Key>
-          <Property Name="tipousuario1" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="idusuario" />
@@ -823,24 +787,6 @@
                 <ScalarProperty Name="tipo_tratamiento" ColumnName="tipo_tratamiento" />
                 <ScalarProperty Name="bajo_tratamiento" ColumnName="bajo_tratamiento" />
                 <ScalarProperty Name="idtratamiento" ColumnName="idtratamiento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="COALModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TipoUsuario">
-            <EntityTypeMapping TypeName="COALModel.TipoUsuario">
-              <MappingFragment StoreEntitySet="TipoUsuario">
-                <ScalarProperty Name="tipousuario1" ColumnName="tipousuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
