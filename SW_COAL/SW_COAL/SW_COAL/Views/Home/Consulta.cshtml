@@ -15,6 +15,7 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/Project/JS/jsSelPacientes.js"></script>
     <script src="~/Scripts/Project/JS/jsAgregarConsulta.js"></script>
+    <script src="~/Scripts/Project/JS/jsCanvas.js"></script>
 </head>
 <body>
     <h3>Consulta</h3>
@@ -549,7 +550,9 @@
         <h4>Paradontograma</h4>
         <br />
         <div class="row justify-content-center">
-            <img id="paradonto" class="img-responsive" src="~/Content/img/paradontograma.png" />
+            <canvas id="miCanvas" width="1050" height="350">
+                Tu navegador no soporta canvas.
+            </canvas>
         </div>
     </div>
     <div>

@@ -278,6 +278,7 @@
     <Content Include="Scripts\Project\JS\jsAgregarConsulta.js" />
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
+    <Content Include="Scripts\Project\JS\jsCanvas.js" />
     <Content Include="Scripts\Project\JS\jsDetallesPaciente.js" />
     <Content Include="Scripts\Project\JS\jsDetallesUsuario.js" />
     <Content Include="Scripts\Project\JS\jsModificaPaciente.js" />
