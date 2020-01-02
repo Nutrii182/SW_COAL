@@ -16,12 +16,5 @@ window.onload = function () {
 
     if (ctx) {
 
-        var img = new Image();
-
-        img.src = "/Content/img/paradontograma.png";
-
-        img.onload = function () {
-            ctx.drawImage(img, 10, 10);
-        }
     }
 }
