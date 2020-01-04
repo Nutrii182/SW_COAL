@@ -7,3 +7,25 @@ li {
     max-width: 100%;
     height: auto;
 }
+
+ul {
+    list-style: none;
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+.liMenu {
+    line-height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#menu {
+    width: 150px;
+    background-color:thistle;
+    position: absolute;
+    border: 1px solid black;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
