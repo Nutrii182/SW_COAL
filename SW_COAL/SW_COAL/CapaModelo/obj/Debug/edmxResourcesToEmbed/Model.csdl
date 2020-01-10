@@ -1,93 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="COALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="COALEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Adicional" EntityType="COALModel.Adicional" />
-    <EntitySet Name="Antecendentes" EntityType="COALModel.Antecendentes" />
-    <EntitySet Name="Habitos" EntityType="COALModel.Habitos" />
     <EntitySet Name="Pacientes" EntityType="COALModel.Pacientes" />
-    <EntitySet Name="Parodontograma" EntityType="COALModel.Parodontograma" />
-    <EntitySet Name="Tejidos" EntityType="COALModel.Tejidos" />
-    <EntitySet Name="Tratamiento" EntityType="COALModel.Tratamiento" />
-    <AssociationSet Name="FK__Adicional__pacie__135DC465" Association="COALModel.FK__Adicional__pacie__135DC465">
-      <End Role="Pacientes" EntitySet="Pacientes" />
-      <End Role="Adicional" EntitySet="Adicional" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Antecende__pacie__004AEFF1" Association="COALModel.FK__Antecende__pacie__004AEFF1">
-      <End Role="Pacientes" EntitySet="Pacientes" />
-      <End Role="Antecendentes" EntitySet="Antecendentes" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Habitos__pacient__041B80D5" Association="COALModel.FK__Habitos__pacient__041B80D5">
-      <End Role="Pacientes" EntitySet="Pacientes" />
-      <End Role="Habitos" EntitySet="Habitos" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Parodonto__pacie__163A3110" Association="COALModel.FK__Parodonto__pacie__163A3110">
-      <End Role="Pacientes" EntitySet="Pacientes" />
-      <End Role="Parodontograma" EntitySet="Parodontograma" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Tejidos__pacient__06F7ED80" Association="COALModel.FK__Tejidos__pacient__06F7ED80">
-      <End Role="Pacientes" EntitySet="Pacientes" />
-      <End Role="Tejidos" EntitySet="Tejidos" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Tratamien__pacie__108157BA" Association="COALModel.FK__Tratamien__pacie__108157BA">
-      <End Role="Pacientes" EntitySet="Pacientes" />
-      <End Role="Tratamiento" EntitySet="Tratamiento" />
-    </AssociationSet>
     <EntitySet Name="Usuarios" EntityType="COALModel.Usuarios" />
-    <AssociationSet Name="FK__Pacientes__odont__104C4D90" Association="COALModel.FK__Pacientes__odont__104C4D90">
+    <AssociationSet Name="FK__Pacientes__odont__746F28F1" Association="COALModel.FK__Pacientes__odont__746F28F1">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Pacientes" EntitySet="Pacientes" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Adicional">
-    <Key>
-      <PropertyRef Name="idadicional" />
-    </Key>
-    <Property Name="idadicional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="rech_apri" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="trat_encias" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="ori_bucal" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="ciru_encias" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="hemorragias" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="veces_cepillado" Type="Int32" Nullable="false" />
-    <Property Name="tipo_cepillo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="paciente" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Adicional__pacie__135DC465" FromRole="Adicional" ToRole="Pacientes" />
-  </EntityType>
-  <EntityType Name="Antecendentes">
-    <Key>
-      <PropertyRef Name="idantecedente" />
-    </Key>
-    <Property Name="idantecedente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="embarazo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="meses_embarazo" Type="Int32" />
-    <Property Name="anticonceptivos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="tipo_anticoncep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="fumador" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="consume_alcohol" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="drogas" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="alergia" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="tipo_alergia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="higiene_bucal" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
-    <Property Name="paciente" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Antecende__pacie__004AEFF1" FromRole="Antecendentes" ToRole="Pacientes" />
-  </EntityType>
-  <EntityType Name="Habitos">
-    <Key>
-      <PropertyRef Name="idhabito" />
-    </Key>
-    <Property Name="idhabito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="bricomania" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="contrac_musc" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="habi_mordi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="resp_bucal" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="chupa_labios" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="chupa_lengua" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="chupa_dedos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="frecuencia" Type="Int32" />
-    <Property Name="alimentacion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
-    <Property Name="paciente" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Habitos__pacient__041B80D5" FromRole="Habitos" ToRole="Pacientes" />
-  </EntityType>
   <EntityType Name="Pacientes">
     <Key>
       <PropertyRef Name="idpaciente" />
@@ -113,20 +33,57 @@
     <Property Name="fie_reu" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
     <Property Name="hipertension" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
     <Property Name="otro_antecedente" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
-    <Property Name="odontologo" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Adicional" Relationship="COALModel.FK__Adicional__pacie__135DC465" FromRole="Pacientes" ToRole="Adicional" />
-    <NavigationProperty Name="Antecendentes" Relationship="COALModel.FK__Antecende__pacie__004AEFF1" FromRole="Pacientes" ToRole="Antecendentes" />
-    <NavigationProperty Name="Habitos" Relationship="COALModel.FK__Habitos__pacient__041B80D5" FromRole="Pacientes" ToRole="Habitos" />
-    <NavigationProperty Name="Parodontograma" Relationship="COALModel.FK__Parodonto__pacie__163A3110" FromRole="Pacientes" ToRole="Parodontograma" />
-    <NavigationProperty Name="Tejidos" Relationship="COALModel.FK__Tejidos__pacient__06F7ED80" FromRole="Pacientes" ToRole="Tejidos" />
-    <NavigationProperty Name="Tratamiento" Relationship="COALModel.FK__Tratamien__pacie__108157BA" FromRole="Pacientes" ToRole="Tratamiento" />
-    <NavigationProperty Name="Usuarios" Relationship="COALModel.FK__Pacientes__odont__104C4D90" FromRole="Pacientes" ToRole="Usuarios" />
-  </EntityType>
-  <EntityType Name="Parodontograma">
-    <Key>
-      <PropertyRef Name="idparadonto" />
-    </Key>
-    <Property Name="idparadonto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="embarazo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="meses_embarazo" Type="Int32" />
+    <Property Name="anticonceptivos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="tipo_anticoncep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fumador" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="consume_alcohol" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="drogas" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="alergia" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="tipo_alergia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="higiene_bucal" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="bricomania" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="contrac_musc" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="habi_mordi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="resp_bucal" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="chupa_labios" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="chupa_lengua" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="chupa_dedos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="frecuencia" Type="Int32" />
+    <Property Name="alimentacion" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="duros" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="rx" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="encia" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="inser_epi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="lengua" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="pulpa" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="velo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="carrillos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="sob_mord" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="mordi_abier" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="desg_bru" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="anoclusion" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="bajo_tratamiento" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="tipo_tratamiento" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="nombre_doctor" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="apePat_doctor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="apeMat_doctor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tel_doctor" Type="Int64" />
+    <Property Name="cel_doctor" Type="Int64" />
+    <Property Name="ini_trata" Type="DateTime" Precision="3" />
+    <Property Name="fin_trata" Type="DateTime" Precision="3" />
+    <Property Name="toma_medi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="medicamento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="hospitalizado" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="motivo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="rech_apri" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="trat_encias" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ori_bucal" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ciru_encias" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="hemorragias" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="veces_cepillado" Type="Int32" Nullable="false" />
+    <Property Name="tipo_cepillo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="d11" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="d12" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="d13" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -159,134 +116,9 @@
     <Property Name="d46" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="d47" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="d48" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="paciente" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Parodonto__pacie__163A3110" FromRole="Parodontograma" ToRole="Pacientes" />
+    <Property Name="odontologo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="COALModel.FK__Pacientes__odont__746F28F1" FromRole="Pacientes" ToRole="Usuarios" />
   </EntityType>
-  <EntityType Name="Tejidos">
-    <Key>
-      <PropertyRef Name="idtejidos" />
-    </Key>
-    <Property Name="idtejidos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="duros" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
-    <Property Name="rx" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-    <Property Name="encia" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="inser_epi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="lengua" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="pulpa" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="velo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="carrillos" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="sob_mord" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="mordi_abier" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="desg_bru" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="anoclusion" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="paciente" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tejidos__pacient__06F7ED80" FromRole="Tejidos" ToRole="Pacientes" />
-  </EntityType>
-  <EntityType Name="Tratamiento">
-    <Key>
-      <PropertyRef Name="idtratamiento" />
-    </Key>
-    <Property Name="idtratamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="bajo_tratamiento" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="tipo_tratamiento" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-    <Property Name="nombre_doctor" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="apePat_doctor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="apeMat_doctor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="tel_doctor" Type="Int64" />
-    <Property Name="cel_doctor" Type="Int64" />
-    <Property Name="ini_trata" Type="DateTime" Precision="3" />
-    <Property Name="fin_trata" Type="DateTime" Precision="3" />
-    <Property Name="toma_medi" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="medicamento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="hospitalizado" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="motivo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="paciente" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Tratamien__pacie__108157BA" FromRole="Tratamiento" ToRole="Pacientes" />
-  </EntityType>
-  <Association Name="FK__Adicional__pacie__135DC465">
-    <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="COALModel.Adicional" Role="Adicional" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pacientes">
-        <PropertyRef Name="idpaciente" />
-      </Principal>
-      <Dependent Role="Adicional">
-        <PropertyRef Name="paciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Antecende__pacie__004AEFF1">
-    <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="COALModel.Antecendentes" Role="Antecendentes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pacientes">
-        <PropertyRef Name="idpaciente" />
-      </Principal>
-      <Dependent Role="Antecendentes">
-        <PropertyRef Name="paciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Habitos__pacient__041B80D5">
-    <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="COALModel.Habitos" Role="Habitos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pacientes">
-        <PropertyRef Name="idpaciente" />
-      </Principal>
-      <Dependent Role="Habitos">
-        <PropertyRef Name="paciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Parodonto__pacie__163A3110">
-    <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="COALModel.Parodontograma" Role="Parodontograma" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pacientes">
-        <PropertyRef Name="idpaciente" />
-      </Principal>
-      <Dependent Role="Parodontograma">
-        <PropertyRef Name="paciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Tejidos__pacient__06F7ED80">
-    <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="COALModel.Tejidos" Role="Tejidos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pacientes">
-        <PropertyRef Name="idpaciente" />
-      </Principal>
-      <Dependent Role="Tejidos">
-        <PropertyRef Name="paciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Tratamien__pacie__108157BA">
-    <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="COALModel.Tratamiento" Role="Tratamiento" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pacientes">
-        <PropertyRef Name="idpaciente" />
-      </Principal>
-      <Dependent Role="Tratamiento">
-        <PropertyRef Name="paciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="Usuarios">
     <Key>
       <PropertyRef Name="idusuario" />
@@ -301,9 +133,9 @@
     <Property Name="usuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="contraseña" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="tipo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Pacientes__odont__104C4D90" FromRole="Usuarios" ToRole="Pacientes" />
+    <NavigationProperty Name="Pacientes" Relationship="COALModel.FK__Pacientes__odont__746F28F1" FromRole="Usuarios" ToRole="Pacientes" />
   </EntityType>
-  <Association Name="FK__Pacientes__odont__104C4D90">
+  <Association Name="FK__Pacientes__odont__746F28F1">
     <End Type="COALModel.Usuarios" Role="Usuarios" Multiplicity="1" />
     <End Type="COALModel.Pacientes" Role="Pacientes" Multiplicity="*" />
     <ReferentialConstraint>

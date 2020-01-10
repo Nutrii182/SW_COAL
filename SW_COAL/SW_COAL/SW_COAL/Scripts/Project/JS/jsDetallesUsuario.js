@@ -1,11 +1,25 @@
 ﻿
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 $(document).ready(function () {
 
-    var url = $('#urlObUsuarios').val();
+    var url = $('#urlObUsuario').val();
+    var id = getParameterByName('id');
+
+    var idusu = JSON.stringify({
+        iID: id,
+        sUsuario: ""
+    });
 
     $.ajax({
-        type: "GET",
+        type: "Post",
         url: url,
+        data: idusu,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: ObtieneUsuarios,
@@ -15,29 +29,14 @@ $(document).ready(function () {
     });
 });
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 function ObtieneUsuarios(result) {
 
-    var id = getParameterByName('id');
-
-    for (c = 0; c < result.data.length; c++) {
-
-        if (id == result.data[c].iId) {
-
-            $('#NomUsu').html(result.data[c].sNombre);
-            $('#ApePat').html(result.data[c].sAp_Paterno);
-            $('#ApeMat').html(result.data[c].sAp_Materno);
-            $('#Tel').html(result.data[c].lTelefono);
-            $('#Cel').html(result.data[c].lCelular);
-            $('#Correo').html(result.data[c].sCorreo);
-            $('#Usuario').html(result.data[c].sUsuario);
-            $('#Tipo').html(result.data[c].sTipo);
-        }
-    }
+    $('#NomUsu').html(result.data.sNombre);
+    $('#ApePat').html(result.data.sAp_Paterno);
+    $('#ApeMat').html(result.data.sAp_Materno);
+    $('#Tel').html(result.data.lTelefono);
+    $('#Cel').html(result.data.lCelular);
+    $('#Correo').html(result.data.sCorreo);
+    $('#Usuario').html(result.data.sUsuario);
+    $('#Tipo').html(result.data.sTipo);
 }

@@ -32,19 +32,7 @@ public partial class COALEntities : DbContext
     }
 
 
-    public virtual DbSet<Adicional> Adicional { get; set; }
-
-    public virtual DbSet<Antecendentes> Antecendentes { get; set; }
-
-    public virtual DbSet<Habitos> Habitos { get; set; }
-
     public virtual DbSet<Pacientes> Pacientes { get; set; }
-
-    public virtual DbSet<Parodontograma> Parodontograma { get; set; }
-
-    public virtual DbSet<Tejidos> Tejidos { get; set; }
-
-    public virtual DbSet<Tratamiento> Tratamiento { get; set; }
 
     public virtual DbSet<Usuarios> Usuarios { get; set; }
 

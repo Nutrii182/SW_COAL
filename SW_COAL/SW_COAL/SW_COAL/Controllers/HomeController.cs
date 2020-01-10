@@ -21,56 +21,43 @@ namespace SWP_COAL.Controllers
             return Json(new { data = listaUsu }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+
+        public ActionResult ObtieneUsuario(UsuarioModel u)
+        {
+            CD_Usuario usu = new CD_Usuario();
+            UsuarioModel usuario = new UsuarioModel();
+            usuario = usu.MuestraUsuario(u);
+            return Json(new { data = usuario }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpGet]
+
         public ActionResult ObtienePacientes()
         {
             CD_Paciente paci = new CD_Paciente();
-            List<ConsultaModel> listaPaci = new List<ConsultaModel>();
-            listaPaci = paci.MostrarPacientes();
+            List<PacienteModel> listaPaci = new List<PacienteModel>();
+            listaPaci = paci.MuestraPacientes();
             return Json(new { data = listaPaci }, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult ObtieneConsulta(ConsultaModel co)
+        [HttpPost]
+        public ActionResult ObtienePaciente(PacienteModel pa)
         {
-            CD_Consulta consult = new CD_Consulta();
-            ConsultaModel consulta = new ConsultaModel();
-            consulta = consult.MuestraConsulta(co);
-            Response.ContentType = "application / json; charset = utf - 8";
-            return Json(new { data = consulta }, JsonRequestBehavior.AllowGet);
+            CD_Paciente paci = new CD_Paciente();
+            PacienteModel Paci = new PacienteModel();
+            Paci = paci.MuestraPaciente(pa);
+            return Json(new { data = Paci }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public ActionResult RecibePaciente(ConsultaModel nuevoPaciente)
+        public ActionResult RecibePaciente(PacienteModel nuevoPaciente)
         {
             var result = new JObject();
 
             CD_Paciente paciente = new CD_Paciente();
 
             if (paciente.NuevoPaciente(nuevoPaciente) != null)
-            {
-                result["Exito"] = true;
-            }
-            else
-            {
-                result["Advertencia"] = true;
-            }
-            return Content(result.ToString());
-        }
-
-        [HttpPost]
-        public ActionResult RecibeConsulta(ConsultaModel nuevaConsulta)
-        {
-            var result = new JObject();
-
-            CD_Antecedente antecedente = new CD_Antecedente();
-            CD_Habitos habitos = new CD_Habitos();
-            CD_InfoAdicional adicional = new CD_InfoAdicional();
-            CD_Tejidos tejidos = new CD_Tejidos();
-            CD_Tratamiento tratamiento = new CD_Tratamiento();
-
-            if (antecedente.NuevoAntecedente(nuevaConsulta) != null && habitos.NuevoHabito(nuevaConsulta) != null
-                && adicional.NuevaInfoAdi(nuevaConsulta) != null && tejidos.NuevoTejido(nuevaConsulta) != null
-                && tratamiento.NuevoTratamiento(nuevaConsulta) != null)
             {
                 result["Exito"] = true;
             }
@@ -119,7 +106,7 @@ namespace SWP_COAL.Controllers
         }
 
         [HttpPost]
-        public ActionResult EliminaPaciente(ConsultaModel paci)
+        public ActionResult EliminaPaciente(PacienteModel paci)
         {
             var resultado = new JObject();
 
@@ -155,7 +142,7 @@ namespace SWP_COAL.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditaPaciente(ConsultaModel pac)
+        public ActionResult EditaPaciente(PacienteModel pac)
         {
             var result = new JObject();
 
@@ -266,13 +253,5 @@ namespace SWP_COAL.Controllers
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
 
-        public ActionResult Consulta()
-        {
-            if ((UsuarioModel)Session["usuario"] != null)
-            {
-                return View();
-            }
-            return RedirectToRoute(new { controller = "Login", action = "Index" });
-        }
     }
 }

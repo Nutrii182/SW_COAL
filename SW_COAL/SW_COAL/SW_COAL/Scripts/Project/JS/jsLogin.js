@@ -1,26 +1,29 @@
-﻿$(document).ready(function () {
+﻿
+function TipoUsu(datosUsuario) {
 
-    var url = $('#urlUsuarios').val();
+    var url = $('#urlUsuario').val();
 
     $.ajax({
-        type: "GET",
+        type: "Post",
         url: url,
+        data: datosUsuario,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        success: prueba,
+        success: UsuarioTipo,
         error: function (data) {
             alert('error obteniendo');
         }
     });
-});
-
-function prueba(result) {
-
-    $(document).on('click', '.btnLogear', function () {
-        validador(result);
-    });
 }
 
+function UsuarioTipo(result) {
+
+    localStorage.setItem('tipo', result.data.sTipo);
+}
+
+$(document).on('click', '.btnLogear', function () {
+    validador();
+});
 
 
 $(document).ready(function () {
@@ -49,7 +52,7 @@ $(document).ready(function () {
     });
 });
 
-function validador(result) {
+function validador() {
     if ($('#inUsuario').val() === "" || $('#inContra').val() === "") {
         alert("favor de llenar los campos");
     } else {
@@ -58,17 +61,10 @@ function validador(result) {
             sContraseña: $('#inContra').val()
         });
 
-        for (c = 0; c < result.data.length; c++) {
-
-            if (result.data[c].sUsuario == $('#inUsuario').val()) {
-                localStorage.setItem('tipo', result.data[c].sTipo);
-                break;
-            }
-        }
-
         $('#gif').css("display", "block");
         localStorage.setItem('user', $('#inUsuario').val());
         $('.btnLogear').attr("disabled", true);
+        TipoUsu(datosUsuario);
         LlamadaIniciarSesion(datosUsuario);
     }
 }
@@ -92,16 +88,18 @@ function LlamadaIniciarSesion(datosUsuario) {
 function SuccessLlamadaIniciarSesion(data) {
 
     if (data.Exito) {
-        var url = $('#urlHome').val()
+        $('.btnLogear').attr("disabled", false);
+        var url = $('#urlHome').val();
         window.location.href = url;
     }
     else if (data.Advertencia) {
         alert("Usuario y/o Contraseña Incorrectos");
+        $('.btnLogear').attr("disabled", false);
         $('#gif').css("display", "none");
     }
     else {
         alert("Error");
         $('#gif').css("display", "none");
+        $('.btnLogear').attr("disabled", false);
     }
-    $('.btnLogear').attr("disabled", false);
 }

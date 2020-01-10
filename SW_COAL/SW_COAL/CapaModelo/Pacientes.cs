@@ -18,25 +18,6 @@ using System;
 public partial class Pacientes
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Pacientes()
-    {
-
-        this.Adicional = new HashSet<Adicional>();
-
-        this.Antecendentes = new HashSet<Antecendentes>();
-
-        this.Habitos = new HashSet<Habitos>();
-
-        this.Parodontograma = new HashSet<Parodontograma>();
-
-        this.Tejidos = new HashSet<Tejidos>();
-
-        this.Tratamiento = new HashSet<Tratamiento>();
-
-    }
-
-
     public int idpaciente { get; set; }
 
     public string nombre { get; set; }
@@ -79,33 +60,175 @@ public partial class Pacientes
 
     public string otro_antecedente { get; set; }
 
+    public string embarazo { get; set; }
+
+    public Nullable<int> meses_embarazo { get; set; }
+
+    public string anticonceptivos { get; set; }
+
+    public string tipo_anticoncep { get; set; }
+
+    public string fumador { get; set; }
+
+    public string consume_alcohol { get; set; }
+
+    public string drogas { get; set; }
+
+    public string alergia { get; set; }
+
+    public string tipo_alergia { get; set; }
+
+    public string higiene_bucal { get; set; }
+
+    public string bricomania { get; set; }
+
+    public string contrac_musc { get; set; }
+
+    public string habi_mordi { get; set; }
+
+    public string resp_bucal { get; set; }
+
+    public string chupa_labios { get; set; }
+
+    public string chupa_lengua { get; set; }
+
+    public string chupa_dedos { get; set; }
+
+    public Nullable<int> frecuencia { get; set; }
+
+    public string alimentacion { get; set; }
+
+    public string duros { get; set; }
+
+    public string rx { get; set; }
+
+    public string encia { get; set; }
+
+    public string inser_epi { get; set; }
+
+    public string lengua { get; set; }
+
+    public string pulpa { get; set; }
+
+    public string velo { get; set; }
+
+    public string carrillos { get; set; }
+
+    public string sob_mord { get; set; }
+
+    public string mordi_abier { get; set; }
+
+    public string desg_bru { get; set; }
+
+    public string anoclusion { get; set; }
+
+    public string bajo_tratamiento { get; set; }
+
+    public string tipo_tratamiento { get; set; }
+
+    public string nombre_doctor { get; set; }
+
+    public string apePat_doctor { get; set; }
+
+    public string apeMat_doctor { get; set; }
+
+    public Nullable<long> tel_doctor { get; set; }
+
+    public Nullable<long> cel_doctor { get; set; }
+
+    public Nullable<System.DateTime> ini_trata { get; set; }
+
+    public Nullable<System.DateTime> fin_trata { get; set; }
+
+    public string toma_medi { get; set; }
+
+    public string medicamento { get; set; }
+
+    public string hospitalizado { get; set; }
+
+    public string motivo { get; set; }
+
+    public string rech_apri { get; set; }
+
+    public string trat_encias { get; set; }
+
+    public string ori_bucal { get; set; }
+
+    public string ciru_encias { get; set; }
+
+    public string hemorragias { get; set; }
+
+    public int veces_cepillado { get; set; }
+
+    public string tipo_cepillo { get; set; }
+
+    public string d11 { get; set; }
+
+    public string d12 { get; set; }
+
+    public string d13 { get; set; }
+
+    public string d14 { get; set; }
+
+    public string d15 { get; set; }
+
+    public string d16 { get; set; }
+
+    public string d17 { get; set; }
+
+    public string d18 { get; set; }
+
+    public string d21 { get; set; }
+
+    public string d22 { get; set; }
+
+    public string d23 { get; set; }
+
+    public string d24 { get; set; }
+
+    public string d25 { get; set; }
+
+    public string d26 { get; set; }
+
+    public string d27 { get; set; }
+
+    public string d28 { get; set; }
+
+    public string d31 { get; set; }
+
+    public string d32 { get; set; }
+
+    public string d33 { get; set; }
+
+    public string d34 { get; set; }
+
+    public string d35 { get; set; }
+
+    public string d36 { get; set; }
+
+    public string d37 { get; set; }
+
+    public string d38 { get; set; }
+
+    public string d41 { get; set; }
+
+    public string d42 { get; set; }
+
+    public string d43 { get; set; }
+
+    public string d44 { get; set; }
+
+    public string d45 { get; set; }
+
+    public string d46 { get; set; }
+
+    public string d47 { get; set; }
+
+    public string d48 { get; set; }
+
     public int odontologo { get; set; }
 
 
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Adicional> Adicional { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Antecendentes> Antecendentes { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Habitos> Habitos { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Parodontograma> Parodontograma { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Tejidos> Tejidos { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Tratamiento> Tratamiento { get; set; }
 
     public virtual Usuarios Usuarios { get; set; }
 

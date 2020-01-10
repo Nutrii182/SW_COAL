@@ -275,7 +275,6 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
-    <Content Include="Scripts\Project\JS\jsAgregarConsulta.js" />
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
     <Content Include="Scripts\Project\JS\jsCanvas.js" />
@@ -318,7 +317,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Home\Consulta.cshtml" />
     <Content Include="Views\Home\Usuarios.cshtml" />
     <Content Include="Views\Shared\DataTable.cshtml" />
     <Content Include="Views\Home\Pacientes.cshtml" />

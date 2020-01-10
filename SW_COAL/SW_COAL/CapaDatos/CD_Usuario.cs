@@ -115,6 +115,36 @@ namespace CapaDatos
             }
         }
 
+        public UsuarioModel MuestraUsuario(UsuarioModel usu)
+        {
+            try
+            {
+                using (var context = new COALEntities())
+                {
+                    UsuarioModel usuario = new UsuarioModel();
+                    var u = context.Usuarios.Where(us => us.usuario == usu.sUsuario || us.idusuario == usu.iId).FirstOrDefault();
+
+                    if (u == null)
+                        return null;
+
+                    usuario.iId = u.idusuario;
+                    usuario.sNombre = u.nombre;
+                    usuario.sAp_Paterno = u.ap_paterno;
+                    usuario.sAp_Materno = u.ap_materno;
+                    usuario.lTelefono = u.telefono;
+                    usuario.lCelular = u.celular;
+                    usuario.sCorreo = u.correo;
+                    usuario.sContraseña = u.contraseña;
+                    usuario.sUsuario = u.usuario;
+                    usuario.sTipo = u.tipo;
+                    return usuario;
+                }
+            }catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
         public List<UsuarioModel> MostrarUsuarios()
         {
             try
@@ -145,7 +175,7 @@ namespace CapaDatos
         {
             try
             {
-                using(var context = new COALEntities())
+                using (var context = new COALEntities())
                 {
                     var eliUsu = context.Usuarios.Where(u => u.idusuario == usu.iId).Single();
 
@@ -158,7 +188,7 @@ namespace CapaDatos
                 }
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaModelo
 {
-    public class ConsultaModel
+    public class PacienteModel
     {
         //Paciente
         public int iIdPaciente { get; set; }
@@ -69,9 +69,9 @@ namespace CapaModelo
 
         public long? lCelDoct { get; set; }
 
-        public DateTime? dtIniciaTratamiento { get; set; }
+        public String sIniciaTratamiento { get; set; }
 
-        public DateTime? dtTerminaTratamiento { get; set; }
+        public String sTerminaTratamiento { get; set; }
 
         public String sTomaMedi { get; set; }
 

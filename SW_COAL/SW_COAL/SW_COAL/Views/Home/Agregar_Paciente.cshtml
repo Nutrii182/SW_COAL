@@ -175,13 +175,579 @@
             </div>
         </div>
     </div>
+    <h4>Tratamiento</h4>
+    <div class="row">
+        <div style="margin-left:35px">
+            <label>Esta bajo tratamiento</label>
+            <ul class="nav m-0">
+                <li style="margin-left:15px" class="form-inline">
+                    <input id="inTsi" name="tratamiento" type="radio" class="form-check" />
+                    <label>Sí</label>
+                </li>
+                <li style="margin-left:15px" class="form-inline">
+                    <input id="inTno" name="tratamiento" type="radio" class="form-check" />
+                    <label>No</label>
+                </li>
+            </ul>
+        </div>
+        <div style="margin-left:35%">
+            <label style="margin-left:60px">Tipo</label>
+            <ul class="nav m-0">
+                <li style="margin-left:15px" class="form-inline">
+                    <input id="inMedico" name="T_tratamiento" type="radio" class="form-check" />
+                    <label>Médico</label>
+                </li>
+                <li style="margin-left:15px" class="form-inline">
+                    <input id="inDental" name="T_tratamiento" type="radio" class="form-check" />
+                    <label>Dental</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin-top:15px" class="container col-lg-12">
+        <h5>Datos del Doctor</h5>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label>Nombre</label>
+                <div>
+                    <input id="inNombreD" type="text" placeholder="Nombre(s)" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Apellido Paterno</label>
+                <div>
+                    <input id="inPaternoD" type="text" placeholder="Apellido Paterno" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Apellido Materno</label>
+                <div>
+                    <input id="inMaternoD" type="text" placeholder="Apellido Materno" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Teléfono del Doctor</label>
+                <div>
+                    <input id="inTelD" type="tel" placeholder="Teléfono del Doctor" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Celular del Doctor</label>
+                <div>
+                    <input id="inCelD" type="tel" placeholder="Celular del Doctor" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <div>
+                    <input type="hidden" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Inicio de Tratamiento</label>
+                <div>
+                    <input id="inFechaIni" type="date" placeholder="Fecha: aaaa-mm-dd" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>Termina Tratamiento</label>
+                <div>
+                    <input id="inFechaFin" type="date" placeholder="Fecha: aaaa-mm-dd" class="form-control required" />
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <input type="hidden" />
+            </div>
+        </div>
+        <div class="row">
+            <h4>Medicamentos</h4>
+            <h4 style="margin-left:39%">Hospitalización</h4>
+        </div>
+        <div class="row justify-content-around">
+            <div>
+                <label>Toma algún medicamento</label>
+                <div>
+                    <ul class="nav m-0">
+                        <li style="margin-left:15px" class="form-inline">
+                            <input id="inMsi" name="medicamento" type="radio" class="form-check" />
+                            <label>Sí</label>
+                        </li>
+                        <li style="margin-left:15px" class="form-inline">
+                            <input id="inMno" name="medicamento" type="radio" class="form-check" />
+                            <label>No</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <label>Especifique</label>
+                <input id="inMesp" type="text" size="40" placeholder="Medicamento(s)" class="form-control" />
+            </div>
+            <div>
+                <label>Ha sido hospitalizado</label>
+                <ul class="nav m-0">
+                    <li style="margin-left:15px" class="form-inline">
+                        <input id="inHsi" name="hospitalizado" type="radio" class="form-check" />
+                        <label>Sí</label>
+                    </li>
+                    <li style="margin-left:15px" class="form-inline">
+                        <input id="inHno" name="hospitalizado" type="radio" class="form-check" />
+                        <label>No</label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <label>Motivo</label>
+                <input id="inMotivo" type="text" size="40" placeholder="Motivo(s)" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <h4>Examen de Tejidos</h4>
+    <div style="margin-left:-2%" class="container col-lg-12">
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <h5>Duros</h5>
+                <ul class="nav m-0">
+                    <li style="margin-left:15px" class="form-inline">
+                        <input id="inEsmalte" name="duros" type="radio" class="form-check" />
+                        <label>Esmalte</label>
+                    </li>
+                    <li style="margin-left:15px" class="form-inline">
+                        <input id="inDentina" name="duros" type="radio" class="form-check" />
+                        <label>Dentina</label>
+                    </li>
+                </ul>
+                <h5>Rx</h5>
+                <h6>Caries Interproximal Supernumerarios</h6>
+                <ul class="nav m-0">
+                    <li style="margin-left:15px" class="form-inline">
+                        <input id="inRaiz" type="radio" name="rx" class="form-check" />
+                        <label>Raíz</label>
+                    </li>
+                    <li style="margin-left:15px" class="form-inline">
+                        <input id="inHuesos" name="rx" type="radio" class="form-check" />
+                        <label>Huesos</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-group col-sm-4">
+                <h5>Blandos</h5>
+                <ul style="margin-left:-10%">
+                    <li>
+                        <div class="form-inline">
+                            <input id="inEncia" type="radio" class="form-check" />
+                            <label>Encia</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-inline">
+                            <input id="inInEpi" type="radio" class="form-check" />
+                            <label>Inserción Epitelial</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-inline">
+                            <input id="inLengua" type="radio" class="form-check" />
+                            <label>Lengua</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-inline">
+                            <input id="inPulpa" type="radio" class="form-check" />
+                            <label>Pulpa (Alteraciones)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-inline">
+                            <input id="inVelo" type="radio" class="form-check" />
+                            <label>Velo del Paladar</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-inline">
+                            <input id="inCarrillo" type="radio" class="form-check" />
+                            <label>Carrillos</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="margin-left:-5%" class="form-group col-sm-4">
+                <h5>Oclusión</h5>
+                <ul>
+                    <li style="margin-left:-13%">
+                        <h6>Sobre Mordida</h6>
+                        <ul>
+                            <li style="margin-left:-4%">
+                                <div class="form-inline">
+                                    <input id="inMorHor" name="mordida" type="radio" class="form-check" />
+                                    <label>Horizontal</label>
+                                </div>
+                            </li>
+                            <li style="margin-left:-4%">
+                                <div class="form-inline">
+                                    <input id="inMorVer" name="mordida" type="radio" class="form-check" />
+                                    <label>Vertical</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul style="margin-left:-10%">
+                    <li style="margin-top:10px">
+                        <div class="form-inline">
+                            <input id="inMordAbi" type="radio" class="form-check" />
+                            <label>Mordida Abierta</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-inline">
+                            <input id="inDesBru" type="radio" class="form-check" />
+                            <label>Desgaste Bruxismo</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-inline">
+                            <input id="inAnoc" type="radio" class="form-check" />
+                            <label>Anoclusión</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h4>Antecedentes Personales</h4>
+    <div class="row">
+        <div>
+            <ul>
+                <li>
+                    <label>Se encuentra embarazada</label>
+                    <div class="form-inline">
+                        <input id="inSiEmba" name="embarazo" type="radio" class="form-check" />
+                        <label>Sí</label>
+                        <input style="margin-left:3%" name="embarazo" id="inNoEmba" type="radio" class="form-check" />
+                        <label>No</label>
+                        <label style="margin-left:3%">Meses</label>
+                        <input id="inMeses" type="number" style="width:60px" min="1" max="9" class="form-control" />
+                    </div>
+                </li>
+                <li style="margin-top:5%">
+                    <label>Usa anticonceptivos</label>
+                    <div class="form-inline">
+                        <input id="inSiAnti" name="anticonceptivo" type="radio" class="form-check" />
+                        <label>Sí</label>
+                        <input style="margin-left:3%" name="anticonceptivo" id="inNoAnti" type="radio" class="form-check" />
+                        <label>No</label>
+                        <div class="form-inline">
+                            <label>Tipo</label>
+                            <input id="inAntiTipo" type="text" placeholder="Tipo(s)" class="form-control" />
+                        </div>
+                    </div>
+                </li>
+                <li style="margin-top:5%">
+                    <label>Fuma</label>
+                    <div class="form-inline">
+                        <input id="inSiFuma" name="fuma" type="radio" class="form-check" />
+                        <label>Sí</label>
+                        <input style="margin-left:3%" name="fuma" id="inNoFuma" type="radio" class="form-check" />
+                        <label>No</label>
+                    </div>
+                </li>
+                <li style="margin-top:5%">
+                    <label>Bebe Alcohol</label>
+                    <div class="form-inline">
+                        <input id="inSiBebe" name="bebe" type="radio" class="form-check" />
+                        <label>Sí</label>
+                        <input style="margin-left:3%" name="bebe" id="inNoBebe" type="radio" class="form-check" />
+                        <label>No</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div style="margin-top:4%">
+            <ul>
+                <li>
+                    <div>
+                        <label>Consume Drogas</label>
+                        <div class="form-inline">
+                            <input id="inSiDroga" name="drogas" type="radio" class="form-check" />
+                            <label>Sí</label>
+                            <input style="margin-left:5%" name="drogas" id="inNoDroga" type="radio" class="form-check" />
+                            <label>No</label>
+                        </div>
+                    </div>
+                </li>
+                <li style="margin-top:1%">
+                    <div>
+                        <label>Alergias</label>
+                        <div class="form-inline">
+                            <input id="inSiAlerg" name="alergia" type="radio" class="form-check" />
+                            <label>Sí</label>
+                            <input style="margin-left:5%" name="alergia" id="inNoAlerg" type="radio" class="form-check" />
+                            <label>No</label>
+                            <div class="form-inline">
+                                <label>Especifíque</label>
+                                <input id="inEspAlerg" type="text" placeholder="Especifíque" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style="margin-top:1%">
+                    <div>
+                        <label>Higiene Bucal</label>
+                        <div class="form-inline">
+                            <input id="inBuena" name="higiene" type="radio" class="form-check" />
+                            <label>Buena</label>
+                            <input style="margin-left:5%" name="higiene" id="inMala" type="radio" class="form-check" />
+                            <label>Mala</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h4>Hábitos</h4>
+    <h5 style="margin-left:1%">Hábitos Bucales</h5>
+    <div class="row">
+        <div class="form-group col-sm-4">
+            <ul>
+                <li>
+                    <div class="form-inline">
+                        <input id="inBrico" type="radio" class="form-check" />
+                        <label>Bricomania</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-inline">
+                        <input id="inConMus" type="radio" class="form-check" />
+                        <label>Contracciones Musculares</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-inline">
+                        <input id="inMordida" type="radio" class="form-check" />
+                        <label>Hábitos de Mordida</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-inline">
+                        <input id="inRespBucal" type="radio" class="form-check" />
+                        <label>Respiración Bucal</label>
+                    </div>
+                </li>
+                <li style="margin-left:-10%">
+                    <h5>Alimentación</h5>
+                    <ul class="nav m-0">
+                        <li>
+                            <div class="form-inline">
+                                <input id="inAliBuena" name="alimentacion" type="radio" class="form-check" />
+                                <label>Buena</label>
+                            </div>
+                        </li>
+                        <li style="margin-left:3%">
+                            <div class="form-inline">
+                                <input id="inAliMala" name="alimentacion" type="radio" class="form-check" />
+                                <label>Mala</label>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="form-group col-sm-4" style="margin-top:-3%">
+            <h5>Chupadores de:</h5>
+            <ul style="margin-left:-7%">
+                <li>
+                    <div class="form-inline">
+                        <input id="inCHLabio" type="radio" class="form-check" />
+                        <label>Labios</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-inline">
+                        <input id="inCHLengua" type="radio" class="form-check" />
+                        <label>Lengua</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-inline">
+                        <input id="inCHDedos" type="radio" class="form-check" />
+                        <label>Dedos</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <label>Frecuencia</label>
+                        <input style="width:40%" id="inFrecuencia" type="number" class="form-control" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h4>Información Adicional</h4>
+    <div class="container col-lg-12">
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <div>
+                    <label>Rechina o aprieta los dientes</label>
+                    <ul>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inSiRechApri" name="RechApri" type="radio" class="form-check" />
+                                <label>Sí</label>
+                                <input style="margin-left:2%" name="RechApri" id="inNoRechApri" type="radio" class="form-check" />
+                                <label>No</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <label>Se hizo tratamiento de encías</label>
+                    <ul>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inSiTratEncias" name="TEncia" type="radio" class="form-check" />
+                                <label>Sí</label>
+                                <input style="margin-left:2%" name="TEncia" id="inNoTratEncias" type="radio" class="form-check" />
+                                <label>No</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <label>Se ha hecho cirujía de encías</label>
+                    <ul>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inSiCiruEncias" name="Cirujia" type="radio" class="form-check" />
+                                <label>Sí</label>
+                                <input style="margin-left:2%" name="Cirujia" id="inNoCiruEncias" type="radio" class="form-check" />
+                                <label>No</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <label>Tuvo orientación de higiene bucal</label>
+                    <ul>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inSiHigiene" name="Higiene" type="radio" class="form-check" />
+                                <label>Sí</label>
+                                <input style="margin-left:2%" name="Higiene" id="inNoHigiene" type="radio" class="form-check" />
+                                <label>No</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <div>
+                    <label>Ha tenido hemorragias en la boca</label>
+                    <ul>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inSiHemorragia" name="Hemo" type="radio" class="form-check" />
+                                <label>Sí</label>
+                                <input style="margin-left:2%" name="Hemo" id="inNoHemorragia" type="radio" class="form-check" />
+                                <label>No</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-inline">
+                    <label>Cuantas veces cepilla sus dientes al dia</label>
+                    <ul>
+                        <li>
+                            <div>
+                                <input style="width:30%" placeholder="0" id="inVecCepi" type="number" class="form-control" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-inline">
+                    <label>Que tipo de cepillo dental usa</label>
+                    <ul>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inDuro" name="Cepillo" type="radio" class="form-check" />
+                                <label>Duro</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inMedio" name="Cepillo" type="radio" class="form-check" />
+                                <label>Medio</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inSuave" name="Cepillo" type="radio" class="form-check" />
+                                <label>Suave</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-inline">
+                                <input id="inUltraSuave" name="Cepillo" type="radio" class="form-check" />
+                                <label>UltraSuave</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h4>Paradontograma</h4>
+        <br />
+        <img src="~/Content/img/paradontograma.png" usemap="#workmap" width="956" height="314" />
+        <map id="workmap" name="workmap">
+            <area id="d11" shape="rect" alt="d11" href="#" coords="93,98,150,138" />
+            <area id="d12" shape="rect" alt="d12" href="#" coords="155,98,202,138" />
+            <area shape="rect" alt="d13" href="#" coords="210,98,270,138" />
+            <area shape="rect" alt="d14" href="#" coords="270,98,310,145" />
+            <area shape="rect" alt="d15" href="#" coords="310,98,360,138" />
+            <area shape="rect" alt="d16" href="#" coords="360,98,400,138" />
+            <area shape="rect" alt="d17" href="#" coords="400,98,440,145" />
+            <area shape="rect" alt="d18" href="#" coords="450,98,500,155" />
+            <area shape="rect" alt="d21" href="#" coords="500,98,550,155" />
+            <area shape="rect" alt="d22" href="#" coords="555,98,595,145" />
+            <area shape="rect" alt="d23" href="#" coords="600,98,640,145" />
+            <area shape="rect" alt="d24" href="#" coords="645,98,685,138" />
+            <area shape="rect" alt="d25" href="#" coords="690,98,730,145" />
+            <area shape="rect" alt="d26" href="#" coords="730,98,795,145" />
+            <area shape="rect" alt="d27" href="#" coords="795,98,850,138" />
+            <area shape="rect" alt="d28" href="#" coords="855,98,905,138" />
+            <area shape="rect" alt="d31" href="#" coords="93,180,145,220" />
+            <area shape="rect" alt="d32" href="#" coords="150,180,205,220" />
+            <area shape="rect" alt="d33" href="#" coords="205,180,270,220" />
+            <area shape="rect" alt="d34" href="#" coords="270,175,310,220" />
+            <area shape="rect" alt="d35" href="#" coords="310,175,355,220" />
+            <area shape="rect" alt="d36" href="#" coords="360,170,400,220" />
+            <area shape="rect" alt="d37" href="#" coords="400,175,445,220" />
+            <area shape="rect" alt="d38" href="#" coords="445,165,490,220" />
+            <area shape="rect" alt="d41" href="#" coords="500,165,545,220" />
+            <area shape="rect" alt="d42" href="#" coords="555,175,595,220" />
+            <area shape="rect" alt="d43" href="#" coords="600,175,640,220" />
+            <area shape="rect" alt="d44" href="#" coords="645,175,685,220" />
+            <area shape="rect" alt="d45" href="#" coords="690,175,730,220" />
+            <area shape="rect" alt="d46" href="#" coords="730,175,790,220" />
+            <area shape="rect" alt="d47" href="#" coords="795,175,850,220" />
+            <area shape="rect" alt="d48" href="#" coords="855,185,905,220" />
+        </map>
+    </div>
+    <div id="menu" style="display:none">
+        <ul>
+            <li class="liMenu" id="op1">opcion1</li>
+            <li class="liMenu" id="op2">opcion2</li>
+            <li class="liMenu" id="op3">opcion3</li>
+        </ul>
+    </div>
     <div>
         <button id="regPaci" class="btn btn-primary">Aceptar</button>
     </div>
     <sec>
         <input type="hidden" id="urlAgregaPaciente" value="@Url.Action("Agregar_Paciente","Home")" />
         <input type="hidden" id="urlPacientes" value="@Url.Action("RecibePaciente","Home")" />
-        <input type="hidden" id="urlUsuarios" value="@Url.Action("ObtieneUsuarios","Home")" />
+        <input type="hidden" id="urlUsuario" value="@Url.Action("ObtieneUsuario","Home")" />
     </sec>
 </body>
 </html>
