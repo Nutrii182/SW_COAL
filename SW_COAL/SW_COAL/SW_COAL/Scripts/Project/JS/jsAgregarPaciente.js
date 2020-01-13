@@ -29,7 +29,7 @@ function ObtieneUsuarios(res) {
 
 function validador(id) {
     var s, apre, apcard, apdig, nerv, coa, desm, vermar, diabe, tiro, fire, hiper;
-    var trat, Ttrat, Tmedi, Tmoti, Thospi, medi, moti;
+    var trat, Ttrat, Tmedi, Thospi;
     var duro, rx, encia, epite, lengua, pulpa, velo, carrillo, mordida, mordabi, desbru, anoclu;
     var emba, anti, fuma, bebe, droga, aler, higi;
     var brico, contmu, habmord, rebuc, chulab, chulen, chuded, ali;

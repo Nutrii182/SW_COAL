@@ -1,6 +1,7 @@
 ﻿using CapaModelo;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace CapaDatos
                         domicilio = paci.sDomicilio,
                         telefono = paci.lTelefono,
                         celular = paci.lCelular,
-                        fecha_nacimiento = DateTime.Parse(paci.dtFechaNacimiento),
+                        fecha_nacimiento = paci.dtFechaNacimiento,
                         sexo = paci.sSexo,
                         apa_resp = paci.sApa_Res,
                         apa_cardi = paci.sApa_Cardi,
@@ -50,8 +51,8 @@ namespace CapaDatos
                         apeMat_doctor = paci.sApeMaterDoc,
                         tel_doctor = paci.lTelDoct,
                         cel_doctor = paci.lCelDoct,
-                        ini_trata = DateTime.Parse(paci.sIniciaTratamiento),
-                        fin_trata = DateTime.Parse(paci.sTerminaTratamiento),
+                        ini_trata = paci.dtIniciaTratamiento,
+                        fin_trata = paci.dtTerminaTratamiento,
                         toma_medi = paci.sTomaMedi,
                         medicamento = paci.sMedicamento,
                         hospitalizado = paci.sHospi,
@@ -156,7 +157,7 @@ namespace CapaDatos
                         sDomicilio = p.domicilio,
                         lTelefono = p.telefono,
                         lCelular = p.celular,
-                        dtFechaNacimiento = p.fecha_nacimiento.ToString(),
+                        dtFechaNacimiento = p.fecha_nacimiento,
                         sSexo = p.sexo,
                         sApa_Res = p.apa_resp,
                         sApa_Cardi = p.apa_cardi,
@@ -220,8 +221,8 @@ namespace CapaDatos
                         sApeMaterDoc = p.apeMat_doctor,
                         lTelDoct = p.tel_doctor,
                         lCelDoct = p.cel_doctor,
-                        sIniciaTratamiento = p.ini_trata.ToString(),
-                        sTerminaTratamiento = p.fin_trata.ToString(),
+                        dtIniciaTratamiento = p.ini_trata,
+                        dtTerminaTratamiento = p.fin_trata,
                         sTomaMedi = p.toma_medi,
                         sMedicamento = p.medicamento,
                         sHospi = p.hospitalizado,
@@ -292,7 +293,7 @@ namespace CapaDatos
                     paciente.sDomicilio = p.domicilio;
                     paciente.lTelefono = p.telefono;
                     paciente.lCelular = p.celular;
-                    paciente.dtFechaNacimiento = p.fecha_nacimiento.ToString();
+                    paciente.dtFechaNacimiento = p.fecha_nacimiento;
                     paciente.sSexo = p.sexo;
                     paciente.sApa_Res = p.apa_resp;
                     paciente.sApa_Cardi = p.apa_cardi;
@@ -356,8 +357,8 @@ namespace CapaDatos
                     paciente.sApeMaterDoc = p.apeMat_doctor;
                     paciente.lTelDoct = p.tel_doctor;
                     paciente.lCelDoct = p.cel_doctor;
-                    paciente.sIniciaTratamiento =  p.ini_trata.ToString();
-                    paciente.sTerminaTratamiento = p.fin_trata.ToString();
+                    paciente.dtIniciaTratamiento =  p.ini_trata;
+                    paciente.dtTerminaTratamiento = p.fin_trata;
                     paciente.sTomaMedi = p.toma_medi;
                     paciente.sMedicamento = p.medicamento;
                     paciente.sHospi = p.hospitalizado;
@@ -443,7 +444,10 @@ namespace CapaDatos
                 p.domicilio = paci.sDomicilio;
                 p.telefono = paci.lTelefono;
                 p.celular = paci.lCelular;
-                p.fecha_nacimiento = DateTime.Parse(paci.dtFechaNacimiento);
+
+                string sfechanac = paci.dtFechaNacimiento.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
+                p.fecha_nacimiento = DateTime.Parse(sfechanac);
+
                 p.sexo = paci.sSexo;
                 p.apa_resp = paci.sApa_Res;
                 p.apa_cardi = paci.sApa_Cardi;
@@ -506,8 +510,8 @@ namespace CapaDatos
                 p.apeMat_doctor = paci.sApeMaterDoc;
                 p.tel_doctor = paci.lTelDoct;
                 p.cel_doctor = paci.lCelDoct;
-                p.ini_trata = DateTime.Parse(paci.sIniciaTratamiento);
-                p.fin_trata = DateTime.Parse(paci.sTerminaTratamiento);
+                p.ini_trata = paci.dtIniciaTratamiento;
+                p.fin_trata = paci.dtTerminaTratamiento;
                 p.toma_medi = paci.sTomaMedi;
                 p.medicamento = paci.sMedicamento;
                 p.hospitalizado = paci.sHospi;

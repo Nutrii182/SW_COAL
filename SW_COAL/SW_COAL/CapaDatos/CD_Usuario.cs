@@ -90,7 +90,7 @@ namespace CapaDatos
             {
                 using (var context = new COALEntities())
                 {
-                    var u = context.Usuarios.Where(us => us.idusuario == usu.iId).Single();
+                    var u = context.Usuarios.Where(us => us.idusuario == usu.iId).FirstOrDefault();
 
                     if (u == null)
                         return null;
@@ -177,7 +177,7 @@ namespace CapaDatos
             {
                 using (var context = new COALEntities())
                 {
-                    var eliUsu = context.Usuarios.Where(u => u.idusuario == usu.iId).Single();
+                    var eliUsu = context.Usuarios.Where(u => u.idusuario == usu.iId).FirstOrDefault();
 
                     if (eliUsu == null)
                         return null;

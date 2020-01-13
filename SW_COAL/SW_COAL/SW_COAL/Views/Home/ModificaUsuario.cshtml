@@ -79,6 +79,18 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label>Tipo de Usuario</label>
+                <div>
+                    <select id="tipoU" class="form-control">
+                        <option value="Seleccione una opción..." disabled="disabled">Seleccione una opción...</option>
+                        <option value="Usuario">Usuario</option>
+                        <option value="SuperUsuario">SuperUsuario</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-lg-start">
             <div class="form-group col-sm-2">
                 <div>
@@ -88,7 +100,7 @@
         </div>
     </div>
     <sec>
-        <input type="hidden" id="urlUsuarios" value="@Url.Action("ObtieneUsuarios","Home")" />
+        <input type="hidden" id="urlUsuario" value="@Url.Action("ObtieneUsuario","Home")" />
         <input type="hidden" id="urlModiUsu" value="@Url.Action("ModificaUsuario","Home")" />
         <input type="hidden" id="urlEdiUsu" value="@Url.Action("EditaUsuario","Home")" />
     </sec>

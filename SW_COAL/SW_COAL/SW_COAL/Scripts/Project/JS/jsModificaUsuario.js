@@ -1,16 +1,31 @@
 ﻿$(document).ready(function () {
 
-    var url = $('#urlUsuarios').val();
+    var url = $('#urlUsuario').val();
+    var id = getParameterByName('id');
+
+    var datUsu = JSON.stringify({
+        iId: id,
+        sUsuario: ""
+    });
 
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: url,
+        data: datUsu,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: ObtieneUsuarios,
         error: function (data) {
             alert('error obteniendo');
         }
+    });
+
+    $(document).on('change', '#tipoU', function () {
+        v = $('select[name="TipoUsua"] option:selected').text();
+    });
+
+    $(document).on('click', '#ModiUsu', function () {
+        validador(id,$('#tipoU').val())
     });
 });
 
@@ -23,30 +38,19 @@ function getParameterByName(name) {
 
 function ObtieneUsuarios(result) {
 
-    var id = getParameterByName('id');
-
-    for (c = 0; c < result.data.length; c++) {
-
-        if (id == result.data[c].iId) {
-
-            $('#inNombre').val(result.data[c].sNombre);
-            $('#inPaterno').val(result.data[c].sAp_Paterno);
-            $('#inMaterno').val(result.data[c].sAp_Materno);
-            $('#inTelefono').val(result.data[c].lTelefono);
-            $('#inCelular').val(result.data[c].lCelular);
-            $('#inCorreo').val(result.data[c].sCorreo);
-            $('#inUsuario').val(result.data[c].sUsuario);
-            $('#inContraseña').val(result.data[c].sContraseña);
-            $('#inVeriContraseña').val(result.data[c].sContraseña);
-            break;
-        }
-    }
-    $(document).on('click','#ModiUsu', function () {
-        validador(id);
-    });
+    $('#inNombre').val(result.data.sNombre);
+    $('#inPaterno').val(result.data.sAp_Paterno);
+    $('#inMaterno').val(result.data.sAp_Materno);
+    $('#inTelefono').val(result.data.lTelefono);
+    $('#inCelular').val(result.data.lCelular);
+    $('#inCorreo').val(result.data.sCorreo);
+    $('#inUsuario').val(result.data.sUsuario);
+    $('#inContraseña').val(result.data.sContraseña);
+    $('#inVeriContraseña').val(result.data.sContraseña);
+    $('#tipoU').val(result.data.sTipo);
 }
 
-function validador(id) {
+function validador(id, tipo) {
 
     if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" ||
         $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inUsuario').val() === "" ||
@@ -67,7 +71,8 @@ function validador(id) {
                 lCelular: $('#inCelular').val(),
                 sCorreo: $('#inCorreo').val(),
                 sUsuario: $('#inUsuario').val(),
-                sContraseña: $('#inContraseña').val()
+                sContraseña: $('#inContraseña').val(),
+                sTipo: tipo
             });
             $('#ModiUsu').attr('disabled', true);
             LlamadaModi(datosUsuario);

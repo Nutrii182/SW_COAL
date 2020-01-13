@@ -22,7 +22,7 @@ namespace CapaModelo
 
         public long? lCelular { get; set; }
 
-        public String dtFechaNacimiento { get; set; }
+        public DateTime dtFechaNacimiento { get; set; } 
 
         public String sSexo { get; set; }
 
@@ -50,10 +50,6 @@ namespace CapaModelo
 
         public String sOtroAntecedente { get; set; }
 
-        public int iOdontologo { get; set; }
-
-        public String sOdontologo { get; set; }
-
         //tratamiento
         public String sBajoTratamiento { get; set; }
 
@@ -69,9 +65,9 @@ namespace CapaModelo
 
         public long? lCelDoct { get; set; }
 
-        public String sIniciaTratamiento { get; set; }
+        public DateTime? dtIniciaTratamiento { get; set; }
 
-        public String sTerminaTratamiento { get; set; }
+        public DateTime? dtTerminaTratamiento { get; set; }
 
         public String sTomaMedi { get; set; }
 
@@ -229,6 +225,6 @@ namespace CapaModelo
 
         public String sD48 { get; set; }
 
-        public int iPaciente { get; set; }
+        public int iOdontologo { get; set; }
     }
 }

@@ -14,6 +14,7 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="~/Scripts/Project/JS/jsPrueba.js"></script>
     <script src="~/Scripts/Project/JS/jsAgregarPaciente.js"></script>
 </head>
 <body>
@@ -698,10 +699,10 @@
     <div>
         <h4>Paradontograma</h4>
         <br />
-        <img src="~/Content/img/paradontograma.png" usemap="#workmap" width="956" height="314" />
-        <map id="workmap" name="workmap">
-            <area id="d11" shape="rect" alt="d11" href="#" coords="93,98,150,138" />
-            <area id="d12" shape="rect" alt="d12" href="#" coords="155,98,202,138" />
+        <img src="~/Content/img/paradontograma_superior.png" usemap="#workmap1" width="956" height="161" />
+        <map id="workmap1" name="workmap1">
+            <area id="d11" alt="d11" href="#" shape="rect" coords="93,98,150,138" />
+            <area shape="rect" alt="d12" href="#" coords="155,98,202,138" />
             <area shape="rect" alt="d13" href="#" coords="210,98,270,138" />
             <area shape="rect" alt="d14" href="#" coords="270,98,310,145" />
             <area shape="rect" alt="d15" href="#" coords="310,98,360,138" />
@@ -716,30 +717,76 @@
             <area shape="rect" alt="d26" href="#" coords="730,98,795,145" />
             <area shape="rect" alt="d27" href="#" coords="795,98,850,138" />
             <area shape="rect" alt="d28" href="#" coords="855,98,905,138" />
-            <area shape="rect" alt="d31" href="#" coords="93,180,145,220" />
-            <area shape="rect" alt="d32" href="#" coords="150,180,205,220" />
-            <area shape="rect" alt="d33" href="#" coords="205,180,270,220" />
-            <area shape="rect" alt="d34" href="#" coords="270,175,310,220" />
-            <area shape="rect" alt="d35" href="#" coords="310,175,355,220" />
-            <area shape="rect" alt="d36" href="#" coords="360,170,400,220" />
-            <area shape="rect" alt="d37" href="#" coords="400,175,445,220" />
-            <area shape="rect" alt="d38" href="#" coords="445,165,490,220" />
-            <area shape="rect" alt="d41" href="#" coords="500,165,545,220" />
-            <area shape="rect" alt="d42" href="#" coords="555,175,595,220" />
-            <area shape="rect" alt="d43" href="#" coords="600,175,640,220" />
-            <area shape="rect" alt="d44" href="#" coords="645,175,685,220" />
-            <area shape="rect" alt="d45" href="#" coords="690,175,730,220" />
-            <area shape="rect" alt="d46" href="#" coords="730,175,790,220" />
-            <area shape="rect" alt="d47" href="#" coords="795,175,850,220" />
-            <area shape="rect" alt="d48" href="#" coords="855,185,905,220" />
         </map>
-    </div>
-    <div id="menu" style="display:none">
-        <ul>
-            <li class="liMenu" id="op1">opcion1</li>
-            <li class="liMenu" id="op2">opcion2</li>
-            <li class="liMenu" id="op3">opcion3</li>
-        </ul>
+        <div id="ParaSuper" style="display:none">
+            <br />
+            <ul>
+                <li>
+                    <input type="radio"/>
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input type="radio"/>
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input type="radio"/>
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input type="radio"/>
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input type="radio"/>
+                    <label>Diente para Extracción</label>
+                </li>
+            </ul>
+        </div>
+        <img src="~/Content/img/paradontograma_inferior.png" usemap="#workmap2" width="956" height="153" />
+        <map id="#workmap2" name="workmap2">
+            <area shape="rect" alt="d31" href="#" coords="93,20,145,60" />
+            <area shape="rect" alt="d32" href="#" coords="150,20,205,60" />
+            <area shape="rect" alt="d33" href="#" coords="205,20,270,60" />
+            <area shape="rect" alt="d34" href="#" coords="270,15,310,60" />
+            <area shape="rect" alt="d35" href="#" coords="310,15,355,60" />
+            <area shape="rect" alt="d36" href="#" coords="360,15,400,60" />
+            <area shape="rect" alt="d37" href="#" coords="400,15,445,60" />
+            <area shape="rect" alt="d38" href="#" coords="445,10,490,60" />
+            <area shape="rect" alt="d41" href="#" coords="500,10,545,60" />
+            <area shape="rect" alt="d42" href="#" coords="555,15,595,60" />
+            <area shape="rect" alt="d43" href="#" coords="600,15,640,60" />
+            <area shape="rect" alt="d44" href="#" coords="645,15,685,60" />
+            <area shape="rect" alt="d45" href="#" coords="690,15,730,60" />
+            <area shape="rect" alt="d46" href="#" coords="730,20,790,60" />
+            <area shape="rect" alt="d47" href="#" coords="795,20,850,60" />
+            <area shape="rect" alt="d48" href="#" coords="855,20,905,60" />
+        </map>
+        <div id="ParaInfe" style="display:none">
+            <br />
+            <ul>
+                <li>
+                    <input type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+            </ul>
+        </div>
     </div>
     <div>
         <button id="regPaci" class="btn btn-primary">Aceptar</button>
