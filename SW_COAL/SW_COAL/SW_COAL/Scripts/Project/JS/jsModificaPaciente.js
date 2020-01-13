@@ -201,7 +201,7 @@ function ObtienePacientes(result) {
         $('#inNoDroga').attr('checked', true);
 
     if (result.data.sAlergia == 'Si')
-        $('#insiAlerg').attr('checked', true);
+        $('#inSiAlerg').attr('checked', true);
     else
         $('#inNoAlerg').attr('checked', true);
 
@@ -769,7 +769,6 @@ function validador(id) {
             sTipoCepillo: cepi,
         });
         $('#EditaPaci').attr("disabled", true);
-        //console.log(datosPaciente);
         LlamadoPaciente(datosPaciente);
     }
 }

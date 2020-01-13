@@ -431,126 +431,137 @@ namespace CapaDatos
 
         public PacienteModel EditaPaciente(PacienteModel paci)
         {
-            using(var context = new COALEntities())
+            try
             {
-                var p = context.Pacientes.Where(pac => pac.idpaciente == paci.iIdPaciente).FirstOrDefault();
 
-                if (p == null)
-                    return null;
+                using (var context = new COALEntities())
+                {
+                    var p = context.Pacientes.Where(pac => pac.idpaciente == paci.iIdPaciente).FirstOrDefault();
 
-                p.nombre = paci.sNombre;
-                p.apellido_paterno = paci.sApePaterno;
-                p.apellido_materno = paci.sApeMaterno;
-                p.domicilio = paci.sDomicilio;
-                p.telefono = paci.lTelefono;
-                p.celular = paci.lCelular;
+                    if (p == null)
+                        return null;
 
-                string sfechanac = paci.dtFechaNacimiento.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
-                p.fecha_nacimiento = DateTime.Parse(sfechanac);
+                    p.nombre = paci.sNombre;
+                    p.apellido_paterno = paci.sApePaterno;
+                    p.apellido_materno = paci.sApeMaterno;
+                    p.domicilio = paci.sDomicilio;
+                    p.telefono = paci.lTelefono;
+                    p.celular = paci.lCelular;
 
-                p.sexo = paci.sSexo;
-                p.apa_resp = paci.sApa_Res;
-                p.apa_cardi = paci.sApa_Cardi;
-                p.apa_diges = paci.sApa_Diges;
-                p.sis_nerv = paci.sSis_Nerv;
-                p.prob_goagu = paci.sProp_Guagu;
-                p.desmayos = paci.sDesmayos;
-                p.verti_mareo = paci.sVerti_Mareo;
-                p.diabetes = paci.sDiabetes;
-                p.tiroides = paci.sTiroides;
-                p.fie_reu = paci.sFie_Reu;
-                p.hipertension = paci.sHipertension;
-                p.otro_antecedente = paci.sOtroAntecedente;
-                p.embarazo = paci.sEmbarazo;
-                p.meses_embarazo = paci.iMesesEmbarazo;
-                p.anticonceptivos = paci.sAnticonceptivos;
-                p.tipo_anticoncep = paci.sTipoAnticoncep;
-                p.fumador = paci.sFuma;
-                p.consume_alcohol = paci.sBebe;
-                p.drogas = paci.sDrogas;
-                p.alergia = paci.sAlergia;
-                p.alergia = paci.sTipoAlergia;
-                p.higiene_bucal = paci.sHigieneBucal;
-                //habitos
-                p.bricomania = paci.sBricomania;
-                p.contrac_musc = paci.sContrac_Musc;
-                p.habi_mordi = paci.sHabi_Mordi;
-                p.resp_bucal = paci.sResp_Bucal;
-                p.chupa_labios = paci.sChupa_Labios;
-                p.chupa_lengua = paci.sChupa_Lengua;
-                p.chupa_dedos = paci.sChupa_Dedos;
-                p.frecuencia = paci.iFrecuencia;
-                p.alimentacion = paci.sAlimentacion;
-                //adicional
-                p.rech_apri = paci.sRechiApri;
-                p.trat_encias = paci.sTrataEncias;
-                p.ori_bucal = paci.sOriHigBucal;
-                p.ciru_encias = paci.sCirugiaEncias;
-                p.hemorragias = paci.sHemorragiaBucal;
-                p.veces_cepillado = paci.iCepillado;
-                p.tipo_cepillo = paci.sTipoCepillo;
-                //Tejidos
-                p.duros = paci.sDuros;
-                p.rx = paci.sRx;
-                p.encia = paci.sEncia;
-                p.inser_epi = paci.sInsert_Epi;
-                p.lengua = paci.sLengua;
-                p.pulpa = paci.sPulpa;
-                p.pulpa = paci.sVelo;
-                p.carrillos = paci.sCarrillos;
-                p.sob_mord = paci.sSob_Mord;
-                p.mordi_abier = paci.sMordi_Abier;
-                p.desg_bru = paci.sDesg_Bru;
-                p.anoclusion = paci.sAnoclusion;
-                //Tratamiento
-                p.bajo_tratamiento = paci.sBajoTratamiento;
-                p.tipo_tratamiento = paci.sTipoTratamiento;
-                p.nombre_doctor = paci.sNombreDoctor;
-                p.apePat_doctor = paci.sApePaterDoc;
-                p.apeMat_doctor = paci.sApeMaterDoc;
-                p.tel_doctor = paci.lTelDoct;
-                p.cel_doctor = paci.lCelDoct;
-                p.ini_trata = paci.dtIniciaTratamiento;
-                p.fin_trata = paci.dtTerminaTratamiento;
-                p.toma_medi = paci.sTomaMedi;
-                p.medicamento = paci.sMedicamento;
-                p.hospitalizado = paci.sHospi;
-                p.motivo = paci.sMotivo;
-                //paradontograma
-                //p.d11 = paci.sD11;
-                //p.d21 = paci.sD21;
-                //p.d31 = paci.sD31;
-                //p.d41 = paci.sD41;
-                //p.d12 = paci.sD12;
-                //p.d22 = paci.sD22;
-                //p.d32 = paci.sD32;
-                //p.d42 = paci.sD42;
-                //p.d13 = paci.sD13;
-                //p.d23 = paci.sD23;
-                //p.d33 = paci.sD33;
-                //p.d43 = paci.sD43;
-                //p.d14 = paci.sD14;
-                //p.d24 = paci.sD24;
-                //p.d34 = paci.sD34;
-                //p.d44 = paci.sD44;
-                //p.d15 = paci.sD15;
-                //p.d25 = paci.sD25;
-                //p.d35 = paci.sD35;
-                //p.d45 = paci.sD45;
-                //p.d16 = paci.sD16;
-                //p.d26 = paci.sD26;
-                //p.d36 = paci.sD36;
-                //p.d46 = paci.sD46;
-                //p.d17 = paci.sD17;
-                //p.d27 = paci.sD27;
-                //p.d37 = paci.sD37;
-                //p.d47 = paci.sD47;
-                //p.d18 = paci.sD18;
-                //p.d28 = paci.sD28;
-                //p.d38 = paci.sD38;
-                //p.d48 = paci.sD48;
-                context.SaveChanges();
-                return paci;
+                    //string sfechanac = paci.dtFechaNacimiento.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
+                    //p.fecha_nacimiento = DateTime.Parse(sfechanac);
+
+                    p.fecha_nacimiento = paci.dtFechaNacimiento;
+
+                    p.sexo = paci.sSexo;
+                    p.apa_resp = paci.sApa_Res;
+                    p.apa_cardi = paci.sApa_Cardi;
+                    p.apa_diges = paci.sApa_Diges;
+                    p.sis_nerv = paci.sSis_Nerv;
+                    p.prob_goagu = paci.sProp_Guagu;
+                    p.desmayos = paci.sDesmayos;
+                    p.verti_mareo = paci.sVerti_Mareo;
+                    p.diabetes = paci.sDiabetes;
+                    p.tiroides = paci.sTiroides;
+                    p.fie_reu = paci.sFie_Reu;
+                    p.hipertension = paci.sHipertension;
+                    p.otro_antecedente = paci.sOtroAntecedente;
+                    p.embarazo = paci.sEmbarazo;
+                    p.meses_embarazo = paci.iMesesEmbarazo;
+                    p.anticonceptivos = paci.sAnticonceptivos;
+                    p.tipo_anticoncep = paci.sTipoAnticoncep;
+                    p.fumador = paci.sFuma;
+                    p.consume_alcohol = paci.sBebe;
+                    p.drogas = paci.sDrogas;
+                    p.alergia = paci.sAlergia;
+                    p.tipo_alergia = paci.sTipoAlergia;
+                    p.higiene_bucal = paci.sHigieneBucal;
+                    //habitos
+                    p.bricomania = paci.sBricomania;
+                    p.contrac_musc = paci.sContrac_Musc;
+                    p.habi_mordi = paci.sHabi_Mordi;
+                    p.resp_bucal = paci.sResp_Bucal;
+                    p.chupa_labios = paci.sChupa_Labios;
+                    p.chupa_lengua = paci.sChupa_Lengua;
+                    p.chupa_dedos = paci.sChupa_Dedos;
+                    p.frecuencia = paci.iFrecuencia;
+                    p.alimentacion = paci.sAlimentacion;
+                    //adicional
+                    p.rech_apri = paci.sRechiApri;
+                    p.trat_encias = paci.sTrataEncias;
+                    p.ori_bucal = paci.sOriHigBucal;
+                    p.ciru_encias = paci.sCirugiaEncias;
+                    p.hemorragias = paci.sHemorragiaBucal;
+                    p.veces_cepillado = paci.iCepillado;
+                    p.tipo_cepillo = paci.sTipoCepillo;
+                    //Tejidos
+                    p.duros = paci.sDuros;
+                    p.rx = paci.sRx;
+                    p.encia = paci.sEncia;
+                    p.inser_epi = paci.sInsert_Epi;
+                    p.lengua = paci.sLengua;
+                    p.pulpa = paci.sPulpa;
+                    p.pulpa = paci.sVelo;
+                    p.carrillos = paci.sCarrillos;
+                    p.sob_mord = paci.sSob_Mord;
+                    p.mordi_abier = paci.sMordi_Abier;
+                    p.desg_bru = paci.sDesg_Bru;
+                    p.anoclusion = paci.sAnoclusion;
+                    //Tratamiento
+                    p.bajo_tratamiento = paci.sBajoTratamiento;
+                    p.tipo_tratamiento = paci.sTipoTratamiento;
+                    p.nombre_doctor = paci.sNombreDoctor;
+                    p.apePat_doctor = paci.sApePaterDoc;
+                    p.apeMat_doctor = paci.sApeMaterDoc;
+                    p.tel_doctor = paci.lTelDoct;
+                    p.cel_doctor = paci.lCelDoct;
+                    p.ini_trata = paci.dtIniciaTratamiento;
+                    p.fin_trata = paci.dtTerminaTratamiento;
+                    p.toma_medi = paci.sTomaMedi;
+                    p.medicamento = paci.sMedicamento;
+                    p.hospitalizado = paci.sHospi;
+                    p.motivo = paci.sMotivo;
+                    //paradontograma
+                    //p.d11 = paci.sD11;
+                    //p.d21 = paci.sD21;
+                    //p.d31 = paci.sD31;
+                    //p.d41 = paci.sD41;
+                    //p.d12 = paci.sD12;
+                    //p.d22 = paci.sD22;
+                    //p.d32 = paci.sD32;
+                    //p.d42 = paci.sD42;
+                    //p.d13 = paci.sD13;
+                    //p.d23 = paci.sD23;
+                    //p.d33 = paci.sD33;
+                    //p.d43 = paci.sD43;
+                    //p.d14 = paci.sD14;
+                    //p.d24 = paci.sD24;
+                    //p.d34 = paci.sD34;
+                    //p.d44 = paci.sD44;
+                    //p.d15 = paci.sD15;
+                    //p.d25 = paci.sD25;
+                    //p.d35 = paci.sD35;
+                    //p.d45 = paci.sD45;
+                    //p.d16 = paci.sD16;
+                    //p.d26 = paci.sD26;
+                    //p.d36 = paci.sD36;
+                    //p.d46 = paci.sD46;
+                    //p.d17 = paci.sD17;
+                    //p.d27 = paci.sD27;
+                    //p.d37 = paci.sD37;
+                    //p.d47 = paci.sD47;
+                    //p.d18 = paci.sD18;
+                    //p.d28 = paci.sD28;
+                    //p.d38 = paci.sD38;
+                    //p.d48 = paci.sD48;
+                    context.SaveChanges();
+                    return paci;
+                }
+
+            }
+            catch(Exception e)
+            {
+                throw e;
             }
         }
     }
