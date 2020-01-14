@@ -3378,8 +3378,10 @@ function validador(id) {
     }
 
     if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" || $('#inDomicilio').val() === "" ||
-        $('#inTelefono').val() === "" || $('#inCelular').val() === "" ||
-        $('#inFechaNac').val() === "") {
+        $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inFechaNac').val() === "" || s == null || trat == null ||
+        Tmedi == null || Thospi == null || duro == null || rx == null || mordida == null || emba == null || anti == null ||
+        fuma == null || bebe == null || droga == null || aler == null || higi == null || ali == null || rechi == null || Tencia == null
+        || Cencia == null || OHbucal == null || hemo == null || $('#inVecCepi').val() === "" || cepi == null) {
         alert("Favor de llenar los campos");
     }
     else {
