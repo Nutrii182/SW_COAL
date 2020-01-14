@@ -6,7 +6,6 @@
 <!doctype html>
 <html>
 <head>
-    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
     <link href="~/Content/css/Paciente.css" rel="stylesheet" />
 
     <script src="~/Scripts/jquery-3.3.1.js"></script>
@@ -14,7 +13,6 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
-    <script src="~/Scripts/Project/JS/jsPrueba.js"></script>
     <script src="~/Scripts/Project/JS/jsAgregarPaciente.js"></script>
 </head>
 <body>
@@ -664,8 +662,8 @@
                         </li>
                     </ul>
                 </div>
+                <label>Que tipo de cepillo dental usa</label>
                 <div class="form-inline">
-                    <label>Que tipo de cepillo dental usa</label>
                     <ul>
                         <li>
                             <div class="form-inline">
@@ -701,100 +699,978 @@
         <br />
         <img src="~/Content/img/paradontograma_superior.png" usemap="#workmap1" width="956" height="161" />
         <map id="workmap1" name="workmap1">
-            <area id="d11" alt="d11" href="#" shape="rect" coords="93,98,150,138" />
-            <area shape="rect" alt="d12" href="#" coords="155,98,202,138" />
-            <area shape="rect" alt="d13" href="#" coords="210,98,270,138" />
-            <area shape="rect" alt="d14" href="#" coords="270,98,310,145" />
-            <area shape="rect" alt="d15" href="#" coords="310,98,360,138" />
-            <area shape="rect" alt="d16" href="#" coords="360,98,400,138" />
-            <area shape="rect" alt="d17" href="#" coords="400,98,440,145" />
-            <area shape="rect" alt="d18" href="#" coords="450,98,500,155" />
-            <area shape="rect" alt="d21" href="#" coords="500,98,550,155" />
-            <area shape="rect" alt="d22" href="#" coords="555,98,595,145" />
-            <area shape="rect" alt="d23" href="#" coords="600,98,640,145" />
-            <area shape="rect" alt="d24" href="#" coords="645,98,685,138" />
-            <area shape="rect" alt="d25" href="#" coords="690,98,730,145" />
-            <area shape="rect" alt="d26" href="#" coords="730,98,795,145" />
-            <area shape="rect" alt="d27" href="#" coords="795,98,850,138" />
-            <area shape="rect" alt="d28" href="#" coords="855,98,905,138" />
+            <area shape="rect" coords="93,98,150,138" onclick="D11()" />
+            <area shape="rect" coords="155,98,202,138" onclick="D12()" />
+            <area shape="rect" coords="210,98,270,138" onclick="D13()" />
+            <area shape="rect" coords="270,98,310,145" onclick="D14()" />
+            <area shape="rect" coords="310,98,360,138" onclick="D15()" />
+            <area shape="rect" coords="360,98,400,138" onclick="D16()" />
+            <area shape="rect" coords="400,98,440,145" onclick="D17()" />
+            <area shape="rect" coords="450,98,500,155" onclick="D18()" />
+            <area shape="rect" coords="500,98,550,155" onclick="D21()" />
+            <area shape="rect" coords="555,98,595,145" onclick="D22()" />
+            <area shape="rect" coords="600,98,640,145" onclick="D23()" />
+            <area shape="rect" coords="645,98,685,138" onclick="D24()" />
+            <area shape="rect" coords="690,98,730,145" onclick="D25()" />
+            <area shape="rect" coords="730,98,795,145" onclick="D26()" />
+            <area shape="rect" coords="795,98,850,138" onclick="D27()" />
+            <area shape="rect" coords="855,98,905,138" onclick="D28()" />
         </map>
-        <div id="ParaSuper" style="display:none">
-            <br />
+        <div id="ParaSuper11" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle11"></h5>
             <ul>
                 <li>
-                    <input type="radio"/>
+                    <input id="inCaries11" name="ParaSup11" type="radio" />
                     <label>Caries</label>
                 </li>
                 <li>
-                    <input type="radio"/>
+                    <input id="inAmalgama11" name="ParaSup11" type="radio" />
                     <label>Amalgama</label>
                 </li>
                 <li>
-                    <input type="radio"/>
+                    <input id="inAusente11" name="ParaSup11" type="radio" />
                     <label>Diente Ausente</label>
                 </li>
                 <li>
-                    <input type="radio"/>
+                    <input id="inFija11" name="ParaSup11" type="radio" />
                     <label>Protesis Fija</label>
                 </li>
                 <li>
-                    <input type="radio"/>
+                    <input id="inExtraccion11" name="ParaSup11" type="radio" />
                     <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon11">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper12" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle12"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries12" name="ParaSup12" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama12" name="ParaSup12" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente12" name="ParaSup12" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija12" name="ParaSup12" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion12" name="ParaSup12" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon12">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper13" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle13"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries13" name="ParaSup13" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama13" name="ParaSup13" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente13" name="ParaSup13" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija13" name="ParaSup13" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion13" name="ParaSup13" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon13">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper14" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle14"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries14" name="ParaSub14" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama14" name="ParaSub14" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente14" name="ParaSub14" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija14" name="ParaSub14" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion14" name="ParaSub14" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon14">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper15" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle15"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries15" name="ParaSup15" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama15" name="ParaSup15" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente15" name="ParaSup15" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija15" name="ParaSup15" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion15" name="ParaSup15" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon15">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper16" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle16"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries16" name="ParaSup16" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama16" name="ParaSup16" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente16" name="ParaSup16" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija16" name="ParaSup16" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion16" name="ParaSup16" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon16">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper17" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle17"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries17" name="ParaSup17" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama17" name="ParaSup17" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente17" name="ParaSup17" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija17" name="ParaSup17" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion17" name="ParaSup17" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon17">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper18" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle18"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries18" name="ParaSup18" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama18" name="ParaSup18" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente18" name="ParaSup18" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija18" name="ParaSup18" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion18" name="ParaSup18" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon18">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper21" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle21"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries21" name="ParaSup21" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama21" name="ParaSup21" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente21" name="ParaSup21" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija21" name="ParaSup21" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion21" name="ParaSup21" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon21">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper22" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle22"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries22" name="ParaSup22" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama22" name="ParaSup22" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente22" name="ParaSup22" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija22" name="ParaSup22" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion22" name="ParaSup22" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon22">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper23" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle23"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries23" name="ParaSup23" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama23" name="ParaSup23" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente23" name="ParaSup23" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija23" name="ParaSup23" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion23" name="ParaSup23" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon23">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper24" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle24"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries24" name="ParaSup24" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama24" name="ParaSup24" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente24" name="ParaSup24" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija24" name="ParaSup24" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion24" name="ParaSup24" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon24">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper25" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle25"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries25" name="ParaSup25" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama25" name="ParaSup25" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente25" name="ParaSup25" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija25" name="ParaSup25" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion25" name="ParaSup25" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon25">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper26" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle26"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries26" name="ParaSup26" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama26" name="ParaSup26" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente26" name="ParaSup26" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija26" name="ParaSup26" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion26" name="ParaSup26" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon26">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper27" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle27"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries27" name="ParaSup27" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama27" name="ParaSup27" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente27" name="ParaSup27" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija27" name="ParaSup27" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion27" name="ParaSup27" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon27">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaSuper28" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle28"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries28" name="ParaSup28" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama28" name="ParaSup28" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente28" name="ParaSup28" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija28" name="ParaSup28" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion28" name="ParaSup28" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon28">Aceptar</button>
                 </li>
             </ul>
         </div>
         <img src="~/Content/img/paradontograma_inferior.png" usemap="#workmap2" width="956" height="153" />
         <map id="#workmap2" name="workmap2">
-            <area shape="rect" alt="d31" href="#" coords="93,20,145,60" />
-            <area shape="rect" alt="d32" href="#" coords="150,20,205,60" />
-            <area shape="rect" alt="d33" href="#" coords="205,20,270,60" />
-            <area shape="rect" alt="d34" href="#" coords="270,15,310,60" />
-            <area shape="rect" alt="d35" href="#" coords="310,15,355,60" />
-            <area shape="rect" alt="d36" href="#" coords="360,15,400,60" />
-            <area shape="rect" alt="d37" href="#" coords="400,15,445,60" />
-            <area shape="rect" alt="d38" href="#" coords="445,10,490,60" />
-            <area shape="rect" alt="d41" href="#" coords="500,10,545,60" />
-            <area shape="rect" alt="d42" href="#" coords="555,15,595,60" />
-            <area shape="rect" alt="d43" href="#" coords="600,15,640,60" />
-            <area shape="rect" alt="d44" href="#" coords="645,15,685,60" />
-            <area shape="rect" alt="d45" href="#" coords="690,15,730,60" />
-            <area shape="rect" alt="d46" href="#" coords="730,20,790,60" />
-            <area shape="rect" alt="d47" href="#" coords="795,20,850,60" />
-            <area shape="rect" alt="d48" href="#" coords="855,20,905,60" />
+            <area shape="rect" coords="93,20,145,60" onclick="D31()" />
+            <area shape="rect" coords="150,20,205,60" onclick="D32()" />
+            <area shape="rect" coords="205,20,270,60" onclick="D33()" />
+            <area shape="rect" coords="270,15,310,60" onclick="D34()" />
+            <area shape="rect" coords="310,15,355,60" onclick="D35()" />
+            <area shape="rect" coords="360,15,400,60" onclick="D36()" />
+            <area shape="rect" coords="400,15,445,60" onclick="D37()" />
+            <area shape="rect" coords="445,10,490,60" onclick="D38()" />
+            <area shape="rect" coords="500,10,545,60" onclick="D41()" />
+            <area shape="rect" coords="555,15,595,60" onclick="D42()" />
+            <area shape="rect" coords="600,15,640,60" onclick="D43()" />
+            <area shape="rect" coords="645,15,685,60" onclick="D44()" />
+            <area shape="rect" coords="690,15,730,60" onclick="D45()" />
+            <area shape="rect" coords="730,20,790,60" onclick="D46()" />
+            <area shape="rect" coords="795,20,850,60" onclick="D47()" />
+            <area shape="rect" coords="855,20,905,60" onclick="D48()" />
         </map>
-        @*<div id="ParaInfe" style="display:none">
-            <br />
+        <div id="ParaInfe31" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle31"></h5>
             <ul>
                 <li>
-                    <input type="radio" />
+                    <input id="inCaries31" name="ParaSup31" type="radio" />
                     <label>Caries</label>
                 </li>
                 <li>
-                    <input type="radio" />
+                    <input id="inAmalgama31" name="ParaSup31" type="radio" />
                     <label>Amalgama</label>
                 </li>
                 <li>
-                    <input type="radio" />
+                    <input id="inAusente31" name="ParaSup31" type="radio" />
                     <label>Diente Ausente</label>
                 </li>
                 <li>
-                    <input type="radio" />
+                    <input id="inFija31" name="ParaSup31" type="radio" />
                     <label>Protesis Fija</label>
                 </li>
                 <li>
-                    <input type="radio" />
+                    <input id="inExtraccion31" name="ParaSup31" type="radio" />
                     <label>Diente para Extracción</label>
                 </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon31">Aceptar</button>
+                </li>
             </ul>
-        </div>*@
-    </div>
-    <div>
-        <button id="regPaci" class="btn btn-primary">Aceptar</button>
-    </div>
-    <sec>
-        <input type="hidden" id="urlAgregaPaciente" value="@Url.Action("Agregar_Paciente","Home")" />
-        <input type="hidden" id="urlPacientes" value="@Url.Action("RecibePaciente","Home")" />
-        <input type="hidden" id="urlUsuario" value="@Url.Action("ObtieneUsuario","Home")" />
-    </sec>
+        </div>
+        <div id="ParaInfe32" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle32"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries32" name="ParaSup32" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama32" name="ParaSup32" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente32" name="ParaSup32" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija32" name="ParaSup32" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion32" name="ParaSup32" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon32">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe33" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle33"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries33" name="ParaSup33" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama33" name="ParaSup33" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente33" name="ParaSup33" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija33" name="ParaSup33" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion33" name="ParaSup33" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon33">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe34" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle34"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries34" name="ParaSub34" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama34" name="ParaSub34" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente34" name="ParaSub34" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija34" name="ParaSub34" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion34" name="ParaSub34" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon34">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe35" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle35"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries35" name="ParaSup35" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama35" name="ParaSup35" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente35" name="ParaSup35" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija35" name="ParaSup35" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion35" name="ParaSup35" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon35">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe36" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle36"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries36" name="ParaSup36" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama36" name="ParaSup36" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente36" name="ParaSup36" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija36" name="ParaSup36" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion36" name="ParaSup36" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon36">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe37" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle37"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries37" name="ParaSup37" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama37" name="ParaSup37" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente37" name="ParaSup37" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija37" name="ParaSup37" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion37" name="ParaSup37" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon37">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe38" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle38"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries38" name="ParaSup38" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama38" name="ParaSup38" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente38" name="ParaSup38" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija38" name="ParaSup38" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion38" name="ParaSup38" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon38">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe41" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle41"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries41" name="ParaSup41" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama41" name="ParaSup41" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente41" name="ParaSup41" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija41" name="ParaSup41" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion41" name="ParaSup41" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon41">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe42" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle42"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries42" name="ParaSup42" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama42" name="ParaSup42" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente42" name="ParaSup42" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija42" name="ParaSup42" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion42" name="ParaSup42" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon42">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe43" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle43"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries43" name="ParaSup43" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama43" name="ParaSup43" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente43" name="ParaSup43" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija43" name="ParaSup43" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion43" name="ParaSup43" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon43">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe44" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle44"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries44" name="ParaSup44" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama44" name="ParaSup44" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente44" name="ParaSup44" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija44" name="ParaSup44" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion44" name="ParaSup44" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon44">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe45" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle45"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries45" name="ParaSup45" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama45" name="ParaSup45" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente45" name="ParaSup45" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija45" name="ParaSup45" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion45" name="ParaSup45" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon45">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe46" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle46"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries46" name="ParaSup46" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama46" name="ParaSup46" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente46" name="ParaSup46" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija46" name="ParaSup46" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion46" name="ParaSup46" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon46">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe47" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle47"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries47" name="ParaSup47" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama47" name="ParaSup47" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente47" name="ParaSup47" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija47" name="ParaSup47" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion47" name="ParaSup47" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon47">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div id="ParaInfe48" style="display:none">
+            <h5 style="margin-left:40px" id="ParaTitle48"></h5>
+            <ul>
+                <li>
+                    <input id="inCaries48" name="ParaSup48" type="radio" />
+                    <label>Caries</label>
+                </li>
+                <li>
+                    <input id="inAmalgama48" name="ParaSup48" type="radio" />
+                    <label>Amalgama</label>
+                </li>
+                <li>
+                    <input id="inAusente48" name="ParaSup48" type="radio" />
+                    <label>Diente Ausente</label>
+                </li>
+                <li>
+                    <input id="inFija48" name="ParaSup48" type="radio" />
+                    <label>Protesis Fija</label>
+                </li>
+                <li>
+                    <input id="inExtraccion48" name="ParaSup48" type="radio" />
+                    <label>Diente para Extracción</label>
+                </li>
+                <li>
+                    <br />
+                    <button class="btn btn-primary" id="AcepParadon48">Aceptar</button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <br />
+            <button id="regPaci" class="btn btn-primary">Registrar</button>
+        </div>
+        <sec>
+            <input type="hidden" id="urlAgregaPaciente" value="@Url.Action("Agregar_Paciente","Home")" />
+            <input type="hidden" id="urlPacientes" value="@Url.Action("RecibePaciente","Home")" />
+            <input type="hidden" id="urlUsuario" value="@Url.Action("ObtieneUsuario","Home")" />
+        </sec>
 </body>
 </html>
