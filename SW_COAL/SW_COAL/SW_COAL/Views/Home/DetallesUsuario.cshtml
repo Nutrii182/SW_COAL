@@ -3,53 +3,70 @@
 <html>
 <head>
     <script src="~/Scripts/Project/JS/jsDetallesUsuario.js"></script>
-    <link href="~/Content/css/DetallesPaciente.css" rel="stylesheet" />
+    <link href="~/Content/css/DetallesUsuario.css" rel="stylesheet" />
 </head>
 <body>
     <h2>Detalles del Usuario</h2>
     <br />
-    <div class="row divInfo">
-        <div class="form-group divSec">
-            <div id="nombre" class="form-inline">
+    <div id="DatPac" class="container col-lg-12">
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Nombre</label>
                 <div>
-                    <label class="titulo">Nombre</label>
                     <label class="subtitulo" id="NomUsu"></label>
                 </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Apellido Paterno</label>
                 <div>
-                    <label class="titulo">Apellido Paterno</label>
                     <label class="subtitulo" id="ApePat"></label>
                 </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Apellido Materno</label>
                 <div>
-                    <label class="titulo">Apellido Materno</label>
                     <label class="subtitulo" id="ApeMat"></label>
                 </div>
             </div>
-            <div id="contacto" class="form-inline">
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Número Telefónico</label>
                 <div>
-                    <label class="titulo">Número Telefónico</label>
                     <label class="subtitulo" id="Tel"></label>
                 </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Número de Celular</label>
                 <div>
-                    <label class="titulo">Número de Celular</label>
                     <label class="subtitulo" id="Cel"></label>
                 </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Correo Electrónico</label>
                 <div>
-                    <label class="titulo">Correo Electrónico</label>
                     <label class="subtitulo" id="Correo"></label>
                 </div>
             </div>
-            <div id="usuario" class="form-inline">
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Nombre de Usuario</label>
                 <div>
-                    <label class="titulo">Nombre de Usuario</label>
                     <label class="subtitulo" id="Usuario"></label>
                 </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Tipo de Usuario</label>
                 <div>
-                    <label class="titulo">Tipo de Usuario</label>
                     <label class="subtitulo" id="Tipo"></label>
                 </div>
             </div>
+            <div class="form-group col-sm-4">
+                <input type="hidden"/>
+            </div>
         </div>
     </div>
-    <input type="hidden" id="urlObUsuario" value="@Url.Action("ObtieneUsuario","Home")"/>
+    <input type="hidden" id="urlObUsuario" value="@Url.Action("ObtieneUsuario","Home")" />
 </body>
 </html>

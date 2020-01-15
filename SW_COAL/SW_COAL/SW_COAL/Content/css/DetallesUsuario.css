@@ -1,0 +1,11 @@
+﻿#DatPac{
+    background-color: white;
+    border-radius: .4rem;
+    border-style: solid;
+    border-color: black;
+}
+
+.titulo{
+    font-weight: bold;
+    font-size: 20px;
+}

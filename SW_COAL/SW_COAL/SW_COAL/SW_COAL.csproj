@@ -221,7 +221,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\DetallesPaciente.css" />
+    <Content Include="Content\css\DetallesUsuario.css" />
     <Content Include="Content\css\Paciente.css" />
     <Content Include="Content\css\Consulta.css" />
     <Content Include="Content\css\Layout.css" />
