@@ -16,7 +16,12 @@ $(document).ready(function () {
         contentType: "application/json; charset=utf-8",
         success: ObtienePacientes,
         error: function (data) {
-            alert('error obteniendo');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Obteniendo Paciente',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 
@@ -100,13 +105,16 @@ function ObtienePacientes(result) {
             $('#inDental').attr('checked', true);
 
     $('#inNombreD').val(result.data.sNombreDoctor);
-    $('#inApePaternoD').val(result.data.ApePaterDoc);
-    $('#inApeMaternoD').val(result.data.ApeMaterDoc);
+    $('#inPatDoc').val(result.data.sApePaterDoc);
+    $('#inMatDoc').val(result.data.sApeMaterDoc);
     $('#inTelD').val(result.data.lTelDoct);
     $('#inCelD').val(result.data.lCelDoct);
 
-    //$('#inFechaIni').val();
-    //$('#inFechaFin').val();
+    var init = moment(result.data.dtIniciaTratamiento).format("YYYY-MM-DD");
+    $('#inFechaIni').val(init);
+
+    var fint = moment(result.data.dtTerminaTratamiento).format("YYYY-MM-DD");
+    $('#inFechaFin').val(fint);
 
     if (result.data.sTomaMedi == 'Si')
         $('#inMsi').attr('checked', true);
@@ -173,10 +181,10 @@ function ObtienePacientes(result) {
     else
         $('#inNoEmba').attr('checked', true);
 
-    if (result.data.iMeses == null)
-        $('#inMeses').val(0);
+    if (result.data.iMesesEmbarazo != null)
+        $('#inMeses').val(result.data.iMesesEmbarazo);
     else
-        $('#inMeses').val(result.data.iMeses);
+        $('#inMeses').val(0);
 
     if (result.data.sAnticonceptivos == 'Si')
         $('#inSiAnti').attr('checked', true);
@@ -798,7 +806,7 @@ function ObtienePacientes(result) {
                     if (result.data.sD48 == 'Extraccion')
                         $('#inExtraccion48').attr('checked', true);
 }
-    
+
 var d11 = null, d12 = null, d13 = null, d14 = null, d15 = null, d16 = null, d17 = null, d18 = null;
 var d21 = null, d22 = null, d23 = null, d24 = null, d25 = null, d26 = null, d27 = null, d28 = null;
 var d31 = null, d32 = null, d33 = null, d34 = null, d35 = null, d36 = null, d37 = null, d38 = null;
@@ -4151,9 +4159,16 @@ function validador(id) {
     }
 
     if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" || $('#inDomicilio').val() === "" ||
-        $('#inTelefono').val() === "" || $('#inCelular').val() === "" ||
-        $('#inFechaNac').val() === "") {
-        alert("Favor de llenar los campos");
+        $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inFechaNac').val() === "" || s == null || trat == null ||
+        Tmedi == null || Thospi == null || duro == null || rx == null || mordida == null || emba == null || anti == null ||
+        fuma == null || bebe == null || droga == null || aler == null || higi == null || ali == null || rechi == null || Tencia == null
+        || Cencia == null || OHbucal == null || hemo == null || $('#inVecCepi').val() === "" || cepi == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Favor de Llenar los Campos!',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     else {
         var datosPaciente = JSON.stringify({
@@ -4182,8 +4197,8 @@ function validador(id) {
             sBajoTratamiento: trat,
             sTipoTratamiento: Ttrat,
             sNombreDoctor: $('#inNombreD').val(),
-            sApePaterDoc: $('#inPaternoD').val(),
-            sApeMaterDoc: $('#inMaternoD').val(),
+            sApePaterDoc: $('#inPatDoc').val(),
+            sApeMaterDoc: $('#inMatDoc').val(),
             lTelDoct: $('#inTelD').val(),
             lCelDoct: $('#inCelD').val(),
             dtIniciaTratamiento: $('#inFechaIni').val(),
@@ -4281,7 +4296,12 @@ function LlamadoPaciente(datosPaciente) {
         async: true,
         success: SuccessPaciente,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error modificando");
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Modificando Paciente',
+                showConfirmButton: false,
+                timer: 1500
+            });
             $('#EditaPaci').attr("disabled", false);
         }
     });
@@ -4291,15 +4311,30 @@ function SuccessPaciente(data) {
 
     if (data.Exito) {
         var url = $('#urlModiPaci').val();
-        alert("Paciente Actualizado");
+        Swal.fire({
+            icon: 'success',
+            title: 'Paciente Actualizado Correctamente',
+            showConfirmButton: false,
+            timer: 1500
+        });
         window.location.href = url;
     }
     else if (data.Advertencia) {
-        alert("El paciente ya existe");
+        Swal.fire({
+            icon: 'warning',
+            title: 'Algo falló',
+            showConfirmButton: false,
+            timer: 1500
+        });
         $('#EditaPaci').attr("disabled", false);
     }
     else {
-        alert("Error");
+        Swal.fire({
+            icon: 'error',
+            title: 'Error Modificando Paciente',
+            showConfirmButton: false,
+            timer: 1500
+        });
         $('#EditaPaci').attr("disabled", false);
     }
     $('#EditaPaci').attr("disabled", false);

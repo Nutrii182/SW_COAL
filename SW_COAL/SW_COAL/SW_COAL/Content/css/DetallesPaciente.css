@@ -1,11 +1,19 @@
-﻿#DatPac{
+﻿#DatPer {
     background-color: white;
     border-radius: .4rem;
     border-style: solid;
     border-color: black;
 }
 
-.titulo{
+.titulo {
     font-weight: bold;
     font-size: 18px;
+}
+
+li{
+    list-style: none;
+}
+
+h5{
+    font-weight: bold;
 }

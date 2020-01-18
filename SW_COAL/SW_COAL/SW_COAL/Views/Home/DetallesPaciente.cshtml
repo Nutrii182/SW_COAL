@@ -2,9 +2,369 @@
 <!doctype html>
 <html>
 <head>
+    <link href="~/Content/css/DetallesPaciente.css" rel="stylesheet" />
+    <script src="~/Scripts/moment.js"></script>
     <script src="~/Scripts/Project/JS/jsDetallesPaciente.js"></script>
 </head>
 <body>
+    <h2>Detalles del Paciente</h2>
+    <div id="DatPer" class="container col-lg-12">
+        <h3>Datos Personales</h3>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Nombre</label>
+                <div>
+                    <label class="subtitulo" id="NomPaci"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Apellido Paterno</label>
+                <div>
+                    <label class="subtitulo" id="ApePatPaci"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Apellido Materno</label>
+                <div>
+                    <label class="subtitulo" id="ApeMatPaci"></label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Domicilio</label>
+                <div>
+                    <label class="subtitulo" id="DomPaci"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Teléfono</label>
+                <div>
+                    <label class="subtitulo" id="TelPaci"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Celular</label>
+                <div>
+                    <label class="subtitulo" id="CelPaci"></label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Fecha de Nacimiento</label>
+                <div>
+                    <label class="subtitulo" id="NacPaci"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Sexo</label>
+                <div>
+                    <label class="subtitulo" id="SexPaci"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <input type="hidden" />
+            </div>
+        </div>
+        <hr />
+        <h3>Tratamiento</h3>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Esta Bajo Tratamiento</label>
+                <div>
+                    <label class="subtitulo" id="TratPaci"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4" id="tipoTrat">
+                <label class="titulo">Tipo</label>
+                <div>
+                    <label class="subtitulo" id="TipoTrat"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <input type="hidden" />
+            </div>
+        </div>
+        <h5 id="TiDacDoc">Datos del Doctor</h5>
+        <div class="row justify-content-center" id="datoDoc">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Nombre del Doctor</label>
+                <div>
+                    <label class="subtitulo" id="NomDoc"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Apellido Paterno del Doctor</label>
+                <div>
+                    <label class="subtitulo" id="ApePatDoc"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Apellido Materno del Doctor</label>
+                <div>
+                    <label class="subtitulo" id="ApeMatDoc"></label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" id="ContacDoc">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Teléfono del Doctor</label>
+                <div>
+                    <label class="subtitulo" id="TelDoc"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Celular del Doctor</label>
+                <div>
+                    <label class="subtitulo" id="CelDoc"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <input type="hidden" />
+            </div>
+        </div>
+        <div class="row justify-content-center" id="TratDoc">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Inicio de Tratamiento</label>
+                <div>
+                    <label class="subtitulo" id="IniTrat"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Fin de Tratamiento</label>
+                <div>
+                    <label class="subtitulo" id="FinTrat"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <input type="hidden" />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div id="divPade" style="margin-left:15px">
+                <h3>Padecimientos</h3>
+                <ul></ul>
+            </div>
+            <div style="margin-left:30%">
+                <h3>Medicamentos</h3>
+                <label class="titulo">Toma Algún Medicamento</label>
+                <div class="form-inline">
+                    <label class="subtitulo" id="TomaMedi"></label>
+                    <label style="margin-left:20px" class="subtitulo" id="Medi"></label>
+                </div>
+                <h3>Hospitalización</h3>
+                <label class="titulo">Ha sido Hospitalizado</label>
+                <div>
+                    <label class="subtitulo" id="Hospi"></label>
+                    <label style="margin-left:20px" class="subtitulo" id="Moti"></label>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h3>Examen de Tejidos</h3>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <h5>Duros</h5>
+                <div>
+                    <label class="subtitulo" id="Dur"></label>
+                </div>
+                <h5>Rx</h5>
+                <div>
+                    <label class="titulo">Caries Interproximal Supernumerarios</label>
+                </div>
+                <div>
+                    <label class="subtitulo" id="Car"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4" id="divBlan">
+                <h5>Blandos</h5>
+                <ul style="margin-top:-15px"></ul>
+            </div>
+            <div class="form-group col-sm-4" id="divMordi">
+                <h5>Oclusión</h5>
+                <div>
+                    <strong><label class="subtitulo">Sobre Mordida</label></strong>
+                </div>
+                <div>
+                    <label class="subtitulo" id="Mord"></label>
+                </div>
+                <ul style="margin-top:-15px" id="Mordi"></ul>
+            </div>
+        </div>
+        <hr />
+        <h3>Antecedentes Personales</h3>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Se Encuentra Embarazada</label>
+                <div>
+                    <label class="subtitulo" id="Emb"></label>
+                    <label style="margin-left:10px" class="subtitulo" id="Meses"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Usa Anticonceptivos</label>
+                <div>
+                    <label class="subtitulo" id="Anti"></label>
+                    <label style="margin-left:10px" class="subtitulo" id="TipAnti"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Fuma</label>
+                <div>
+                    <label class="subtitulo" id="Fuma"></label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Bebe Alcohol</label>
+                <div>
+                    <label class="subtitulo" id="Alco"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Consume Drogas</label>
+                <div>
+                    <label class="subtitulo" id="Drug"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Alergias</label>
+                <div>
+                    <label class="subtitulo" id="Aler"></label>
+                    <label style="margin-left:10px" class="subtitulo" id="TipAler"></label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Higiene Bucal</label>
+                <div>
+                    <label class="subtitulo" id="Hig"></label>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h3>Hábitos</h3>
+        <div class="row justify-content-center">
+            <div id="HabBuc" class="form-group col-sm-4">
+                <label class="titulo">Hábitos Bucales</label>
+                <ul style="margin-top:-15px"></ul>
+            </div>
+            <div id="Chu" class="form-group col-sm-4">
+                <label class="titulo">Chupadores de:</label>
+                <div>
+                    <label class="subtitulo" id="Chup"></label>
+                </div>
+                <label class="subtitulo">Frecuencia</label>
+                <label class="subtitulo" id="Fre"></label>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Alimentación</label>
+                <div>
+                    <label class="subtitulo" id="Ali"></label>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h3>Información Adicional</h3>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Rechina o Aprieta los Dientes</label>
+                <div>
+                    <label class="subtitulo" id="Rech"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Se Hizo Tratamiento de Encias</label>
+                <div>
+                    <label class="subtitulo" id="TratEn"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Se ha Hecho Cirujía de Encias</label>
+                <div>
+                    <label class="subtitulo" id="CirEn"></label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Tuvo Orientación de Higiene Bucal</label>
+                <div>
+                    <label class="subtitulo" id="OriHig"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Ha Tenido Hemorragias en la Boca</label>
+                <div>
+                    <label class="subtitulo" id="Hemo"></label>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="titulo">Cuántas Veces Cepilla sus Dientes al Día</label>
+                <div>
+                    <label class="subtitulo" id="Cepi"></label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="titulo">Que Tipo de Cepillo Dental Usa</label>
+                <div>
+                    <label class="subtitulo" id="TipCepi"></label>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h3>Paradontograma</h3>
+        <br />
+        <div align="center">
+            <img src="~/Content/img/paradontograma_superior.png" usemap="#workmap1" width="956" height="161" />
+            <map id="workmap1" name="workmap1">
+                <area shape="rect" coords="93,98,150,138" onclick="D11()" />
+                <area shape="rect" coords="155,98,202,138" onclick="D12()" />
+                <area shape="rect" coords="210,98,270,138" onclick="D13()" />
+                <area shape="rect" coords="270,98,310,145" onclick="D14()" />
+                <area shape="rect" coords="310,98,360,138" onclick="D15()" />
+                <area shape="rect" coords="360,98,400,138" onclick="D16()" />
+                <area shape="rect" coords="400,98,440,145" onclick="D17()" />
+                <area shape="rect" coords="450,98,500,155" onclick="D18()" />
+                <area shape="rect" coords="500,98,550,155" onclick="D21()" />
+                <area shape="rect" coords="555,98,595,145" onclick="D22()" />
+                <area shape="rect" coords="600,98,640,145" onclick="D23()" />
+                <area shape="rect" coords="645,98,685,138" onclick="D24()" />
+                <area shape="rect" coords="690,98,730,145" onclick="D25()" />
+                <area shape="rect" coords="730,98,795,145" onclick="D26()" />
+                <area shape="rect" coords="795,98,850,138" onclick="D27()" />
+                <area shape="rect" coords="855,98,905,138" onclick="D28()" />
+            </map>
+        </div>
+        <div align="center">
+            <img src="~/Content/img/paradontograma_inferior.png" usemap="#workmap2" width="956" height="153" />
+            <map id="#workmap2" name="workmap2">
+                <area shape="rect" coords="93,20,145,60" onclick="D31()" />
+                <area shape="rect" coords="150,20,205,60" onclick="D32()" />
+                <area shape="rect" coords="205,20,270,60" onclick="D33()" />
+                <area shape="rect" coords="270,15,310,60" onclick="D34()" />
+                <area shape="rect" coords="310,15,355,60" onclick="D35()" />
+                <area shape="rect" coords="360,15,400,60" onclick="D36()" />
+                <area shape="rect" coords="400,15,445,60" onclick="D37()" />
+                <area shape="rect" coords="445,10,490,60" onclick="D38()" />
+                <area shape="rect" coords="500,10,545,60" onclick="D41()" />
+                <area shape="rect" coords="555,15,595,60" onclick="D42()" />
+                <area shape="rect" coords="600,15,640,60" onclick="D43()" />
+                <area shape="rect" coords="645,15,685,60" onclick="D44()" />
+                <area shape="rect" coords="690,15,730,60" onclick="D45()" />
+                <area shape="rect" coords="730,20,790,60" onclick="D46()" />
+                <area shape="rect" coords="795,20,850,60" onclick="D47()" />
+                <area shape="rect" coords="855,20,905,60" onclick="D48()" />
+            </map>
+        </div>
+    </div>
+    <input type="hidden" id="urlObPaciente" value="@Url.Action("ObtienePaciente","Home")" />
 </body>
 </html>
 

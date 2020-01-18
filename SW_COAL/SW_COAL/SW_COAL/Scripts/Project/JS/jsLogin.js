@@ -11,7 +11,12 @@ function TipoUsu(datosUsuario) {
         contentType: "application/json; charset=utf-8",
         success: UsuarioTipo,
         error: function (data) {
-            alert('error obteniendo');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Obteniendo Datos',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 }
@@ -31,7 +36,12 @@ $(document).ready(function () {
         if (tecla.charCode < 48 && tecla.charCode != 13 || tecla.charCode > 57) {
             if (tecla.charCode < 63 || tecla.charCode > 91) {
                 if (tecla.charCode < 97 || tecla.charCode > 122) {
-                    alert('No usar caracteres raros');
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'No usar Caractéres Raros',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
                     return false;
                 }
             }
@@ -44,7 +54,12 @@ $(document).ready(function () {
         if (tecla.charCode < 48 && tecla.charCode != 13 || tecla.charCode > 57) {
             if (tecla.charCode < 63 || tecla.charCode > 91) {
                 if (tecla.charCode < 97 || tecla.charCode > 122) {
-                    alert('No usar caracteres raros');
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'No usar Caractéres Raros',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
                     return false;
                 }
             }
@@ -54,7 +69,12 @@ $(document).ready(function () {
 
 function validador() {
     if ($('#inUsuario').val() === "" || $('#inContra').val() === "") {
-        alert("favor de llenar los campos");
+        Swal.fire({
+            icon: 'warning',
+            title: 'Favor de Llenar Los Campos',
+            showConfirmButton: false,
+            timer: 1500
+        });
     } else {
         var datosUsuario = JSON.stringify({
             sUsuario: $('#inUsuario').val(),
@@ -80,7 +100,12 @@ function LlamadaIniciarSesion(datosUsuario) {
         async: true,
         success: SuccessLlamadaIniciarSesion,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error");
+            Swal.fire({
+                icon: 'error',
+                title: 'Error en Envío de Formulario',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 }
@@ -93,12 +118,22 @@ function SuccessLlamadaIniciarSesion(data) {
         window.location.href = url;
     }
     else if (data.Advertencia) {
-        alert("Usuario y/o Contraseña Incorrectos");
+        Swal.fire({
+            icon: 'warning',
+            title: 'Usuario y/o Contraseña Incorrectos',
+            showConfirmButton: false,
+            timer: 1500
+        });
         $('.btnLogear').attr("disabled", false);
         $('#gif').css("display", "none");
     }
     else {
-        alert("Error");
+        Swal.fire({
+            icon: 'error',
+            title: 'Error en Envío de Formulario',
+            showConfirmButton: false,
+            timer: 1500
+        });
         $('#gif').css("display", "none");
         $('.btnLogear').attr("disabled", false);
     }

@@ -28,7 +28,12 @@ function validador(v) {
     else {
 
         if ($('#inContraseña').val() !== $('#inVeriContraseña').val())
-            alert('Las contraseñas no coinciden');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Las Contraseñas No Coinciden',
+                showConfirmButton: false,
+                timer: 1500
+            });
         else {
             var nuevoUsuario = {
                 sNombre: $('#inNombre').val(),
@@ -59,7 +64,12 @@ function LlamadaRegistro(nuevoUsuario) {
         async: true,
         success: SuccessLlamadaRegistro,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error");
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Enviando Datos',
+                showConfirmButton: false,
+                timer: 1500
+            });
             $('#idRegistro').attr("disabled", false);
         }
     });
@@ -68,15 +78,30 @@ function LlamadaRegistro(nuevoUsuario) {
 function SuccessLlamadaRegistro(data) {
 
     if (data.Exito) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Usuario Agregado Correctamente',
+            showConfirmButton: false,
+            timer: 1200
+        });
         var url = $('#urlAgregarUsuario').val();
-        alert("Datos agregados Correctamente");
         window.location.href = url;
     }
     else if (data.Advertencia) {
-        alert("Advertencia, el usuario ya existe");
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Usuario Ya Existe!',
+            showConfirmButton: false,
+            timer: 1000
+        });
     }
     else {
-        alert("Error algo falló");
+        Swal.fire({
+            icon: 'error',
+            title: 'Error Agregando Usuario',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     $('#idRegistro').attr("disabled", false);
 }

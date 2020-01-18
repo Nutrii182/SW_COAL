@@ -17,7 +17,12 @@ $(document).on('click', '#regPaci', function () {
         contentType: "application/json; charset=utf-8",
         success: ObtieneUsuarios,
         error: function (data) {
-            alert('error obteniendo');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Obteniendo Datos',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 });
@@ -44,7 +49,7 @@ function D11() {
     var M26 = $('#ParaSuper26').is(':visible');
     var M27 = $('#ParaSuper27').is(':visible');
     var M28 = $('#ParaSuper28').is(':visible');
-   
+
     if (M12)
         $('#ParaSuper12').hide('slow');
 
@@ -94,25 +99,25 @@ function D11() {
 
     $('#ParaSuper11').show('slow');
 
-    $("input[id=inCaries11]").click(function(){
-		d11 = 'Caries';
-	});
+    $("input[id=inCaries11]").click(function () {
+        d11 = 'Caries';
+    });
 
-    $("input[id=inAmalgama11]").click(function(){
-		d11 = 'Amalgama';
-	});
+    $("input[id=inAmalgama11]").click(function () {
+        d11 = 'Amalgama';
+    });
 
-    $("input[id=inAusente11]").click(function(){
-		d11 = 'Ausente';
-	});
+    $("input[id=inAusente11]").click(function () {
+        d11 = 'Ausente';
+    });
 
-    $("input[id=inFija11]").click(function(){
-		d11 = 'Fija';
-	});
+    $("input[id=inFija11]").click(function () {
+        d11 = 'Fija';
+    });
 
-    $("input[id=inExtraccion11]").click(function(){
-		d11 = 'Extraccion';
-	});
+    $("input[id=inExtraccion11]").click(function () {
+        d11 = 'Extraccion';
+    });
 
     $('#AcepParadon11').click(function () {
         $('#ParaSuper11').hide('slow');
@@ -186,25 +191,25 @@ function D12() {
 
     $('#ParaSuper12').show('slow');
 
-    $("input[id=inCaries12]").click(function(){
-		d12 = 'Caries';
-	});
+    $("input[id=inCaries12]").click(function () {
+        d12 = 'Caries';
+    });
 
-    $("input[id=inAmalgama12]").click(function(){
-		d12 = 'Amalgama';
-	});
+    $("input[id=inAmalgama12]").click(function () {
+        d12 = 'Amalgama';
+    });
 
-    $("input[id=inAusente12]").click(function(){
-		d12 = 'Ausente';
-	});
+    $("input[id=inAusente12]").click(function () {
+        d12 = 'Ausente';
+    });
 
-    $("input[id=inFija12]").click(function(){
-		d12 = 'Fija';
-	});
+    $("input[id=inFija12]").click(function () {
+        d12 = 'Fija';
+    });
 
-    $("input[id=inExtraccion12]").click(function(){
-		d12 = 'Extraccion';
-	});
+    $("input[id=inExtraccion12]").click(function () {
+        d12 = 'Extraccion';
+    });
 
     $('#AcepParadon12').click(function () {
         $('#ParaSuper12').hide('slow');
@@ -278,25 +283,25 @@ function D13() {
 
     $('#ParaSuper13').show('slow');
 
-    $("input[id=inCaries13]").click(function(){
-		d13 = 'Caries';
-	});
+    $("input[id=inCaries13]").click(function () {
+        d13 = 'Caries';
+    });
 
-    $("input[id=inAmalgama13]").click(function(){
-		d13 = 'Amalgama';
-	});
+    $("input[id=inAmalgama13]").click(function () {
+        d13 = 'Amalgama';
+    });
 
-    $("input[id=inAusente13]").click(function(){
-		d13 = 'Ausente';
-	});
+    $("input[id=inAusente13]").click(function () {
+        d13 = 'Ausente';
+    });
 
-    $("input[id=inFija13]").click(function(){
-		d13 = 'Fija';
-	});
+    $("input[id=inFija13]").click(function () {
+        d13 = 'Fija';
+    });
 
-    $("input[id=inExtraccion13]").click(function(){
-		d13 = 'Extraccion';
-	});
+    $("input[id=inExtraccion13]").click(function () {
+        d13 = 'Extraccion';
+    });
 
     $('#AcepParadon13').click(function () {
         $('#ParaSuper13').hide('slow');
@@ -370,25 +375,25 @@ function D14() {
 
     $('#ParaSuper14').show('slow');
 
-    $("input[id=inCaries14]").click(function(){
-		d14 = 'Caries';
-	});
+    $("input[id=inCaries14]").click(function () {
+        d14 = 'Caries';
+    });
 
-    $("input[id=inAmalgama14]").click(function(){
-		d14 = 'Amalgama';
-	});
+    $("input[id=inAmalgama14]").click(function () {
+        d14 = 'Amalgama';
+    });
 
-    $("input[id=inAusente14]").click(function(){
-		d14 = 'Ausente';
-	});
+    $("input[id=inAusente14]").click(function () {
+        d14 = 'Ausente';
+    });
 
-    $("input[id=inFija14]").click(function(){
-		d14 = 'Fija';
-	});
+    $("input[id=inFija14]").click(function () {
+        d14 = 'Fija';
+    });
 
-    $("input[id=inExtraccion14]").click(function(){
-		d14 = 'Extraccion';
-	});
+    $("input[id=inExtraccion14]").click(function () {
+        d14 = 'Extraccion';
+    });
 
     $('#AcepParadon14').click(function () {
         $('#ParaSuper14').hide('slow');
@@ -462,25 +467,25 @@ function D15() {
 
     $('#ParaSuper15').show('slow');
 
-    $("input[id=inCaries15]").click(function(){
-		d15 = 'Caries';
-	});
+    $("input[id=inCaries15]").click(function () {
+        d15 = 'Caries';
+    });
 
-    $("input[id=inAmalgama15]").click(function(){
-		d15 = 'Amalgama';
-	});
+    $("input[id=inAmalgama15]").click(function () {
+        d15 = 'Amalgama';
+    });
 
-    $("input[id=inAusente15]").click(function(){
-		d15 = 'Ausente';
-	});
+    $("input[id=inAusente15]").click(function () {
+        d15 = 'Ausente';
+    });
 
-    $("input[id=inFija15]").click(function(){
-		d15 = 'Fija';
-	});
+    $("input[id=inFija15]").click(function () {
+        d15 = 'Fija';
+    });
 
-    $("input[id=inExtraccion15]").click(function(){
-		d15 = 'Extraccion';
-	});
+    $("input[id=inExtraccion15]").click(function () {
+        d15 = 'Extraccion';
+    });
 
     $('#AcepParadon15').click(function () {
         $('#ParaSuper15').hide('slow');
@@ -554,25 +559,25 @@ function D16() {
 
     $('#ParaSuper16').show('slow');
 
-    $("input[id=inCaries16]").click(function(){
-		d16 = 'Caries';
-	});
+    $("input[id=inCaries16]").click(function () {
+        d16 = 'Caries';
+    });
 
-    $("input[id=inAmalgama16]").click(function(){
-		d16 = 'Amalgama';
-	});
+    $("input[id=inAmalgama16]").click(function () {
+        d16 = 'Amalgama';
+    });
 
-    $("input[id=inAusente16]").click(function(){
-		d16 = 'Ausente';
-	});
+    $("input[id=inAusente16]").click(function () {
+        d16 = 'Ausente';
+    });
 
-    $("input[id=inFija16]").click(function(){
-		d16 = 'Fija';
-	});
+    $("input[id=inFija16]").click(function () {
+        d16 = 'Fija';
+    });
 
-    $("input[id=inExtraccion16]").click(function(){
-		d16 = 'Extraccion';
-	});
+    $("input[id=inExtraccion16]").click(function () {
+        d16 = 'Extraccion';
+    });
 
     $('#AcepParadon16').click(function () {
         $('#ParaSuper16').hide('slow');
@@ -646,25 +651,25 @@ function D17() {
 
     $('#ParaSuper17').show('slow');
 
-    $("input[id=inCaries17]").click(function(){
-		d17 = 'Caries';
-	});
+    $("input[id=inCaries17]").click(function () {
+        d17 = 'Caries';
+    });
 
-    $("input[id=inAmalgama17]").click(function(){
-		d17 = 'Amalgama';
-	});
+    $("input[id=inAmalgama17]").click(function () {
+        d17 = 'Amalgama';
+    });
 
-    $("input[id=inAusente17]").click(function(){
-		d17 = 'Ausente';
-	});
+    $("input[id=inAusente17]").click(function () {
+        d17 = 'Ausente';
+    });
 
-    $("input[id=inFija17]").click(function(){
-		d17 = 'Fija';
-	});
+    $("input[id=inFija17]").click(function () {
+        d17 = 'Fija';
+    });
 
-    $("input[id=inExtraccion17]").click(function(){
-		d17 = 'Extraccion';
-	});
+    $("input[id=inExtraccion17]").click(function () {
+        d17 = 'Extraccion';
+    });
 
     $('#AcepParadon17').click(function () {
         $('#ParaSuper17').hide('slow');
@@ -738,25 +743,25 @@ function D18() {
 
     $('#ParaSuper18').show('slow');
 
-    $("input[id=inCaries18]").click(function(){
-		d18 = 'Caries';
-	});
+    $("input[id=inCaries18]").click(function () {
+        d18 = 'Caries';
+    });
 
-    $("input[id=inAmalgama18]").click(function(){
-		d18 = 'Amalgama';
-	});
+    $("input[id=inAmalgama18]").click(function () {
+        d18 = 'Amalgama';
+    });
 
-    $("input[id=inAusente18]").click(function(){
-		d18 = 'Ausente';
-	});
+    $("input[id=inAusente18]").click(function () {
+        d18 = 'Ausente';
+    });
 
-    $("input[id=inFija18]").click(function(){
-		d18 = 'Fija';
-	});
+    $("input[id=inFija18]").click(function () {
+        d18 = 'Fija';
+    });
 
-    $("input[id=inExtraccion18]").click(function(){
-		d18 = 'Extraccion';
-	});
+    $("input[id=inExtraccion18]").click(function () {
+        d18 = 'Extraccion';
+    });
 
     $('#AcepParadon18').click(function () {
         $('#ParaSuper18').hide('slow');
@@ -830,25 +835,25 @@ function D21() {
 
     $('#ParaSuper21').show('slow');
 
-    $("input[id=inCaries21]").click(function(){
-		d21 = 'Caries';
-	});
+    $("input[id=inCaries21]").click(function () {
+        d21 = 'Caries';
+    });
 
-    $("input[id=inAmalgama21]").click(function(){
-		d21 = 'Amalgama';
-	});
+    $("input[id=inAmalgama21]").click(function () {
+        d21 = 'Amalgama';
+    });
 
-    $("input[id=inAusente21]").click(function(){
-		d21 = 'Ausente';
-	});
+    $("input[id=inAusente21]").click(function () {
+        d21 = 'Ausente';
+    });
 
-    $("input[id=inFija21]").click(function(){
-		d21 = 'Fija';
-	});
+    $("input[id=inFija21]").click(function () {
+        d21 = 'Fija';
+    });
 
-    $("input[id=inExtraccion21]").click(function(){
-		d21 = 'Extraccion';
-	});
+    $("input[id=inExtraccion21]").click(function () {
+        d21 = 'Extraccion';
+    });
 
     $('#AcepParadon21').click(function () {
         $('#ParaSuper21').hide('slow');
@@ -922,25 +927,25 @@ function D22() {
 
     $('#ParaSuper22').show('slow');
 
-    $("input[id=inCaries22]").click(function(){
-		d22 = 'Caries';
-	});
+    $("input[id=inCaries22]").click(function () {
+        d22 = 'Caries';
+    });
 
-    $("input[id=inAmalgama22]").click(function(){
-		d22 = 'Amalgama';
-	});
+    $("input[id=inAmalgama22]").click(function () {
+        d22 = 'Amalgama';
+    });
 
-    $("input[id=inAusente22]").click(function(){
-		d22 = 'Ausente';
-	});
+    $("input[id=inAusente22]").click(function () {
+        d22 = 'Ausente';
+    });
 
-    $("input[id=inFija22]").click(function(){
-		d22 = 'Fija';
-	});
+    $("input[id=inFija22]").click(function () {
+        d22 = 'Fija';
+    });
 
-    $("input[id=inExtraccion22]").click(function(){
-		d22 = 'Extraccion';
-	});
+    $("input[id=inExtraccion22]").click(function () {
+        d22 = 'Extraccion';
+    });
 
     $('#AcepParadon22').click(function () {
         $('#ParaSuper22').hide('slow');
@@ -1014,25 +1019,25 @@ function D23() {
 
     $('#ParaSuper23').show('slow');
 
-    $("input[id=inCaries23]").click(function(){
-		d23 = 'Caries';
-	});
+    $("input[id=inCaries23]").click(function () {
+        d23 = 'Caries';
+    });
 
-    $("input[id=inAmalgama23]").click(function(){
-		d23 = 'Amalgama';
-	});
+    $("input[id=inAmalgama23]").click(function () {
+        d23 = 'Amalgama';
+    });
 
-    $("input[id=inAusente23]").click(function(){
-		d23 = 'Ausente';
-	});
+    $("input[id=inAusente23]").click(function () {
+        d23 = 'Ausente';
+    });
 
-    $("input[id=inFija23]").click(function(){
-		d23 = 'Fija';
-	});
+    $("input[id=inFija23]").click(function () {
+        d23 = 'Fija';
+    });
 
-    $("input[id=inExtraccion23]").click(function(){
-		d23 = 'Extraccion';
-	});
+    $("input[id=inExtraccion23]").click(function () {
+        d23 = 'Extraccion';
+    });
 
     $('#AcepParadon23').click(function () {
         $('#ParaSuper23').hide('slow');
@@ -1106,25 +1111,25 @@ function D24() {
 
     $('#ParaSuper24').show('slow');
 
-    $("input[id=inCaries24]").click(function(){
-		d24 = 'Caries';
-	});
+    $("input[id=inCaries24]").click(function () {
+        d24 = 'Caries';
+    });
 
-    $("input[id=inAmalgama24]").click(function(){
-		d24 = 'Amalgama';
-	});
+    $("input[id=inAmalgama24]").click(function () {
+        d24 = 'Amalgama';
+    });
 
-    $("input[id=inAusente24]").click(function(){
-		d24 = 'Ausente';
-	});
+    $("input[id=inAusente24]").click(function () {
+        d24 = 'Ausente';
+    });
 
-    $("input[id=inFija24]").click(function(){
-		d24 = 'Fija';
-	});
+    $("input[id=inFija24]").click(function () {
+        d24 = 'Fija';
+    });
 
-    $("input[id=inExtraccion24]").click(function(){
-		d24 = 'Extraccion';
-	});
+    $("input[id=inExtraccion24]").click(function () {
+        d24 = 'Extraccion';
+    });
 
     $('#AcepParadon24').click(function () {
         $('#ParaSuper24').hide('slow');
@@ -1198,25 +1203,25 @@ function D25() {
 
     $('#ParaSuper25').show('slow');
 
-    $("input[id=inCaries25]").click(function(){
-		d25 = 'Caries';
-	});
+    $("input[id=inCaries25]").click(function () {
+        d25 = 'Caries';
+    });
 
-    $("input[id=inAmalgama25]").click(function(){
-		d25 = 'Amalgama';
-	});
+    $("input[id=inAmalgama25]").click(function () {
+        d25 = 'Amalgama';
+    });
 
-    $("input[id=inAusente25]").click(function(){
-		d25 = 'Ausente';
-	});
+    $("input[id=inAusente25]").click(function () {
+        d25 = 'Ausente';
+    });
 
-    $("input[id=inFija25]").click(function(){
-		d25 = 'Fija';
-	});
+    $("input[id=inFija25]").click(function () {
+        d25 = 'Fija';
+    });
 
-    $("input[id=inExtraccion25]").click(function(){
-		d25 = 'Extraccion';
-	});
+    $("input[id=inExtraccion25]").click(function () {
+        d25 = 'Extraccion';
+    });
 
     $('#AcepParadon25').click(function () {
         $('#ParaSuper25').hide('slow');
@@ -1290,25 +1295,25 @@ function D26() {
 
     $('#ParaSuper26').show('slow');
 
-    $("input[id=inCaries26]").click(function(){
-		d26 = 'Caries';
-	});
+    $("input[id=inCaries26]").click(function () {
+        d26 = 'Caries';
+    });
 
-    $("input[id=inAmalgama26]").click(function(){
-		d26 = 'Amalgama';
-	});
+    $("input[id=inAmalgama26]").click(function () {
+        d26 = 'Amalgama';
+    });
 
-    $("input[id=inAusente26]").click(function(){
-		d26 = 'Ausente';
-	});
+    $("input[id=inAusente26]").click(function () {
+        d26 = 'Ausente';
+    });
 
-    $("input[id=inFija26]").click(function(){
-		d26 = 'Fija';
-	});
+    $("input[id=inFija26]").click(function () {
+        d26 = 'Fija';
+    });
 
-    $("input[id=inExtraccion26]").click(function(){
-		d26 = 'Extraccion';
-	});
+    $("input[id=inExtraccion26]").click(function () {
+        d26 = 'Extraccion';
+    });
 
     $('#AcepParadon26').click(function () {
         $('#ParaSuper26').hide('slow');
@@ -1382,25 +1387,25 @@ function D27() {
 
     $('#ParaSuper27').show('slow');
 
-    $("input[id=inCaries27]").click(function(){
-		d27 = 'Caries';
-	});
+    $("input[id=inCaries27]").click(function () {
+        d27 = 'Caries';
+    });
 
-    $("input[id=inAmalgama27]").click(function(){
-		d27 = 'Amalgama';
-	});
+    $("input[id=inAmalgama27]").click(function () {
+        d27 = 'Amalgama';
+    });
 
-    $("input[id=inAusente27]").click(function(){
-		d27 = 'Ausente';
-	});
+    $("input[id=inAusente27]").click(function () {
+        d27 = 'Ausente';
+    });
 
-    $("input[id=inFija27]").click(function(){
-		d27 = 'Fija';
-	});
+    $("input[id=inFija27]").click(function () {
+        d27 = 'Fija';
+    });
 
-    $("input[id=inExtraccion27]").click(function(){
-		d27 = 'Extraccion';
-	});
+    $("input[id=inExtraccion27]").click(function () {
+        d27 = 'Extraccion';
+    });
 
     $('#AcepParadon27').click(function () {
         $('#ParaSuper27').hide('slow');
@@ -1465,34 +1470,34 @@ function D28() {
         $('#ParaSuper25').hide('slow');
 
     if (M26)
-        $('#ParaSuper27').hide('slow');
+        $('#ParaSuper26').hide('slow');
 
     if (M27)
-        $('#ParaSuper28').hide('slow');
+        $('#ParaSuper27').hide('slow');
 
     document.querySelector('#ParaTitle28').innerText = 'D28';
 
     $('#ParaSuper28').show('slow');
 
-    $("input[id=inCaries28]").click(function(){
-		d28 = 'Caries';
-	});
+    $("input[id=inCaries28]").click(function () {
+        d28 = 'Caries';
+    });
 
-    $("input[id=inAmalgama28]").click(function(){
-		d28 = 'Amalgama';
-	});
+    $("input[id=inAmalgama28]").click(function () {
+        d28 = 'Amalgama';
+    });
 
-    $("input[id=inAusente28]").click(function(){
-		d28 = 'Ausente';
-	});
+    $("input[id=inAusente28]").click(function () {
+        d28 = 'Ausente';
+    });
 
-    $("input[id=inFija28]").click(function(){
-		d28 = 'Fija';
-	});
+    $("input[id=inFija28]").click(function () {
+        d28 = 'Fija';
+    });
 
-    $("input[id=inExtraccion28]").click(function(){
-		d28 = 'Extraccion';
-	});
+    $("input[id=inExtraccion28]").click(function () {
+        d28 = 'Extraccion';
+    });
 
     $('#AcepParadon28').click(function () {
         $('#ParaSuper28').hide('slow');
@@ -1566,25 +1571,25 @@ function D31() {
 
     $('#ParaInfe31').show('slow');
 
-    $("input[id=inCaries31]").click(function(){
-		d31 = 'Caries';
-	});
+    $("input[id=inCaries31]").click(function () {
+        d31 = 'Caries';
+    });
 
-    $("input[id=inAmalgama31]").click(function(){
-		d31 = 'Amalgama';
-	});
+    $("input[id=inAmalgama31]").click(function () {
+        d31 = 'Amalgama';
+    });
 
-    $("input[id=inAusente31]").click(function(){
-		d31 = 'Ausente';
-	});
+    $("input[id=inAusente31]").click(function () {
+        d31 = 'Ausente';
+    });
 
-    $("input[id=inFija31]").click(function(){
-		d31 = 'Fija';
-	});
+    $("input[id=inFija31]").click(function () {
+        d31 = 'Fija';
+    });
 
-    $("input[id=inExtraccion31]").click(function(){
-		d31 = 'Extraccion';
-	});
+    $("input[id=inExtraccion31]").click(function () {
+        d31 = 'Extraccion';
+    });
 
     $('#AcepParadon31').click(function () {
         $('#ParaInfe31').hide('slow');
@@ -1658,25 +1663,25 @@ function D32() {
 
     $('#ParaInfe32').show('slow');
 
-    $("input[id=inCaries32]").click(function(){
-		d32 = 'Caries';
-	});
+    $("input[id=inCaries32]").click(function () {
+        d32 = 'Caries';
+    });
 
-    $("input[id=inAmalgama32]").click(function(){
-		d32 = 'Amalgama';
-	});
+    $("input[id=inAmalgama32]").click(function () {
+        d32 = 'Amalgama';
+    });
 
-    $("input[id=inAusente32]").click(function(){
-		d32 = 'Ausente';
-	});
+    $("input[id=inAusente32]").click(function () {
+        d32 = 'Ausente';
+    });
 
-    $("input[id=inFija32]").click(function(){
-		d32 = 'Fija';
-	});
+    $("input[id=inFija32]").click(function () {
+        d32 = 'Fija';
+    });
 
-    $("input[id=inExtraccion32]").click(function(){
-		d32 = 'Extraccion';
-	});
+    $("input[id=inExtraccion32]").click(function () {
+        d32 = 'Extraccion';
+    });
 
     $('#AcepParadon32').click(function () {
         $('#ParaInfe32').hide('slow');
@@ -1750,25 +1755,25 @@ function D33() {
 
     $('#ParaInfe33').show('slow');
 
-    $("input[id=inCarie33]").click(function(){
-		d33 = 'Caries';
-	});
+    $("input[id=inCarie33]").click(function () {
+        d33 = 'Caries';
+    });
 
-    $("input[id=inAmalgama33]").click(function(){
-		d33 = 'Amalgama';
-	});
+    $("input[id=inAmalgama33]").click(function () {
+        d33 = 'Amalgama';
+    });
 
-    $("input[id=inAusente33]").click(function(){
-		d33 = 'Ausente';
-	});
+    $("input[id=inAusente33]").click(function () {
+        d33 = 'Ausente';
+    });
 
-    $("input[id=inFija33]").click(function(){
-		d33 = 'Fija';
-	});
+    $("input[id=inFija33]").click(function () {
+        d33 = 'Fija';
+    });
 
-    $("input[id=inExtraccion33]").click(function(){
-		d33 = 'Extraccion';
-	});
+    $("input[id=inExtraccion33]").click(function () {
+        d33 = 'Extraccion';
+    });
 
     $('#AcepParadon33').click(function () {
         $('#ParaInfe33').hide('slow');
@@ -1842,25 +1847,25 @@ function D34() {
 
     $('#ParaInfe34').show('slow');
 
-    $("input[id=inCaries34]").click(function(){
-		d34 = 'Caries';
-	});
+    $("input[id=inCaries34]").click(function () {
+        d34 = 'Caries';
+    });
 
-    $("input[id=inAmalgama34]").click(function(){
-		d34 = 'Amalgama';
-	});
+    $("input[id=inAmalgama34]").click(function () {
+        d34 = 'Amalgama';
+    });
 
-    $("input[id=inAusente34]").click(function(){
-		d34 = 'Ausente';
-	});
+    $("input[id=inAusente34]").click(function () {
+        d34 = 'Ausente';
+    });
 
-    $("input[id=inFija34]").click(function(){
-		d34 = 'Fija';
-	});
+    $("input[id=inFija34]").click(function () {
+        d34 = 'Fija';
+    });
 
-    $("input[id=inExtraccion34]").click(function(){
-		d34 = 'Extraccion';
-	});
+    $("input[id=inExtraccion34]").click(function () {
+        d34 = 'Extraccion';
+    });
 
     $('#AcepParadon34').click(function () {
         $('#ParaInfe34').hide('slow');
@@ -1934,25 +1939,25 @@ function D35() {
 
     $('#ParaInfe35').show('slow');
 
-    $("input[id=inCaries35]").click(function(){
-		d35 = 'Caries';
-	});
+    $("input[id=inCaries35]").click(function () {
+        d35 = 'Caries';
+    });
 
-    $("input[id=inAmalgama35]").click(function(){
-		d35 = 'Amalgama';
-	});
+    $("input[id=inAmalgama35]").click(function () {
+        d35 = 'Amalgama';
+    });
 
-    $("input[id=inAusente35]").click(function(){
-		d35 = 'Ausente';
-	});
+    $("input[id=inAusente35]").click(function () {
+        d35 = 'Ausente';
+    });
 
-    $("input[id=inFija35]").click(function(){
-		d35 = 'Fija';
-	});
+    $("input[id=inFija35]").click(function () {
+        d35 = 'Fija';
+    });
 
-    $("input[id=inExtraccion35]").click(function(){
-		d35 = 'Extraccion';
-	});
+    $("input[id=inExtraccion35]").click(function () {
+        d35 = 'Extraccion';
+    });
 
     $('#AcepParadon35').click(function () {
         $('#ParaInfe35').hide('slow');
@@ -2026,25 +2031,25 @@ function D36() {
 
     $('#ParaInfe36').show('slow');
 
-    $("input[id=inCaries36]").click(function(){
-		d36 = 'Caries';
-	});
+    $("input[id=inCaries36]").click(function () {
+        d36 = 'Caries';
+    });
 
-    $("input[id=inAmalgama36]").click(function(){
-		d36 = 'Amalgama';
-	});
+    $("input[id=inAmalgama36]").click(function () {
+        d36 = 'Amalgama';
+    });
 
-    $("input[id=inAusente36]").click(function(){
-		d36 = 'Ausente';
-	});
+    $("input[id=inAusente36]").click(function () {
+        d36 = 'Ausente';
+    });
 
-    $("input[id=inFija36]").click(function(){
-		d36 = 'Fija';
-	});
+    $("input[id=inFija36]").click(function () {
+        d36 = 'Fija';
+    });
 
-    $("input[id=inExtraccion36]").click(function(){
-		d36 = 'Extraccion';
-	});
+    $("input[id=inExtraccion36]").click(function () {
+        d36 = 'Extraccion';
+    });
 
     $('#AcepParadon36').click(function () {
         $('#ParaInfe36').hide('slow');
@@ -2118,25 +2123,25 @@ function D37() {
 
     $('#ParaInfe37').show('slow');
 
-    $("input[id=inCaries37]").click(function(){
-		d37 = 'Caries';
-	});
+    $("input[id=inCaries37]").click(function () {
+        d37 = 'Caries';
+    });
 
-    $("input[id=inAmalgama37]").click(function(){
-		d37 = 'Amalgama';
-	});
+    $("input[id=inAmalgama37]").click(function () {
+        d37 = 'Amalgama';
+    });
 
-    $("input[id=inAusente37]").click(function(){
-		d37 = 'Ausente';
-	});
+    $("input[id=inAusente37]").click(function () {
+        d37 = 'Ausente';
+    });
 
-    $("input[id=inFija37]").click(function(){
-		d37 = 'Fija';
-	});
+    $("input[id=inFija37]").click(function () {
+        d37 = 'Fija';
+    });
 
-    $("input[id=inExtraccion37]").click(function(){
-		d37 = 'Extraccion';
-	});
+    $("input[id=inExtraccion37]").click(function () {
+        d37 = 'Extraccion';
+    });
 
     $('#AcepParadon37').click(function () {
         $('#ParaInfe37').hide('slow');
@@ -2210,25 +2215,25 @@ function D38() {
 
     $('#ParaInfe38').show('slow');
 
-    $("input[id=inCaries38]").click(function(){
-		d38 = 'Caries';
-	});
+    $("input[id=inCaries38]").click(function () {
+        d38 = 'Caries';
+    });
 
-    $("input[id=inAmalgama38]").click(function(){
-		d38 = 'Amalgama';
-	});
+    $("input[id=inAmalgama38]").click(function () {
+        d38 = 'Amalgama';
+    });
 
-    $("input[id=inAusente38]").click(function(){
-		d38 = 'Ausente';
-	});
+    $("input[id=inAusente38]").click(function () {
+        d38 = 'Ausente';
+    });
 
-    $("input[id=inFija38]").click(function(){
-		d38 = 'Fija';
-	});
+    $("input[id=inFija38]").click(function () {
+        d38 = 'Fija';
+    });
 
-    $("input[id=inExtraccion38]").click(function(){
-		d38 = 'Extraccion';
-	});
+    $("input[id=inExtraccion38]").click(function () {
+        d38 = 'Extraccion';
+    });
 
     $('#AcepParadon38').click(function () {
         $('#ParaInfe38').hide('slow');
@@ -2302,25 +2307,25 @@ function D41() {
 
     $('#ParaInfe41').show('slow');
 
-    $("input[id=inCaries41]").click(function(){
-		d41 = 'Caries';
-	});
+    $("input[id=inCaries41]").click(function () {
+        d41 = 'Caries';
+    });
 
-    $("input[id=inAmalgama41]").click(function(){
-		d41 = 'Amalgama';
-	});
+    $("input[id=inAmalgama41]").click(function () {
+        d41 = 'Amalgama';
+    });
 
-    $("input[id=inAusente41]").click(function(){
-		d41 = 'Ausente';
-	});
+    $("input[id=inAusente41]").click(function () {
+        d41 = 'Ausente';
+    });
 
-    $("input[id=inFija41]").click(function(){
-		d41 = 'Fija';
-	});
+    $("input[id=inFija41]").click(function () {
+        d41 = 'Fija';
+    });
 
-    $("input[id=inExtraccion41]").click(function(){
-		d41 = 'Extraccion';
-	});
+    $("input[id=inExtraccion41]").click(function () {
+        d41 = 'Extraccion';
+    });
 
     $('#AcepParadon41').click(function () {
         $('#ParaInfe41').hide('slow');
@@ -2394,25 +2399,25 @@ function D42() {
 
     $('#ParaInfe42').show('slow');
 
-    $("input[id=inCaries42]").click(function(){
-		d42 = 'Caries';
-	});
+    $("input[id=inCaries42]").click(function () {
+        d42 = 'Caries';
+    });
 
-    $("input[id=inAmalgama42]").click(function(){
-		d42 = 'Amalgama';
-	});
+    $("input[id=inAmalgama42]").click(function () {
+        d42 = 'Amalgama';
+    });
 
-    $("input[id=inAusente42]").click(function(){
-		d42 = 'Ausente';
-	});
+    $("input[id=inAusente42]").click(function () {
+        d42 = 'Ausente';
+    });
 
-    $("input[id=inFija42]").click(function(){
-		d42 = 'Fija';
-	});
+    $("input[id=inFija42]").click(function () {
+        d42 = 'Fija';
+    });
 
-    $("input[id=inExtraccion42]").click(function(){
-		d42 = 'Extraccion';
-	});
+    $("input[id=inExtraccion42]").click(function () {
+        d42 = 'Extraccion';
+    });
 
     $('#AcepParadon42').click(function () {
         $('#ParaInfe42').hide('slow');
@@ -2486,25 +2491,25 @@ function D43() {
 
     $('#ParaInfe43').show('slow');
 
-    $("input[id=inCaries43]").click(function(){
-		d43 = 'Caries';
-	});
+    $("input[id=inCaries43]").click(function () {
+        d43 = 'Caries';
+    });
 
-    $("input[id=inAmalgama43]").click(function(){
-		d43 = 'Amalgama';
-	});
+    $("input[id=inAmalgama43]").click(function () {
+        d43 = 'Amalgama';
+    });
 
-    $("input[id=inAusente43]").click(function(){
-		d43 = 'Ausente';
-	});
+    $("input[id=inAusente43]").click(function () {
+        d43 = 'Ausente';
+    });
 
-    $("input[id=inFija43]").click(function(){
-		d43 = 'Fija';
-	});
+    $("input[id=inFija43]").click(function () {
+        d43 = 'Fija';
+    });
 
-    $("input[id=inExtraccion43]").click(function(){
-		d43 = 'Extraccion';
-	});
+    $("input[id=inExtraccion43]").click(function () {
+        d43 = 'Extraccion';
+    });
 
     $('#AcepParadon43').click(function () {
         $('#ParaInfe43').hide('slow');
@@ -2578,25 +2583,25 @@ function D44() {
 
     $('#ParaInfe44').show('slow');
 
-    $("input[id=inCaries44]").click(function(){
-		d44 = 'Caries';
-	});
+    $("input[id=inCaries44]").click(function () {
+        d44 = 'Caries';
+    });
 
-    $("input[id=inAmalgama44]").click(function(){
-		d44 = 'Amalgama';
-	});
+    $("input[id=inAmalgama44]").click(function () {
+        d44 = 'Amalgama';
+    });
 
-    $("input[id=inAusente44]").click(function(){
-		d44 = 'Ausente';
-	});
+    $("input[id=inAusente44]").click(function () {
+        d44 = 'Ausente';
+    });
 
-    $("input[id=inFija44]").click(function(){
-		d44 = 'Fija';
-	});
+    $("input[id=inFija44]").click(function () {
+        d44 = 'Fija';
+    });
 
-    $("input[id=inExtraccion44]").click(function(){
-		d44 = 'Extraccion';
-	});
+    $("input[id=inExtraccion44]").click(function () {
+        d44 = 'Extraccion';
+    });
 
     $('#AcepParadon44').click(function () {
         $('#ParaInfe44').hide('slow');
@@ -2671,25 +2676,25 @@ function D45() {
 
     $('#ParaInfe45').show('slow');
 
-    $("input[id=inCaries45]").click(function(){
-		d45 = 'Caries';
-	});
+    $("input[id=inCaries45]").click(function () {
+        d45 = 'Caries';
+    });
 
-    $("input[id=inAmalgama45]").click(function(){
-		d45 = 'Amalgama';
-	});
+    $("input[id=inAmalgama45]").click(function () {
+        d45 = 'Amalgama';
+    });
 
-    $("input[id=inAusente45]").click(function(){
-		d45 = 'Ausente';
-	});
+    $("input[id=inAusente45]").click(function () {
+        d45 = 'Ausente';
+    });
 
-    $("input[id=inFija45]").click(function(){
-		d45 = 'Fija';
-	});
+    $("input[id=inFija45]").click(function () {
+        d45 = 'Fija';
+    });
 
-    $("input[id=inExtraccion45]").click(function(){
-		d45 = 'Extraccion';
-	});
+    $("input[id=inExtraccion45]").click(function () {
+        d45 = 'Extraccion';
+    });
 
     $('#AcepParadon45').click(function () {
         $('#ParaInfe45').hide('slow');
@@ -2764,25 +2769,25 @@ function D46() {
 
     $('#ParaInfe46').show('slow');
 
-    $("input[id=inCaries46]").click(function(){
-		d46 = 'Caries';
-	});
+    $("input[id=inCaries46]").click(function () {
+        d46 = 'Caries';
+    });
 
-    $("input[id=inAmalgama46]").click(function(){
-		d46 = 'Amalgama';
-	});
+    $("input[id=inAmalgama46]").click(function () {
+        d46 = 'Amalgama';
+    });
 
-    $("input[id=inAusente46]").click(function(){
-		d46 = 'Ausente';
-	});
+    $("input[id=inAusente46]").click(function () {
+        d46 = 'Ausente';
+    });
 
-    $("input[id=inFija46]").click(function(){
-		d46 = 'Fija';
-	});
+    $("input[id=inFija46]").click(function () {
+        d46 = 'Fija';
+    });
 
-    $("input[id=inExtraccion46]").click(function(){
-		d46 = 'Extraccion';
-	});
+    $("input[id=inExtraccion46]").click(function () {
+        d46 = 'Extraccion';
+    });
 
     $('#AcepParadon46').click(function () {
         $('#ParaInfe46').hide('slow');
@@ -2856,25 +2861,25 @@ function D47() {
 
     $('#ParaInfe47').show('slow');
 
-    $("input[id=inCaries47]").click(function(){
-		d47 = 'Caries';
-	});
+    $("input[id=inCaries47]").click(function () {
+        d47 = 'Caries';
+    });
 
-    $("input[id=inAmalgama47]").click(function(){
-		d47 = 'Amalgama';
-	});
+    $("input[id=inAmalgama47]").click(function () {
+        d47 = 'Amalgama';
+    });
 
-    $("input[id=inAusente47]").click(function(){
-		d47 = 'Ausente';
-	});
+    $("input[id=inAusente47]").click(function () {
+        d47 = 'Ausente';
+    });
 
-    $("input[id=inFija47]").click(function(){
-		d47 = 'Fija';
-	});
+    $("input[id=inFija47]").click(function () {
+        d47 = 'Fija';
+    });
 
-    $("input[id=inExtraccion47]").click(function(){
-		d47 = 'Extraccion';
-	});
+    $("input[id=inExtraccion47]").click(function () {
+        d47 = 'Extraccion';
+    });
 
     $('#AcepParadon47').click(function () {
         $('#ParaInfe47').hide('slow');
@@ -2948,25 +2953,25 @@ function D48() {
 
     $('#ParaInfe48').show('slow');
 
-    $("input[id=inCaries48]").click(function(){
-		d48 = 'Caries';
-	});
+    $("input[id=inCaries48]").click(function () {
+        d48 = 'Caries';
+    });
 
-    $("input[id=inAmalgama48]").click(function(){
-		d48 = 'Amalgama';
-	});
+    $("input[id=inAmalgama48]").click(function () {
+        d48 = 'Amalgama';
+    });
 
-    $("input[id=inAusente48]").click(function(){
-		d48 = 'Ausente';
-	});
+    $("input[id=inAusente48]").click(function () {
+        d48 = 'Ausente';
+    });
 
-    $("input[id=inFija48]").click(function(){
-		d48 = 'Fija';
-	});
+    $("input[id=inFija48]").click(function () {
+        d48 = 'Fija';
+    });
 
-    $("input[id=inExtraccion48]").click(function(){
-		d48 = 'Extraccion';
-	});
+    $("input[id=inExtraccion48]").click(function () {
+        d48 = 'Extraccion';
+    });
 
     $('#AcepParadon48').click(function () {
         $('#ParaInfe48').hide('slow');
@@ -2981,7 +2986,7 @@ function validador(id) {
     var s, apre, apcard, apdig, nerv, coa, desm, vermar, diabe, tiro, fire, hiper;
     var trat, Ttrat, Tmedi, Thospi;
     var duro, rx, encia, epite, lengua, pulpa, velo, carrillo, mordida, mordabi, desbru, anoclu;
-    var emba, anti, fuma, bebe, droga, aler, higi;
+    var emba, meses, anti, fuma, bebe, droga, aler, higi;
     var brico, contmu, habmord, rebuc, chulab, chulen, chuded, ali;
     var rechi, Tencia, Cencia, OHbucal, hemo, cepi;
 
@@ -3202,6 +3207,9 @@ function validador(id) {
         }
     }
 
+    if ($('#inMeses').val() == null)
+        meses = 0;
+
     //Anticonceptivos
     if ($('#inSiAnti').prop('checked')) {
         anti = 'Si';
@@ -3377,159 +3385,558 @@ function validador(id) {
         }
     }
 
-    if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" || $('#inDomicilio').val() === "" ||
-        $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inFechaNac').val() === "" || s == null || trat == null ||
-        Tmedi == null || Thospi == null || duro == null || rx == null || mordida == null || emba == null || anti == null ||
-        fuma == null || bebe == null || droga == null || aler == null || higi == null || ali == null || rechi == null || Tencia == null
-        || Cencia == null || OHbucal == null || hemo == null || $('#inVecCepi').val() === "" || cepi == null) {
-        alert("Favor de llenar los campos");
-    }
-    else {
-        var datosPaciente = JSON.stringify({
-
-            sNombre: $('#inNombre').val(),
-            sApePaterno: $('#inPaterno').val(),
-            sApeMaterno: $('#inMaterno').val(),
-            sDomicilio: $('#inDomicilio').val(),
-            lTelefono: $('#inTelefono').val(),
-            lCelular: $('#inCelular').val(),
-            dtFechaNacimiento: $('#inFechaNac').val(),
-            sSexo: s,
-            sApa_Res: apre,
-            sApa_Cardi: apcard,
-            sApa_Diges: apdig,
-            sSis_Nerv: nerv,
-            sProp_Guagu: coa,
-            sDesmayos: desm,
-            sVerti_Mareo: vermar,
-            sDiabetes: diabe,
-            sTiroides: tiro,
-            sFie_Reu: fire,
-            sHipertension: hiper,
-            sOtroAntecedente: $('#inAPotros').val(),
-            sBajoTratamiento: trat,
-            sTipoTratamiento: Ttrat,
-            sNombreDoctor: $('#inNombreD').val(),
-            sApePaterDoc: $('#inPaternoD').val(),
-            sApeMaterDoc: $('#inMaternoD').val(),
-            lTelDoct: $('#inTelD').val(),
-            lCelDoct: $('#inCelD').val(),
-            dtIniciaTratamiento: $('#inFechaIni').val(),
-            dtTerminaTratamiento: $('#inFechaFin').val(),
-            sTomaMedi: Tmedi,
-            sMedicamento: $('#inMesp').val(),
-            sHospi: Thospi,
-            sMotivo: $('#inMotivo').val(),
-            sDuros: duro,
-            sRx: rx,
-            sEncia: encia,
-            sInsert_Epi: epite,
-            sLengua: lengua,
-            sPulpa: pulpa,
-            sVelo: velo,
-            sCarrillos: carrillo,
-            sSob_Mord: mordida,
-            sMordi_Abier: mordabi,
-            sDesg_Bru: desbru,
-            sAnoclusion: anoclu,
-            sEmbarazo: emba,
-            iMesesEmbarazo: $('#inMeses').val(),
-            sAnticonceptivos: anti,
-            sTipoAnticoncep: $('#inAntiTipo').val(),
-            sFuma: fuma,
-            sBebe: bebe,
-            sDrogas: droga,
-            sAlergia: aler,
-            sTipoAlergia: $('#inEspAlerg').val(),
-            sHigieneBucal: higi,
-            sBricomania: brico,
-            sContrac_Musc: contmu,
-            sHabi_Mordi: habmord,
-            sResp_Bucal: rebuc,
-            sChupa_Labios: chulab,
-            sChupa_Lengua: chulen,
-            sChupa_Dedos: chuded,
-            iFrecuencia: $('#inFrecuencia').val(),
-            sAlimentacion: ali,
-            sRechiApri: rechi,
-            sTrataEncias: Tencia,
-            sOriHigBucal: OHbucal,
-            sCirugiaEncias: Cencia,
-            sHemorragiaBucal: hemo,
-            iCepillado: $('#inVecCepi').val(),
-            sTipoCepillo: cepi,
-            sD11: d11,
-            sD12: d12,
-            sD13: d13,
-            sD14: d14,
-            sD15: d15,
-            sD16: d16,
-            sD17: d17,
-            sD18: d18,
-            sD21: d21,
-            sD22: d22,
-            sD23: d23,
-            sD24: d24,
-            sD25: d25,
-            sD26: d26,
-            sD27: d27,
-            sD28: d28,
-            sD31: d31,
-            sD32: d32,
-            sD33: d33,
-            sD34: d34,
-            sD35: d35,
-            sD36: d36,
-            sD37: d37,
-            sD38: d38,
-            sD41: d41,
-            sD42: d42,
-            sD43: d43,
-            sD44: d44,
-            sD45: d45,
-            sD46: d46,
-            sD47: d47,
-            sD48: d48,
-            iOdontologo: parseInt(id)
+    if ($('#inNombre').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Nombre Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
         });
+    } else {
+        if ($('#inPaterno').val() === "") {
+            Swal.fire({
+                icon: 'warning',
+                title: 'El Campo Apellido Paterno Está Vacío',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        } else {
+            if ($('#inMaterno').val() === "") {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'El Campo Apellido Materno Está Vacío',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                if ($('#inDomicilio').val() === "") {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'El Campo Domicilio Está Vacío',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                } else {
+                    if ($('#inTelefono').val() === "") {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'El Campo Teléfono Está Vacío',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    } else {
+                        if ($('#inCelular').val() === "") {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'El Campo Celular Está Vacío',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        } else {
+                            if ($('#inFechaNac').val() === "") {
+                                Swal.fire({
+                                    icon: 'warning',
+                                    title: 'El Campo Fecha de Nacimiento Está Vacío',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            } else {
+                                if (s == null) {
+                                    Swal.fire({
+                                        icon: 'warning',
+                                        title: 'El Campo Sexo Está Vacío',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                } else {
+                                    if (trat == null) {
+                                        Swal.fire({
+                                            icon: 'warning',
+                                            title: 'El Campo Tratamiento Está Vacío',
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                        });
+                                    } else {
+                                        if (s == null) {
+                                            Swal.fire({
+                                                icon: 'warning',
+                                                title: 'El Campo Sexo Está Vacío',
+                                                showConfirmButton: false,
+                                                timer: 1500
+                                            });
+                                        } else {
+                                            if (trat == 'Si' && Ttrat == null) {
+                                                Swal.fire({
+                                                    icon: 'warning',
+                                                    title: 'El Campo Tipo de Tratamiento Vacío',
+                                                    showConfirmButton: false,
+                                                    timer: 1500
+                                                });
+                                            } else {
+                                                if (trat == 'Si' && $('#inNombreD').val() === "") {
+                                                    Swal.fire({
+                                                        icon: 'warning',
+                                                        title: 'El Campo Nombre del Doctor Está Vacío',
+                                                        showConfirmButton: false,
+                                                        timer: 1500
+                                                    });
+                                                } else {
+                                                    if (trat == 'Si' && $('#inPaternoD').val() === "") {
+                                                        Swal.fire({
+                                                            icon: 'warning',
+                                                            title: 'El Campo Apellido Paterno del Doctor Está Vacío',
+                                                            showConfirmButton: false,
+                                                            timer: 1500
+                                                        });
+                                                    } else {
+                                                        if (trat == 'Si' && $('#inMaternoD').val() === "") {
+                                                            Swal.fire({
+                                                                icon: 'warning',
+                                                                title: 'El Campo Apellido Materno del Doctor Está Vacío',
+                                                                showConfirmButton: false,
+                                                                timer: 1500
+                                                            });
+                                                        } else {
+                                                            if (trat == 'Si' && $('#inTelD').val() === "") {
+                                                                Swal.fire({
+                                                                    icon: 'warning',
+                                                                    title: 'El Campo Teléfono del Doctor Está Vacío',
+                                                                    showConfirmButton: false,
+                                                                    timer: 1500
+                                                                });
+                                                            } else {
+                                                                if (trat == 'Si' && $('#inCelD').val() === "") {
+                                                                    Swal.fire({
+                                                                        icon: 'warning',
+                                                                        title: 'El Campo Celular del Doctor Está Vacío',
+                                                                        showConfirmButton: false,
+                                                                        timer: 1500
+                                                                    });
+                                                                } else {
+                                                                    if (trat == 'Si' && $('#inFechaIni').val() === "") {
+                                                                        Swal.fire({
+                                                                            icon: 'warning',
+                                                                            title: 'El Campo Inicia Tratamiento Está Vacío',
+                                                                            showConfirmButton: false,
+                                                                            timer: 1500
+                                                                        });
+                                                                    } else {
+                                                                        if (trat == 'Si' && $('#inFechaFin').val() === "") {
+                                                                            Swal.fire({
+                                                                                icon: 'warning',
+                                                                                title: 'El Campo Termina Tratamiento Está Vacío',
+                                                                                showConfirmButton: false,
+                                                                                timer: 1500
+                                                                            });
+                                                                        } else {
+                                                                            if (Tmedi == null) {
+                                                                                Swal.fire({
+                                                                                    icon: 'warning',
+                                                                                    title: 'El Campo Toma Medicamento Está Vacío',
+                                                                                    showConfirmButton: false,
+                                                                                    timer: 1500
+                                                                                });
+                                                                            }
+                                                                            else {
+                                                                                if (Tmedi == 'Si' && $('#inMesp').val() === "") {
+                                                                                    Swal.fire({
+                                                                                        icon: 'warning',
+                                                                                        title: 'El Campo Especifica Medicamento Está Vacío',
+                                                                                        showConfirmButton: false,
+                                                                                        timer: 1500
+                                                                                    });
+                                                                                } else {
+                                                                                    if (Thospi == null) {
+                                                                                        Swal.fire({
+                                                                                            icon: 'warning',
+                                                                                            title: 'El Campo Hospitalizado Está Vacío',
+                                                                                            showConfirmButton: false,
+                                                                                            timer: 1500
+                                                                                        });
+                                                                                    } else {
+                                                                                        if (Thospi == 'Si' && $('#inMotivo').val() === "") {
+                                                                                            Swal.fire({
+                                                                                                icon: 'warning',
+                                                                                                title: 'El Campo Hospitalizado Está Vacío',
+                                                                                                showConfirmButton: false,
+                                                                                                timer: 1500
+                                                                                            });
+                                                                                        } else {
+                                                                                            if (duro == null) {
+                                                                                                Swal.fire({
+                                                                                                    icon: 'warning',
+                                                                                                    title: 'El Campo Duro Está Vacío',
+                                                                                                    showConfirmButton: false,
+                                                                                                    timer: 1500
+                                                                                                });
+                                                                                            } else {
+                                                                                                if (rx == null) {
+                                                                                                    Swal.fire({
+                                                                                                        icon: 'warning',
+                                                                                                        title: 'El Campo Rx Está Vacío',
+                                                                                                        showConfirmButton: false,
+                                                                                                        timer: 1500
+                                                                                                    });
+                                                                                                } else {
+                                                                                                    if (mordida == null) {
+                                                                                                        Swal.fire({
+                                                                                                            icon: 'warning',
+                                                                                                            title: 'El Campo Sobre Mordida Está Vacío',
+                                                                                                            showConfirmButton: false,
+                                                                                                            timer: 1500
+                                                                                                        });
+                                                                                                    } else {
+                                                                                                        if (emba == null) {
+                                                                                                            Swal.fire({
+                                                                                                                icon: 'warning',
+                                                                                                                title: 'El Campo Embarazo Está Vacío',
+                                                                                                                showConfirmButton: false,
+                                                                                                                timer: 1500
+                                                                                                            });
+                                                                                                        } else {
+                                                                                                            if (emba == null && $('#inMeses').val() === "") {
+                                                                                                                Swal.fire({
+                                                                                                                    icon: 'warning',
+                                                                                                                    title: 'El Campo Meses de Embarazo Está Vacío',
+                                                                                                                    showConfirmButton: false,
+                                                                                                                    timer: 1500
+                                                                                                                });
+                                                                                                            } else {
+                                                                                                                if (anti == null) {
+                                                                                                                    Swal.fire({
+                                                                                                                        icon: 'warning',
+                                                                                                                        title: 'El Campo Usa Anticonceptivos Está Vacío',
+                                                                                                                        showConfirmButton: false,
+                                                                                                                        timer: 1500
+                                                                                                                    });
+                                                                                                                } else {
+                                                                                                                    if (anti == null && $('#inAntiTipo').val() === "") {
+                                                                                                                        Swal.fire({
+                                                                                                                            icon: 'warning',
+                                                                                                                            title: 'El Campo Tipo de Anticonceptivos Está Vacío',
+                                                                                                                            showConfirmButton: false,
+                                                                                                                            timer: 1500
+                                                                                                                        });
+                                                                                                                    } else {
+                                                                                                                        if (fuma == null) {
+                                                                                                                            Swal.fire({
+                                                                                                                                icon: 'warning',
+                                                                                                                                title: 'El Campo Fuma Está Vacío',
+                                                                                                                                showConfirmButton: false,
+                                                                                                                                timer: 1500
+                                                                                                                            });
+                                                                                                                        } else {
+                                                                                                                            if (bebe == null) {
+                                                                                                                                Swal.fire({
+                                                                                                                                    icon: 'warning',
+                                                                                                                                    title: 'El Campo Bebe Alcohol Está Vacío',
+                                                                                                                                    showConfirmButton: false,
+                                                                                                                                    timer: 1500
+                                                                                                                                });
+                                                                                                                            } else {
+                                                                                                                                if (droga == null) {
+                                                                                                                                    Swal.fire({
+                                                                                                                                        icon: 'warning',
+                                                                                                                                        title: 'El Campo Consume Drogas Está Vacío',
+                                                                                                                                        showConfirmButton: false,
+                                                                                                                                        timer: 1500
+                                                                                                                                    });
+                                                                                                                                } else {
+                                                                                                                                    if (aler == null) {
+                                                                                                                                        Swal.fire({
+                                                                                                                                            icon: 'warning',
+                                                                                                                                            title: 'El Campo Alergia Está Vacío',
+                                                                                                                                            showConfirmButton: false,
+                                                                                                                                            timer: 1500
+                                                                                                                                        });
+                                                                                                                                    } else {
+                                                                                                                                        if (aler == null && $('#inEspAlerg').val() === "") {
+                                                                                                                                            Swal.fire({
+                                                                                                                                                icon: 'warning',
+                                                                                                                                                title: 'El Campo Alergia Está Vacío',
+                                                                                                                                                showConfirmButton: false,
+                                                                                                                                                timer: 1500
+                                                                                                                                            });
+                                                                                                                                        } else {
+                                                                                                                                            if (higi == null) {
+                                                                                                                                                Swal.fire({
+                                                                                                                                                    icon: 'warning',
+                                                                                                                                                    title: 'El Campo Higinen Bucal Está Vacío',
+                                                                                                                                                    showConfirmButton: false,
+                                                                                                                                                    timer: 1500
+                                                                                                                                                });
+                                                                                                                                            } else {
+                                                                                                                                                if (ali == null) {
+                                                                                                                                                    Swal.fire({
+                                                                                                                                                        icon: 'warning',
+                                                                                                                                                        title: 'El Campo Alimentación Está Vacío',
+                                                                                                                                                        showConfirmButton: false,
+                                                                                                                                                        timer: 1500
+                                                                                                                                                    });
+                                                                                                                                                } else {
+                                                                                                                                                    if (rechi == null) {
+                                                                                                                                                        Swal.fire({
+                                                                                                                                                            icon: 'warning',
+                                                                                                                                                            title: 'El Campo Rechina o Aprieta los Dientes Está Vacío',
+                                                                                                                                                            showConfirmButton: false,
+                                                                                                                                                            timer: 1500
+                                                                                                                                                        });
+                                                                                                                                                    } else {
+                                                                                                                                                        if (Tencia == null) {
+                                                                                                                                                            Swal.fire({
+                                                                                                                                                                icon: 'warning',
+                                                                                                                                                                title: 'El Tratamiento de Encias Está Vacío',
+                                                                                                                                                                showConfirmButton: false,
+                                                                                                                                                                timer: 1500
+                                                                                                                                                            });
+                                                                                                                                                        } else {
+                                                                                                                                                            if (Cencia == null) {
+                                                                                                                                                                Swal.fire({
+                                                                                                                                                                    icon: 'warning',
+                                                                                                                                                                    title: 'El Campo Cirujía de Encias Está Vacío',
+                                                                                                                                                                    showConfirmButton: false,
+                                                                                                                                                                    timer: 1500
+                                                                                                                                                                });
+                                                                                                                                                            } else {
+                                                                                                                                                                if (OHbucal == null) {
+                                                                                                                                                                    Swal.fire({
+                                                                                                                                                                        icon: 'warning',
+                                                                                                                                                                        title: 'El Campo Orientación de Higiene Bucal Está Vacío',
+                                                                                                                                                                        showConfirmButton: false,
+                                                                                                                                                                        timer: 1500
+                                                                                                                                                                    });
+                                                                                                                                                                } else {
+                                                                                                                                                                    if (hemo == null) {
+                                                                                                                                                                        Swal.fire({
+                                                                                                                                                                            icon: 'warning',
+                                                                                                                                                                            title: 'El Campo Hemorragias en la Boca Está Vacío',
+                                                                                                                                                                            showConfirmButton: false,
+                                                                                                                                                                            timer: 1500
+                                                                                                                                                                        });
+                                                                                                                                                                    } else {
+                                                                                                                                                                        if ($('#inVecCepi').val() === "") {
+                                                                                                                                                                            Swal.fire({
+                                                                                                                                                                                icon: 'warning',
+                                                                                                                                                                                title: 'El Campo Veces Cepillado Está Vacío',
+                                                                                                                                                                                showConfirmButton: false,
+                                                                                                                                                                                timer: 1500
+                                                                                                                                                                            });
+                                                                                                                                                                        } else {
+                                                                                                                                                                            if (cepi == null) {
+                                                                                                                                                                                Swal.fire({
+                                                                                                                                                                                    icon: 'warning',
+                                                                                                                                                                                    title: 'El Campo Tipo de Cepillo Está Vacío',
+                                                                                                                                                                                    showConfirmButton: false,
+                                                                                                                                                                                    timer: 1500
+                                                                                                                                                                                });
+                                                                                                                                                                            } else {
+                                                                                                                                                                                var datosPaciente = JSON.stringify({
+
+                                                                                                                                                                                    sNombre: $('#inNombre').val(),
+                                                                                                                                                                                    sApePaterno: $('#inPaterno').val(),
+                                                                                                                                                                                    sApeMaterno: $('#inMaterno').val(),
+                                                                                                                                                                                    sDomicilio: $('#inDomicilio').val(),
+                                                                                                                                                                                    lTelefono: $('#inTelefono').val(),
+                                                                                                                                                                                    lCelular: $('#inCelular').val(),
+                                                                                                                                                                                    dtFechaNacimiento: $('#inFechaNac').val(),
+                                                                                                                                                                                    sSexo: s,
+                                                                                                                                                                                    sApa_Res: apre,
+                                                                                                                                                                                    sApa_Cardi: apcard,
+                                                                                                                                                                                    sApa_Diges: apdig,
+                                                                                                                                                                                    sSis_Nerv: nerv,
+                                                                                                                                                                                    sProp_Guagu: coa,
+                                                                                                                                                                                    sDesmayos: desm,
+                                                                                                                                                                                    sVerti_Mareo: vermar,
+                                                                                                                                                                                    sDiabetes: diabe,
+                                                                                                                                                                                    sTiroides: tiro,
+                                                                                                                                                                                    sFie_Reu: fire,
+                                                                                                                                                                                    sHipertension: hiper,
+                                                                                                                                                                                    sOtroAntecedente: $('#inAPotros').val(),
+                                                                                                                                                                                    sBajoTratamiento: trat,
+                                                                                                                                                                                    sTipoTratamiento: Ttrat,
+                                                                                                                                                                                    sNombreDoctor: $('#inNombreD').val(),
+                                                                                                                                                                                    sApePaterDoc: $('#inPaternoD').val(),
+                                                                                                                                                                                    sApeMaterDoc: $('#inMaternoD').val(),
+                                                                                                                                                                                    lTelDoct: $('#inTelD').val(),
+                                                                                                                                                                                    lCelDoct: $('#inCelD').val(),
+                                                                                                                                                                                    dtIniciaTratamiento: $('#inFechaIni').val(),
+                                                                                                                                                                                    dtTerminaTratamiento: $('#inFechaFin').val(),
+                                                                                                                                                                                    sTomaMedi: Tmedi,
+                                                                                                                                                                                    sMedicamento: $('#inMesp').val(),
+                                                                                                                                                                                    sHospi: Thospi,
+                                                                                                                                                                                    sMotivo: $('#inMotivo').val(),
+                                                                                                                                                                                    sDuros: duro,
+                                                                                                                                                                                    sRx: rx,
+                                                                                                                                                                                    sEncia: encia,
+                                                                                                                                                                                    sInsert_Epi: epite,
+                                                                                                                                                                                    sLengua: lengua,
+                                                                                                                                                                                    sPulpa: pulpa,
+                                                                                                                                                                                    sVelo: velo,
+                                                                                                                                                                                    sCarrillos: carrillo,
+                                                                                                                                                                                    sSob_Mord: mordida,
+                                                                                                                                                                                    sMordi_Abier: mordabi,
+                                                                                                                                                                                    sDesg_Bru: desbru,
+                                                                                                                                                                                    sAnoclusion: anoclu,
+                                                                                                                                                                                    sEmbarazo: emba,
+                                                                                                                                                                                    iMesesEmbarazo: $('#inMeses').val(),
+                                                                                                                                                                                    sAnticonceptivos: anti,
+                                                                                                                                                                                    sTipoAnticoncep: $('#inAntiTipo').val(),
+                                                                                                                                                                                    sFuma: fuma,
+                                                                                                                                                                                    sBebe: bebe,
+                                                                                                                                                                                    sDrogas: droga,
+                                                                                                                                                                                    sAlergia: aler,
+                                                                                                                                                                                    sTipoAlergia: $('#inEspAlerg').val(),
+                                                                                                                                                                                    sHigieneBucal: higi,
+                                                                                                                                                                                    sBricomania: brico,
+                                                                                                                                                                                    sContrac_Musc: contmu,
+                                                                                                                                                                                    sHabi_Mordi: habmord,
+                                                                                                                                                                                    sResp_Bucal: rebuc,
+                                                                                                                                                                                    sChupa_Labios: chulab,
+                                                                                                                                                                                    sChupa_Lengua: chulen,
+                                                                                                                                                                                    sChupa_Dedos: chuded,
+                                                                                                                                                                                    iFrecuencia: $('#inFrecuencia').val(),
+                                                                                                                                                                                    sAlimentacion: ali,
+                                                                                                                                                                                    sRechiApri: rechi,
+                                                                                                                                                                                    sTrataEncias: Tencia,
+                                                                                                                                                                                    sOriHigBucal: OHbucal,
+                                                                                                                                                                                    sCirugiaEncias: Cencia,
+                                                                                                                                                                                    sHemorragiaBucal: hemo,
+                                                                                                                                                                                    iCepillado: $('#inVecCepi').val(),
+                                                                                                                                                                                    sTipoCepillo: cepi,
+                                                                                                                                                                                    sD11: d11,
+                                                                                                                                                                                    sD12: d12,
+                                                                                                                                                                                    sD13: d13,
+                                                                                                                                                                                    sD14: d14,
+                                                                                                                                                                                    sD15: d15,
+                                                                                                                                                                                    sD16: d16,
+                                                                                                                                                                                    sD17: d17,
+                                                                                                                                                                                    sD18: d18,
+                                                                                                                                                                                    sD21: d21,
+                                                                                                                                                                                    sD22: d22,
+                                                                                                                                                                                    sD23: d23,
+                                                                                                                                                                                    sD24: d24,
+                                                                                                                                                                                    sD25: d25,
+                                                                                                                                                                                    sD26: d26,
+                                                                                                                                                                                    sD27: d27,
+                                                                                                                                                                                    sD28: d28,
+                                                                                                                                                                                    sD31: d31,
+                                                                                                                                                                                    sD32: d32,
+                                                                                                                                                                                    sD33: d33,
+                                                                                                                                                                                    sD34: d34,
+                                                                                                                                                                                    sD35: d35,
+                                                                                                                                                                                    sD36: d36,
+                                                                                                                                                                                    sD37: d37,
+                                                                                                                                                                                    sD38: d38,
+                                                                                                                                                                                    sD41: d41,
+                                                                                                                                                                                    sD42: d42,
+                                                                                                                                                                                    sD43: d43,
+                                                                                                                                                                                    sD44: d44,
+                                                                                                                                                                                    sD45: d45,
+                                                                                                                                                                                    sD46: d46,
+                                                                                                                                                                                    sD47: d47,
+                                                                                                                                                                                    sD48: d48,
+                                                                                                                                                                                    iOdontologo: parseInt(id)
+                                                                                                                                                                                });
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         $('#regPaci').attr("disabled", true);
         LlamadoPaciente(datosPaciente);
     }
-}
 
-function LlamadoPaciente(datosPaciente) {
+    function LlamadoPaciente(datosPaciente) {
 
-    var url = $('#urlPacientes').val();
-    console.log(datosPaciente);
-    $.ajax({
-        url: url,
-        data: datosPaciente,
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        async: true,
-        success: SuccessPaciente,
-        error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error Agregando");
+        var url = $('#urlPacientes').val();
+        console.log(datosPaciente);
+        $.ajax({
+            url: url,
+            data: datosPaciente,
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: true,
+            success: SuccessPaciente,
+            error: function (xmlHttpRequest, textStatus, errorThrown) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error Agregando Paciente',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                $('#regPaci').attr("disabled", false);
+            }
+        });
+    }
+
+    function SuccessPaciente(data) {
+
+        if (data.Exito) {
+            var url = $('#urlAgregaPaciente').val();
+            Swal.fire({
+                icon: 'success',
+                title: 'Paciente Agregado Correctamente',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            window.location.href = url;
+        }
+        else if (data.Advertencia) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'El Paciente ya Existe',
+                showConfirmButton: false,
+                timer: 1500
+            });
             $('#regPaci').attr("disabled", false);
         }
-    });
-}
-
-function SuccessPaciente(data) {
-
-    if (data.Exito) {
-        var url = $('#urlAgregaPaciente').val();
-        alert("Datos agregados Correctamente");
-        window.location.href = url;
-    }
-    else if (data.Advertencia) {
-        alert("El paciente ya existe");
+        else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Agregando Paciente',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            $('#regPaci').attr("disabled", false);
+        }
         $('#regPaci').attr("disabled", false);
     }
-    else {
-        alert("Error");
-        $('#regPaci').attr("disabled", false);
-    }
-    $('#regPaci').attr("disabled", false);
 }

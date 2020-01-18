@@ -16,7 +16,12 @@
         contentType: "application/json; charset=utf-8",
         success: ObtieneUsuarios,
         error: function (data) {
-            alert('error obteniendo');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Obteniendo Usuario',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 
@@ -55,11 +60,21 @@ function validador(id, tipo) {
     if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" ||
         $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inUsuario').val() === "" ||
         $('#inContraseña').val() === "" || $('#inVeriContraseña').val() === "") {
-        alert("Favor de llenar los campos");
+        Swal.fire({
+            icon: 'warning',
+            title: 'Favor de Llenar los Campos!',
+            showConfirmButton: false,
+            timer: 1500
+        });
     } else {
 
         if ($('#inContraseña').val() !== $('#inVeriContraseña').val())
-            alert('Las contraseñas no coinciden');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Las Contraseñas No Coinciden!',
+                showConfirmButton: false,
+                timer: 1500
+            });
         else {
             var datosUsuario = JSON.stringify({
 
@@ -92,7 +107,12 @@ function LlamadaModi(datosUsuario) {
         async: true,
         success: SuccessLlamada,
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-            alert("Error");
+            Swal.fire({
+            icon: 'error',
+            title: 'Error Enviando Datos',
+            showConfirmButton: false,
+            timer: 1500
+        });
             $('#ModiUsu').attr("disabled", false);
         }
     });
@@ -102,14 +122,29 @@ function SuccessLlamada(data) {
 
     if (data.Exito) {
         var url = $('#urlModiUsu').val();
-        alert("Datos modificados Correctamente");
+        Swal.fire({
+            icon: 'success',
+            title: 'Usuario Modificado Correctamente',
+            showConfirmButton: false,
+            timer: 1500
+        });
         window.location.href = url;
     }
     else if (data.Advertencia) {
-        alert("Advertencia, modificando");
+        Swal.fire({
+            icon: 'warning',
+            title: 'Algo Falló',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     else {
-        alert("Error algo falló");
+        Swal.fire({
+            icon: 'Error',
+            title: 'Error Modificando Usuario',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     $('#ModiUsu').attr("disabled", false);
 }

@@ -556,19 +556,19 @@
             <ul style="margin-left:-7%">
                 <li>
                     <div class="form-inline">
-                        <input id="inCHLabio" type="radio" class="form-check" />
+                        <input id="inCHLabio" name="chupador" type="radio" class="form-check" />
                         <label>Labios</label>
                     </div>
                 </li>
                 <li>
                     <div class="form-inline">
-                        <input id="inCHLengua" type="radio" class="form-check" />
+                        <input id="inCHLengua" name="chupador" type="radio" class="form-check" />
                         <label>Lengua</label>
                     </div>
                 </li>
                 <li>
                     <div class="form-inline">
-                        <input id="inCHDedos" type="radio" class="form-check" />
+                        <input id="inCHDedos" name="chupador" type="radio" class="form-check" />
                         <label>Dedos</label>
                     </div>
                 </li>
@@ -1667,10 +1667,11 @@
             <br />
             <button id="regPaci" class="btn btn-primary">Registrar</button>
         </div>
-        <sec>
-            <input type="hidden" id="urlAgregaPaciente" value="@Url.Action("Agregar_Paciente","Home")" />
-            <input type="hidden" id="urlPacientes" value="@Url.Action("RecibePaciente","Home")" />
-            <input type="hidden" id="urlUsuario" value="@Url.Action("ObtieneUsuario","Home")" />
-        </sec>
+    </div>
+    <sec>
+        <input type="hidden" id="urlAgregaPaciente" value="@Url.Action("Agregar_Paciente","Home")" />
+        <input type="hidden" id="urlPacientes" value="@Url.Action("RecibePaciente","Home")" />
+        <input type="hidden" id="urlUsuario" value="@Url.Action("ObtieneUsuario","Home")" />
+    </sec>
 </body>
 </html>

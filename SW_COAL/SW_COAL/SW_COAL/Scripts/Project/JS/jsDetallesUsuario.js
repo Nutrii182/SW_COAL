@@ -24,7 +24,12 @@ $(document).ready(function () {
         contentType: "application/json; charset=utf-8",
         success: ObtieneUsuarios,
         error: function (data) {
-            alert('error');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Obteniendo Usuario',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 });

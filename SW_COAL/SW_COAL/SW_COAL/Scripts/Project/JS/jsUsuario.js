@@ -33,7 +33,19 @@ var GetUsuario = function (tbody) {
         var eliUsu = JSON.stringify({
             iId: $(this).attr('data-target')
         });
-        eliminaUsu(eliUsu);
+        Swal.fire({
+            title: '¿Estás Seguro?',
+            text: "No Podrás Revertirlo",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'S´, Bórralo!'
+        }).then((result) => {
+            if (result.value) {
+                eliminaUsu(eliUsu);
+            }
+        })
     });
 }
 
@@ -50,7 +62,12 @@ function eliminaUsu(eliUsu) {
         async: true,
         success: SuccessEliminaUsu,
         error: function (data) {
-            alert('Error ajax usuario');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Obteniendo Usuario',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 }
@@ -58,15 +75,31 @@ function eliminaUsu(eliUsu) {
 function SuccessEliminaUsu(data) {
 
     if (data.Exito) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Usuario Eliminado Exitosamente',
+            showConfirmButton: false,
+            timer: 1000
+        });
         var url = $('#urlUsuarios').val();
+
         window.location.href = url;
-        alert("Usuario Eliminado Exitosamente");
     }
     else if (data.Advertencia) {
-        alert('Advertencia Eliminando Usuario')
+        Swal.fire({
+            icon: 'warning',
+            title: 'Algo Falló',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     else {
-        alert("Error eliminando");
+        Swal.fire({
+            icon: 'error',
+            title: 'Error Eliminando Usuario',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     $('#btnEliUsu').attr('disabled', false);
 }

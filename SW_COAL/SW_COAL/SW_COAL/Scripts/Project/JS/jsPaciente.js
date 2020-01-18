@@ -31,7 +31,19 @@ var Getpaciente = function (tbody) {
         var eliPaci = JSON.stringify({
             iIdPaciente: $(this).attr('data-target')
         });
-        eliminaPaciente(eliPaci);
+        Swal.fire({
+            title: '¿Estás Seguro?',
+            text: "No Podrás Revertirlo",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, Bórralo!'
+        }).then((result) => {
+            if (result.value) {
+                eliminaPaciente(eliPaci);
+            }
+        })
     });
 }
 
@@ -48,7 +60,12 @@ function eliminaPaciente(eliPaci) {
         async: true,
         success: SuccessEliminaPaci,
         error: function (data) {
-            alert('Error ajax paciente');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Obteniendo Paciente',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 }
@@ -57,14 +74,29 @@ function SuccessEliminaPaci(data) {
 
     if (data.Exito) {
         var url = $('#urlPacientes').val();
+        Swal.fire({
+            icon: 'success',
+            title: 'Paciente Eliminado Exitosamente',
+            showConfirmButton: false,
+            timer: 1500
+        });
         window.location.href = url;
-        alert("Paciente Eliminado Exitosamente");
     }
     else if (data.Advertencia) {
-        alert('Advertencia Eliminando Paciente')
+        Swal.fire({
+            icon: 'warning',
+            title: 'Algo Falló',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     else {
-        alert("Error eliminando");
+        Swal.fire({
+            icon: 'error',
+            title: 'Error Eliminando Usuario',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     $('#btnEliPaci').attr('disabled', false);
 }

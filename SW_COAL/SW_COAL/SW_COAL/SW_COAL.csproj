@@ -221,6 +221,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\DetallesPaciente.css" />
     <Content Include="Content\css\DetallesUsuario.css" />
     <Content Include="Content\css\Paciente.css" />
     <Content Include="Content\css\Consulta.css" />
@@ -297,8 +298,6 @@
     <Content Include="Scripts\Project\JS\jsPaciente.js" />
     <Content Include="Scripts\Project\JS\jsLogin.js" />
     <Content Include="Scripts\Project\JS\jsLogout.js" />
-    <Content Include="Scripts\Project\JS\jsPrueba.js" />
-    <Content Include="Scripts\Project\JS\jsSelPacientes.js" />
     <Content Include="Scripts\Project\JS\jsUsuario.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
