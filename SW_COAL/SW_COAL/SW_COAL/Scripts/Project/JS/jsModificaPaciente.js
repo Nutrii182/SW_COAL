@@ -110,11 +110,15 @@ function ObtienePacientes(result) {
     $('#inTelD').val(result.data.lTelDoct);
     $('#inCelD').val(result.data.lCelDoct);
 
-    var init = moment(result.data.dtIniciaTratamiento).format("YYYY-MM-DD");
-    $('#inFechaIni').val(init);
+    if (result.data.dtIniciaTratamiento != null) {
+        var init = moment(result.data.dtIniciaTratamiento).format("YYYY-MM-DD");
+        $('#inFechaIni').val(init);
+    }
 
-    var fint = moment(result.data.dtTerminaTratamiento).format("YYYY-MM-DD");
-    $('#inFechaFin').val(fint);
+    if (result.data.dtTerminaTratamiento != null) {
+        var fint = moment(result.data.dtTerminaTratamiento).format("YYYY-MM-DD");
+        $('#inFechaFin').val(fint);
+    }
 
     if (result.data.sTomaMedi == 'Si')
         $('#inMsi').attr('checked', true);
@@ -3759,6 +3763,7 @@ function D48() {
 }
 
 function validador(id) {
+
     var s, apre, apcard, apdig, nerv, coa, desm, vermar, diabe, tiro, fire, hiper;
     var trat, Ttrat, Tmedi, Thospi;
     var duro, rx, encia, epite, lengua, pulpa, velo, carrillo, mordida, mordabi, desbru, anoclu;
@@ -4158,19 +4163,9 @@ function validador(id) {
         }
     }
 
-    if ($('#inNombre').val() === "" || $('#inPaterno').val() === "" || $('#inMaterno').val() === "" || $('#inDomicilio').val() === "" ||
-        $('#inTelefono').val() === "" || $('#inCelular').val() === "" || $('#inFechaNac').val() === "" || s == null || trat == null ||
-        Tmedi == null || Thospi == null || duro == null || rx == null || mordida == null || emba == null || anti == null ||
-        fuma == null || bebe == null || droga == null || aler == null || higi == null || ali == null || rechi == null || Tencia == null
-        || Cencia == null || OHbucal == null || hemo == null || $('#inVecCepi').val() === "" || cepi == null) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Favor de Llenar los Campos!',
-            showConfirmButton: false,
-            timer: 1500
-        });
-    }
-    else {
+    if (validaCampos(s, trat, Ttrat, Tmedi, Thospi, duro, rx, mordida, emba, anti, fuma, bebe, droga, aler, higi, ali, rechi, Tencia,
+        Cencia, OHbucal, hemo, cepi) == true) {
+
         var datosPaciente = JSON.stringify({
 
             iIdPaciente: id,
@@ -4197,8 +4192,8 @@ function validador(id) {
             sBajoTratamiento: trat,
             sTipoTratamiento: Ttrat,
             sNombreDoctor: $('#inNombreD').val(),
-            sApePaterDoc: $('#inPatDoc').val(),
-            sApeMaterDoc: $('#inMatDoc').val(),
+            sApePaterDoc: $('#inPaternoD').val(),
+            sApeMaterDoc: $('#inMaternoD').val(),
             lTelDoct: $('#inTelD').val(),
             lCelDoct: $('#inCelD').val(),
             dtIniciaTratamiento: $('#inFechaIni').val(),
@@ -4277,10 +4272,447 @@ function validador(id) {
             sD46: d46,
             sD47: d47,
             sD48: d48,
+            iOdontologo: parseInt(id)
         });
         $('#EditaPaci').attr("disabled", true);
         LlamadoPaciente(datosPaciente);
     }
+}
+
+function validaCampos(s, trat, Ttrat, Tmedi, Thospi, duro, rx, mordida, emba, anti, fuma, bebe, droga, aler, higi, ali, rechi, Tencia,
+    Cencia, OHbucal,hemo,cepi) {
+
+    if ($('#inNombre').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Nombre Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if ($('#inPaterno').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Apellido Paterno Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if ($('#inMaterno').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Apellido Materno Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false
+    }
+
+    if ($('#inDomicilio').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Domicilio Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if ($('#inTelefono').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Teléfono Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if ($('#inCelular').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Celular Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if ($('#inFechaNac').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Fecha de Nacimiento Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (s == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Sexo Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Tratamiento Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == 'Si' && Ttrat == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Tipo de Tratamiento Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == 'Si' && $('#inNombreD').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Nombre del Doctor Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == 'Si' && $('#inPaternoD').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Apellido Paterno del Doctor Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == 'Si' && $('#inMaternoD').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Apellido Materno del Doctor Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == 'Si' && $('#inTelD').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Teléfono del Doctor Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == 'Si' && $('#inCelD').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Celular del Doctor Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == 'Si' && $('#inFechaIni').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Inicia Tratamiento Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (trat == 'Si' && $('#inFechaFin').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Termina Tratamiento Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (Tmedi == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Toma Medicamento Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (Tmedi == 'Si' && $('#inMesp').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Especifica Medicamento Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (Thospi == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Hospitalizado Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (Thospi == 'Si' && $('#inMotivo').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Hospitalizado Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (duro == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Duro Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (rx == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Rx Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (mordida == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Sobre Mordida Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (emba == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Embarazo Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (emba == 'Si' && s == 'Masculino') {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Un Hombre No Puede Estar Embarazado',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (emba == 'Si' && $('#inMeses').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Meses de Embarazo Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (anti == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Usa Anticonceptivos Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (anti == null && $('#inAntiTipo').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Tipo de Anticonceptivos Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (fuma == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Fuma Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (bebe == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Bebe Alcohol Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (droga == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Consume Drogas Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (aler == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Alergia Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (aler == 'Si' && $('#inEspAlerg').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Alergia Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (higi == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Higiene Bucal Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (ali == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Alimentación Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (rechi == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Rechina o Aprieta los Dientes Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (Tencia == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Tratamiento de Encias Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (Cencia == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Cirujía de Encias Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (OHbucal == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Orientación de Higiene Bucal Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (hemo == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Hemorragias en la Boca Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if ($('#inVecCepi').val() === "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Veces Cepillado Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    if (cepi == null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El Campo Tipo de Cepillo Está Vacío',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
+
+    return true;
 }
 
 function LlamadoPaciente(datosPaciente) {

@@ -447,12 +447,7 @@ namespace CapaDatos
                     p.domicilio = paci.sDomicilio;
                     p.telefono = paci.lTelefono;
                     p.celular = paci.lCelular;
-
-                    //string sfechanac = paci.dtFechaNacimiento.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
-                    //p.fecha_nacimiento = DateTime.Parse(sfechanac);
-
                     p.fecha_nacimiento = paci.dtFechaNacimiento;
-
                     p.sexo = paci.sSexo;
                     p.apa_resp = paci.sApa_Res;
                     p.apa_cardi = paci.sApa_Cardi;
