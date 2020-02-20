@@ -1,32 +1,4 @@
-﻿
-function TipoUsu(datosUsuario) {
-
-    var url = $('#urlUsuario').val();
-
-    $.ajax({
-        type: "Post",
-        url: url,
-        data: datosUsuario,
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        success: UsuarioTipo,
-        error: function (data) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error Obteniendo Datos',
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }
-    });
-}
-
-function UsuarioTipo(result) {
-
-    localStorage.setItem('tipo', result.data.sTipo);
-}
-
-$(document).on('click', '.btnLogear', function () {
+﻿$(document).on('click', '.btnLogear', function () {
     validador();
 });
 
@@ -84,12 +56,12 @@ function validador() {
         $('#gif').css("display", "block");
         localStorage.setItem('user', $('#inUsuario').val());
         $('.btnLogear').attr("disabled", true);
-        TipoUsu(datosUsuario);
         LlamadaIniciarSesion(datosUsuario);
     }
 }
 
 function LlamadaIniciarSesion(datosUsuario) {
+
     var url = $('#urlLogeo').val();
     $.ajax({
         url: url,
@@ -102,10 +74,12 @@ function LlamadaIniciarSesion(datosUsuario) {
         error: function (xmlHttpRequest, textStatus, errorThrown) {
             Swal.fire({
                 icon: 'error',
-                title: 'Error en Envío de Formulario',
+                title: 'Error algo falló',
                 showConfirmButton: false,
                 timer: 1500
             });
+            $('#gif').css("display", "none");
+            $('.btnLogear').attr("disabled", false);
         }
     });
 }

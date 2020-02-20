@@ -1,4 +1,10 @@
-﻿
+﻿$(document).ready(function () {
+
+    document.getElementById('inFechaNac').max = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    document.getElementById('inFechaIni').max = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    document.getElementById('inFechaFin').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+});
+
 $(document).on('click', '#regPaci', function () {
 
     var url = $('#urlUsuario').val();
