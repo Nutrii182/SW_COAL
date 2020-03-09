@@ -40,7 +40,7 @@ var GetUsuario = function (tbody) {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'S´, Bórralo!'
+            confirmButtonText: 'Sí, Bórralo!'
         }).then((result) => {
             if (result.value) {
                 eliminaUsu(eliUsu);

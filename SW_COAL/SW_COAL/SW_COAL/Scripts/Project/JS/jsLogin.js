@@ -39,6 +39,33 @@ $(document).ready(function () {
     });
 });
 
+function TipoUsu(datosUsuario) {
+
+    var url = $('#urlUsuario').val();
+
+    $.ajax({
+        type: "Post",
+        url: url,
+        data: datosUsuario,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: UsuarioTipo,
+        error: function (data) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error Obteniendo Datos',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+    });
+}
+
+function UsuarioTipo(result) {
+
+    localStorage.setItem('tipo', result.data.sTipo);
+}
+
 function validador() {
     if ($('#inUsuario').val() === "" || $('#inContra').val() === "") {
         Swal.fire({
@@ -61,6 +88,8 @@ function validador() {
 }
 
 function LlamadaIniciarSesion(datosUsuario) {
+
+    TipoUsu(datosUsuario);
 
     var url = $('#urlLogeo').val();
     $.ajax({
