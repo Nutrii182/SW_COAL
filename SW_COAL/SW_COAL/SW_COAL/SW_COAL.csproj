@@ -389,6 +389,7 @@
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
+    <Content Include="Scripts\Project\JS\jsCalendar.js" />
     <Content Include="Scripts\Project\JS\jsDetallesPaciente.js" />
     <Content Include="Scripts\Project\JS\jsDetallesUsuario.js" />
     <Content Include="Scripts\Project\JS\jsModificaPaciente.js" />

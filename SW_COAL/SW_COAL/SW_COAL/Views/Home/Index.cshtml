@@ -7,6 +7,8 @@
 <html>
 
 <head>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
     <script src="~/Scripts/moment.js"></script>
     <style>
         * {
@@ -81,7 +83,7 @@
 
         .days div:hover {
             cursor: pointer;
-            background-color: #dfe6e9
+            background-color: lightslategray
         }
 
         .prev,
@@ -106,6 +108,49 @@
         #month {
             font-size: 30px;
             font-weight: 500;
+        }
+
+        #modalDay {
+            display: none;
+            z-index: 500;
+            margin-top: 5%;
+            padding: 45px;
+            background-color: #E1E2E1;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            border-style: none;
+            border-radius: 25px;
+            box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #submodal {
+            box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #heading_modal {
+            background-color: #36363D;
+            padding: 25px;
+            color: #FFF;
+            border-style: none;
+            /*border-radius: 25px 25px 0px 0px;*/
+        }
+
+        #modalDay th {
+            background-color: #29292E;
+            color: #FFF;
+            padding: 10px;
+        }
+
+        #modalDay td {
+            /*background-color: #fff;*/
+            padding: 10px;
+        }
+
+        #modalDay table {
+            width: 100%;
         }
     </style>
 </head>
@@ -136,10 +181,43 @@
             </div>
             <div class="days">
 
+
             </div>
         </div>
     </div>
+
+    <div id="modalDay">
+        <div id="submodal">
+            <div id="heading_modal">
+                <h1>Detalles del día</h1>
+                <h3 id="fecha"></h3>
+            </div>
+            <table id="tbEvents" class="table-hover table-striped">
+                <tr>
+                    <th width="10%">Hora</th>
+                    <th width="45%">Paciente</th>
+                    <th width="45%">Motivo</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
     <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyB-5JV71ISSOgJRLtBR8cw1sI2bD5eDRrw",
+            authDomain: "coal-c6cd1.firebaseapp.com",
+            databaseURL: "https://coal-c6cd1.firebaseio.com",
+            projectId: "coal-c6cd1",
+            storageBucket: "coal-c6cd1.appspot.com",
+            messagingSenderId: "809516151624",
+            appId: "1:809516151624:web:fc7fee9f49db5a3f60b97d",
+            measurementId: "G-CNBDFWQ3SZ"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
         var dt = new Date();
         function renderDate() {
             dt.setDate(1);
@@ -172,25 +250,62 @@
             ]
             document.getElementById("month").innerHTML = months[dt.getMonth()];
 
-            var fecha = moment(dt).format('L');
+            moment.locale();
+            var dateToday = moment(today).format("DD/MM/YYYY");
 
-            document.getElementById("date_str").innerHTML = fecha;
+            document.getElementById("date_str").innerHTML = dateToday;
             var cells = "";
+
             for (x = day; x > 0; x--) {
                 cells += "<div class='prev_date'>" + (prevDate - x + 1) + "</div>";
             }
 
             for (i = 1; i <= endDate; i++) {
-                if (i == today.getDate() && dt.getMonth() == today.getMonth()) cells += "<div class='today'>" + i + "</div>";
+                if (i == today.getDate() && dt.getMonth() == today.getMonth()) cells += "<div class='today' id=" + i + ">" + i + "</div>";
                 else
-                    cells += "<div>" + i + "</div>";
+                    cells += "<div id=" + i + ">" + i + "</div>";
             }
             document.getElementsByClassName("days")[0].innerHTML = cells;
 
+            showEvents(today);
         }
 
-        function sendDay(dt) {
+        function showEvents(today) {
+            $('body').on('click', '.days div', function () {
+                var dia = $(this).attr('id');
+                var d;
 
+                var modal_detailsDay = document.getElementById('modalDay');
+                var x = document.getElementsByTagName("BODY")[0];
+
+                modal_detailsDay.style.display = 'block';
+
+                window.onclick = function (event) {
+                    if (event.target == x) {
+                        modal_detailsDay.style.display = 'none';
+                        $('#events td').remove();
+                    }
+                }
+
+                db.collection("Citas").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        if (doc.data().Estado == 'Aceptada') {
+
+                            var fecha = doc.data().Fecha;
+
+                            if (fecha.substr(0, 1) == '0') {
+                                d = fecha.substr(1, 1);
+                            } else {
+                                d = fecha.substr(0, 2);
+                            }
+
+                            if (d == dia) {
+                                $('#tbEvents').append('<tr id="events"><td width="10%">' + doc.data().Hora + '</td><td width="45%">' + doc.data().Nombre + '</td><td width="45%">' + doc.data().Motivo + '</td></tr>');
+                            }
+                        }
+                    });
+                });
+            });
         }
 
         function moveDate(para) {
