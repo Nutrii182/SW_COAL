@@ -390,6 +390,7 @@
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
     <Content Include="Scripts\Project\JS\jsCalendar.js" />
+    <Content Include="Scripts\Project\JS\jsCitas.js" />
     <Content Include="Scripts\Project\JS\jsDetallesPaciente.js" />
     <Content Include="Scripts\Project\JS\jsDetallesUsuario.js" />
     <Content Include="Scripts\Project\JS\jsModificaPaciente.js" />
@@ -434,6 +435,7 @@
     <Content Include="Views\Home\DetallesUsuario.cshtml" />
     <Content Include="Views\Home\ModificaUsuario.cshtml" />
     <Content Include="Views\Home\DetallesPaciente.cshtml" />
+    <Content Include="Views\Home\Citas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
