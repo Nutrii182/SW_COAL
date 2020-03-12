@@ -271,5 +271,15 @@ namespace SWP_COAL.Controllers
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
 
+        public ActionResult Cita_Aceptada()
+        {
+            return View();
+        }
+
+        public ActionResult Cita_Rechazada()
+        {
+            return View();
+        }
+
     }
 }

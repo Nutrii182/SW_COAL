@@ -387,9 +387,12 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Project\JS\jsAgregarCita.js" />
     <Content Include="Scripts\Project\JS\jsAgregarPaciente.js" />
     <Content Include="Scripts\Project\JS\jsAgregarUsuario.js" />
     <Content Include="Scripts\Project\JS\jsCalendar.js" />
+    <Content Include="Scripts\Project\JS\jsCitaAceptada.js" />
+    <Content Include="Scripts\Project\JS\jsCitaRechazada.js" />
     <Content Include="Scripts\Project\JS\jsCitas.js" />
     <Content Include="Scripts\Project\JS\jsDetallesPaciente.js" />
     <Content Include="Scripts\Project\JS\jsDetallesUsuario.js" />
@@ -437,6 +440,8 @@
     <Content Include="Views\Home\DetallesPaciente.cshtml" />
     <Content Include="Views\Home\Citas.cshtml" />
     <Content Include="Views\Home\Agrega_Cita.cshtml" />
+    <Content Include="Views\Home\Cita_Aceptada.cshtml" />
+    <Content Include="Views\Home\Cita_Rechazada.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

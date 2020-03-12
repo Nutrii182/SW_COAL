@@ -1,6 +1,8 @@
 ﻿
 $(document).ready(function () {
 
+    document.getElementById('fecha').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+
     var firebaseConfig = {
         apiKey: "AIzaSyB-5JV71ISSOgJRLtBR8cw1sI2bD5eDRrw",
         authDomain: "coal-c6cd1.firebaseapp.com",
@@ -18,16 +20,28 @@ $(document).ready(function () {
 
     $('#AcepCita').on('click', function () {
 
-        db.collection("Usuarios").get().then((querySnapshot) => {
+        if ($('#nombre').val() === '' || $('#motivo').val() === '' || $('#fecha').val() === '' || $('#hora').val() === '' || $('#usuario').val() === '') {
 
-            for (var i in querySnapshot.docs) {
-                const doc = querySnapshot.docs[i];
+            Swal.fire({
+                icon: 'warning',
+                title: 'Favor de llenar Todos los Campos',
+                showConfirmButton: false,
+                timer: 1500
+            });
 
-                if (doc.data().Correo == $('#usuario').val())
-                    token = doc.data().Token;
-            }
-            addToken(token);
-        });
+        } else {
+
+            db.collection("Usuarios").get().then((querySnapshot) => {
+
+                for (var i in querySnapshot.docs) {
+                    const doc = querySnapshot.docs[i];
+
+                    if (doc.data().Correo == $('#usuario').val())
+                        token = doc.data().Token;
+                }
+                addToken(token);
+            });
+        }
 
     });
 
@@ -50,23 +64,23 @@ $(document).ready(function () {
             Proxima: false
         };
 
-        db.collection("Citas").doc(id).set(data).then(function () {
-            Swal.fire({
-                icon: 'success',
-                title: 'Cita Agregada Correctamente',
-                showConfirmButton: false,
-                timer: 1500
-            });
-            window.location.href = url;
-        }).catch(function (error) {
-            console.error("Error writing document: ", error);
-            Swal.fire({
-                icon: 'warning',
-                title: 'Error Agregando Cita',
-                showConfirmButton: false,
-                timer: 1500
-            });
-        });
+        //db.collection("Citas").doc(id).set(data).then(function () {
+        //    Swal.fire({
+        //        icon: 'success',
+        //        title: 'Cita Agregada Correctamente',
+        //        showConfirmButton: false,
+        //        timer: 1500
+        //    });
+        //    window.location.href = url;
+        //}).catch(function (error) {
+        //    console.error("Error writing document: ", error);
+        //    Swal.fire({
+        //        icon: 'warning',
+        //        title: 'Error Agregando Cita',
+        //        showConfirmButton: false,
+        //        timer: 1500
+        //    });
+        //});
 
 
     }
