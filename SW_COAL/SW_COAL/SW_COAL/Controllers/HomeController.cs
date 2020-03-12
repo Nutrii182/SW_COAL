@@ -262,5 +262,14 @@ namespace SWP_COAL.Controllers
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
 
+        public ActionResult Agrega_Cita()
+        {
+            if ((UsuarioModel)Session["usuario"] != null)
+            {
+                return View();
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
+        }
+
     }
 }
