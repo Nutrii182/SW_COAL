@@ -8,10 +8,10 @@
 $(document).on('click', '#regPaci', function () {
 
     var url = $('#urlUsuario').val();
-    var u = localStorage.getItem('user');
+    var u = JSON.parse(localStorage.getItem('user'));
 
     var datUsu = JSON.stringify({
-        sUsuario: u,
+        sUsuario: u.sUsuario,
         iId: 0
     })
 

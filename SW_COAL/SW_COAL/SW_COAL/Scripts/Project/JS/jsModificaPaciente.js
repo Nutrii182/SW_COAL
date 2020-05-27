@@ -105,8 +105,8 @@ function ObtienePacientes(result) {
             $('#inDental').attr('checked', true);
 
     $('#inNombreD').val(result.data.sNombreDoctor);
-    $('#inPatDoc').val(result.data.sApePaterDoc);
-    $('#inMatDoc').val(result.data.sApeMaterDoc);
+    $('#inPaternoD').val(result.data.sApePaterDoc);
+    $('#inMaternoD').val(result.data.sApeMaterDoc);
     $('#inTelD').val(result.data.lTelDoct);
     $('#inCelD').val(result.data.lCelDoct);
 
