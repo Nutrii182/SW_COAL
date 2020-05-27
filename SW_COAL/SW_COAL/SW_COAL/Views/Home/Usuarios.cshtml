@@ -12,6 +12,10 @@
         @Html.ActionLink("Agregar Usuario", "Agregar_Usuario", "Home")
     </button>
     <br />
+    <div class="form-inline">
+        <input type="text" class="form-control pull-right" style="width:20%" id="search" placeholder="Buscar Usuario...">
+    </div>
+    <br />
     <div class="row">
         <table id="tabUsu" class="table table-striped table-bordered table-hover table-responsive-lg">
             <thead>
@@ -82,9 +86,9 @@
             }
         </table>
     </div>
-    <input type="hidden" id="urlUsuarios" value="@Url.Action("Usuarios","Home")"/>
-    <input type="hidden" id="urlDetUsu" value="@Url.Action("DetallesUsuario","Home")"/>
-    <input type="hidden" id="urlModiUsu" value="@Url.Action("ModificaUsuario","Home")"/>
-    <input type="hidden" id="urlEliUsu" value="@Url.Action("EliminaUsuario","Home")"/>
+    <input type="hidden" id="urlUsuarios" value="@Url.Action("Usuarios","Home")" />
+    <input type="hidden" id="urlDetUsu" value="@Url.Action("DetallesUsuario","Home")" />
+    <input type="hidden" id="urlModiUsu" value="@Url.Action("ModificaUsuario","Home")" />
+    <input type="hidden" id="urlEliUsu" value="@Url.Action("EliminaUsuario","Home")" />
 </body>
 </html>

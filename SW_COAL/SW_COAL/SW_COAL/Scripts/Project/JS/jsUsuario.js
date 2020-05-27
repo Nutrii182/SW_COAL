@@ -7,6 +7,21 @@ $(document).ready(function () {
         $('.EliUsu').css('display', 'block');
         $('#AgUs').css('display', 'block');
     }
+
+    // Write on keyup event of keyword input element
+    $(document).ready(function () {
+        $("#search").keyup(function () {
+            _this = this;
+            // Show only matching TR, hide rest of them
+            $.each($("#tabUsu tbody tr"), function () {
+                if ($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        });
+    });
+
     GetUsuario('#tabUsu tbody');
 });
 

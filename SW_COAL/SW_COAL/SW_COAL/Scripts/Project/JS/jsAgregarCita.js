@@ -64,25 +64,22 @@ $(document).ready(function () {
             Proxima: false
         };
 
-        //db.collection("Citas").doc(id).set(data).then(function () {
-        //    Swal.fire({
-        //        icon: 'success',
-        //        title: 'Cita Agregada Correctamente',
-        //        showConfirmButton: false,
-        //        timer: 1500
-        //    });
-        //    window.location.href = url;
-        //}).catch(function (error) {
-        //    console.error("Error writing document: ", error);
-        //    Swal.fire({
-        //        icon: 'warning',
-        //        title: 'Error Agregando Cita',
-        //        showConfirmButton: false,
-        //        timer: 1500
-        //    });
-        //});
-
-
+        db.collection("Citas").doc(id).set(data).then(function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Cita Agregada Correctamente',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            window.location.href = url;
+        }).catch(function (error) {
+            console.error("Error writing document: ", error);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Error Agregando Cita',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
     }
-
 });
