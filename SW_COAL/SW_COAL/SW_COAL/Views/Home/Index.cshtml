@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Calendario";
 }
 
@@ -7,155 +6,17 @@
 <html>
 
 <head>
+
+    <link href="~/Content/css/Calendario.css" rel="stylesheet" />
+    <link href="~/Content/css/ListaCitas.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="~/Scripts/Project/JS/jsFirebase.js"></script>
     <script src="~/Scripts/moment.js"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        ul {
-            list-style-type: none;
-        }
-
-        body {
-            font-family: "Lato", sans-serif;
-        }
-
-        * {
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        .calendar {
-            margin: auto;
-            width: 1100px;
-            background-color: #fff;
-            box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .month {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 40px 30px;
-            text-align: center;
-            background-color: #36363D;
-            color: #fff;
-        }
-
-        .weekdays {
-            background-color: #29292E;
-            color: #fff;
-            padding: 7px 0;
-            display: flex;
-        }
-
-        .days {
-            font-weight: 300;
-            padding: 10px 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-            .weekdays div,
-            .days div {
-                text-align: center;
-                width: 14.28%;
-            }
-
-            .days div {
-                padding: 10px 0;
-                margin-bottom: 10px;
-                transition: all 0.4s;
-            }
-
-        .prev_date {
-            color: #999;
-        }
-
-        .today {
-            background-color: #29292E;
-            color: #fff;
-        }
-
-        .days div:hover {
-            cursor: pointer;
-            background-color: lightslategray
-        }
-
-        .prev,
-        .next {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 23px;
-            background-color: rgba(0, 0, 0, 0.1);
-            transition: all 0.4s;
-        }
-
-            .prev:hover,
-            .next:hover {
-                cursor: pointer;
-                background-color: rgba(0, 0, 0, 0.2);
-            }
-
-        #month {
-            font-size: 30px;
-            font-weight: 500;
-        }
-
-        #modalDay {
-            display: none;
-            z-index: 500;
-            margin-top: 5%;
-            padding: 45px;
-            background-color: #E1E2E1;
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            border-style: none;
-            border-radius: 25px;
-            box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        #submodal {
-            box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        #heading_modal {
-            background-color: #36363D;
-            padding: 25px;
-            color: #FFF;
-            border-style: none;
-            /*border-radius: 25px 25px 0px 0px;*/
-        }
-
-        #modalDay th {
-            background-color: #29292E;
-            color: #FFF;
-            padding: 10px;
-        }
-
-        #modalDay td {
-            /*background-color: #fff;*/
-            padding: 10px;
-        }
-
-        #modalDay table {
-            width: 100%;
-        }
-    </style>
 </head>
 
-<body onload="renderDate()">
+<body style="padding: 80px" onload="renderDate()">
     <div class="wrapper">
         <div class="calendar">
             <div class="month">
@@ -202,8 +63,10 @@
         </div>
     </div>
 
-    <script>
 
+    <div class="card"></div>
+
+    <script>
         var firebaseConfig = {
             apiKey: "AIzaSyB-5JV71ISSOgJRLtBR8cw1sI2bD5eDRrw",
             authDomain: "coal-c6cd1.firebaseapp.com",
@@ -214,10 +77,8 @@
             appId: "1:809516151624:web:fc7fee9f49db5a3f60b97d",
             measurementId: "G-CNBDFWQ3SZ"
         };
-
         firebase.initializeApp(firebaseConfig);
         var db = firebase.firestore();
-
         var dt = new Date();
         function renderDate() {
             dt.setDate(1);
@@ -228,7 +89,6 @@
                 dt.getMonth() + 1,
                 0
             ).getDate();
-
             var prevDate = new Date(
                 dt.getFullYear(),
                 dt.getMonth(),
@@ -249,56 +109,43 @@
                 "Diciembre"
             ]
             document.getElementById("month").innerHTML = months[dt.getMonth()];
-
             moment.locale();
             var dateToday = moment(today).format("DD/MM/YYYY");
-
             document.getElementById("date_str").innerHTML = dateToday;
             var cells = "";
-
             for (x = day; x > 0; x--) {
                 cells += "<div class='prev_date'>" + (prevDate - x + 1) + "</div>";
             }
-
             for (i = 1; i <= endDate; i++) {
                 if (i == today.getDate() && dt.getMonth() == today.getMonth()) cells += "<div class='today' id=" + i + ">" + i + "</div>";
                 else
                     cells += "<div id=" + i + ">" + i + "</div>";
             }
             document.getElementsByClassName("days")[0].innerHTML = cells;
-
             showEvents(today);
         }
-
         function showEvents(today) {
             $('body').on('click', '.days div', function () {
                 var dia = $(this).attr('id');
                 var d;
-
                 var modal_detailsDay = document.getElementById('modalDay');
                 var x = document.getElementsByTagName("BODY")[0];
-
                 modal_detailsDay.style.display = 'block';
-
                 window.onclick = function (event) {
                     if (event.target == x) {
                         modal_detailsDay.style.display = 'none';
                         $('#events td').remove();
                     }
                 }
-
                 db.collection("Citas").get().then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         if (doc.data().Estado == 'Aceptada') {
-
                             var fecha = doc.data().Fecha;
-
                             if (fecha.substr(0, 1) == '0') {
                                 d = fecha.substr(1, 1);
                             } else {
                                 d = fecha.substr(0, 2);
                             }
-
                             if (d == dia) {
                                 $('#tbEvents').append('<tr id="events"><td width="10%">' + doc.data().Hora + '</td><td width="45%">' + doc.data().Nombre + '</td><td width="45%">' + doc.data().Motivo + '</td></tr>');
                             }
@@ -307,7 +154,6 @@
                 });
             });
         }
-
         function moveDate(para) {
             if (para == "prev") {
                 dt.setMonth(dt.getMonth() - 1);

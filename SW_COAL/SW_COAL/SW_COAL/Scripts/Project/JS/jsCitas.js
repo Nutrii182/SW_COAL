@@ -20,7 +20,7 @@ $(document).ready(function () {
             if (doc.data().Estado != 'Rechazada') {
                 var date = doc.data().Fecha.split('/');
                 var id = date[0] + ':' + date[1] + ':' + date[2] + ':' + doc.data().Hora;
-                $('#tabCitas').append('<tr id="events"><td>' + doc.data().Usuario + '</td><td>' + doc.data().Nombre + '</td><td>' + doc.data().Motivo + '</td><td>' + doc.data().Fecha + '</td><td>' + doc.data().Hora + '</td><td>' + doc.data().Estado + '</td><td><button class="btn btn-danger form-control RechCita" id="' + id + '">Cancelar</button></td></tr>');
+                $('#tabCitas').append('<tr id="events"><td>' + doc.data().Usuario + '</td><td>' + doc.data().Nombre + '</td><td>' + doc.data().Motivo + '</td><td>' + doc.data().Fecha + '</td><td>' + doc.data().Hora + '</td><td>' + doc.data().Estado + '</td><td><button class="btn btn-primary form-control AcepCita" id="' + id + '">Aceptar</button><button class="btn btn-danger form-control RechCita" id="' + id + '">Cancelar</button></td></tr>');
             }
         });
     });
@@ -48,6 +48,23 @@ var getBody = function (tbody, db) {
             }
         })
     });
+
+    $(tbody).on('click', '.AcepCita', function () {
+        var id = $(this).attr('id');
+
+        Swal.fire({
+            title: '¿Desea aceptar esta cita?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, Aceptar!'
+        }).then((result) => {
+            if (result.value) {
+                aceptaCita(id, db);
+            }
+        })
+    })
 }
 
 function cancelaCita(id, db) {
@@ -73,6 +90,52 @@ function cancelaCita(id, db) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Error Cancelando Cita',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+}
+
+function aceptaCita(id, db) {
+
+    var doc = db.collection("Citas").doc(id);
+
+    doc.get().then(function (doc) {
+        if (doc.exists) {
+            if (doc.data().Estado == 'Aceptada') {
+                Swal.fire('La Cita fue Aceptada Anteriormente');
+                return;
+            } else {
+                aceptar(id, db);
+            }
+        }
+    });
+
+}
+
+function aceptar(id, db) {
+
+    var url = $('#urlCitas').val();
+
+    var doc = db.collection("Citas").doc(id);
+
+    return doc.update({
+        Estado: 'Aceptada'
+    })
+        .then(function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Cita Aceptada Exitosamente',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            window.location.href = url;
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Error Aceptando Cita',
                 showConfirmButton: false,
                 timer: 1500
             });

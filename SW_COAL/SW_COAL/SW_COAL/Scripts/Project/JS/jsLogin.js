@@ -62,8 +62,7 @@ function TipoUsu(datosUsuario) {
 }
 
 function UsuarioTipo(result) {
-
-    localStorage.setItem('tipo', result.data.sTipo);
+    localStorage.setItem('user', JSON.stringify(result.data));
 }
 
 function validador() {
@@ -81,15 +80,12 @@ function validador() {
         });
 
         $('#gif').css("display", "block");
-        localStorage.setItem('user', $('#inUsuario').val());
         $('.btnLogear').attr("disabled", true);
         LlamadaIniciarSesion(datosUsuario);
     }
 }
 
 function LlamadaIniciarSesion(datosUsuario) {
-
-    TipoUsu(datosUsuario);
 
     var url = $('#urlLogeo').val();
     $.ajax({
@@ -116,6 +112,14 @@ function LlamadaIniciarSesion(datosUsuario) {
 function SuccessLlamadaIniciarSesion(data) {
 
     if (data.Exito) {
+
+        var datos = JSON.stringify({
+            sUsuario: $('#inUsuario').val(),
+            sContraseña: $('#inContra').val()
+        });
+
+        TipoUsu(datos);
+
         $('.btnLogear').attr("disabled", false);
         var url = $('#urlHome').val();
         window.location.href = url;

@@ -10,27 +10,45 @@
 
     <!--Styles-->
     <link href="~/Content/css/Layout.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
 
     <script src="~/Scripts/jquery-3.4.1.js"></script>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="~/Scripts/Project/JS/jsLayout.js"></script>
     <script src="~/Scripts/Project/JS/jsLogout.js"></script>
 
 </head>
 <body>
     <header>
-        <nav class="nav bg-dark m-0  fixed-top p-2">
-            <a class="nav-link">@Html.ActionLink("Sistema Dental COAL", "Index", "Home")</a>
-            <a class="nav-link">@Html.ActionLink("Inicio", "Index", "Home")</a>
-            <a class="nav-link">@Html.ActionLink("Pacientes", "Pacientes", "Home")</a>
-            <a class="nav-link">@Html.ActionLink("Usuarios", "Usuarios", "Home")</a>
-            <a class="nav-link">@Html.ActionLink("Citas", "Citas", "Home")</a>
-            <button id="btnLogout" class="btn btn-outline-light ml-auto btn-sm">Cerrar Sesión</button>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">@Html.ActionLink("Sistema Dental COAL", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Home")">Inicio<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Pacientes","Home")">Pacientes</a>
+                    </li>
+                    <li id="users" class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Usuarios","Home")">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Citas","Home")">Citas</a>
+                    </li>
+                </ul>
+                <button id="btnLogout" class="btn btn-outline-light ml-auto btn-sm">Cerrar Sesión</button>
+            </div>
         </nav>
     </header>
 
-    <div class="container body-content">
+    <div class="container body-content cfooter">
         <div class="row">
             <div class="col">
                 @RenderBody()
@@ -38,7 +56,7 @@
         </div>
 
         <hr />
-        <footer>
+        <footer id="idFooter">
             <br />
             <p>&copy; @DateTime.Now.Year - Sistema Dental COAL</p>
         </footer>
@@ -48,6 +66,5 @@
     @RenderSection("scripts", required: false)
 
     <input type="hidden" id="urlLogout" value="@Url.Action("Logout","Login")" />
-
 </body>
 </html>

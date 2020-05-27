@@ -1,9 +1,9 @@
 ﻿
 $(document).ready(function () {
 
-    var tipo = localStorage.getItem('tipo')
+    var user = JSON.parse(localStorage.getItem('user'));
 
-    if (tipo == 'SuperUsuario') {
+    if (user.sTipo == 'SuperUsuario') {
         $('.EliUsu').css('display', 'block');
         $('#AgUs').css('display', 'block');
     }

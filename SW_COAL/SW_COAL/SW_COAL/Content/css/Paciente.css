@@ -1,7 +1,102 @@
-﻿h4, h5 {
-    margin-top: 10px;
+﻿
+
+.card {
+    margin: 1%;
+}
+
+.form1 {
+    display: block;
+}
+
+.form2 {
+    display: none;
 }
 
 li {
     list-style: none;
+}
+
+#idFooter {
+    margin-left: 10%;
+}
+
+
+@media only screen and (max-device-width: 768px) {
+
+    .form1, label {
+        display: none;
+    }
+
+    .form2 {
+        display: block;
+    }
+
+    body {
+        background-color: rgba(95, 186, 214, 0.2);
+    }
+
+    h2, h4 {
+        text-align: center;
+        margin: 3%;
+    }
+
+    h4 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 35px;
+        text-decoration: underline;
+    }
+
+    div input {
+        margin: 1%;
+        text-align: center;
+    }
+
+    .card-body input {
+        font-size: 50px;
+    }
+
+    input[type="radio"], input[type="checkbox"] { /* ocultar el circulo original */
+        position: absolute;
+        opacity: 0;
+    }
+
+
+    .checkmark { /*crear el circulo editado */
+        background-color: rgba(0, 0, 0, 0.2);
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .container input:checked ~ .checkmark {
+        background-color: rgba(95, 186, 214, 0.5);
+    }
+
+    .container { /* posicion de los circulos y texto */
+        display: block;
+        position: relative;
+        text-align: center;
+        font-size: 50px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .form2 .paradentograma img {
+        width: 100%;
+    }
+
+
+    .form2 button {
+        font-size: 100px;
+        padding: 5%;
+        width: 100%;
+    }
 }

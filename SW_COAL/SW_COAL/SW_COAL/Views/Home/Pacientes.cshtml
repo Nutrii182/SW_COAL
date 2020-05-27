@@ -12,7 +12,7 @@
     </button>
     <br /><br />
     <div class="row">
-        <table id="tabPaci" class="table table-striped table-bordered table-hover table-responsive">
+        <table id="tabPaci" class="table table-striped table-bordered table-hover table-responsive-lg">
             <thead>
                 <tr>
                     <th>
@@ -67,8 +67,11 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.celular)
                         </td>
+                        @{ 
+                            String fecha = item.fecha_nacimiento.ToShortDateString();
+                        }
                         <td>
-                            @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+                            @Html.DisplayFor(modelItem => fecha)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.sexo)

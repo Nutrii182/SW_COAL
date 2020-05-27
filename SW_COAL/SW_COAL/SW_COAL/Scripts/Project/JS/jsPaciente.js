@@ -1,10 +1,11 @@
 ﻿
 $(document).ready(function () {
 
-    var tipo = localStorage.getItem('tipo')
+    var user = JSON.parse(localStorage.getItem('user'));
 
-    if (tipo == 'SuperUsuario')
+    if (user.sTipo == 'SuperUsuario') {
         $('.EliPaci').css('display', 'block');
+    }
 
     Getpaciente("#tabPaci tbody");
 });
