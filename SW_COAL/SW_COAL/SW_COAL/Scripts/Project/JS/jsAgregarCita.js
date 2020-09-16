@@ -61,7 +61,6 @@ $(document).ready(function () {
             Usuario: $('#usuario').val(),
             Token: token,
             Estado: 'Aceptada',
-            Proxima: false
         };
 
         db.collection("Citas").doc(id).set(data).then(function () {

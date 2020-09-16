@@ -13,7 +13,7 @@
     </button>
     <br />
     <div class="form-inline">
-        <input type="text" class="form-control pull-right" style="width:20%" id="search" placeholder="Buscar Usuario...">
+        <input type="text" class="form-control pull-right" style="width:20%" id="search" placeholder="Buscar Usuario">
     </div>
     <br />
     <div class="row">
@@ -22,12 +22,6 @@
                 <tr>
                     <th>
                         Nombre
-                    </th>
-                    <th>
-                        Apellido Paterno
-                    </th>
-                    <th>
-                        Apellido Materno
                     </th>
                     <th>
                         Teléfono
@@ -52,14 +46,11 @@
             {
                 <tbody>
                     <tr>
+                        @{
+                            String nombreCompleto = item.nombre + ' ' + item.ap_paterno + ' ' + item.ap_materno;
+                        }
                         <td>
-                            @Html.DisplayFor(modelItem => item.nombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ap_paterno)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ap_materno)
+                            @Html.DisplayFor(modelItem => nombreCompleto)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.telefono)
@@ -77,9 +68,9 @@
                             @Html.DisplayFor(modelItem => item.tipo)
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary form-control ActUsu" data-target="@item.idusuario">Actualizar</button>
-                            <button type="button" class="btn btn-success form-control DetUsu" data-target="@item.idusuario">Detalles</button>
-                            <button type="button" style="display: none" class="btn btn-danger form-control EliUsu" data-target="@item.idusuario">Eliminar</button>
+                            <button title="Editar" type="button" class="btn btn-primary form-control ActUsu" data-target="@item.idusuario"><span><i class="far fa-edit"></i></span></button>
+                            <button title="Detalles" type="button" class="btn btn-success form-control DetUsu" data-target="@item.idusuario"><span><i class="fas fa-info-circle"></i></span></button>
+                            <button title="Eliminar" type="button" style="display: none" class="btn btn-danger form-control EliUsu" data-target="@item.idusuario"><span><i class="far fa-trash-alt"></i></span></button>
                         </td>
                     </tr>
                 </tbody>

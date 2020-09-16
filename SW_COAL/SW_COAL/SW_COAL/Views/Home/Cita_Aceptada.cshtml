@@ -2,17 +2,24 @@
 <!doctype html>
 <html>
 <head>
+    <link href="~/Content/css/RespuestaCita.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
     <script src="~/Scripts/moment.js"></script>
     <script src="~/Scripts/Project/JS/jsCitaAceptada.js"></script>
 </head>
-<body>
-    <h2>Cita Aceptada</h2>
-    <br />
-    <p id="info"></p>
-    <br />
-    <p>Para mayor información inicia sesión en el sistema o accede al apartado citas.</p>
-    <br />
+<body class="bg-secondary">
+    <div class="card bg-light container-fluid col-md-6 shadow p-3 mt-5">
+        <h2 class="font-weight-bold text-center mt-3">Cita Aceptada</h2>
+        
+        <br />
+
+        <img class="col-md-6" src="~/Content/img/Logo.png" />
+
+        <p class="text-justify ml-5 mt-3 mr-5" id="info">
+            Para mayor información inicia sesión en el sistema o accede al apartado citas.
+        </p>
+        <br />
+    </div>
 </body>
 </html>

@@ -17,11 +17,24 @@ $(document).ready(function () {
 
     db.collection("Citas").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            if (doc.data().Estado != 'Rechazada') {
-                var date = doc.data().Fecha.split('/');
-                var id = date[0] + ':' + date[1] + ':' + date[2] + ':' + doc.data().Hora;
-                $('#tabCitas').append('<tr id="events"><td>' + doc.data().Usuario + '</td><td>' + doc.data().Nombre + '</td><td>' + doc.data().Motivo + '</td><td>' + doc.data().Fecha + '</td><td>' + doc.data().Hora + '</td><td>' + doc.data().Estado + '</td><td><button class="btn btn-primary form-control AcepCita" id="' + id + '">Aceptar</button><button class="btn btn-danger form-control RechCita" id="' + id + '">Cancelar</button></td></tr>');
+
+            var fechaActual = new Date();
+            var fechaCita = doc.data().Fecha;
+
+            var date = fechaCita.split("/");
+            var id = date[0] + ':' + date[1] + ':' + date[2] + ':' + doc.data().Hora;
+
+            if (fechaActual.getFullYear() > date[2])
+                db.collection("Citas").doc(id).delete();
+            else {
+                if (fechaActual.getMonth() > date[1] || fechaActual.getMonth() == date[1] && fechaActual.getDay() > date[0])
+                    db.collection("Citas").doc(id).delete();
+
+                if (doc.data().Estado != 'Rechazada')
+                    $('#tabCitas').append('<tr id="events"><td>' + doc.data().Usuario + '</td><td>' + doc.data().Nombre + '</td><td>' + doc.data().Motivo + '</td><td>' + doc.data().Fecha + '</td><td>' + doc.data().Hora + '</td><td>' + doc.data().Estado + '</td><td><button title="Aceptar" class="btn btn-primary form-control AcepCita" id="' + id + '"><span><i class="fas fa-check"></i></span></button><button title="Rechazar" class="btn btn-danger form-control RechCita" id="' + id + '"><span><i class="fas fa-times"></i></span></button></td></tr>');
+
             }
+
         });
     });
 
